@@ -1,6 +1,6 @@
 [project]
 name = "authentik_client"
-version = "2024.12.3"
+version = "2024.12.4"
 description = "authentik"
 authors = [
   {name = "authentik Team",email = "hello@goauthentik.io"},
