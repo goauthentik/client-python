@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | 
 **results** | [**List[PropertyMapping]**](PropertyMapping.md) |  | 
-**autocomplete** | **Dict[str, object]** |  | 
 
 ## Example
 

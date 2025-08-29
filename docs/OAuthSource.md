@@ -35,8 +35,7 @@ Name | Type | Description | Notes
 **type** | [**SourceType**](SourceType.md) |  | [readonly] 
 **oidc_well_known_url** | **str** |  | [optional] 
 **oidc_jwks_url** | **str** |  | [optional] 
-**oidc_jwks** | **Dict[str, object]** |  | [optional] 
-**authorization_code_auth_method** | [**AuthorizationCodeAuthMethodEnum**](AuthorizationCodeAuthMethodEnum.md) | How to perform authentication during an authorization_code token request flow | [optional] 
+**oidc_jwks** | **object** |  | [optional] 
 
 ## Example
 

@@ -54,7 +54,6 @@ Name | Type | Description | Notes
 **primary_action** | **str** |  | 
 **sources** | [**List[LoginSource]**](LoginSource.md) |  | [optional] 
 **show_source_labels** | **bool** |  | 
-**enable_remember_me** | **bool** |  | [optional] [default to True]
 **slug** | **str** |  | 
 **fields** | [**List[StagePrompt]**](StagePrompt.md) |  | 
 **to** | **str** |  | 

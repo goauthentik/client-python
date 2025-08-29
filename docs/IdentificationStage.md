@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **sources** | **List[str]** | Specify which sources should be shown. | [optional] 
 **show_source_labels** | **bool** |  | [optional] 
 **pretend_user_exists** | **bool** | When enabled, the stage will succeed and continue even when incorrect user info is entered. | [optional] 
-**enable_remember_me** | **bool** | Show the user the &#39;Remember me on this device&#39; toggle, allowing repeat users to skip straight to entering their password. | [optional] 
 
 ## Example
 

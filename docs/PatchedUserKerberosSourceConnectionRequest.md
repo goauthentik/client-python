@@ -1,6 +1,6 @@
 # PatchedUserKerberosSourceConnectionRequest
 
-User source connection
+Kerberos Source Serializer
 
 ## Properties
 

@@ -1,6 +1,6 @@
 # PatchedGroupPlexSourceConnectionRequest
 
-Group Source Connection
+Plex Group-Source connection Serializer
 
 ## Properties
 

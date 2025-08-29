@@ -1,6 +1,6 @@
 # UserKerberosSourceConnectionRequest
 
-User source connection
+Kerberos Source Serializer
 
 ## Properties
 

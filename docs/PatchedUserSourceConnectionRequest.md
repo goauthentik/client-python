@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | **int** |  | [optional] 
 **source** | **str** |  | [optional] 
-**identifier** | **str** |  | [optional] 
 
 ## Example
 

@@ -10,14 +10,13 @@ Name | Type | Description | Notes
 **property_mappings** | **List[str]** |  | [optional] 
 **property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
 **delegated_subject** | **str** |  | [optional] 
-**credentials** | **Dict[str, object]** |  | [optional] 
+**credentials** | **object** |  | [optional] 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **default_group_email_domain** | **str** |  | [optional] 
-**dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 
 ## Example
 

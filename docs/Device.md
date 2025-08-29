@@ -1,6 +1,6 @@
 # Device
 
-Serializer for authenticator devices
+Serializer for Duo authenticator devices
 
 ## Properties
 
@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **last_updated** | **datetime** |  | [readonly] 
 **last_used** | **datetime** |  | [readonly] 
 **extra_description** | **str** | Get extra description | [readonly] 
-**external_id** | **str** | Get external Device ID | [readonly] 
 
 ## Example
 

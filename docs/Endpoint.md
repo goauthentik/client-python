@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **provider_obj** | [**RACProvider**](RACProvider.md) |  | [readonly] 
 **protocol** | [**ProtocolEnum**](ProtocolEnum.md) |  | 
 **host** | **str** |  | 
-**settings** | **Dict[str, object]** |  | [optional] 
+**settings** | **object** |  | [optional] 
 **property_mappings** | **List[str]** |  | [optional] 
 **auth_mode** | [**AuthModeEnum**](AuthModeEnum.md) |  | 
 **launch_url** | **str** | Build actual launch URL (the provider itself does not have one, just individual endpoints) | [readonly] 

@@ -12,8 +12,6 @@ Name | Type | Description | Notes
 **branding_title** | **str** |  | [optional] 
 **branding_logo** | **str** |  | [optional] 
 **branding_favicon** | **str** |  | [optional] 
-**branding_custom_css** | **str** |  | [optional] 
-**branding_default_flow_background** | **str** |  | [optional] 
 **flow_authentication** | **str** |  | [optional] 
 **flow_invalidation** | **str** |  | [optional] 
 **flow_recovery** | **str** |  | [optional] 
@@ -22,8 +20,7 @@ Name | Type | Description | Notes
 **flow_device_code** | **str** |  | [optional] 
 **default_application** | **str** | When set, external users will be redirected to this application after authenticating. | [optional] 
 **web_certificate** | **str** | Web Certificate used by the authentik Core webserver. | [optional] 
-**client_certificates** | **List[str]** | Certificates used for client authentication. | [optional] 
-**attributes** | **Dict[str, object]** |  | [optional] 
+**attributes** | **object** |  | [optional] 
 
 ## Example
 

@@ -1,6 +1,6 @@
 # GroupPlexSourceConnection
 
-Group Source Connection
+Plex Group-Source connection Serializer
 
 ## Properties
 
@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **source_obj** | [**Source**](Source.md) |  | [readonly] 
 **identifier** | **str** |  | 
 **created** | **datetime** |  | [readonly] 
-**last_updated** | **datetime** |  | [readonly] 
 
 ## Example
 

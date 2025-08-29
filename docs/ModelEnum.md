@@ -5,29 +5,7 @@
 
 * `AUTHENTIK_TENANTS_DOT_DOMAIN` (value: `'authentik_tenants.domain'`)
 
-* `AUTHENTIK_CORE_DOT_GROUP` (value: `'authentik_core.group'`)
-
-* `AUTHENTIK_CORE_DOT_USER` (value: `'authentik_core.user'`)
-
-* `AUTHENTIK_CORE_DOT_APPLICATION` (value: `'authentik_core.application'`)
-
-* `AUTHENTIK_CORE_DOT_APPLICATIONENTITLEMENT` (value: `'authentik_core.applicationentitlement'`)
-
-* `AUTHENTIK_CORE_DOT_TOKEN` (value: `'authentik_core.token'`)
-
 * `AUTHENTIK_CRYPTO_DOT_CERTIFICATEKEYPAIR` (value: `'authentik_crypto.certificatekeypair'`)
-
-* `AUTHENTIK_ENTERPRISE_DOT_LICENSE` (value: `'authentik_enterprise.license'`)
-
-* `AUTHENTIK_EVENTS_DOT_EVENT` (value: `'authentik_events.event'`)
-
-* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONTRANSPORT` (value: `'authentik_events.notificationtransport'`)
-
-* `AUTHENTIK_EVENTS_DOT_NOTIFICATION` (value: `'authentik_events.notification'`)
-
-* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONRULE` (value: `'authentik_events.notificationrule'`)
-
-* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONWEBHOOKMAPPING` (value: `'authentik_events.notificationwebhookmapping'`)
 
 * `AUTHENTIK_FLOWS_DOT_FLOW` (value: `'authentik_flows.flow'`)
 
@@ -63,12 +41,6 @@
 
 * `AUTHENTIK_PROVIDERS_PROXY_DOT_PROXYPROVIDER` (value: `'authentik_providers_proxy.proxyprovider'`)
 
-* `AUTHENTIK_PROVIDERS_RAC_DOT_RACPROVIDER` (value: `'authentik_providers_rac.racprovider'`)
-
-* `AUTHENTIK_PROVIDERS_RAC_DOT_ENDPOINT` (value: `'authentik_providers_rac.endpoint'`)
-
-* `AUTHENTIK_PROVIDERS_RAC_DOT_RACPROPERTYMAPPING` (value: `'authentik_providers_rac.racpropertymapping'`)
-
 * `AUTHENTIK_PROVIDERS_RADIUS_DOT_RADIUSPROVIDER` (value: `'authentik_providers_radius.radiusprovider'`)
 
 * `AUTHENTIK_PROVIDERS_RADIUS_DOT_RADIUSPROVIDERPROPERTYMAPPING` (value: `'authentik_providers_radius.radiusproviderpropertymapping'`)
@@ -83,8 +55,6 @@
 
 * `AUTHENTIK_RBAC_DOT_ROLE` (value: `'authentik_rbac.role'`)
 
-* `AUTHENTIK_RBAC_DOT_INITIALPERMISSIONS` (value: `'authentik_rbac.initialpermissions'`)
-
 * `AUTHENTIK_SOURCES_KERBEROS_DOT_KERBEROSSOURCE` (value: `'authentik_sources_kerberos.kerberossource'`)
 
 * `AUTHENTIK_SOURCES_KERBEROS_DOT_KERBEROSSOURCEPROPERTYMAPPING` (value: `'authentik_sources_kerberos.kerberossourcepropertymapping'`)
@@ -96,10 +66,6 @@
 * `AUTHENTIK_SOURCES_LDAP_DOT_LDAPSOURCE` (value: `'authentik_sources_ldap.ldapsource'`)
 
 * `AUTHENTIK_SOURCES_LDAP_DOT_LDAPSOURCEPROPERTYMAPPING` (value: `'authentik_sources_ldap.ldapsourcepropertymapping'`)
-
-* `AUTHENTIK_SOURCES_LDAP_DOT_USERLDAPSOURCECONNECTION` (value: `'authentik_sources_ldap.userldapsourceconnection'`)
-
-* `AUTHENTIK_SOURCES_LDAP_DOT_GROUPLDAPSOURCECONNECTION` (value: `'authentik_sources_ldap.groupldapsourceconnection'`)
 
 * `AUTHENTIK_SOURCES_OAUTH_DOT_OAUTHSOURCE` (value: `'authentik_sources_oauth.oauthsource'`)
 
@@ -189,13 +155,21 @@
 
 * `AUTHENTIK_STAGES_USER_WRITE_DOT_USERWRITESTAGE` (value: `'authentik_stages_user_write.userwritestage'`)
 
-* `AUTHENTIK_TASKS_SCHEDULES_DOT_SCHEDULE` (value: `'authentik_tasks_schedules.schedule'`)
-
 * `AUTHENTIK_BRANDS_DOT_BRAND` (value: `'authentik_brands.brand'`)
 
 * `AUTHENTIK_BLUEPRINTS_DOT_BLUEPRINTINSTANCE` (value: `'authentik_blueprints.blueprintinstance'`)
 
-* `AUTHENTIK_POLICIES_UNIQUE_PASSWORD_DOT_UNIQUEPASSWORDPOLICY` (value: `'authentik_policies_unique_password.uniquepasswordpolicy'`)
+* `AUTHENTIK_CORE_DOT_GROUP` (value: `'authentik_core.group'`)
+
+* `AUTHENTIK_CORE_DOT_USER` (value: `'authentik_core.user'`)
+
+* `AUTHENTIK_CORE_DOT_APPLICATION` (value: `'authentik_core.application'`)
+
+* `AUTHENTIK_CORE_DOT_APPLICATIONENTITLEMENT` (value: `'authentik_core.applicationentitlement'`)
+
+* `AUTHENTIK_CORE_DOT_TOKEN` (value: `'authentik_core.token'`)
+
+* `AUTHENTIK_ENTERPRISE_DOT_LICENSE` (value: `'authentik_enterprise.license'`)
 
 * `AUTHENTIK_PROVIDERS_GOOGLE_WORKSPACE_DOT_GOOGLEWORKSPACEPROVIDER` (value: `'authentik_providers_google_workspace.googleworkspaceprovider'`)
 
@@ -205,13 +179,27 @@
 
 * `AUTHENTIK_PROVIDERS_MICROSOFT_ENTRA_DOT_MICROSOFTENTRAPROVIDERMAPPING` (value: `'authentik_providers_microsoft_entra.microsoftentraprovidermapping'`)
 
+* `AUTHENTIK_PROVIDERS_RAC_DOT_RACPROVIDER` (value: `'authentik_providers_rac.racprovider'`)
+
+* `AUTHENTIK_PROVIDERS_RAC_DOT_ENDPOINT` (value: `'authentik_providers_rac.endpoint'`)
+
+* `AUTHENTIK_PROVIDERS_RAC_DOT_RACPROPERTYMAPPING` (value: `'authentik_providers_rac.racpropertymapping'`)
+
 * `AUTHENTIK_PROVIDERS_SSF_DOT_SSFPROVIDER` (value: `'authentik_providers_ssf.ssfprovider'`)
 
 * `AUTHENTIK_STAGES_AUTHENTICATOR_ENDPOINT_GDTC_DOT_AUTHENTICATORENDPOINTGDTCSTAGE` (value: `'authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage'`)
 
-* `AUTHENTIK_STAGES_MTLS_DOT_MUTUALTLSSTAGE` (value: `'authentik_stages_mtls.mutualtlsstage'`)
-
 * `AUTHENTIK_STAGES_SOURCE_DOT_SOURCESTAGE` (value: `'authentik_stages_source.sourcestage'`)
+
+* `AUTHENTIK_EVENTS_DOT_EVENT` (value: `'authentik_events.event'`)
+
+* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONTRANSPORT` (value: `'authentik_events.notificationtransport'`)
+
+* `AUTHENTIK_EVENTS_DOT_NOTIFICATION` (value: `'authentik_events.notification'`)
+
+* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONRULE` (value: `'authentik_events.notificationrule'`)
+
+* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONWEBHOOKMAPPING` (value: `'authentik_events.notificationwebhookmapping'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

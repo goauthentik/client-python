@@ -1,6 +1,6 @@
 # UserSAMLSourceConnectionRequest
 
-User source connection
+SAML Source Serializer
 
 ## Properties
 

@@ -1,6 +1,6 @@
 # PatchedUserPlexSourceConnectionRequest
 
-User source connection
+Plex Source connection Serializer
 
 ## Properties
 

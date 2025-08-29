@@ -1,6 +1,6 @@
 # authentik_client.EventsApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**events_events_destroy**](EventsApi.md#events_events_destroy) | **DELETE** /events/events/{event_uuid}/ | 
 [**events_events_list**](EventsApi.md#events_events_list) | **GET** /events/events/ | 
 [**events_events_partial_update**](EventsApi.md#events_events_partial_update) | **PATCH** /events/events/{event_uuid}/ | 
+[**events_events_per_month_list**](EventsApi.md#events_events_per_month_list) | **GET** /events/events/per_month/ | 
 [**events_events_retrieve**](EventsApi.md#events_events_retrieve) | **GET** /events/events/{event_uuid}/ | 
 [**events_events_top_per_user_list**](EventsApi.md#events_events_top_per_user_list) | **GET** /events/events/top_per_user/ | 
 [**events_events_update**](EventsApi.md#events_events_update) | **PUT** /events/events/{event_uuid}/ | 
@@ -27,6 +28,9 @@ Method | HTTP request | Description
 [**events_rules_retrieve**](EventsApi.md#events_rules_retrieve) | **GET** /events/rules/{pbm_uuid}/ | 
 [**events_rules_update**](EventsApi.md#events_rules_update) | **PUT** /events/rules/{pbm_uuid}/ | 
 [**events_rules_used_by_list**](EventsApi.md#events_rules_used_by_list) | **GET** /events/rules/{pbm_uuid}/used_by/ | 
+[**events_system_tasks_list**](EventsApi.md#events_system_tasks_list) | **GET** /events/system_tasks/ | 
+[**events_system_tasks_retrieve**](EventsApi.md#events_system_tasks_retrieve) | **GET** /events/system_tasks/{uuid}/ | 
+[**events_system_tasks_run_create**](EventsApi.md#events_system_tasks_run_create) | **POST** /events/system_tasks/{uuid}/run/ | 
 [**events_transports_create**](EventsApi.md#events_transports_create) | **POST** /events/transports/ | 
 [**events_transports_destroy**](EventsApi.md#events_transports_destroy) | **DELETE** /events/transports/{uuid}/ | 
 [**events_transports_list**](EventsApi.md#events_transports_list) | **GET** /events/transports/ | 
@@ -52,10 +56,10 @@ from authentik_client.models.type_create import TypeCreate
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -126,10 +130,10 @@ from authentik_client.models.event_request import EventRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -202,10 +206,10 @@ import authentik_client
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -263,7 +267,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **events_events_list**
-> PaginatedEventList events_events_list(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, page=page, page_size=page_size, search=search, username=username)
+> PaginatedEventList events_events_list(action=action, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, page=page, page_size=page_size, search=search, username=username)
 
 Event Read-Only Viewset
 
@@ -277,10 +281,10 @@ from authentik_client.models.paginated_event_list import PaginatedEventList
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -298,7 +302,6 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
     action = 'action_example' # str |  (optional)
-    actions = ['actions_example'] # List[str] |  (optional)
     brand_name = 'brand_name_example' # str | Brand name (optional)
     client_ip = 'client_ip_example' # str |  (optional)
     context_authorized_app = 'context_authorized_app_example' # str | Context Authorized application (optional)
@@ -312,7 +315,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     username = 'username_example' # str | Username (optional)
 
     try:
-        api_response = api_instance.events_events_list(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, page=page, page_size=page_size, search=search, username=username)
+        api_response = api_instance.events_events_list(action=action, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, page=page, page_size=page_size, search=search, username=username)
         print("The response of EventsApi->events_events_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -327,7 +330,6 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **action** | **str**|  | [optional] 
- **actions** | [**List[str]**](str.md)|  | [optional] 
  **brand_name** | **str**| Brand name | [optional] 
  **client_ip** | **str**|  | [optional] 
  **context_authorized_app** | **str**| Context Authorized application | [optional] 
@@ -379,10 +381,10 @@ from authentik_client.models.patched_event_request import PatchedEventRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -443,6 +445,85 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **events_events_per_month_list**
+> List[Coordinate] events_events_per_month_list(action=action, query=query)
+
+Get the count of events per month
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.coordinate import Coordinate
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "http://localhost/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EventsApi(api_client)
+    action = 'action_example' # str |  (optional)
+    query = 'query_example' # str |  (optional)
+
+    try:
+        api_response = api_instance.events_events_per_month_list(action=action, query=query)
+        print("The response of EventsApi->events_events_per_month_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->events_events_per_month_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **action** | **str**|  | [optional] 
+ **query** | **str**|  | [optional] 
+
+### Return type
+
+[**List[Coordinate]**](Coordinate.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **events_events_retrieve**
 > Event events_events_retrieve(event_uuid)
 
@@ -458,10 +539,10 @@ from authentik_client.models.event import Event
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -535,10 +616,10 @@ from authentik_client.models.event_top_per_user import EventTopPerUser
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -615,10 +696,10 @@ from authentik_client.models.event_request import EventRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -680,7 +761,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **events_events_volume_list**
-> List[EventVolume] events_events_volume_list(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, history_days=history_days, ordering=ordering, search=search, username=username)
+> List[Coordinate] events_events_volume_list(action=action, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, search=search, username=username)
 
 Get event volume for specified filters and timeframe
 
@@ -690,14 +771,14 @@ Get event volume for specified filters and timeframe
 
 ```python
 import authentik_client
-from authentik_client.models.event_volume import EventVolume
+from authentik_client.models.coordinate import Coordinate
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -715,20 +796,18 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
     action = 'action_example' # str |  (optional)
-    actions = ['actions_example'] # List[str] |  (optional)
     brand_name = 'brand_name_example' # str | Brand name (optional)
     client_ip = 'client_ip_example' # str |  (optional)
     context_authorized_app = 'context_authorized_app_example' # str | Context Authorized application (optional)
     context_model_app = 'context_model_app_example' # str | Context Model App (optional)
     context_model_name = 'context_model_name_example' # str | Context Model Name (optional)
     context_model_pk = 'context_model_pk_example' # str | Context Model Primary Key (optional)
-    history_days = 7 # float |  (optional) (default to 7)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     search = 'search_example' # str | A search term. (optional)
     username = 'username_example' # str | Username (optional)
 
     try:
-        api_response = api_instance.events_events_volume_list(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, history_days=history_days, ordering=ordering, search=search, username=username)
+        api_response = api_instance.events_events_volume_list(action=action, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, search=search, username=username)
         print("The response of EventsApi->events_events_volume_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -743,21 +822,19 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **action** | **str**|  | [optional] 
- **actions** | [**List[str]**](str.md)|  | [optional] 
  **brand_name** | **str**| Brand name | [optional] 
  **client_ip** | **str**|  | [optional] 
  **context_authorized_app** | **str**| Context Authorized application | [optional] 
  **context_model_app** | **str**| Context Model App | [optional] 
  **context_model_name** | **str**| Context Model Name | [optional] 
  **context_model_pk** | **str**| Context Model Primary Key | [optional] 
- **history_days** | **float**|  | [optional] [default to 7]
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **search** | **str**| A search term. | [optional] 
  **username** | **str**| Username | [optional] 
 
 ### Return type
 
-[**List[EventVolume]**](EventVolume.md)
+[**List[Coordinate]**](Coordinate.md)
 
 ### Authorization
 
@@ -792,10 +869,10 @@ import authentik_client
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -867,10 +944,10 @@ from authentik_client.models.paginated_notification_list import PaginatedNotific
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -961,10 +1038,10 @@ import authentik_client
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1033,10 +1110,10 @@ from authentik_client.models.patched_notification_request import PatchedNotifica
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1112,10 +1189,10 @@ from authentik_client.models.notification import Notification
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1190,10 +1267,10 @@ from authentik_client.models.notification_request import NotificationRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1269,10 +1346,10 @@ from authentik_client.models.used_by import UsedBy
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1347,10 +1424,10 @@ from authentik_client.models.notification_rule_request import NotificationRuleRe
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1423,10 +1500,10 @@ import authentik_client
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1484,7 +1561,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **events_rules_list**
-> PaginatedNotificationRuleList events_rules_list(destination_group__name=destination_group__name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, severity=severity)
+> PaginatedNotificationRuleList events_rules_list(group__name=group__name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, severity=severity)
 
 NotificationRule Viewset
 
@@ -1498,10 +1575,10 @@ from authentik_client.models.paginated_notification_rule_list import PaginatedNo
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1518,7 +1595,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    destination_group__name = 'destination_group__name_example' # str |  (optional)
+    group__name = 'group__name_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -1527,7 +1604,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     severity = 'severity_example' # str | Controls which severity level the created notifications will have.   (optional)
 
     try:
-        api_response = api_instance.events_rules_list(destination_group__name=destination_group__name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, severity=severity)
+        api_response = api_instance.events_rules_list(group__name=group__name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, severity=severity)
         print("The response of EventsApi->events_rules_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -1541,7 +1618,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **destination_group__name** | **str**|  | [optional] 
+ **group__name** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -1588,10 +1665,10 @@ from authentik_client.models.patched_notification_rule_request import PatchedNot
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1667,10 +1744,10 @@ from authentik_client.models.notification_rule import NotificationRule
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1745,10 +1822,10 @@ from authentik_client.models.notification_rule_request import NotificationRuleRe
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1824,10 +1901,10 @@ from authentik_client.models.used_by import UsedBy
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1886,6 +1963,248 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **events_system_tasks_list**
+> PaginatedSystemTaskList events_system_tasks_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search, status=status, uid=uid)
+
+Read-only view set that returns all background tasks
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_system_task_list import PaginatedSystemTaskList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "http://localhost/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EventsApi(api_client)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    status = 'status_example' # str |  (optional)
+    uid = 'uid_example' # str |  (optional)
+
+    try:
+        api_response = api_instance.events_system_tasks_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search, status=status, uid=uid)
+        print("The response of EventsApi->events_system_tasks_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->events_system_tasks_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **status** | **str**|  | [optional] 
+ **uid** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedSystemTaskList**](PaginatedSystemTaskList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **events_system_tasks_retrieve**
+> SystemTask events_system_tasks_retrieve(uuid)
+
+Read-only view set that returns all background tasks
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.system_task import SystemTask
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "http://localhost/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EventsApi(api_client)
+    uuid = 'uuid_example' # str | A UUID string identifying this System Task.
+
+    try:
+        api_response = api_instance.events_system_tasks_retrieve(uuid)
+        print("The response of EventsApi->events_system_tasks_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->events_system_tasks_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| A UUID string identifying this System Task. | 
+
+### Return type
+
+[**SystemTask**](SystemTask.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **events_system_tasks_run_create**
+> events_system_tasks_run_create(uuid)
+
+Run task
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "http://localhost/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EventsApi(api_client)
+    uuid = 'uuid_example' # str | A UUID string identifying this System Task.
+
+    try:
+        api_instance.events_system_tasks_run_create(uuid)
+    except Exception as e:
+        print("Exception when calling EventsApi->events_system_tasks_run_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| A UUID string identifying this System Task. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Task retried successfully |  -  |
+**404** | Task not found |  -  |
+**500** | Failed to retry task |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **events_transports_create**
 > NotificationTransport events_transports_create(notification_transport_request)
 
@@ -1902,10 +2221,10 @@ from authentik_client.models.notification_transport_request import NotificationT
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1978,10 +2297,10 @@ import authentik_client
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2053,10 +2372,10 @@ from authentik_client.models.paginated_notification_transport_list import Pagina
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2145,10 +2464,10 @@ from authentik_client.models.patched_notification_transport_request import Patch
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2224,10 +2543,10 @@ from authentik_client.models.notification_transport import NotificationTransport
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2302,10 +2621,10 @@ from authentik_client.models.notification_transport_test import NotificationTran
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2381,10 +2700,10 @@ from authentik_client.models.notification_transport_request import NotificationT
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2460,10 +2779,10 @@ from authentik_client.models.used_by import UsedBy
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 # The client must configure the authentication and authorization parameters

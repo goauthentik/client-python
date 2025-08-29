@@ -5,19 +5,11 @@
 
 * `AUTHENTIK_DOT_TENANTS` (value: `'authentik.tenants'`)
 
-* `AUTHENTIK_DOT_TASKS` (value: `'authentik.tasks'`)
-
 * `AUTHENTIK_DOT_ADMIN` (value: `'authentik.admin'`)
 
 * `AUTHENTIK_DOT_API` (value: `'authentik.api'`)
 
-* `AUTHENTIK_DOT_CORE` (value: `'authentik.core'`)
-
 * `AUTHENTIK_DOT_CRYPTO` (value: `'authentik.crypto'`)
-
-* `AUTHENTIK_DOT_ENTERPRISE` (value: `'authentik.enterprise'`)
-
-* `AUTHENTIK_DOT_EVENTS` (value: `'authentik.events'`)
 
 * `AUTHENTIK_DOT_FLOWS` (value: `'authentik.flows'`)
 
@@ -44,8 +36,6 @@
 * `AUTHENTIK_DOT_PROVIDERS_DOT_OAUTH2` (value: `'authentik.providers.oauth2'`)
 
 * `AUTHENTIK_DOT_PROVIDERS_DOT_PROXY` (value: `'authentik.providers.proxy'`)
-
-* `AUTHENTIK_DOT_PROVIDERS_DOT_RAC` (value: `'authentik.providers.rac'`)
 
 * `AUTHENTIK_DOT_PROVIDERS_DOT_RADIUS` (value: `'authentik.providers.radius'`)
 
@@ -113,29 +103,29 @@
 
 * `AUTHENTIK_DOT_STAGES_DOT_USER_WRITE` (value: `'authentik.stages.user_write'`)
 
-* `AUTHENTIK_DOT_TASKS_DOT_SCHEDULES` (value: `'authentik.tasks.schedules'`)
-
 * `AUTHENTIK_DOT_BRANDS` (value: `'authentik.brands'`)
 
 * `AUTHENTIK_DOT_BLUEPRINTS` (value: `'authentik.blueprints'`)
 
-* `AUTHENTIK_DOT_ENTERPRISE_DOT_AUDIT` (value: `'authentik.enterprise.audit'`)
+* `AUTHENTIK_DOT_CORE` (value: `'authentik.core'`)
 
-* `AUTHENTIK_DOT_ENTERPRISE_DOT_POLICIES_DOT_UNIQUE_PASSWORD` (value: `'authentik.enterprise.policies.unique_password'`)
+* `AUTHENTIK_DOT_ENTERPRISE` (value: `'authentik.enterprise'`)
+
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_AUDIT` (value: `'authentik.enterprise.audit'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_GOOGLE_WORKSPACE` (value: `'authentik.enterprise.providers.google_workspace'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_MICROSOFT_ENTRA` (value: `'authentik.enterprise.providers.microsoft_entra'`)
 
-* `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SSF` (value: `'authentik.enterprise.providers.ssf'`)
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_RAC` (value: `'authentik.enterprise.providers.rac'`)
 
-* `AUTHENTIK_DOT_ENTERPRISE_DOT_SEARCH` (value: `'authentik.enterprise.search'`)
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SSF` (value: `'authentik.enterprise.providers.ssf'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_STAGES_DOT_AUTHENTICATOR_ENDPOINT_GDTC` (value: `'authentik.enterprise.stages.authenticator_endpoint_gdtc'`)
 
-* `AUTHENTIK_DOT_ENTERPRISE_DOT_STAGES_DOT_MTLS` (value: `'authentik.enterprise.stages.mtls'`)
-
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_STAGES_DOT_SOURCE` (value: `'authentik.enterprise.stages.source'`)
+
+* `AUTHENTIK_DOT_EVENTS` (value: `'authentik.events'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,14 +1,13 @@
 # SyncStatus
 
-Provider/source sync status
+Provider sync status
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_running** | **bool** |  | 
-**last_successful_sync** | **datetime** |  | [optional] 
-**last_sync_status** | [**TaskAggregatedStatusEnum**](TaskAggregatedStatusEnum.md) |  | [optional] 
+**is_running** | **bool** |  | [readonly] 
+**tasks** | [**List[SystemTask]**](SystemTask.md) |  | [readonly] 
 
 ## Example
 

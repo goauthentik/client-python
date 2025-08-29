@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **path** | **str** |  | [optional] [default to '']
-**context** | **Dict[str, object]** |  | [optional] 
+**context** | **object** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
 **content** | **str** |  | [optional] 
 

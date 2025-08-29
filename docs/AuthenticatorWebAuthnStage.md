@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **resident_key_requirement** | [**ResidentKeyRequirementEnum**](ResidentKeyRequirementEnum.md) |  | [optional] 
 **device_type_restrictions** | **List[str]** |  | [optional] 
 **device_type_restrictions_obj** | [**List[WebAuthnDeviceType]**](WebAuthnDeviceType.md) |  | [readonly] 
-**max_attempts** | **int** |  | [optional] 
 
 ## Example
 
