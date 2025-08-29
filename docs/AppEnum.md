@@ -37,6 +37,8 @@
 
 * `AUTHENTIK_DOT_PROVIDERS_DOT_PROXY` (value: `'authentik.providers.proxy'`)
 
+* `AUTHENTIK_DOT_PROVIDERS_DOT_RAC` (value: `'authentik.providers.rac'`)
+
 * `AUTHENTIK_DOT_PROVIDERS_DOT_RADIUS` (value: `'authentik.providers.radius'`)
 
 * `AUTHENTIK_DOT_PROVIDERS_DOT_SAML` (value: `'authentik.providers.saml'`)
@@ -116,8 +118,6 @@
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_GOOGLE_WORKSPACE` (value: `'authentik.enterprise.providers.google_workspace'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_MICROSOFT_ENTRA` (value: `'authentik.enterprise.providers.microsoft_entra'`)
-
-* `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_RAC` (value: `'authentik.enterprise.providers.rac'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SSF` (value: `'authentik.enterprise.providers.ssf'`)
 
