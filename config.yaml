@@ -1,0 +1,6 @@
+---
+templateDir: /local/templates/
+additionalProperties:
+  packageName: authentik_client
+  projectName: authentik-client
+  infoName: authentik Team
