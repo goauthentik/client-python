@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class UserPasswordSetRequest(BaseModel):
     """
-    UserPasswordSetRequest
+    Payload to set a users' password directly
     """ # noqa: E501
     password: Annotated[str, Field(min_length=1, strict=True)]
     __properties: ClassVar[List[str]] = ["password"]
