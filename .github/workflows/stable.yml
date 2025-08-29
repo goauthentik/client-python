@@ -102,7 +102,6 @@ jobs:
           git tag "$tag"
           git push origin "$branch"
           git push --tags
-          cargo publish
           gh release create "$tag" --latest --title "$version"
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
