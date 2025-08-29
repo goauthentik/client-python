@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **property_mappings** | **List[str]** |  | [optional] 
 **property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
 **delegated_subject** | **str** |  | 
-**credentials** | **Dict[str, object]** |  | 
+**credentials** | **object** |  | 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 

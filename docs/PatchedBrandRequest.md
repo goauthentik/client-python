@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **default_application** | **str** | When set, external users will be redirected to this application after authenticating. | [optional] 
 **web_certificate** | **str** | Web Certificate used by the authentik Core webserver. | [optional] 
 **client_certificates** | **List[str]** | Certificates used for client authentication. | [optional] 
-**attributes** | **Dict[str, object]** |  | [optional] 
+**attributes** | **object** |  | [optional] 
 
 ## Example
 

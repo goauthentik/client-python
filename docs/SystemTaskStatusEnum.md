@@ -1,17 +1,11 @@
-# TaskAggregatedStatusEnum
+# SystemTaskStatusEnum
 
 
 ## Enum
 
-* `QUEUED` (value: `'queued'`)
+* `UNKNOWN` (value: `'unknown'`)
 
-* `CONSUMED` (value: `'consumed'`)
-
-* `REJECTED` (value: `'rejected'`)
-
-* `DONE` (value: `'done'`)
-
-* `INFO` (value: `'info'`)
+* `SUCCESSFUL` (value: `'successful'`)
 
 * `WARNING` (value: `'warning'`)
 

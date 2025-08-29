@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **type** | [**UserTypeEnum**](UserTypeEnum.md) |  | [optional] 
 **uuid** | **str** |  | [readonly] 
 **password_change_date** | **datetime** |  | [readonly] 
-**last_updated** | **datetime** |  | [readonly] 
 
 ## Example
 

@@ -37,7 +37,6 @@ Name | Type | Description | Notes
 **sign_response** | **bool** |  | [optional] 
 **sp_binding** | [**SpBindingEnum**](SpBindingEnum.md) | This determines how authentik sends the response back to the Service Provider. | [optional] 
 **default_relay_state** | **str** | Default relay_state value for IDP-initiated logins | [optional] 
-**default_name_id_policy** | [**SAMLNameIDPolicyEnum**](SAMLNameIDPolicyEnum.md) |  | [optional] 
 **url_download_metadata** | **str** | Get metadata download URL | [readonly] 
 **url_sso_post** | **str** | Get SSO Post URL | [readonly] 
 **url_sso_redirect** | **str** | Get SSO Redirect URL | [readonly] 

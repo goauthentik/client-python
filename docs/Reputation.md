@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **pk** | **str** |  | [optional] 
 **identifier** | **str** |  | 
 **ip** | **str** |  | 
-**ip_geo_data** | **Dict[str, object]** |  | [optional] 
-**ip_asn_data** | **Dict[str, object]** |  | [optional] 
+**ip_geo_data** | **object** |  | [optional] 
+**ip_asn_data** | **object** |  | [optional] 
 **score** | **int** |  | [optional] 
 **updated** | **datetime** |  | [readonly] 
 

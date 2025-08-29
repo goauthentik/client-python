@@ -7,10 +7,9 @@ SCIMSourceGroup Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
-**external_id** | **str** |  | [optional] 
 **group** | **str** |  | [optional] 
 **source** | **str** |  | [optional] 
-**attributes** | **Dict[str, object]** |  | [optional] 
+**attributes** | **object** |  | [optional] 
 
 ## Example
 

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **sso_url** | **str** | URL that the initial Login request is sent to. | 
 **slo_url** | **str** | Optional URL if your IDP supports Single-Logout. | [optional] 
 **allow_idp_initiated** | **bool** | Allows authentication flows initiated by the IdP. This can be a security risk, as no validation of the request ID is done. | [optional] 
-**name_id_policy** | [**SAMLNameIDPolicyEnum**](SAMLNameIDPolicyEnum.md) | NameID Policy sent to the IdP. Can be unset, in which case no Policy is sent. | [optional] 
+**name_id_policy** | [**NameIdPolicyEnum**](NameIdPolicyEnum.md) | NameID Policy sent to the IdP. Can be unset, in which case no Policy is sent. | [optional] 
 **binding_type** | [**BindingTypeEnum**](BindingTypeEnum.md) |  | [optional] 
 **verification_kp** | **str** | When selected, incoming assertion&#39;s Signatures will be validated against this certificate. To allow unsigned Requests, leave on default. | [optional] 
 **signing_kp** | **str** | Keypair used to sign outgoing Responses going to the Identity Provider. | [optional] 

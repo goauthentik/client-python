@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **pbm_uuid** | **str** |  | [readonly] 
 **name** | **str** |  | 
 **app** | **str** |  | 
-**attributes** | **Dict[str, object]** |  | [optional] 
+**attributes** | **object** |  | [optional] 
 
 ## Example
 

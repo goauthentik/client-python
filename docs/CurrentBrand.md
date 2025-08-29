@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **flow_user_settings** | **str** |  | [optional] 
 **flow_device_code** | **str** |  | [optional] 
 **default_locale** | **str** |  | [readonly] 
-**flags** | [**CurrentBrandFlags**](CurrentBrandFlags.md) |  | 
 
 ## Example
 

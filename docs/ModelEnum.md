@@ -5,29 +5,7 @@
 
 * `AUTHENTIK_TENANTS_DOT_DOMAIN` (value: `'authentik_tenants.domain'`)
 
-* `AUTHENTIK_CORE_DOT_GROUP` (value: `'authentik_core.group'`)
-
-* `AUTHENTIK_CORE_DOT_USER` (value: `'authentik_core.user'`)
-
-* `AUTHENTIK_CORE_DOT_APPLICATION` (value: `'authentik_core.application'`)
-
-* `AUTHENTIK_CORE_DOT_APPLICATIONENTITLEMENT` (value: `'authentik_core.applicationentitlement'`)
-
-* `AUTHENTIK_CORE_DOT_TOKEN` (value: `'authentik_core.token'`)
-
 * `AUTHENTIK_CRYPTO_DOT_CERTIFICATEKEYPAIR` (value: `'authentik_crypto.certificatekeypair'`)
-
-* `AUTHENTIK_ENTERPRISE_DOT_LICENSE` (value: `'authentik_enterprise.license'`)
-
-* `AUTHENTIK_EVENTS_DOT_EVENT` (value: `'authentik_events.event'`)
-
-* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONTRANSPORT` (value: `'authentik_events.notificationtransport'`)
-
-* `AUTHENTIK_EVENTS_DOT_NOTIFICATION` (value: `'authentik_events.notification'`)
-
-* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONRULE` (value: `'authentik_events.notificationrule'`)
-
-* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONWEBHOOKMAPPING` (value: `'authentik_events.notificationwebhookmapping'`)
 
 * `AUTHENTIK_FLOWS_DOT_FLOW` (value: `'authentik_flows.flow'`)
 
@@ -189,11 +167,21 @@
 
 * `AUTHENTIK_STAGES_USER_WRITE_DOT_USERWRITESTAGE` (value: `'authentik_stages_user_write.userwritestage'`)
 
-* `AUTHENTIK_TASKS_SCHEDULES_DOT_SCHEDULE` (value: `'authentik_tasks_schedules.schedule'`)
-
 * `AUTHENTIK_BRANDS_DOT_BRAND` (value: `'authentik_brands.brand'`)
 
 * `AUTHENTIK_BLUEPRINTS_DOT_BLUEPRINTINSTANCE` (value: `'authentik_blueprints.blueprintinstance'`)
+
+* `AUTHENTIK_CORE_DOT_GROUP` (value: `'authentik_core.group'`)
+
+* `AUTHENTIK_CORE_DOT_USER` (value: `'authentik_core.user'`)
+
+* `AUTHENTIK_CORE_DOT_APPLICATION` (value: `'authentik_core.application'`)
+
+* `AUTHENTIK_CORE_DOT_APPLICATIONENTITLEMENT` (value: `'authentik_core.applicationentitlement'`)
+
+* `AUTHENTIK_CORE_DOT_TOKEN` (value: `'authentik_core.token'`)
+
+* `AUTHENTIK_ENTERPRISE_DOT_LICENSE` (value: `'authentik_enterprise.license'`)
 
 * `AUTHENTIK_POLICIES_UNIQUE_PASSWORD_DOT_UNIQUEPASSWORDPOLICY` (value: `'authentik_policies_unique_password.uniquepasswordpolicy'`)
 
@@ -212,6 +200,16 @@
 * `AUTHENTIK_STAGES_MTLS_DOT_MUTUALTLSSTAGE` (value: `'authentik_stages_mtls.mutualtlsstage'`)
 
 * `AUTHENTIK_STAGES_SOURCE_DOT_SOURCESTAGE` (value: `'authentik_stages_source.sourcestage'`)
+
+* `AUTHENTIK_EVENTS_DOT_EVENT` (value: `'authentik_events.event'`)
+
+* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONTRANSPORT` (value: `'authentik_events.notificationtransport'`)
+
+* `AUTHENTIK_EVENTS_DOT_NOTIFICATION` (value: `'authentik_events.notification'`)
+
+* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONRULE` (value: `'authentik_events.notificationrule'`)
+
+* `AUTHENTIK_EVENTS_DOT_NOTIFICATIONWEBHOOKMAPPING` (value: `'authentik_events.notificationwebhookmapping'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
