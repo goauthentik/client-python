@@ -6,7 +6,7 @@ GID = $(shell id -g)
 all: clean update diff build
 
 clean:
-	rm -rf src/ docs/ test/
+	rm -rf authentik_client/ docs/ test/
 
 update:
 	mv schema.yml schema-old.yml
