@@ -1,6 +1,6 @@
 # authentik_client.TenantsApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,10 +35,10 @@ from authentik_client.models.domain_request import DomainRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -101,10 +101,10 @@ import authentik_client
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -166,10 +166,10 @@ from authentik_client.models.paginated_domain_list import PaginatedDomainList
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -240,10 +240,10 @@ from authentik_client.models.patched_domain_request import PatchedDomainRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -309,10 +309,10 @@ from authentik_client.models.domain import Domain
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -377,10 +377,10 @@ from authentik_client.models.domain_request import DomainRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -447,10 +447,10 @@ from authentik_client.models.tenant_request import TenantRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -514,10 +514,10 @@ from authentik_client.models.tenant_admin_group_request_request import TenantAdm
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -583,10 +583,10 @@ from authentik_client.models.tenant_recovery_key_response import TenantRecoveryK
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -652,10 +652,10 @@ import authentik_client
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -717,10 +717,10 @@ from authentik_client.models.paginated_tenant_list import PaginatedTenantList
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -791,10 +791,10 @@ from authentik_client.models.tenant import Tenant
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -860,10 +860,10 @@ from authentik_client.models.tenant import Tenant
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 
@@ -928,10 +928,10 @@ from authentik_client.models.tenant_request import TenantRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /api/v3
+# Defining the host is optional and defaults to http://localhost/api/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = authentik_client.Configuration(
-    host = "/api/v3"
+    host = "http://localhost/api/v3"
 )
 
 

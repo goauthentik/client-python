@@ -6,12 +6,11 @@ SCIMSourceUser Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**external_id** | **str** |  | 
+**id** | **str** |  | 
 **user** | **int** |  | 
 **user_obj** | [**GroupMember**](GroupMember.md) |  | [readonly] 
 **source** | **str** |  | 
-**attributes** | **Dict[str, object]** |  | [optional] 
+**attributes** | **object** |  | [optional] 
 
 ## Example
 

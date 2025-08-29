@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | 
 **results** | [**List[DummyStage]**](DummyStage.md) |  | 
-**autocomplete** | **Dict[str, object]** |  | 
 
 ## Example
 

@@ -10,9 +10,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **transports** | **List[str]** | Select which transports should be used to notify the user. If none are selected, the notification will only be shown in the authentik UI. | [optional] 
 **severity** | [**SeverityEnum**](SeverityEnum.md) | Controls which severity level the created notifications will have. | [optional] 
-**destination_group** | **str** | Define which group of users this notification should be sent and shown to. If left empty, Notification won&#39;t ben sent. | [optional] 
-**destination_group_obj** | [**Group**](Group.md) |  | [readonly] 
-**destination_event_user** | **bool** | When enabled, notification will be sent to user the user that triggered the event.When destination_group is configured, notification is sent to both. | [optional] 
+**group** | **str** | Define which group of users this notification should be sent and shown to. If left empty, Notification won&#39;t ben sent. | [optional] 
+**group_obj** | [**Group**](Group.md) |  | [readonly] 
 
 ## Example
 

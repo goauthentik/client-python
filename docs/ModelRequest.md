@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **property_mappings** | **List[str]** |  | [optional] 
 **property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
 **delegated_subject** | **str** |  | 
-**credentials** | **Dict[str, object]** |  | 
+**credentials** | **object** |  | 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 
@@ -39,7 +39,6 @@ Name | Type | Description | Notes
 **signing_key** | **str** | Key used to sign the SSF Events. | 
 **encryption_key** | **str** | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional] 
 **redirect_uris** | [**List[RedirectURIRequest]**](RedirectURIRequest.md) |  | 
-**backchannel_logout_uri** | **str** |  | [optional] 
 **sub_mode** | [**SubModeEnum**](SubModeEnum.md) | Configure what data should be used as unique User Identifier. For most cases, the default should be fine. | [optional] 
 **issuer_mode** | [**IssuerModeEnum**](IssuerModeEnum.md) | Configure how the issuer field of the ID Token should be filled. | [optional] 
 **jwt_federation_sources** | **List[str]** |  | [optional] 
@@ -54,7 +53,7 @@ Name | Type | Description | Notes
 **mode** | [**ProxyMode**](ProxyMode.md) | Enable support for forwardAuth in traefik and nginx auth_request. Exclusive with internal_host. | [optional] 
 **intercept_header_auth** | **bool** | When enabled, this provider will intercept the authorization header and authenticate requests based on its value. | [optional] 
 **cookie_domain** | **str** |  | [optional] 
-**settings** | **Dict[str, object]** |  | [optional] 
+**settings** | **object** |  | [optional] 
 **connection_expiry** | **str** | Determines how long a session lasts. Default of 0 means that the sessions lasts until the browser is closed. (Format: hours&#x3D;-1;minutes&#x3D;-2;seconds&#x3D;-3) | [optional] 
 **delete_token_on_disconnect** | **bool** | When set to true, connection tokens will be deleted upon disconnect. | [optional] 
 **client_networks** | **str** | List of CIDRs (comma-separated) that clients can connect from. A more specific CIDR will match before a looser one. Clients connecting from a non-specified CIDR will be dropped. | [optional] 
@@ -76,7 +75,6 @@ Name | Type | Description | Notes
 **sign_response** | **bool** |  | [optional] 
 **sp_binding** | [**SpBindingEnum**](SpBindingEnum.md) | This determines how authentik sends the response back to the Service Provider. | [optional] 
 **default_relay_state** | **str** | Default relay_state value for IDP-initiated logins | [optional] 
-**default_name_id_policy** | [**SAMLNameIDPolicyEnum**](SAMLNameIDPolicyEnum.md) |  | [optional] 
 **url** | **str** | Base URL to SCIM requests, usually ends in /v2 | 
 **verify_certificates** | **bool** |  | [optional] 
 **token** | **str** | Authentication token | 

@@ -29,7 +29,6 @@ Name | Type | Description | Notes
 **user_object_filter** | **str** | Consider Objects matching this filter to be Users. | [optional] 
 **group_object_filter** | **str** | Consider Objects matching this filter to be Groups. | [optional] 
 **group_membership_field** | **str** | Field which contains members of a group. | [optional] 
-**user_membership_attribute** | **str** | Attribute which matches the value of &#x60;group_membership_field&#x60;. | [optional] 
 **object_uniqueness_field** | **str** | Field which contains a unique Identifier. | [optional] 
 **password_login_update_internal_password** | **bool** | Update internal authentik password when login succeeds with LDAP | [optional] 
 **sync_users** | **bool** |  | [optional] 
@@ -37,7 +36,6 @@ Name | Type | Description | Notes
 **sync_groups** | **bool** |  | [optional] 
 **sync_parent_group** | **str** |  | [optional] 
 **lookup_groups_from_user** | **bool** | Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory | [optional] 
-**delete_not_found_objects** | **bool** | Delete authentik users and groups which were previously supplied by this source, but are now missing from it. | [optional] 
 
 ## Example
 

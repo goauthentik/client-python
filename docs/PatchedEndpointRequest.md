@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **provider** | **int** |  | [optional] 
 **protocol** | [**ProtocolEnum**](ProtocolEnum.md) |  | [optional] 
 **host** | **str** |  | [optional] 
-**settings** | **Dict[str, object]** |  | [optional] 
+**settings** | **object** |  | [optional] 
 **property_mappings** | **List[str]** |  | [optional] 
 **auth_mode** | [**AuthModeEnum**](AuthModeEnum.md) |  | [optional] 
 **maximum_connections** | **int** |  | [optional] 

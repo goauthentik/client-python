@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | 
 **results** | [**List[AuthenticatedSession]**](AuthenticatedSession.md) |  | 
-**autocomplete** | **Dict[str, object]** |  | 
 
 ## Example
 

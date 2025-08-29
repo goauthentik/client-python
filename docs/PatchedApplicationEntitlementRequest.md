@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **app** | **str** |  | [optional] 
-**attributes** | **Dict[str, object]** |  | [optional] 
+**attributes** | **object** |  | [optional] 
 
 ## Example
 

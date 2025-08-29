@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
 **delegated_subject** | **str** |  | 
-**credentials** | **Dict[str, object]** |  | 
+**credentials** | **object** |  | 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 
