@@ -17,12 +17,6 @@ Name | Type | Description | Notes
 **asns** | **List[int]** |  | [optional] 
 **countries** | [**List[CountryCodeEnum]**](CountryCodeEnum.md) |  | 
 **countries_obj** | [**List[DetailedCountryField]**](DetailedCountryField.md) |  | [readonly] 
-**check_history_distance** | **bool** |  | [optional] 
-**history_max_distance_km** | **int** |  | [optional] 
-**distance_tolerance_km** | **int** |  | [optional] 
-**history_login_count** | **int** |  | [optional] 
-**check_impossible_travel** | **bool** |  | [optional] 
-**impossible_tolerance_km** | **int** |  | [optional] 
 
 ## Example
 

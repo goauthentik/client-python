@@ -20,9 +20,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.api.root_api import RootApi
     from authentik_client.api.schema_api import SchemaApi
     from authentik_client.api.sources_api import SourcesApi
-    from authentik_client.api.ssf_api import SsfApi
     from authentik_client.api.stages_api import StagesApi
-    from authentik_client.api.tasks_api import TasksApi
     from authentik_client.api.tenants_api import TenantsApi
     
 else:
@@ -50,9 +48,7 @@ from authentik_client.api.rbac_api import RbacApi
 from authentik_client.api.root_api import RootApi
 from authentik_client.api.schema_api import SchemaApi
 from authentik_client.api.sources_api import SourcesApi
-from authentik_client.api.ssf_api import SsfApi
 from authentik_client.api.stages_api import StagesApi
-from authentik_client.api.tasks_api import TasksApi
 from authentik_client.api.tenants_api import TenantsApi
 
 """,

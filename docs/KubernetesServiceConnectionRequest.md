@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **local** | **bool** | If enabled, use the local connection. Required Docker socket/Kubernetes Integration | [optional] 
-**kubeconfig** | **Dict[str, object]** | Paste your kubeconfig here. authentik will automatically use the currently selected context. | [optional] 
+**kubeconfig** | **object** | Paste your kubeconfig here. authentik will automatically use the currently selected context. | [optional] 
 **verify_ssl** | **bool** | Verify SSL Certificates of the Kubernetes API endpoint | [optional] 
 
 ## Example

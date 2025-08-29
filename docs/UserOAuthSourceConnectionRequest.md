@@ -1,6 +1,6 @@
 # UserOAuthSourceConnectionRequest
 
-User source connection
+OAuth Source Serializer
 
 ## Properties
 

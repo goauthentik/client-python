@@ -1,6 +1,6 @@
 # GroupOAuthSourceConnectionRequest
 
-Group Source Connection
+OAuth Group-Source connection Serializer
 
 ## Properties
 

@@ -12,10 +12,8 @@ Name | Type | Description | Notes
 **url** | **str** | Base URL to SCIM requests, usually ends in /v2 | [optional] 
 **verify_certificates** | **bool** |  | [optional] 
 **token** | **str** | Authentication token | [optional] 
-**compatibility_mode** | [**CompatibilityModeEnum**](CompatibilityModeEnum.md) | Alter authentik behavior for vendor-specific SCIM implementations. | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 
-**dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 
 ## Example
 

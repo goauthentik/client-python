@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component** | **str** |  | [optional] [default to 'ak-stage-user-login']
 **code** | **str** |  | 
-**email** | **str** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
 **selected_challenge** | [**DeviceChallengeRequest**](DeviceChallengeRequest.md) |  | [optional] 
 **selected_stage** | **str** |  | [optional] 

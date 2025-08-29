@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **assertion_valid_not_on_or_after** | **str** | Assertion not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **session_valid_not_on_or_after** | **str** | Session not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **name_id_mapping** | **str** | Configure how the NameID value will be created. When left empty, the NameIDPolicy of the incoming request will be considered | [optional] 
-**authn_context_class_ref_mapping** | **str** | Configure how the AuthnContextClassRef value will be created. When left empty, the AuthnContextClassRef will be set based on which authentication methods the user used to authenticate. | [optional] 
 **digest_algorithm** | [**DigestAlgorithmEnum**](DigestAlgorithmEnum.md) |  | [optional] 
 **signature_algorithm** | [**SignatureAlgorithmEnum**](SignatureAlgorithmEnum.md) |  | [optional] 
 **signing_kp** | **str** | Keypair used to sign outgoing Responses going to the Service Provider. | [optional] 
@@ -28,7 +27,6 @@ Name | Type | Description | Notes
 **sign_response** | **bool** |  | [optional] 
 **sp_binding** | [**SpBindingEnum**](SpBindingEnum.md) | This determines how authentik sends the response back to the Service Provider. | [optional] 
 **default_relay_state** | **str** | Default relay_state value for IDP-initiated logins | [optional] 
-**default_name_id_policy** | [**SAMLNameIDPolicyEnum**](SAMLNameIDPolicyEnum.md) |  | [optional] 
 
 ## Example
 

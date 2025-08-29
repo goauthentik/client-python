@@ -1,6 +1,6 @@
 # PatchedUserOAuthSourceConnectionRequest
 
-User source connection
+OAuth Source Serializer
 
 ## Properties
 

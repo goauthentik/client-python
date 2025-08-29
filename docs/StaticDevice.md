@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **name** | **str** | The human-readable name of this device. | 
 **token_set** | [**List[StaticDeviceToken]**](StaticDeviceToken.md) |  | [readonly] 
 **pk** | **int** |  | [readonly] 
-**user** | [**GroupMember**](GroupMember.md) |  | [readonly] 
 
 ## Example
 

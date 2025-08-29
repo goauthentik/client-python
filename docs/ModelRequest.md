@@ -9,14 +9,13 @@ Name | Type | Description | Notes
 **property_mappings** | **List[str]** |  | [optional] 
 **property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
 **delegated_subject** | **str** |  | 
-**credentials** | **Dict[str, object]** |  | 
+**credentials** | **object** |  | 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **default_group_email_domain** | **str** |  | 
-**dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 **authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
 **authorization_flow** | **str** | Flow used when authorizing this provider. | 
 **invalidation_flow** | **str** | Flow used ending the session from a provider. | 
@@ -36,10 +35,9 @@ Name | Type | Description | Notes
 **access_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **refresh_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **include_claims_in_id_token** | **bool** | Include User claims from scopes in the id_token, for applications that don&#39;t access the userinfo endpoint. | [optional] 
-**signing_key** | **str** | Key used to sign the SSF Events. | 
+**signing_key** | **str** | Key used to sign the tokens. | [optional] 
 **encryption_key** | **str** | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional] 
 **redirect_uris** | [**List[RedirectURIRequest]**](RedirectURIRequest.md) |  | 
-**backchannel_logout_uri** | **str** |  | [optional] 
 **sub_mode** | [**SubModeEnum**](SubModeEnum.md) | Configure what data should be used as unique User Identifier. For most cases, the default should be fine. | [optional] 
 **issuer_mode** | [**IssuerModeEnum**](IssuerModeEnum.md) | Configure how the issuer field of the ID Token should be filled. | [optional] 
 **jwt_federation_sources** | **List[str]** |  | [optional] 
@@ -54,7 +52,7 @@ Name | Type | Description | Notes
 **mode** | [**ProxyMode**](ProxyMode.md) | Enable support for forwardAuth in traefik and nginx auth_request. Exclusive with internal_host. | [optional] 
 **intercept_header_auth** | **bool** | When enabled, this provider will intercept the authorization header and authenticate requests based on its value. | [optional] 
 **cookie_domain** | **str** |  | [optional] 
-**settings** | **Dict[str, object]** |  | [optional] 
+**settings** | **object** |  | [optional] 
 **connection_expiry** | **str** | Determines how long a session lasts. Default of 0 means that the sessions lasts until the browser is closed. (Format: hours&#x3D;-1;minutes&#x3D;-2;seconds&#x3D;-3) | [optional] 
 **delete_token_on_disconnect** | **bool** | When set to true, connection tokens will be deleted upon disconnect. | [optional] 
 **client_networks** | **str** | List of CIDRs (comma-separated) that clients can connect from. A more specific CIDR will match before a looser one. Clients connecting from a non-specified CIDR will be dropped. | [optional] 
@@ -66,7 +64,6 @@ Name | Type | Description | Notes
 **assertion_valid_not_on_or_after** | **str** | Assertion not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **session_valid_not_on_or_after** | **str** | Session not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **name_id_mapping** | **str** | Configure how the NameID value will be created. When left empty, the NameIDPolicy of the incoming request will be considered | [optional] 
-**authn_context_class_ref_mapping** | **str** | Configure how the AuthnContextClassRef value will be created. When left empty, the AuthnContextClassRef will be set based on which authentication methods the user used to authenticate. | [optional] 
 **digest_algorithm** | [**DigestAlgorithmEnum**](DigestAlgorithmEnum.md) |  | [optional] 
 **signature_algorithm** | [**SignatureAlgorithmEnum**](SignatureAlgorithmEnum.md) |  | [optional] 
 **signing_kp** | **str** | Keypair used to sign outgoing Responses going to the Service Provider. | [optional] 
@@ -76,13 +73,9 @@ Name | Type | Description | Notes
 **sign_response** | **bool** |  | [optional] 
 **sp_binding** | [**SpBindingEnum**](SpBindingEnum.md) | This determines how authentik sends the response back to the Service Provider. | [optional] 
 **default_relay_state** | **str** | Default relay_state value for IDP-initiated logins | [optional] 
-**default_name_id_policy** | [**SAMLNameIDPolicyEnum**](SAMLNameIDPolicyEnum.md) |  | [optional] 
 **url** | **str** | Base URL to SCIM requests, usually ends in /v2 | 
 **verify_certificates** | **bool** |  | [optional] 
 **token** | **str** | Authentication token | 
-**compatibility_mode** | [**CompatibilityModeEnum**](CompatibilityModeEnum.md) | Alter authentik behavior for vendor-specific SCIM implementations. | [optional] 
-**oidc_auth_providers** | **List[int]** |  | [optional] 
-**event_retention** | **str** |  | [optional] 
 
 ## Example
 

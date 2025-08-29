@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
 **name** | **str** | The human-readable name of this device. | 
-**user** | [**GroupMember**](GroupMember.md) |  | [readonly] 
 
 ## Example
 

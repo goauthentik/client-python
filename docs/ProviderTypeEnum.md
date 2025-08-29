@@ -7,8 +7,6 @@
 
 * `OPENIDCONNECT` (value: `'openidconnect'`)
 
-* `ENTRAID` (value: `'entraid'`)
-
 * `AZUREAD` (value: `'azuread'`)
 
 * `DISCORD` (value: `'discord'`)

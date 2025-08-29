@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
 **configure_flow** | **str** | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional] 
 **friendly_name** | **str** |  | [optional] 
-**credentials** | **Dict[str, object]** |  | 
+**credentials** | **object** |  | 
 
 ## Example
 

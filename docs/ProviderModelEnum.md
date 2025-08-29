@@ -21,8 +21,6 @@
 
 * `AUTHENTIK_PROVIDERS_SCIM_DOT_SCIMPROVIDER` (value: `'authentik_providers_scim.scimprovider'`)
 
-* `AUTHENTIK_PROVIDERS_SSF_DOT_SSFPROVIDER` (value: `'authentik_providers_ssf.ssfprovider'`)
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

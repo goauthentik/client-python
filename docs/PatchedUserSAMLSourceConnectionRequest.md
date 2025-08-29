@@ -1,6 +1,6 @@
 # PatchedUserSAMLSourceConnectionRequest
 
-User source connection
+SAML Source Serializer
 
 ## Properties
 

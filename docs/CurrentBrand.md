@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **branding_title** | **str** |  | 
 **branding_logo** | **str** |  | 
 **branding_favicon** | **str** |  | 
-**branding_custom_css** | **str** |  | 
 **ui_footer_links** | [**List[FooterLink]**](FooterLink.md) |  | [readonly] 
 **ui_theme** | [**UiThemeEnum**](UiThemeEnum.md) |  | [readonly] 
 **flow_authentication** | **str** |  | [optional] 
@@ -20,7 +19,6 @@ Name | Type | Description | Notes
 **flow_user_settings** | **str** |  | [optional] 
 **flow_device_code** | **str** |  | [optional] 
 **default_locale** | **str** |  | [readonly] 
-**flags** | [**CurrentBrandFlags**](CurrentBrandFlags.md) |  | 
 
 ## Example
 

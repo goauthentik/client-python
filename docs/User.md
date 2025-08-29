@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **name** | **str** | User&#39;s display name. | 
 **is_active** | **bool** | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional] 
 **last_login** | **datetime** |  | [optional] 
-**date_joined** | **datetime** |  | [readonly] 
 **is_superuser** | **bool** |  | [readonly] 
 **groups** | **List[str]** |  | [optional] 
 **groups_obj** | [**List[UserGroup]**](UserGroup.md) |  | [readonly] 
@@ -22,8 +21,6 @@ Name | Type | Description | Notes
 **path** | **str** |  | [optional] 
 **type** | [**UserTypeEnum**](UserTypeEnum.md) |  | [optional] 
 **uuid** | **str** |  | [readonly] 
-**password_change_date** | **datetime** |  | [readonly] 
-**last_updated** | **datetime** |  | [readonly] 
 
 ## Example
 

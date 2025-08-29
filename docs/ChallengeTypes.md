@@ -18,8 +18,6 @@ Name | Type | Description | Notes
 **activation_barcode** | **str** |  | 
 **activation_code** | **str** |  | 
 **stage_uuid** | **str** |  | 
-**email** | **str** |  | [optional] 
-**email_required** | **bool** |  | [optional] [default to True]
 **phone_number_required** | **bool** |  | [optional] [default to True]
 **codes** | **List[str]** |  | 
 **config_url** | **str** |  | 
@@ -54,7 +52,6 @@ Name | Type | Description | Notes
 **primary_action** | **str** |  | 
 **sources** | [**List[LoginSource]**](LoginSource.md) |  | [optional] 
 **show_source_labels** | **bool** |  | 
-**enable_remember_me** | **bool** |  | [optional] [default to True]
 **slug** | **str** |  | 
 **fields** | [**List[StagePrompt]**](StagePrompt.md) |  | 
 **to** | **str** |  | 

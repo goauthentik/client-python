@@ -1,6 +1,6 @@
 # UserSAMLSourceConnection
 
-User source connection
+SAML Source Serializer
 
 ## Properties
 
@@ -10,9 +10,8 @@ Name | Type | Description | Notes
 **user** | **int** |  | 
 **source** | **str** |  | 
 **source_obj** | [**Source**](Source.md) |  | [readonly] 
-**identifier** | **str** |  | 
 **created** | **datetime** |  | [readonly] 
-**last_updated** | **datetime** |  | [readonly] 
+**identifier** | **str** |  | 
 
 ## Example
 
