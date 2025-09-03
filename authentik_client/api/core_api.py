@@ -16301,7 +16301,6 @@ class CoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '401': None,
             '400': "ValidationError",
             '403': "GenericError",
         }
@@ -16375,7 +16374,6 @@ class CoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '401': None,
             '400': "ValidationError",
             '403': "GenericError",
         }
@@ -16449,7 +16447,6 @@ class CoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '401': None,
             '400': "ValidationError",
             '403': "GenericError",
         }

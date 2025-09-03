@@ -4458,7 +4458,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Successfully started impersonation |  -  |
-**401** | Access denied |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 
