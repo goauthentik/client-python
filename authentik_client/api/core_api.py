@@ -10432,7 +10432,7 @@ class CoreApi:
     ) -> None:
         """core_groups_remove_user_create
 
-        Add user to group
+        Remove user from group
 
         :param group_uuid: A UUID string identifying this Group. (required)
         :type group_uuid: str
@@ -10506,7 +10506,7 @@ class CoreApi:
     ) -> ApiResponse[None]:
         """core_groups_remove_user_create
 
-        Add user to group
+        Remove user from group
 
         :param group_uuid: A UUID string identifying this Group. (required)
         :type group_uuid: str
@@ -10580,7 +10580,7 @@ class CoreApi:
     ) -> RESTResponseType:
         """core_groups_remove_user_create
 
-        Add user to group
+        Remove user from group
 
         :param group_uuid: A UUID string identifying this Group. (required)
         :type group_uuid: str

@@ -2808,7 +2808,7 @@ Name | Type | Description  | Notes
 # **core_groups_remove_user_create**
 > core_groups_remove_user_create(group_uuid, user_account_request)
 
-Add user to group
+Remove user from group
 
 ### Example
 
@@ -2876,7 +2876,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | User added |  -  |
+**204** | User removed |  -  |
 **404** | User not found |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
@@ -4527,7 +4527,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Successfully started impersonation |  -  |
+**204** | Successfully ended impersonation |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 
