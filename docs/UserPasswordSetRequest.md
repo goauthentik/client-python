@@ -1,5 +1,6 @@
 # UserPasswordSetRequest
 
+Payload to set a users' password directly
 
 ## Properties
 
