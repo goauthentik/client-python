@@ -114,11 +114,6 @@ class AuthenticatorEmailStage(BaseModel):
         if self.configure_flow is None and "configure_flow" in self.model_fields_set:
             _dict['configure_flow'] = None
 
-        # set to None if friendly_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.friendly_name is None and "friendly_name" in self.model_fields_set:
-            _dict['friendly_name'] = None
-
         return _dict
 
     @classmethod

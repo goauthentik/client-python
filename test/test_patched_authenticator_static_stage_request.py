@@ -49,7 +49,7 @@ class TestPatchedAuthenticatorStaticStageRequest(unittest.TestCase):
                         denied_action = null, )
                     ],
                 configure_flow = '',
-                friendly_name = '0',
+                friendly_name = '',
                 token_count = 0,
                 token_length = 0
             )

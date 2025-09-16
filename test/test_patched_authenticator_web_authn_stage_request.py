@@ -49,7 +49,7 @@ class TestPatchedAuthenticatorWebAuthnStageRequest(unittest.TestCase):
                         denied_action = null, )
                     ],
                 configure_flow = '',
-                friendly_name = '0',
+                friendly_name = '',
                 user_verification = 'required',
                 authenticator_attachment = 'platform',
                 resident_key_requirement = 'discouraged',

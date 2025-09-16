@@ -49,7 +49,7 @@ class TestPatchedAuthenticatorDuoStageRequest(unittest.TestCase):
                         denied_action = null, )
                     ],
                 configure_flow = '',
-                friendly_name = '0',
+                friendly_name = '',
                 client_id = '0',
                 client_secret = '0',
                 api_hostname = '0',

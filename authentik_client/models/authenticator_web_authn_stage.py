@@ -121,11 +121,6 @@ class AuthenticatorWebAuthnStage(BaseModel):
         if self.configure_flow is None and "configure_flow" in self.model_fields_set:
             _dict['configure_flow'] = None
 
-        # set to None if friendly_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.friendly_name is None and "friendly_name" in self.model_fields_set:
-            _dict['friendly_name'] = None
-
         # set to None if authenticator_attachment (nullable) is None
         # and model_fields_set contains the field
         if self.authenticator_attachment is None and "authenticator_attachment" in self.model_fields_set:

@@ -49,7 +49,7 @@ class TestAuthenticatorEmailStageRequest(unittest.TestCase):
                         denied_action = null, )
                     ],
                 configure_flow = '',
-                friendly_name = '0',
+                friendly_name = '',
                 use_global_settings = True,
                 host = '0',
                 port = -2147483648,

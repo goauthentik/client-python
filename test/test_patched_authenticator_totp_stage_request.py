@@ -49,7 +49,7 @@ class TestPatchedAuthenticatorTOTPStageRequest(unittest.TestCase):
                         denied_action = null, )
                     ],
                 configure_flow = '',
-                friendly_name = '0',
+                friendly_name = '',
                 digits = '6'
             )
         else:

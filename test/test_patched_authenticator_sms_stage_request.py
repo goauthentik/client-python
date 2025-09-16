@@ -49,7 +49,7 @@ class TestPatchedAuthenticatorSMSStageRequest(unittest.TestCase):
                         denied_action = null, )
                     ],
                 configure_flow = '',
-                friendly_name = '0',
+                friendly_name = '',
                 provider = 'twilio',
                 from_number = '0',
                 account_sid = '0',

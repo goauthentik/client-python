@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
@@ -34,7 +34,7 @@ class PatchedAuthenticatorTOTPStageRequest(BaseModel):
     name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     flow_set: Optional[List[FlowSetRequest]] = None
     configure_flow: Optional[UUID] = Field(default=None, description="Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage.")
-    friendly_name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
+    friendly_name: Optional[StrictStr] = None
     digits: Optional[DigitsEnum] = None
     __properties: ClassVar[List[str]] = ["name", "flow_set", "configure_flow", "friendly_name", "digits"]
 
@@ -88,11 +88,6 @@ class PatchedAuthenticatorTOTPStageRequest(BaseModel):
         # and model_fields_set contains the field
         if self.configure_flow is None and "configure_flow" in self.model_fields_set:
             _dict['configure_flow'] = None
-
-        # set to None if friendly_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.friendly_name is None and "friendly_name" in self.model_fields_set:
-            _dict['friendly_name'] = None
 
         return _dict
 
