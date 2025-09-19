@@ -159,8 +159,6 @@
 
 * `AUTHENTIK_STAGES_CONSENT_DOT_CONSENTSTAGE` (value: `'authentik_stages_consent.consentstage'`)
 
-* `AUTHENTIK_STAGES_CONSENT_DOT_USERCONSENT` (value: `'authentik_stages_consent.userconsent'`)
-
 * `AUTHENTIK_STAGES_DENY_DOT_DENYSTAGE` (value: `'authentik_stages_deny.denystage'`)
 
 * `AUTHENTIK_STAGES_DUMMY_DOT_DUMMYSTAGE` (value: `'authentik_stages_dummy.dummystage'`)

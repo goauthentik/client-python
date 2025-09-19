@@ -105,7 +105,6 @@ class ModelEnum(str, Enum):
     AUTHENTIK_STAGES_AUTHENTICATOR_WEBAUTHN_DOT_WEBAUTHNDEVICE = 'authentik_stages_authenticator_webauthn.webauthndevice'
     AUTHENTIK_STAGES_CAPTCHA_DOT_CAPTCHASTAGE = 'authentik_stages_captcha.captchastage'
     AUTHENTIK_STAGES_CONSENT_DOT_CONSENTSTAGE = 'authentik_stages_consent.consentstage'
-    AUTHENTIK_STAGES_CONSENT_DOT_USERCONSENT = 'authentik_stages_consent.userconsent'
     AUTHENTIK_STAGES_DENY_DOT_DENYSTAGE = 'authentik_stages_deny.denystage'
     AUTHENTIK_STAGES_DUMMY_DOT_DUMMYSTAGE = 'authentik_stages_dummy.dummystage'
     AUTHENTIK_STAGES_EMAIL_DOT_EMAILSTAGE = 'authentik_stages_email.emailstage'
