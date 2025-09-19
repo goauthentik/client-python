@@ -18039,7 +18039,7 @@ class CoreApi:
     @validate_call
     def core_users_paths_retrieve(
         self,
-        search: Optional[StrictStr] = None,
+        search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18057,7 +18057,7 @@ class CoreApi:
 
         Get all user paths
 
-        :param search:
+        :param search: A search term.
         :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -18108,7 +18108,7 @@ class CoreApi:
     @validate_call
     def core_users_paths_retrieve_with_http_info(
         self,
-        search: Optional[StrictStr] = None,
+        search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18126,7 +18126,7 @@ class CoreApi:
 
         Get all user paths
 
-        :param search:
+        :param search: A search term.
         :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -18177,7 +18177,7 @@ class CoreApi:
     @validate_call
     def core_users_paths_retrieve_without_preload_content(
         self,
-        search: Optional[StrictStr] = None,
+        search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18195,7 +18195,7 @@ class CoreApi:
 
         Get all user paths
 
-        :param search:
+        :param search: A search term.
         :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

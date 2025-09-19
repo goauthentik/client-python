@@ -4842,7 +4842,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    search = 'search_example' # str |  (optional)
+    search = 'search_example' # str | A search term. (optional)
 
     try:
         api_response = api_instance.core_users_paths_retrieve(search=search)
@@ -4859,7 +4859,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
 
 ### Return type
 

@@ -688,7 +688,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     provider = 56 # int |  (optional)
-    search = 'search_example' # str |  (optional)
+    search = 'search_example' # str | A search term. (optional)
     superuser_full_list = True # bool |  (optional)
 
     try:
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **provider** | **int**|  | [optional] 
- **search** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
  **superuser_full_list** | **bool**|  | [optional] 
 
 ### Return type

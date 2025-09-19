@@ -2366,7 +2366,7 @@ class RacApi:
         page: Annotated[Optional[StrictInt], Field(description="A page number within the paginated result set.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
         provider: Optional[StrictInt] = None,
-        search: Optional[StrictStr] = None,
+        search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         superuser_full_list: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -2395,7 +2395,7 @@ class RacApi:
         :type page_size: int
         :param provider:
         :type provider: int
-        :param search:
+        :param search: A search term.
         :type search: str
         :param superuser_full_list:
         :type superuser_full_list: bool
@@ -2459,7 +2459,7 @@ class RacApi:
         page: Annotated[Optional[StrictInt], Field(description="A page number within the paginated result set.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
         provider: Optional[StrictInt] = None,
-        search: Optional[StrictStr] = None,
+        search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         superuser_full_list: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -2488,7 +2488,7 @@ class RacApi:
         :type page_size: int
         :param provider:
         :type provider: int
-        :param search:
+        :param search: A search term.
         :type search: str
         :param superuser_full_list:
         :type superuser_full_list: bool
@@ -2552,7 +2552,7 @@ class RacApi:
         page: Annotated[Optional[StrictInt], Field(description="A page number within the paginated result set.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
         provider: Optional[StrictInt] = None,
-        search: Optional[StrictStr] = None,
+        search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         superuser_full_list: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -2581,7 +2581,7 @@ class RacApi:
         :type page_size: int
         :param provider:
         :type provider: int
-        :param search:
+        :param search: A search term.
         :type search: str
         :param superuser_full_list:
         :type superuser_full_list: bool
