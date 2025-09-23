@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,7 +35,8 @@ class RadiusOutpostConfig(BaseModel):
     client_networks: Optional[StrictStr] = Field(default=None, description="List of CIDRs (comma-separated) that clients can connect from. A more specific CIDR will match before a looser one. Clients connecting from a non-specified CIDR will be dropped.")
     shared_secret: Optional[StrictStr] = Field(default=None, description="Shared secret between clients and server to hash packets.")
     mfa_support: Optional[StrictBool] = Field(default=None, description="When enabled, code-based multi-factor authentication can be used by appending a semicolon and the TOTP code to the password. This should only be enabled if all users that will bind to this provider have a TOTP device configured, as otherwise a password may incorrectly be rejected if it contains a semicolon.")
-    __properties: ClassVar[List[str]] = ["pk", "name", "application_slug", "auth_flow_slug", "client_networks", "shared_secret", "mfa_support"]
+    certificate: Optional[UUID] = None
+    __properties: ClassVar[List[str]] = ["pk", "name", "application_slug", "auth_flow_slug", "client_networks", "shared_secret", "mfa_support", "certificate"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,6 +79,11 @@ class RadiusOutpostConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if certificate (nullable) is None
+        # and model_fields_set contains the field
+        if self.certificate is None and "certificate" in self.model_fields_set:
+            _dict['certificate'] = None
+
         return _dict
 
     @classmethod
@@ -95,7 +102,8 @@ class RadiusOutpostConfig(BaseModel):
             "auth_flow_slug": obj.get("auth_flow_slug"),
             "client_networks": obj.get("client_networks"),
             "shared_secret": obj.get("shared_secret"),
-            "mfa_support": obj.get("mfa_support")
+            "mfa_support": obj.get("mfa_support"),
+            "certificate": obj.get("certificate")
         })
         return _obj
 

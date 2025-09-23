@@ -67,7 +67,8 @@ class TestPaginatedRadiusProviderList(unittest.TestCase):
                         outpost_set = [
                             ''
                             ], 
-                        mfa_support = True, )
+                        mfa_support = True, 
+                        certificate = '', )
                     ],
                 autocomplete = {
                     'key' : null
@@ -106,7 +107,8 @@ class TestPaginatedRadiusProviderList(unittest.TestCase):
                         outpost_set = [
                             ''
                             ], 
-                        mfa_support = True, )
+                        mfa_support = True, 
+                        certificate = '', )
                     ],
                 autocomplete = {
                     'key' : null

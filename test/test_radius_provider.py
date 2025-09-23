@@ -57,7 +57,8 @@ class TestRadiusProvider(unittest.TestCase):
                 outpost_set = [
                     ''
                     ],
-                mfa_support = True
+                mfa_support = True,
+                certificate = ''
             )
         else:
             return RadiusProvider(

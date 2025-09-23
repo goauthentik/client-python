@@ -127,6 +127,8 @@
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_MICROSOFT_ENTRA` (value: `'authentik.enterprise.providers.microsoft_entra'`)
 
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_RADIUS` (value: `'authentik.enterprise.providers.radius'`)
+
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SCIM` (value: `'authentik.enterprise.providers.scim'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SSF` (value: `'authentik.enterprise.providers.ssf'`)

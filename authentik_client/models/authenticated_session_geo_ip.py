@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Union
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,10 +27,10 @@ class AuthenticatedSessionGeoIp(BaseModel):
     """
     Get GeoIP Data
     """ # noqa: E501
-    continent: StrictStr
-    country: StrictStr
-    lat: Union[StrictFloat, StrictInt]
-    long: Union[StrictFloat, StrictInt]
+    continent: Optional[StrictStr]
+    country: Optional[StrictStr]
+    lat: Optional[Union[StrictFloat, StrictInt]]
+    long: Optional[Union[StrictFloat, StrictInt]]
     city: StrictStr
     __properties: ClassVar[List[str]] = ["continent", "country", "lat", "long", "city"]
 
@@ -73,6 +73,26 @@ class AuthenticatedSessionGeoIp(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if continent (nullable) is None
+        # and model_fields_set contains the field
+        if self.continent is None and "continent" in self.model_fields_set:
+            _dict['continent'] = None
+
+        # set to None if country (nullable) is None
+        # and model_fields_set contains the field
+        if self.country is None and "country" in self.model_fields_set:
+            _dict['country'] = None
+
+        # set to None if lat (nullable) is None
+        # and model_fields_set contains the field
+        if self.lat is None and "lat" in self.model_fields_set:
+            _dict['lat'] = None
+
+        # set to None if long (nullable) is None
+        # and model_fields_set contains the field
+        if self.long is None and "long" in self.model_fields_set:
+            _dict['long'] = None
+
         return _dict
 
     @classmethod

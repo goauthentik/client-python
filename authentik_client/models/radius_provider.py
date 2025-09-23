@@ -46,7 +46,8 @@ class RadiusProvider(BaseModel):
     shared_secret: Optional[StrictStr] = Field(default=None, description="Shared secret between clients and server to hash packets.")
     outpost_set: List[StrictStr]
     mfa_support: Optional[StrictBool] = Field(default=None, description="When enabled, code-based multi-factor authentication can be used by appending a semicolon and the TOTP code to the password. This should only be enabled if all users that will bind to this provider have a TOTP device configured, as otherwise a password may incorrectly be rejected if it contains a semicolon.")
-    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "client_networks", "shared_secret", "outpost_set", "mfa_support"]
+    certificate: Optional[UUID] = None
+    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "client_networks", "shared_secret", "outpost_set", "mfa_support", "certificate"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,6 +113,11 @@ class RadiusProvider(BaseModel):
         if self.authentication_flow is None and "authentication_flow" in self.model_fields_set:
             _dict['authentication_flow'] = None
 
+        # set to None if certificate (nullable) is None
+        # and model_fields_set contains the field
+        if self.certificate is None and "certificate" in self.model_fields_set:
+            _dict['certificate'] = None
+
         return _dict
 
     @classmethod
@@ -141,7 +147,8 @@ class RadiusProvider(BaseModel):
             "client_networks": obj.get("client_networks"),
             "shared_secret": obj.get("shared_secret"),
             "outpost_set": obj.get("outpost_set"),
-            "mfa_support": obj.get("mfa_support")
+            "mfa_support": obj.get("mfa_support"),
+            "certificate": obj.get("certificate")
         })
         return _obj
 

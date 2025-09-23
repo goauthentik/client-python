@@ -45,7 +45,8 @@ class TestPatchedRadiusProviderRequest(unittest.TestCase):
                     ],
                 client_networks = '0',
                 shared_secret = '0',
-                mfa_support = True
+                mfa_support = True,
+                certificate = ''
             )
         else:
             return PatchedRadiusProviderRequest(

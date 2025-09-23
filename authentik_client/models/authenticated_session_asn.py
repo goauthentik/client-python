@@ -27,7 +27,7 @@ class AuthenticatedSessionAsn(BaseModel):
     """
     Get ASN Data
     """ # noqa: E501
-    asn: StrictInt
+    asn: Optional[StrictInt]
     as_org: Optional[StrictStr]
     network: Optional[StrictStr]
     __properties: ClassVar[List[str]] = ["asn", "as_org", "network"]
@@ -71,6 +71,11 @@ class AuthenticatedSessionAsn(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if asn (nullable) is None
+        # and model_fields_set contains the field
+        if self.asn is None and "asn" in self.model_fields_set:
+            _dict['asn'] = None
+
         # set to None if as_org (nullable) is None
         # and model_fields_set contains the field
         if self.as_org is None and "as_org" in self.model_fields_set:

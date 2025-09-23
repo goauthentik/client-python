@@ -42,7 +42,8 @@ class TestRadiusOutpostConfig(unittest.TestCase):
                 auth_flow_slug = '',
                 client_networks = '',
                 shared_secret = '',
-                mfa_support = True
+                mfa_support = True,
+                certificate = ''
             )
         else:
             return RadiusOutpostConfig(
