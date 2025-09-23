@@ -18,7 +18,10 @@ Name | Type | Description | Notes
 **meta_model_name** | **str** | Return internal model name | [readonly] 
 **url** | **str** | Base URL to SCIM requests, usually ends in /v2 | 
 **verify_certificates** | **bool** |  | [optional] 
-**token** | **str** | Authentication token | 
+**token** | **str** | Authentication token | [optional] 
+**auth_mode** | [**SCIMAuthenticationModeEnum**](SCIMAuthenticationModeEnum.md) |  | [optional] 
+**auth_oauth** | **str** | OAuth Source used for authentication | [optional] 
+**auth_oauth_params** | **Dict[str, object]** | Additional OAuth parameters, such as grant_type | [optional] 
 **compatibility_mode** | [**CompatibilityModeEnum**](CompatibilityModeEnum.md) | Alter authentik behavior for vendor-specific SCIM implementations. | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 

@@ -53,6 +53,11 @@ class TestSCIMProvider(unittest.TestCase):
                 url = '',
                 verify_certificates = True,
                 token = '',
+                auth_mode = 'token',
+                auth_oauth = '',
+                auth_oauth_params = {
+                    'key' : null
+                    },
                 compatibility_mode = 'default',
                 exclude_users_service_account = True,
                 filter_group = '',
@@ -69,7 +74,6 @@ class TestSCIMProvider(unittest.TestCase):
                 verbose_name_plural = '',
                 meta_model_name = '',
                 url = '',
-                token = '',
         )
         """
 

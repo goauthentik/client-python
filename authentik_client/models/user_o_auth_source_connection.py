@@ -20,7 +20,7 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from authentik_client.models.source import Source
 from typing import Optional, Set
@@ -37,7 +37,8 @@ class UserOAuthSourceConnection(BaseModel):
     identifier: StrictStr
     created: datetime
     last_updated: datetime
-    __properties: ClassVar[List[str]] = ["pk", "user", "source", "source_obj", "identifier", "created", "last_updated"]
+    expires: Optional[datetime] = None
+    __properties: ClassVar[List[str]] = ["pk", "user", "source", "source_obj", "identifier", "created", "last_updated", "expires"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,7 +108,8 @@ class UserOAuthSourceConnection(BaseModel):
             "source_obj": Source.from_dict(obj["source_obj"]) if obj.get("source_obj") is not None else None,
             "identifier": obj.get("identifier"),
             "created": obj.get("created"),
-            "last_updated": obj.get("last_updated")
+            "last_updated": obj.get("last_updated"),
+            "expires": obj.get("expires")
         })
         return _obj
 

@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from authentik_client.models.compatibility_mode_enum import CompatibilityModeEnum
+from authentik_client.models.scim_authentication_mode_enum import SCIMAuthenticationModeEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -41,12 +42,15 @@ class SCIMProvider(BaseModel):
     meta_model_name: StrictStr = Field(description="Return internal model name")
     url: StrictStr = Field(description="Base URL to SCIM requests, usually ends in /v2")
     verify_certificates: Optional[StrictBool] = None
-    token: StrictStr = Field(description="Authentication token")
+    token: Optional[StrictStr] = Field(default=None, description="Authentication token")
+    auth_mode: Optional[SCIMAuthenticationModeEnum] = None
+    auth_oauth: Optional[UUID] = Field(default=None, description="OAuth Source used for authentication")
+    auth_oauth_params: Optional[Dict[str, Any]] = Field(default=None, description="Additional OAuth parameters, such as grant_type")
     compatibility_mode: Optional[CompatibilityModeEnum] = Field(default=None, description="Alter authentik behavior for vendor-specific SCIM implementations.")
     exclude_users_service_account: Optional[StrictBool] = None
     filter_group: Optional[UUID] = None
     dry_run: Optional[StrictBool] = Field(default=None, description="When enabled, provider will not modify or create objects in the remote system.")
-    __properties: ClassVar[List[str]] = ["pk", "name", "property_mappings", "property_mappings_group", "component", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "url", "verify_certificates", "token", "compatibility_mode", "exclude_users_service_account", "filter_group", "dry_run"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "property_mappings", "property_mappings_group", "component", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "url", "verify_certificates", "token", "auth_mode", "auth_oauth", "auth_oauth_params", "compatibility_mode", "exclude_users_service_account", "filter_group", "dry_run"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,6 +105,11 @@ class SCIMProvider(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if auth_oauth (nullable) is None
+        # and model_fields_set contains the field
+        if self.auth_oauth is None and "auth_oauth" in self.model_fields_set:
+            _dict['auth_oauth'] = None
+
         # set to None if filter_group (nullable) is None
         # and model_fields_set contains the field
         if self.filter_group is None and "filter_group" in self.model_fields_set:
@@ -131,6 +140,9 @@ class SCIMProvider(BaseModel):
             "url": obj.get("url"),
             "verify_certificates": obj.get("verify_certificates"),
             "token": obj.get("token"),
+            "auth_mode": obj.get("auth_mode"),
+            "auth_oauth": obj.get("auth_oauth"),
+            "auth_oauth_params": obj.get("auth_oauth_params"),
             "compatibility_mode": obj.get("compatibility_mode"),
             "exclude_users_service_account": obj.get("exclude_users_service_account"),
             "filter_group": obj.get("filter_group"),

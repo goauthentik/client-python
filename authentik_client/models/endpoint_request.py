@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
-from authentik_client.models.auth_mode_enum import AuthModeEnum
+from authentik_client.models.endpoint_auth_mode_enum import EndpointAuthModeEnum
 from authentik_client.models.protocol_enum import ProtocolEnum
 from typing import Optional, Set
 from typing_extensions import Self
@@ -37,7 +37,7 @@ class EndpointRequest(BaseModel):
     host: Annotated[str, Field(min_length=1, strict=True)]
     settings: Optional[Dict[str, Any]] = None
     property_mappings: Optional[List[UUID]] = None
-    auth_mode: AuthModeEnum
+    auth_mode: EndpointAuthModeEnum
     maximum_connections: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     __properties: ClassVar[List[str]] = ["name", "provider", "protocol", "host", "settings", "property_mappings", "auth_mode", "maximum_connections"]
 

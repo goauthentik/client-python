@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **identifier** | **str** |  | 
 **created** | **datetime** |  | [readonly] 
 **last_updated** | **datetime** |  | [readonly] 
+**expires** | **datetime** |  | [optional] 
 
 ## Example
 

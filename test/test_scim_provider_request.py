@@ -45,7 +45,12 @@ class TestSCIMProviderRequest(unittest.TestCase):
                     ],
                 url = '0',
                 verify_certificates = True,
-                token = '0',
+                token = '',
+                auth_mode = 'token',
+                auth_oauth = '',
+                auth_oauth_params = {
+                    'key' : null
+                    },
                 compatibility_mode = 'default',
                 exclude_users_service_account = True,
                 filter_group = '',
@@ -55,7 +60,6 @@ class TestSCIMProviderRequest(unittest.TestCase):
             return SCIMProviderRequest(
                 name = '0',
                 url = '0',
-                token = '0',
         )
         """
 

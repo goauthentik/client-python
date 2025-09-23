@@ -63,6 +63,11 @@ class TestPaginatedSCIMProviderList(unittest.TestCase):
                         url = '', 
                         verify_certificates = True, 
                         token = '', 
+                        auth_mode = 'token', 
+                        auth_oauth = '', 
+                        auth_oauth_params = {
+                            'key' : null
+                            }, 
                         compatibility_mode = null, 
                         exclude_users_service_account = True, 
                         filter_group = '', 
@@ -101,6 +106,11 @@ class TestPaginatedSCIMProviderList(unittest.TestCase):
                         url = '', 
                         verify_certificates = True, 
                         token = '', 
+                        auth_mode = 'token', 
+                        auth_oauth = '', 
+                        auth_oauth_params = {
+                            'key' : null
+                            }, 
                         compatibility_mode = null, 
                         exclude_users_service_account = True, 
                         filter_group = '', 

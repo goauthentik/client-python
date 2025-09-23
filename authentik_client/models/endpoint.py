@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
-from authentik_client.models.auth_mode_enum import AuthModeEnum
+from authentik_client.models.endpoint_auth_mode_enum import EndpointAuthModeEnum
 from authentik_client.models.protocol_enum import ProtocolEnum
 from authentik_client.models.rac_provider import RACProvider
 from typing import Optional, Set
@@ -40,7 +40,7 @@ class Endpoint(BaseModel):
     host: StrictStr
     settings: Optional[Dict[str, Any]] = None
     property_mappings: Optional[List[UUID]] = None
-    auth_mode: AuthModeEnum
+    auth_mode: EndpointAuthModeEnum
     launch_url: Optional[StrictStr] = Field(description="Build actual launch URL (the provider itself does not have one, just individual endpoints)")
     maximum_connections: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     __properties: ClassVar[List[str]] = ["pk", "name", "provider", "provider_obj", "protocol", "host", "settings", "property_mappings", "auth_mode", "launch_url", "maximum_connections"]

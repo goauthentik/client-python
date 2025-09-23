@@ -42,7 +42,6 @@ authentik_client/models/application.py
 authentik_client/models/application_entitlement.py
 authentik_client/models/application_entitlement_request.py
 authentik_client/models/application_request.py
-authentik_client/models/auth_mode_enum.py
 authentik_client/models/auth_type_enum.py
 authentik_client/models/authenticated_session.py
 authentik_client/models/authenticated_session_asn.py
@@ -158,6 +157,7 @@ authentik_client/models/email_device_request.py
 authentik_client/models/email_stage.py
 authentik_client/models/email_stage_request.py
 authentik_client/models/endpoint.py
+authentik_client/models/endpoint_auth_mode_enum.py
 authentik_client/models/endpoint_device.py
 authentik_client/models/endpoint_device_request.py
 authentik_client/models/endpoint_request.py
@@ -656,6 +656,7 @@ authentik_client/models/saml_source_property_mapping_request.py
 authentik_client/models/saml_source_request.py
 authentik_client/models/schedule.py
 authentik_client/models/schedule_request.py
+authentik_client/models/scim_authentication_mode_enum.py
 authentik_client/models/scim_mapping.py
 authentik_client/models/scim_mapping_request.py
 authentik_client/models/scim_provider.py
@@ -798,7 +799,6 @@ docs/Application.md
 docs/ApplicationEntitlement.md
 docs/ApplicationEntitlementRequest.md
 docs/ApplicationRequest.md
-docs/AuthModeEnum.md
 docs/AuthTypeEnum.md
 docs/AuthenticatedSession.md
 docs/AuthenticatedSessionAsn.md
@@ -917,6 +917,7 @@ docs/EmailDeviceRequest.md
 docs/EmailStage.md
 docs/EmailStageRequest.md
 docs/Endpoint.md
+docs/EndpointAuthModeEnum.md
 docs/EndpointDevice.md
 docs/EndpointDeviceRequest.md
 docs/EndpointRequest.md
@@ -1425,6 +1426,7 @@ docs/SAMLSource.md
 docs/SAMLSourcePropertyMapping.md
 docs/SAMLSourcePropertyMappingRequest.md
 docs/SAMLSourceRequest.md
+docs/SCIMAuthenticationModeEnum.md
 docs/SCIMMapping.md
 docs/SCIMMappingRequest.md
 docs/SCIMProvider.md
@@ -1580,7 +1582,6 @@ test/test_application.py
 test/test_application_entitlement.py
 test/test_application_entitlement_request.py
 test/test_application_request.py
-test/test_auth_mode_enum.py
 test/test_auth_type_enum.py
 test/test_authenticated_session.py
 test/test_authenticated_session_asn.py
@@ -1699,6 +1700,7 @@ test/test_email_device_request.py
 test/test_email_stage.py
 test/test_email_stage_request.py
 test/test_endpoint.py
+test/test_endpoint_auth_mode_enum.py
 test/test_endpoint_device.py
 test/test_endpoint_device_request.py
 test/test_endpoint_request.py
@@ -2210,6 +2212,7 @@ test/test_saml_source_request.py
 test/test_schedule.py
 test/test_schedule_request.py
 test/test_schema_api.py
+test/test_scim_authentication_mode_enum.py
 test/test_scim_mapping.py
 test/test_scim_mapping_request.py
 test/test_scim_provider.py

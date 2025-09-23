@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **host** | **str** |  | 
 **settings** | **Dict[str, object]** |  | [optional] 
 **property_mappings** | **List[str]** |  | [optional] 
-**auth_mode** | [**AuthModeEnum**](AuthModeEnum.md) |  | 
+**auth_mode** | [**EndpointAuthModeEnum**](EndpointAuthModeEnum.md) |  | 
 **launch_url** | **str** | Build actual launch URL (the provider itself does not have one, just individual endpoints) | [readonly] 
 **maximum_connections** | **int** |  | [optional] 
 

@@ -26,7 +26,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.application_entitlement import ApplicationEntitlement
     from authentik_client.models.application_entitlement_request import ApplicationEntitlementRequest
     from authentik_client.models.application_request import ApplicationRequest
-    from authentik_client.models.auth_mode_enum import AuthModeEnum
     from authentik_client.models.auth_type_enum import AuthTypeEnum
     from authentik_client.models.authenticated_session import AuthenticatedSession
     from authentik_client.models.authenticated_session_asn import AuthenticatedSessionAsn
@@ -142,6 +141,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.email_stage import EmailStage
     from authentik_client.models.email_stage_request import EmailStageRequest
     from authentik_client.models.endpoint import Endpoint
+    from authentik_client.models.endpoint_auth_mode_enum import EndpointAuthModeEnum
     from authentik_client.models.endpoint_device import EndpointDevice
     from authentik_client.models.endpoint_device_request import EndpointDeviceRequest
     from authentik_client.models.endpoint_request import EndpointRequest
@@ -638,6 +638,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.saml_source_property_mapping import SAMLSourcePropertyMapping
     from authentik_client.models.saml_source_property_mapping_request import SAMLSourcePropertyMappingRequest
     from authentik_client.models.saml_source_request import SAMLSourceRequest
+    from authentik_client.models.scim_authentication_mode_enum import SCIMAuthenticationModeEnum
     from authentik_client.models.scim_mapping import SCIMMapping
     from authentik_client.models.scim_mapping_request import SCIMMappingRequest
     from authentik_client.models.scim_provider import SCIMProvider
@@ -787,7 +788,6 @@ from authentik_client.models.application import Application
 from authentik_client.models.application_entitlement import ApplicationEntitlement
 from authentik_client.models.application_entitlement_request import ApplicationEntitlementRequest
 from authentik_client.models.application_request import ApplicationRequest
-from authentik_client.models.auth_mode_enum import AuthModeEnum
 from authentik_client.models.auth_type_enum import AuthTypeEnum
 from authentik_client.models.authenticated_session import AuthenticatedSession
 from authentik_client.models.authenticated_session_asn import AuthenticatedSessionAsn
@@ -903,6 +903,7 @@ from authentik_client.models.email_device_request import EmailDeviceRequest
 from authentik_client.models.email_stage import EmailStage
 from authentik_client.models.email_stage_request import EmailStageRequest
 from authentik_client.models.endpoint import Endpoint
+from authentik_client.models.endpoint_auth_mode_enum import EndpointAuthModeEnum
 from authentik_client.models.endpoint_device import EndpointDevice
 from authentik_client.models.endpoint_device_request import EndpointDeviceRequest
 from authentik_client.models.endpoint_request import EndpointRequest
@@ -1399,6 +1400,7 @@ from authentik_client.models.saml_source import SAMLSource
 from authentik_client.models.saml_source_property_mapping import SAMLSourcePropertyMapping
 from authentik_client.models.saml_source_property_mapping_request import SAMLSourcePropertyMappingRequest
 from authentik_client.models.saml_source_request import SAMLSourceRequest
+from authentik_client.models.scim_authentication_mode_enum import SCIMAuthenticationModeEnum
 from authentik_client.models.scim_mapping import SCIMMapping
 from authentik_client.models.scim_mapping_request import SCIMMappingRequest
 from authentik_client.models.scim_provider import SCIMProvider

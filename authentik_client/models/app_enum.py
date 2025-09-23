@@ -89,6 +89,7 @@ class AppEnum(str, Enum):
     AUTHENTIK_DOT_ENTERPRISE_DOT_POLICIES_DOT_UNIQUE_PASSWORD = 'authentik.enterprise.policies.unique_password'
     AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_GOOGLE_WORKSPACE = 'authentik.enterprise.providers.google_workspace'
     AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_MICROSOFT_ENTRA = 'authentik.enterprise.providers.microsoft_entra'
+    AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SCIM = 'authentik.enterprise.providers.scim'
     AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SSF = 'authentik.enterprise.providers.ssf'
     AUTHENTIK_DOT_ENTERPRISE_DOT_SEARCH = 'authentik.enterprise.search'
     AUTHENTIK_DOT_ENTERPRISE_DOT_STAGES_DOT_AUTHENTICATOR_ENDPOINT_GDTC = 'authentik.enterprise.stages.authenticator_endpoint_gdtc'

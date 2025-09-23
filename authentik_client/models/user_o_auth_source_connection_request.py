@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
@@ -33,7 +34,8 @@ class UserOAuthSourceConnectionRequest(BaseModel):
     source: UUID
     identifier: Annotated[str, Field(min_length=1, strict=True)]
     access_token: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["user", "source", "identifier", "access_token"]
+    expires: Optional[datetime] = None
+    __properties: ClassVar[List[str]] = ["user", "source", "identifier", "access_token", "expires"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,7 +96,8 @@ class UserOAuthSourceConnectionRequest(BaseModel):
             "user": obj.get("user"),
             "source": obj.get("source"),
             "identifier": obj.get("identifier"),
-            "access_token": obj.get("access_token")
+            "access_token": obj.get("access_token"),
+            "expires": obj.get("expires")
         })
         return _obj
 

@@ -19,9 +19,9 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class AuthModeEnum(str, Enum):
+class EndpointAuthModeEnum(str, Enum):
     """
-    AuthModeEnum
+    EndpointAuthModeEnum
     """
 
     """
@@ -32,7 +32,7 @@ class AuthModeEnum(str, Enum):
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of AuthModeEnum from a JSON string"""
+        """Create an instance of EndpointAuthModeEnum from a JSON string"""
         return cls(json.loads(json_str))
 
 

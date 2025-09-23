@@ -15,10 +15,10 @@
 
 import unittest
 
-from authentik_client.models.auth_mode_enum import AuthModeEnum
+from authentik_client.models.scim_authentication_mode_enum import SCIMAuthenticationModeEnum
 
-class TestAuthModeEnum(unittest.TestCase):
-    """AuthModeEnum unit test stubs"""
+class TestSCIMAuthenticationModeEnum(unittest.TestCase):
+    """SCIMAuthenticationModeEnum unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,9 +26,9 @@ class TestAuthModeEnum(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAuthModeEnum(self):
-        """Test AuthModeEnum"""
-        # inst = AuthModeEnum()
+    def testSCIMAuthenticationModeEnum(self):
+        """Test SCIMAuthenticationModeEnum"""
+        # inst = SCIMAuthenticationModeEnum()
 
 if __name__ == '__main__':
     unittest.main()

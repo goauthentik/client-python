@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **source** | **str** |  | 
 **identifier** | **str** |  | 
 **access_token** | **str** |  | [optional] 
+**expires** | **datetime** |  | [optional] 
 
 ## Example
 

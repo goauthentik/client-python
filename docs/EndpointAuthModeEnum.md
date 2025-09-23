@@ -1,4 +1,4 @@
-# AuthModeEnum
+# EndpointAuthModeEnum
 
 
 ## Enum

@@ -126,7 +126,12 @@ class TestModelRequest(unittest.TestCase):
                 default_name_id_policy = 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
                 url = '0',
                 verify_certificates = True,
-                token = '0',
+                token = '',
+                auth_mode = 'token',
+                auth_oauth = '',
+                auth_oauth_params = {
+                    'key' : None
+                    },
                 compatibility_mode = 'default',
                 oidc_auth_providers = [
                     56
@@ -155,7 +160,6 @@ class TestModelRequest(unittest.TestCase):
                 external_host = '0',
                 acs_url = '0',
                 url = '0',
-                token = '0',
         )
         """
 

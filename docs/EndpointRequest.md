@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **host** | **str** |  | 
 **settings** | **Dict[str, object]** |  | [optional] 
 **property_mappings** | **List[str]** |  | [optional] 
-**auth_mode** | [**AuthModeEnum**](AuthModeEnum.md) |  | 
+**auth_mode** | [**EndpointAuthModeEnum**](EndpointAuthModeEnum.md) |  | 
 **maximum_connections** | **int** |  | [optional] 
 
 ## Example
