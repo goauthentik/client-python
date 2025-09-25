@@ -30,6 +30,7 @@ class CompatibilityModeEnum(str, Enum):
     DEFAULT = 'default'
     AWS = 'aws'
     SLACK = 'slack'
+    SFDC = 'sfdc'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
