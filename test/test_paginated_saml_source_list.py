@@ -80,7 +80,9 @@ class TestPaginatedSAMLSourceList(unittest.TestCase):
                         digest_algorithm = 'http://www.w3.org/2000/09/xmldsig#sha1', 
                         signature_algorithm = 'http://www.w3.org/2000/09/xmldsig#rsa-sha1', 
                         temporary_user_delete_after = '', 
-                        encryption_kp = '', )
+                        encryption_kp = '', 
+                        signed_assertion = True, 
+                        signed_response = True, )
                     ],
                 autocomplete = {
                     'key' : null
@@ -132,7 +134,9 @@ class TestPaginatedSAMLSourceList(unittest.TestCase):
                         digest_algorithm = 'http://www.w3.org/2000/09/xmldsig#sha1', 
                         signature_algorithm = 'http://www.w3.org/2000/09/xmldsig#rsa-sha1', 
                         temporary_user_delete_after = '', 
-                        encryption_kp = '', )
+                        encryption_kp = '', 
+                        signed_assertion = True, 
+                        signed_response = True, )
                     ],
                 autocomplete = {
                     'key' : null

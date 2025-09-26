@@ -25613,6 +25613,8 @@ class SourcesApi:
         pre_authentication_flow: Optional[UUID] = None,
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         signature_algorithm: Optional[StrictStr] = None,
+        signed_assertion: Optional[StrictBool] = None,
+        signed_response: Optional[StrictBool] = None,
         signing_kp: Optional[UUID] = None,
         slo_url: Optional[StrictStr] = None,
         slug: Optional[StrictStr] = None,
@@ -25673,6 +25675,10 @@ class SourcesApi:
         :type search: str
         :param signature_algorithm:
         :type signature_algorithm: str
+        :param signed_assertion:
+        :type signed_assertion: bool
+        :param signed_response:
+        :type signed_response: bool
         :param signing_kp:
         :type signing_kp: str
         :param slo_url:
@@ -25728,6 +25734,8 @@ class SourcesApi:
             pre_authentication_flow=pre_authentication_flow,
             search=search,
             signature_algorithm=signature_algorithm,
+            signed_assertion=signed_assertion,
+            signed_response=signed_response,
             signing_kp=signing_kp,
             slo_url=slo_url,
             slug=slug,
@@ -25778,6 +25786,8 @@ class SourcesApi:
         pre_authentication_flow: Optional[UUID] = None,
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         signature_algorithm: Optional[StrictStr] = None,
+        signed_assertion: Optional[StrictBool] = None,
+        signed_response: Optional[StrictBool] = None,
         signing_kp: Optional[UUID] = None,
         slo_url: Optional[StrictStr] = None,
         slug: Optional[StrictStr] = None,
@@ -25838,6 +25848,10 @@ class SourcesApi:
         :type search: str
         :param signature_algorithm:
         :type signature_algorithm: str
+        :param signed_assertion:
+        :type signed_assertion: bool
+        :param signed_response:
+        :type signed_response: bool
         :param signing_kp:
         :type signing_kp: str
         :param slo_url:
@@ -25893,6 +25907,8 @@ class SourcesApi:
             pre_authentication_flow=pre_authentication_flow,
             search=search,
             signature_algorithm=signature_algorithm,
+            signed_assertion=signed_assertion,
+            signed_response=signed_response,
             signing_kp=signing_kp,
             slo_url=slo_url,
             slug=slug,
@@ -25943,6 +25959,8 @@ class SourcesApi:
         pre_authentication_flow: Optional[UUID] = None,
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         signature_algorithm: Optional[StrictStr] = None,
+        signed_assertion: Optional[StrictBool] = None,
+        signed_response: Optional[StrictBool] = None,
         signing_kp: Optional[UUID] = None,
         slo_url: Optional[StrictStr] = None,
         slug: Optional[StrictStr] = None,
@@ -26003,6 +26021,10 @@ class SourcesApi:
         :type search: str
         :param signature_algorithm:
         :type signature_algorithm: str
+        :param signed_assertion:
+        :type signed_assertion: bool
+        :param signed_response:
+        :type signed_response: bool
         :param signing_kp:
         :type signing_kp: str
         :param slo_url:
@@ -26058,6 +26080,8 @@ class SourcesApi:
             pre_authentication_flow=pre_authentication_flow,
             search=search,
             signature_algorithm=signature_algorithm,
+            signed_assertion=signed_assertion,
+            signed_response=signed_response,
             signing_kp=signing_kp,
             slo_url=slo_url,
             slug=slug,
@@ -26103,6 +26127,8 @@ class SourcesApi:
         pre_authentication_flow,
         search,
         signature_algorithm,
+        signed_assertion,
+        signed_response,
         signing_kp,
         slo_url,
         slug,
@@ -26203,6 +26229,14 @@ class SourcesApi:
         if signature_algorithm is not None:
             
             _query_params.append(('signature_algorithm', signature_algorithm))
+            
+        if signed_assertion is not None:
+            
+            _query_params.append(('signed_assertion', signed_assertion))
+            
+        if signed_response is not None:
+            
+            _query_params.append(('signed_response', signed_response))
             
         if signing_kp is not None:
             

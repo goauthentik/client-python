@@ -6967,7 +6967,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sources_saml_list**
-> PaginatedSAMLSourceList sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
+> PaginatedSAMLSourceList sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signed_assertion=signed_assertion, signed_response=signed_response, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
 
 SAMLSource Viewset
 
@@ -7019,6 +7019,8 @@ with authentik_client.ApiClient(configuration) as api_client:
     pre_authentication_flow = 'pre_authentication_flow_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     signature_algorithm = 'signature_algorithm_example' # str |  (optional)
+    signed_assertion = True # bool |  (optional)
+    signed_response = True # bool |  (optional)
     signing_kp = 'signing_kp_example' # str |  (optional)
     slo_url = 'slo_url_example' # str |  (optional)
     slug = 'slug_example' # str |  (optional)
@@ -7028,7 +7030,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     verification_kp = 'verification_kp_example' # str |  (optional)
 
     try:
-        api_response = api_instance.sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
+        api_response = api_instance.sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signed_assertion=signed_assertion, signed_response=signed_response, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
         print("The response of SourcesApi->sources_saml_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -7060,6 +7062,8 @@ Name | Type | Description  | Notes
  **pre_authentication_flow** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **signature_algorithm** | **str**|  | [optional] 
+ **signed_assertion** | **bool**|  | [optional] 
+ **signed_response** | **bool**|  | [optional] 
  **signing_kp** | **str**|  | [optional] 
  **slo_url** | **str**|  | [optional] 
  **slug** | **str**|  | [optional] 

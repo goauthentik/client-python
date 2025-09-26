@@ -63,7 +63,9 @@ class TestPatchedSAMLSourceRequest(unittest.TestCase):
                 digest_algorithm = 'http://www.w3.org/2000/09/xmldsig#sha1',
                 signature_algorithm = 'http://www.w3.org/2000/09/xmldsig#rsa-sha1',
                 temporary_user_delete_after = '0',
-                encryption_kp = ''
+                encryption_kp = '',
+                signed_assertion = True,
+                signed_response = True
             )
         else:
             return PatchedSAMLSourceRequest(

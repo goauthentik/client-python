@@ -67,7 +67,9 @@ class SAMLSource(BaseModel):
     signature_algorithm: Optional[SignatureAlgorithmEnum] = None
     temporary_user_delete_after: Optional[StrictStr] = Field(default=None, description="Time offset when temporary users should be deleted. This only applies if your IDP uses the NameID Format 'transient', and the user doesn't log out manually. (Format: hours=1;minutes=2;seconds=3).")
     encryption_kp: Optional[UUID] = Field(default=None, description="When selected, incoming assertions are encrypted by the IdP using the public key of the encryption keypair. The assertion is decrypted by the SP using the the private key.")
-    __properties: ClassVar[List[str]] = ["pk", "name", "slug", "enabled", "authentication_flow", "enrollment_flow", "user_property_mappings", "group_property_mappings", "component", "verbose_name", "verbose_name_plural", "meta_model_name", "policy_engine_mode", "user_matching_mode", "managed", "user_path_template", "icon", "group_matching_mode", "pre_authentication_flow", "issuer", "sso_url", "slo_url", "allow_idp_initiated", "name_id_policy", "binding_type", "verification_kp", "signing_kp", "digest_algorithm", "signature_algorithm", "temporary_user_delete_after", "encryption_kp"]
+    signed_assertion: Optional[StrictBool] = None
+    signed_response: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["pk", "name", "slug", "enabled", "authentication_flow", "enrollment_flow", "user_property_mappings", "group_property_mappings", "component", "verbose_name", "verbose_name_plural", "meta_model_name", "policy_engine_mode", "user_matching_mode", "managed", "user_path_template", "icon", "group_matching_mode", "pre_authentication_flow", "issuer", "sso_url", "slo_url", "allow_idp_initiated", "name_id_policy", "binding_type", "verification_kp", "signing_kp", "digest_algorithm", "signature_algorithm", "temporary_user_delete_after", "encryption_kp", "signed_assertion", "signed_response"]
 
     @field_validator('slug')
     def slug_validate_regular_expression(cls, value):
@@ -206,7 +208,9 @@ class SAMLSource(BaseModel):
             "digest_algorithm": obj.get("digest_algorithm"),
             "signature_algorithm": obj.get("signature_algorithm"),
             "temporary_user_delete_after": obj.get("temporary_user_delete_after"),
-            "encryption_kp": obj.get("encryption_kp")
+            "encryption_kp": obj.get("encryption_kp"),
+            "signed_assertion": obj.get("signed_assertion"),
+            "signed_response": obj.get("signed_response")
         })
         return _obj
 

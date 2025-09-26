@@ -37,6 +37,8 @@ Name | Type | Description | Notes
 **signature_algorithm** | [**SignatureAlgorithmEnum**](SignatureAlgorithmEnum.md) |  | [optional] 
 **temporary_user_delete_after** | **str** | Time offset when temporary users should be deleted. This only applies if your IDP uses the NameID Format &#39;transient&#39;, and the user doesn&#39;t log out manually. (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **encryption_kp** | **str** | When selected, incoming assertions are encrypted by the IdP using the public key of the encryption keypair. The assertion is decrypted by the SP using the the private key. | [optional] 
+**signed_assertion** | **bool** |  | [optional] 
+**signed_response** | **bool** |  | [optional] 
 
 ## Example
 
