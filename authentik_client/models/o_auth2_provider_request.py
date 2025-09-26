@@ -44,6 +44,7 @@ class OAuth2ProviderRequest(BaseModel):
     access_code_validity: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Access codes not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
     access_token_validity: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
     refresh_token_validity: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
+    refresh_token_threshold: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="When refreshing a token, if the refresh token is valid for less than this duration, it will be renewed. When set to seconds=0, token will always be renewed. (Format: hours=1;minutes=2;seconds=3).")
     include_claims_in_id_token: Optional[StrictBool] = Field(default=None, description="Include User claims from scopes in the id_token, for applications that don't access the userinfo endpoint.")
     signing_key: Optional[UUID] = Field(default=None, description="Key used to sign the tokens.")
     encryption_key: Optional[UUID] = Field(default=None, description="Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs.")
@@ -53,7 +54,7 @@ class OAuth2ProviderRequest(BaseModel):
     issuer_mode: Optional[IssuerModeEnum] = Field(default=None, description="Configure how the issuer field of the ID Token should be filled.")
     jwt_federation_sources: Optional[List[UUID]] = None
     jwt_federation_providers: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "client_type", "client_id", "client_secret", "access_code_validity", "access_token_validity", "refresh_token_validity", "include_claims_in_id_token", "signing_key", "encryption_key", "redirect_uris", "backchannel_logout_uri", "sub_mode", "issuer_mode", "jwt_federation_sources", "jwt_federation_providers"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "client_type", "client_id", "client_secret", "access_code_validity", "access_token_validity", "refresh_token_validity", "refresh_token_threshold", "include_claims_in_id_token", "signing_key", "encryption_key", "redirect_uris", "backchannel_logout_uri", "sub_mode", "issuer_mode", "jwt_federation_sources", "jwt_federation_providers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -139,6 +140,7 @@ class OAuth2ProviderRequest(BaseModel):
             "access_code_validity": obj.get("access_code_validity"),
             "access_token_validity": obj.get("access_token_validity"),
             "refresh_token_validity": obj.get("refresh_token_validity"),
+            "refresh_token_threshold": obj.get("refresh_token_threshold"),
             "include_claims_in_id_token": obj.get("include_claims_in_id_token"),
             "signing_key": obj.get("signing_key"),
             "encryption_key": obj.get("encryption_key"),

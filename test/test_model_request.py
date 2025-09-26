@@ -72,6 +72,7 @@ class TestModelRequest(unittest.TestCase):
                 access_code_validity = '0',
                 access_token_validity = '0',
                 refresh_token_validity = '0',
+                refresh_token_threshold = '0',
                 include_claims_in_id_token = True,
                 signing_key = '',
                 encryption_key = '',

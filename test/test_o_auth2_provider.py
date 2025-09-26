@@ -58,6 +58,7 @@ class TestOAuth2Provider(unittest.TestCase):
                 access_code_validity = '',
                 access_token_validity = '',
                 refresh_token_validity = '',
+                refresh_token_threshold = '',
                 include_claims_in_id_token = True,
                 signing_key = '',
                 encryption_key = '',
