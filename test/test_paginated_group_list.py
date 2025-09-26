@@ -56,7 +56,7 @@ class TestPaginatedGroupList(unittest.TestCase):
                             56
                             ], 
                         users_obj = [
-                            authentik_client.models.group_member.GroupMember(
+                            authentik_client.models.partial_user.PartialUser(
                                 pk = 56, 
                                 username = 'A', 
                                 name = '', 
@@ -116,7 +116,7 @@ class TestPaginatedGroupList(unittest.TestCase):
                             56
                             ], 
                         users_obj = [
-                            authentik_client.models.group_member.GroupMember(
+                            authentik_client.models.partial_user.PartialUser(
                                 pk = 56, 
                                 username = 'A', 
                                 name = '', 

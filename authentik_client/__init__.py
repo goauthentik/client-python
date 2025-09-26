@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2025.10.0-rc1-1758805275"
+__version__ = "2025.10.0-rc1-1758891598"
 
 # Define package exports
 __all__ = [
@@ -147,7 +147,6 @@ __all__ = [
     "DenyStageRequest",
     "DetailedCountry",
     "DetailedCountryField",
-    "DetailedCountryFieldRequest",
     "Device",
     "DeviceChallenge",
     "DeviceChallengeRequest",
@@ -233,8 +232,6 @@ __all__ = [
     "GroupLDAPSourceConnection",
     "GroupLDAPSourceConnectionRequest",
     "GroupMatchingModeEnum",
-    "GroupMember",
-    "GroupMemberRequest",
     "GroupOAuthSourceConnection",
     "GroupOAuthSourceConnectionRequest",
     "GroupPlexSourceConnection",
@@ -474,6 +471,8 @@ __all__ = [
     "PaginatedWebAuthnDeviceList",
     "PaginatedWebAuthnDeviceTypeList",
     "Pagination",
+    "PartialGroup",
+    "PartialUser",
     "PasswordChallenge",
     "PasswordChallengeResponseRequest",
     "PasswordExpiryPolicy",
@@ -722,7 +721,6 @@ __all__ = [
     "StaticDevice",
     "StaticDeviceRequest",
     "StaticDeviceToken",
-    "StaticDeviceTokenRequest",
     "SubModeEnum",
     "SyncObjectModelEnum",
     "SyncObjectRequest",
@@ -762,8 +760,6 @@ __all__ = [
     "UserDeleteStage",
     "UserDeleteStageRequest",
     "UserFieldsEnum",
-    "UserGroup",
-    "UserGroupRequest",
     "UserKerberosSourceConnection",
     "UserKerberosSourceConnectionRequest",
     "UserLDAPSourceConnection",
@@ -802,7 +798,6 @@ __all__ = [
     "WebAuthnDevice",
     "WebAuthnDeviceRequest",
     "WebAuthnDeviceType",
-    "WebAuthnDeviceTypeRequest",
     "Worker",
 ]
 
@@ -940,7 +935,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.deny_stage_request import DenyStageRequest as DenyStageRequest
     from authentik_client.models.detailed_country import DetailedCountry as DetailedCountry
     from authentik_client.models.detailed_country_field import DetailedCountryField as DetailedCountryField
-    from authentik_client.models.detailed_country_field_request import DetailedCountryFieldRequest as DetailedCountryFieldRequest
     from authentik_client.models.device import Device as Device
     from authentik_client.models.device_challenge import DeviceChallenge as DeviceChallenge
     from authentik_client.models.device_challenge_request import DeviceChallengeRequest as DeviceChallengeRequest
@@ -1026,8 +1020,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.group_ldap_source_connection import GroupLDAPSourceConnection as GroupLDAPSourceConnection
     from authentik_client.models.group_ldap_source_connection_request import GroupLDAPSourceConnectionRequest as GroupLDAPSourceConnectionRequest
     from authentik_client.models.group_matching_mode_enum import GroupMatchingModeEnum as GroupMatchingModeEnum
-    from authentik_client.models.group_member import GroupMember as GroupMember
-    from authentik_client.models.group_member_request import GroupMemberRequest as GroupMemberRequest
     from authentik_client.models.group_o_auth_source_connection import GroupOAuthSourceConnection as GroupOAuthSourceConnection
     from authentik_client.models.group_o_auth_source_connection_request import GroupOAuthSourceConnectionRequest as GroupOAuthSourceConnectionRequest
     from authentik_client.models.group_plex_source_connection import GroupPlexSourceConnection as GroupPlexSourceConnection
@@ -1267,6 +1259,8 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.paginated_web_authn_device_list import PaginatedWebAuthnDeviceList as PaginatedWebAuthnDeviceList
     from authentik_client.models.paginated_web_authn_device_type_list import PaginatedWebAuthnDeviceTypeList as PaginatedWebAuthnDeviceTypeList
     from authentik_client.models.pagination import Pagination as Pagination
+    from authentik_client.models.partial_group import PartialGroup as PartialGroup
+    from authentik_client.models.partial_user import PartialUser as PartialUser
     from authentik_client.models.password_challenge import PasswordChallenge as PasswordChallenge
     from authentik_client.models.password_challenge_response_request import PasswordChallengeResponseRequest as PasswordChallengeResponseRequest
     from authentik_client.models.password_expiry_policy import PasswordExpiryPolicy as PasswordExpiryPolicy
@@ -1515,7 +1509,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.static_device import StaticDevice as StaticDevice
     from authentik_client.models.static_device_request import StaticDeviceRequest as StaticDeviceRequest
     from authentik_client.models.static_device_token import StaticDeviceToken as StaticDeviceToken
-    from authentik_client.models.static_device_token_request import StaticDeviceTokenRequest as StaticDeviceTokenRequest
     from authentik_client.models.sub_mode_enum import SubModeEnum as SubModeEnum
     from authentik_client.models.sync_object_model_enum import SyncObjectModelEnum as SyncObjectModelEnum
     from authentik_client.models.sync_object_request import SyncObjectRequest as SyncObjectRequest
@@ -1555,8 +1548,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.user_delete_stage import UserDeleteStage as UserDeleteStage
     from authentik_client.models.user_delete_stage_request import UserDeleteStageRequest as UserDeleteStageRequest
     from authentik_client.models.user_fields_enum import UserFieldsEnum as UserFieldsEnum
-    from authentik_client.models.user_group import UserGroup as UserGroup
-    from authentik_client.models.user_group_request import UserGroupRequest as UserGroupRequest
     from authentik_client.models.user_kerberos_source_connection import UserKerberosSourceConnection as UserKerberosSourceConnection
     from authentik_client.models.user_kerberos_source_connection_request import UserKerberosSourceConnectionRequest as UserKerberosSourceConnectionRequest
     from authentik_client.models.user_ldap_source_connection import UserLDAPSourceConnection as UserLDAPSourceConnection
@@ -1595,7 +1586,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.web_authn_device import WebAuthnDevice as WebAuthnDevice
     from authentik_client.models.web_authn_device_request import WebAuthnDeviceRequest as WebAuthnDeviceRequest
     from authentik_client.models.web_authn_device_type import WebAuthnDeviceType as WebAuthnDeviceType
-    from authentik_client.models.web_authn_device_type_request import WebAuthnDeviceTypeRequest as WebAuthnDeviceTypeRequest
     from authentik_client.models.worker import Worker as Worker
     
 else:
@@ -1739,7 +1729,6 @@ from authentik_client.models.deny_stage import DenyStage as DenyStage
 from authentik_client.models.deny_stage_request import DenyStageRequest as DenyStageRequest
 from authentik_client.models.detailed_country import DetailedCountry as DetailedCountry
 from authentik_client.models.detailed_country_field import DetailedCountryField as DetailedCountryField
-from authentik_client.models.detailed_country_field_request import DetailedCountryFieldRequest as DetailedCountryFieldRequest
 from authentik_client.models.device import Device as Device
 from authentik_client.models.device_challenge import DeviceChallenge as DeviceChallenge
 from authentik_client.models.device_challenge_request import DeviceChallengeRequest as DeviceChallengeRequest
@@ -1825,8 +1814,6 @@ from authentik_client.models.group_kerberos_source_connection_request import Gro
 from authentik_client.models.group_ldap_source_connection import GroupLDAPSourceConnection as GroupLDAPSourceConnection
 from authentik_client.models.group_ldap_source_connection_request import GroupLDAPSourceConnectionRequest as GroupLDAPSourceConnectionRequest
 from authentik_client.models.group_matching_mode_enum import GroupMatchingModeEnum as GroupMatchingModeEnum
-from authentik_client.models.group_member import GroupMember as GroupMember
-from authentik_client.models.group_member_request import GroupMemberRequest as GroupMemberRequest
 from authentik_client.models.group_o_auth_source_connection import GroupOAuthSourceConnection as GroupOAuthSourceConnection
 from authentik_client.models.group_o_auth_source_connection_request import GroupOAuthSourceConnectionRequest as GroupOAuthSourceConnectionRequest
 from authentik_client.models.group_plex_source_connection import GroupPlexSourceConnection as GroupPlexSourceConnection
@@ -2066,6 +2053,8 @@ from authentik_client.models.paginated_user_write_stage_list import PaginatedUse
 from authentik_client.models.paginated_web_authn_device_list import PaginatedWebAuthnDeviceList as PaginatedWebAuthnDeviceList
 from authentik_client.models.paginated_web_authn_device_type_list import PaginatedWebAuthnDeviceTypeList as PaginatedWebAuthnDeviceTypeList
 from authentik_client.models.pagination import Pagination as Pagination
+from authentik_client.models.partial_group import PartialGroup as PartialGroup
+from authentik_client.models.partial_user import PartialUser as PartialUser
 from authentik_client.models.password_challenge import PasswordChallenge as PasswordChallenge
 from authentik_client.models.password_challenge_response_request import PasswordChallengeResponseRequest as PasswordChallengeResponseRequest
 from authentik_client.models.password_expiry_policy import PasswordExpiryPolicy as PasswordExpiryPolicy
@@ -2314,7 +2303,6 @@ from authentik_client.models.state_enum import StateEnum as StateEnum
 from authentik_client.models.static_device import StaticDevice as StaticDevice
 from authentik_client.models.static_device_request import StaticDeviceRequest as StaticDeviceRequest
 from authentik_client.models.static_device_token import StaticDeviceToken as StaticDeviceToken
-from authentik_client.models.static_device_token_request import StaticDeviceTokenRequest as StaticDeviceTokenRequest
 from authentik_client.models.sub_mode_enum import SubModeEnum as SubModeEnum
 from authentik_client.models.sync_object_model_enum import SyncObjectModelEnum as SyncObjectModelEnum
 from authentik_client.models.sync_object_request import SyncObjectRequest as SyncObjectRequest
@@ -2354,8 +2342,6 @@ from authentik_client.models.user_creation_mode_enum import UserCreationModeEnum
 from authentik_client.models.user_delete_stage import UserDeleteStage as UserDeleteStage
 from authentik_client.models.user_delete_stage_request import UserDeleteStageRequest as UserDeleteStageRequest
 from authentik_client.models.user_fields_enum import UserFieldsEnum as UserFieldsEnum
-from authentik_client.models.user_group import UserGroup as UserGroup
-from authentik_client.models.user_group_request import UserGroupRequest as UserGroupRequest
 from authentik_client.models.user_kerberos_source_connection import UserKerberosSourceConnection as UserKerberosSourceConnection
 from authentik_client.models.user_kerberos_source_connection_request import UserKerberosSourceConnectionRequest as UserKerberosSourceConnectionRequest
 from authentik_client.models.user_ldap_source_connection import UserLDAPSourceConnection as UserLDAPSourceConnection
@@ -2394,7 +2380,6 @@ from authentik_client.models.version_history import VersionHistory as VersionHis
 from authentik_client.models.web_authn_device import WebAuthnDevice as WebAuthnDevice
 from authentik_client.models.web_authn_device_request import WebAuthnDeviceRequest as WebAuthnDeviceRequest
 from authentik_client.models.web_authn_device_type import WebAuthnDeviceType as WebAuthnDeviceType
-from authentik_client.models.web_authn_device_type_request import WebAuthnDeviceTypeRequest as WebAuthnDeviceTypeRequest
 from authentik_client.models.worker import Worker as Worker
 
 """,

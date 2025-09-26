@@ -24,7 +24,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
 from authentik_client.models.flow import Flow
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,7 +36,7 @@ class Invitation(BaseModel):
     name: Annotated[str, Field(strict=True, max_length=50)]
     expires: Optional[datetime] = None
     fixed_data: Optional[Dict[str, Any]] = None
-    created_by: GroupMember
+    created_by: PartialUser
     single_use: Optional[StrictBool] = Field(default=None, description="When enabled, the invitation will be deleted after usage.")
     flow: Optional[UUID] = Field(default=None, description="When set, only the configured flow can use this invitation.")
     flow_obj: Flow
@@ -126,7 +126,7 @@ class Invitation(BaseModel):
             "name": obj.get("name"),
             "expires": obj.get("expires"),
             "fixed_data": obj.get("fixed_data"),
-            "created_by": GroupMember.from_dict(obj["created_by"]) if obj.get("created_by") is not None else None,
+            "created_by": PartialUser.from_dict(obj["created_by"]) if obj.get("created_by") is not None else None,
             "single_use": obj.get("single_use"),
             "flow": obj.get("flow"),
             "flow_obj": Flow.from_dict(obj["flow_obj"]) if obj.get("flow_obj") is not None else None

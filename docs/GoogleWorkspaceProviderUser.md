@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [readonly] 
 **google_id** | **str** |  | 
 **user** | **int** |  | 
-**user_obj** | [**GroupMember**](GroupMember.md) |  | [readonly] 
+**user_obj** | [**PartialUser**](PartialUser.md) |  | [readonly] 
 **provider** | **int** |  | 
 **attributes** | **Dict[str, object]** |  | [readonly] 
 

@@ -42,7 +42,7 @@ class TestStaticDevice(unittest.TestCase):
                         token = '', )
                     ],
                 pk = 56,
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
@@ -62,7 +62,7 @@ class TestStaticDevice(unittest.TestCase):
                         token = '', )
                     ],
                 pk = 56,
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 

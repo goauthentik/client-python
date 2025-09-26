@@ -18,31 +18,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
-class GroupMemberRequest(BaseModel):
+class PartialGroup(BaseModel):
     """
-    Stripped down user serializer to show relevant users for groups
+    Partial Group Serializer, does not include child relations.
     """ # noqa: E501
-    username: Annotated[str, Field(min_length=1, strict=True, max_length=150)] = Field(description="Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.")
-    name: Annotated[str, Field(min_length=1, strict=True)] = Field(description="User's display name.")
-    is_active: Optional[StrictBool] = Field(default=None, description="Designates whether this user should be treated as active. Unselect this instead of deleting accounts.")
-    last_login: Optional[datetime] = None
-    email: Optional[Annotated[str, Field(strict=True, max_length=254)]] = None
+    pk: UUID
+    num_pk: StrictInt = Field(description="Get a numerical, int32 ID for the group")
+    name: StrictStr
+    is_superuser: Optional[StrictBool] = Field(default=None, description="Users added to this group will be superusers.")
+    parent: Optional[UUID] = None
+    parent_name: Optional[StrictStr]
     attributes: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["username", "name", "is_active", "last_login", "email", "attributes"]
-
-    @field_validator('username')
-    def username_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if not re.match(r"^[\w.@+-]+$", value):
-            raise ValueError(r"must validate the regular expression /^[\w.@+-]+$/")
-        return value
+    __properties: ClassVar[List[str]] = ["pk", "num_pk", "name", "is_superuser", "parent", "parent_name", "attributes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -62,7 +55,7 @@ class GroupMemberRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of GroupMemberRequest from a JSON string"""
+        """Create an instance of PartialGroup from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,8 +67,14 @@ class GroupMemberRequest(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
+            "pk",
+            "num_pk",
+            "parent_name",
         ])
 
         _dict = self.model_dump(
@@ -83,16 +82,21 @@ class GroupMemberRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if last_login (nullable) is None
+        # set to None if parent (nullable) is None
         # and model_fields_set contains the field
-        if self.last_login is None and "last_login" in self.model_fields_set:
-            _dict['last_login'] = None
+        if self.parent is None and "parent" in self.model_fields_set:
+            _dict['parent'] = None
+
+        # set to None if parent_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.parent_name is None and "parent_name" in self.model_fields_set:
+            _dict['parent_name'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of GroupMemberRequest from a dict"""
+        """Create an instance of PartialGroup from a dict"""
         if obj is None:
             return None
 
@@ -100,11 +104,12 @@ class GroupMemberRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "username": obj.get("username"),
+            "pk": obj.get("pk"),
+            "num_pk": obj.get("num_pk"),
             "name": obj.get("name"),
-            "is_active": obj.get("is_active"),
-            "last_login": obj.get("last_login"),
-            "email": obj.get("email"),
+            "is_superuser": obj.get("is_superuser"),
+            "parent": obj.get("parent"),
+            "parent_name": obj.get("parent_name"),
             "attributes": obj.get("attributes")
         })
         return _obj

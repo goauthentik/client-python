@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from typing_extensions import Annotated
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class DuoDevice(BaseModel):
     """ # noqa: E501
     pk: StrictInt
     name: Annotated[str, Field(strict=True, max_length=64)] = Field(description="The human-readable name of this device.")
-    user: GroupMember
+    user: PartialUser
     __properties: ClassVar[List[str]] = ["pk", "name", "user"]
 
     model_config = ConfigDict(
@@ -94,7 +94,7 @@ class DuoDevice(BaseModel):
         _obj = cls.model_validate({
             "pk": obj.get("pk"),
             "name": obj.get("name"),
-            "user": GroupMember.from_dict(obj["user"]) if obj.get("user") is not None else None
+            "user": PartialUser.from_dict(obj["user"]) if obj.get("user") is not None else None
         })
         return _obj
 

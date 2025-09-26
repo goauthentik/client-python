@@ -23,7 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
-from authentik_client.models.user_group import UserGroup
+from authentik_client.models.partial_group import PartialGroup
 from authentik_client.models.user_type_enum import UserTypeEnum
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,7 +40,7 @@ class User(BaseModel):
     date_joined: datetime
     is_superuser: StrictBool
     groups: Optional[List[UUID]] = None
-    groups_obj: Optional[List[UserGroup]]
+    groups_obj: Optional[List[PartialGroup]]
     email: Optional[Annotated[str, Field(strict=True, max_length=254)]] = None
     avatar: StrictStr = Field(description="User's avatar, either a http/https URL or a data URI")
     attributes: Optional[Dict[str, Any]] = None
@@ -146,7 +146,7 @@ class User(BaseModel):
             "date_joined": obj.get("date_joined"),
             "is_superuser": obj.get("is_superuser"),
             "groups": obj.get("groups"),
-            "groups_obj": [UserGroup.from_dict(_item) for _item in obj["groups_obj"]] if obj.get("groups_obj") is not None else None,
+            "groups_obj": [PartialGroup.from_dict(_item) for _item in obj["groups_obj"]] if obj.get("groups_obj") is not None else None,
             "email": obj.get("email"),
             "avatar": obj.get("avatar"),
             "attributes": obj.get("attributes"),

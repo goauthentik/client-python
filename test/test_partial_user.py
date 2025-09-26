@@ -15,10 +15,10 @@
 
 import unittest
 
-from authentik_client.models.group_member_request import GroupMemberRequest
+from authentik_client.models.partial_user import PartialUser
 
-class TestGroupMemberRequest(unittest.TestCase):
-    """GroupMemberRequest unit test stubs"""
+class TestPartialUser(unittest.TestCase):
+    """PartialUser unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,34 +26,38 @@ class TestGroupMemberRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> GroupMemberRequest:
-        """Test GroupMemberRequest
+    def make_instance(self, include_optional) -> PartialUser:
+        """Test PartialUser
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `GroupMemberRequest`
+        # uncomment below to create an instance of `PartialUser`
         """
-        model = GroupMemberRequest()
+        model = PartialUser()
         if include_optional:
-            return GroupMemberRequest(
-                username = 'A0',
-                name = '0',
+            return PartialUser(
+                pk = 56,
+                username = 'A',
+                name = '',
                 is_active = True,
                 last_login = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 email = '',
                 attributes = {
                     'key' : null
-                    }
+                    },
+                uid = ''
             )
         else:
-            return GroupMemberRequest(
-                username = 'A0',
-                name = '0',
+            return PartialUser(
+                pk = 56,
+                username = 'A',
+                name = '',
+                uid = '',
         )
         """
 
-    def testGroupMemberRequest(self):
-        """Test GroupMemberRequest"""
+    def testPartialUser(self):
+        """Test PartialUser"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

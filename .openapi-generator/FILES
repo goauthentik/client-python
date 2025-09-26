@@ -129,7 +129,6 @@ authentik_client/models/deny_stage.py
 authentik_client/models/deny_stage_request.py
 authentik_client/models/detailed_country.py
 authentik_client/models/detailed_country_field.py
-authentik_client/models/detailed_country_field_request.py
 authentik_client/models/device.py
 authentik_client/models/device_challenge.py
 authentik_client/models/device_challenge_request.py
@@ -215,8 +214,6 @@ authentik_client/models/group_kerberos_source_connection_request.py
 authentik_client/models/group_ldap_source_connection.py
 authentik_client/models/group_ldap_source_connection_request.py
 authentik_client/models/group_matching_mode_enum.py
-authentik_client/models/group_member.py
-authentik_client/models/group_member_request.py
 authentik_client/models/group_o_auth_source_connection.py
 authentik_client/models/group_o_auth_source_connection_request.py
 authentik_client/models/group_plex_source_connection.py
@@ -456,6 +453,8 @@ authentik_client/models/paginated_user_write_stage_list.py
 authentik_client/models/paginated_web_authn_device_list.py
 authentik_client/models/paginated_web_authn_device_type_list.py
 authentik_client/models/pagination.py
+authentik_client/models/partial_group.py
+authentik_client/models/partial_user.py
 authentik_client/models/password_challenge.py
 authentik_client/models/password_challenge_response_request.py
 authentik_client/models/password_expiry_policy.py
@@ -704,7 +703,6 @@ authentik_client/models/state_enum.py
 authentik_client/models/static_device.py
 authentik_client/models/static_device_request.py
 authentik_client/models/static_device_token.py
-authentik_client/models/static_device_token_request.py
 authentik_client/models/sub_mode_enum.py
 authentik_client/models/sync_object_model_enum.py
 authentik_client/models/sync_object_request.py
@@ -744,8 +742,6 @@ authentik_client/models/user_creation_mode_enum.py
 authentik_client/models/user_delete_stage.py
 authentik_client/models/user_delete_stage_request.py
 authentik_client/models/user_fields_enum.py
-authentik_client/models/user_group.py
-authentik_client/models/user_group_request.py
 authentik_client/models/user_kerberos_source_connection.py
 authentik_client/models/user_kerberos_source_connection_request.py
 authentik_client/models/user_ldap_source_connection.py
@@ -784,7 +780,6 @@ authentik_client/models/version_history.py
 authentik_client/models/web_authn_device.py
 authentik_client/models/web_authn_device_request.py
 authentik_client/models/web_authn_device_type.py
-authentik_client/models/web_authn_device_type_request.py
 authentik_client/models/worker.py
 authentik_client/py.typed
 authentik_client/rest.py
@@ -889,7 +884,6 @@ docs/DenyStage.md
 docs/DenyStageRequest.md
 docs/DetailedCountry.md
 docs/DetailedCountryField.md
-docs/DetailedCountryFieldRequest.md
 docs/Device.md
 docs/DeviceChallenge.md
 docs/DeviceChallengeRequest.md
@@ -978,8 +972,6 @@ docs/GroupKerberosSourceConnectionRequest.md
 docs/GroupLDAPSourceConnection.md
 docs/GroupLDAPSourceConnectionRequest.md
 docs/GroupMatchingModeEnum.md
-docs/GroupMember.md
-docs/GroupMemberRequest.md
 docs/GroupOAuthSourceConnection.md
 docs/GroupOAuthSourceConnectionRequest.md
 docs/GroupPlexSourceConnection.md
@@ -1222,6 +1214,8 @@ docs/PaginatedUserWriteStageList.md
 docs/PaginatedWebAuthnDeviceList.md
 docs/PaginatedWebAuthnDeviceTypeList.md
 docs/Pagination.md
+docs/PartialGroup.md
+docs/PartialUser.md
 docs/PasswordChallenge.md
 docs/PasswordChallengeResponseRequest.md
 docs/PasswordExpiryPolicy.md
@@ -1480,7 +1474,6 @@ docs/StateEnum.md
 docs/StaticDevice.md
 docs/StaticDeviceRequest.md
 docs/StaticDeviceToken.md
-docs/StaticDeviceTokenRequest.md
 docs/SubModeEnum.md
 docs/SyncObjectModelEnum.md
 docs/SyncObjectRequest.md
@@ -1522,8 +1515,6 @@ docs/UserCreationModeEnum.md
 docs/UserDeleteStage.md
 docs/UserDeleteStageRequest.md
 docs/UserFieldsEnum.md
-docs/UserGroup.md
-docs/UserGroupRequest.md
 docs/UserKerberosSourceConnection.md
 docs/UserKerberosSourceConnectionRequest.md
 docs/UserLDAPSourceConnection.md
@@ -1562,7 +1553,6 @@ docs/VersionHistory.md
 docs/WebAuthnDevice.md
 docs/WebAuthnDeviceRequest.md
 docs/WebAuthnDeviceType.md
-docs/WebAuthnDeviceTypeRequest.md
 docs/Worker.md
 git_push.sh
 pyproject.toml
@@ -1672,7 +1662,6 @@ test/test_deny_stage.py
 test/test_deny_stage_request.py
 test/test_detailed_country.py
 test/test_detailed_country_field.py
-test/test_detailed_country_field_request.py
 test/test_device.py
 test/test_device_challenge.py
 test/test_device_challenge_request.py
@@ -1761,8 +1750,6 @@ test/test_group_kerberos_source_connection_request.py
 test/test_group_ldap_source_connection.py
 test/test_group_ldap_source_connection_request.py
 test/test_group_matching_mode_enum.py
-test/test_group_member.py
-test/test_group_member_request.py
 test/test_group_o_auth_source_connection.py
 test/test_group_o_auth_source_connection_request.py
 test/test_group_plex_source_connection.py
@@ -2005,6 +1992,8 @@ test/test_paginated_user_write_stage_list.py
 test/test_paginated_web_authn_device_list.py
 test/test_paginated_web_authn_device_type_list.py
 test/test_pagination.py
+test/test_partial_group.py
+test/test_partial_user.py
 test/test_password_challenge.py
 test/test_password_challenge_response_request.py
 test/test_password_expiry_policy.py
@@ -2263,7 +2252,6 @@ test/test_state_enum.py
 test/test_static_device.py
 test/test_static_device_request.py
 test/test_static_device_token.py
-test/test_static_device_token_request.py
 test/test_sub_mode_enum.py
 test/test_sync_object_model_enum.py
 test/test_sync_object_request.py
@@ -2305,8 +2293,6 @@ test/test_user_creation_mode_enum.py
 test/test_user_delete_stage.py
 test/test_user_delete_stage_request.py
 test/test_user_fields_enum.py
-test/test_user_group.py
-test/test_user_group_request.py
 test/test_user_kerberos_source_connection.py
 test/test_user_kerberos_source_connection_request.py
 test/test_user_ldap_source_connection.py
@@ -2345,6 +2331,5 @@ test/test_version_history.py
 test/test_web_authn_device.py
 test/test_web_authn_device_request.py
 test/test_web_authn_device_type.py
-test/test_web_authn_device_type_request.py
 test/test_worker.py
 tox.ini

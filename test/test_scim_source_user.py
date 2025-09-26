@@ -39,7 +39,7 @@ class TestSCIMSourceUser(unittest.TestCase):
                 id = '',
                 external_id = '',
                 user = 56,
-                user_obj = authentik_client.models.group_member.GroupMember(
+                user_obj = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
@@ -59,7 +59,7 @@ class TestSCIMSourceUser(unittest.TestCase):
             return SCIMSourceUser(
                 external_id = '',
                 user = 56,
-                user_obj = authentik_client.models.group_member.GroupMember(
+                user_obj = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 

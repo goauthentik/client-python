@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class SCIMSourceUser(BaseModel):
     id: Optional[StrictStr] = None
     external_id: StrictStr
     user: StrictInt
-    user_obj: GroupMember
+    user_obj: PartialUser
     source: UUID
     attributes: Optional[Dict[str, Any]] = None
     __properties: ClassVar[List[str]] = ["id", "external_id", "user", "user_obj", "source", "attributes"]
@@ -96,7 +96,7 @@ class SCIMSourceUser(BaseModel):
             "id": obj.get("id"),
             "external_id": obj.get("external_id"),
             "user": obj.get("user"),
-            "user_obj": GroupMember.from_dict(obj["user_obj"]) if obj.get("user_obj") is not None else None,
+            "user_obj": PartialUser.from_dict(obj["user_obj"]) if obj.get("user_obj") is not None else None,
             "source": obj.get("source"),
             "attributes": obj.get("attributes")
         })

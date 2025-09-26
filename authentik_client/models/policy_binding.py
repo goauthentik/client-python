@@ -22,9 +22,9 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
-from authentik_client.models.group import Group
+from authentik_client.models.partial_group import PartialGroup
+from authentik_client.models.partial_user import PartialUser
 from authentik_client.models.policy import Policy
-from authentik_client.models.user import User
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,8 +37,8 @@ class PolicyBinding(BaseModel):
     group: Optional[UUID] = None
     user: Optional[StrictInt] = None
     policy_obj: Policy
-    group_obj: Group
-    user_obj: User
+    group_obj: PartialGroup
+    user_obj: PartialUser
     target: UUID
     negate: Optional[StrictBool] = Field(default=None, description="Negates the outcome of the policy. Messages are unaffected.")
     enabled: Optional[StrictBool] = None
@@ -135,8 +135,8 @@ class PolicyBinding(BaseModel):
             "group": obj.get("group"),
             "user": obj.get("user"),
             "policy_obj": Policy.from_dict(obj["policy_obj"]) if obj.get("policy_obj") is not None else None,
-            "group_obj": Group.from_dict(obj["group_obj"]) if obj.get("group_obj") is not None else None,
-            "user_obj": User.from_dict(obj["user_obj"]) if obj.get("user_obj") is not None else None,
+            "group_obj": PartialGroup.from_dict(obj["group_obj"]) if obj.get("group_obj") is not None else None,
+            "user_obj": PartialUser.from_dict(obj["user_obj"]) if obj.get("user_obj") is not None else None,
             "target": obj.get("target"),
             "negate": obj.get("negate"),
             "enabled": obj.get("enabled"),

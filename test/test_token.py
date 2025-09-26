@@ -53,7 +53,7 @@ class TestToken(unittest.TestCase):
                         ''
                         ], 
                     groups_obj = [
-                        authentik_client.models.user_group.UserGroup(
+                        authentik_client.models.partial_group.PartialGroup(
                             pk = '', 
                             num_pk = 56, 
                             name = '', 
@@ -95,7 +95,7 @@ class TestToken(unittest.TestCase):
                         ''
                         ], 
                     groups_obj = [
-                        authentik_client.models.user_group.UserGroup(
+                        authentik_client.models.partial_group.PartialGroup(
                             pk = '', 
                             num_pk = 56, 
                             name = '', 

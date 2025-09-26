@@ -49,84 +49,27 @@ class TestPolicyBinding(unittest.TestCase):
                     verbose_name_plural = '', 
                     meta_model_name = '', 
                     bound_to = 56, ),
-                group_obj = authentik_client.models.group.Group(
+                group_obj = authentik_client.models.partial_group.PartialGroup(
                     pk = '', 
                     num_pk = 56, 
                     name = '', 
                     is_superuser = True, 
                     parent = '', 
                     parent_name = '', 
-                    users = [
-                        56
-                        ], 
-                    users_obj = [
-                        authentik_client.models.group_member.GroupMember(
-                            pk = 56, 
-                            username = 'A', 
-                            name = '', 
-                            is_active = True, 
-                            last_login = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            email = '', 
-                            attributes = {
-                                'key' : null
-                                }, 
-                            uid = '', )
-                        ], 
                     attributes = {
                         'key' : null
-                        }, 
-                    roles = [
-                        ''
-                        ], 
-                    roles_obj = [
-                        authentik_client.models.role.Role(
-                            pk = '', 
-                            name = '', )
-                        ], 
-                    children = [
-                        ''
-                        ], 
-                    children_obj = [
-                        authentik_client.models.group_child.GroupChild(
-                            pk = '', 
-                            name = '', 
-                            is_superuser = True, 
-                            group_uuid = '', )
-                        ], ),
-                user_obj = authentik_client.models.user.User(
+                        }, ),
+                user_obj = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
-                    username = '', 
+                    username = 'A', 
                     name = '', 
                     is_active = True, 
                     last_login = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    date_joined = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    is_superuser = True, 
-                    groups = [
-                        ''
-                        ], 
-                    groups_obj = [
-                        authentik_client.models.user_group.UserGroup(
-                            pk = '', 
-                            num_pk = 56, 
-                            name = '', 
-                            is_superuser = True, 
-                            parent = '', 
-                            parent_name = '', 
-                            attributes = {
-                                'key' : null
-                                }, )
-                        ], 
                     email = '', 
-                    avatar = '', 
                     attributes = {
                         'key' : null
                         }, 
-                    uid = '', 
-                    path = '', 
-                    type = 'internal', 
-                    uuid = '', 
-                    password_change_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    last_updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
+                    uid = '', ),
                 target = '',
                 negate = True,
                 enabled = True,
@@ -146,84 +89,27 @@ class TestPolicyBinding(unittest.TestCase):
                     verbose_name_plural = '', 
                     meta_model_name = '', 
                     bound_to = 56, ),
-                group_obj = authentik_client.models.group.Group(
+                group_obj = authentik_client.models.partial_group.PartialGroup(
                     pk = '', 
                     num_pk = 56, 
                     name = '', 
                     is_superuser = True, 
                     parent = '', 
                     parent_name = '', 
-                    users = [
-                        56
-                        ], 
-                    users_obj = [
-                        authentik_client.models.group_member.GroupMember(
-                            pk = 56, 
-                            username = 'A', 
-                            name = '', 
-                            is_active = True, 
-                            last_login = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            email = '', 
-                            attributes = {
-                                'key' : null
-                                }, 
-                            uid = '', )
-                        ], 
                     attributes = {
                         'key' : null
-                        }, 
-                    roles = [
-                        ''
-                        ], 
-                    roles_obj = [
-                        authentik_client.models.role.Role(
-                            pk = '', 
-                            name = '', )
-                        ], 
-                    children = [
-                        ''
-                        ], 
-                    children_obj = [
-                        authentik_client.models.group_child.GroupChild(
-                            pk = '', 
-                            name = '', 
-                            is_superuser = True, 
-                            group_uuid = '', )
-                        ], ),
-                user_obj = authentik_client.models.user.User(
+                        }, ),
+                user_obj = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
-                    username = '', 
+                    username = 'A', 
                     name = '', 
                     is_active = True, 
                     last_login = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    date_joined = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    is_superuser = True, 
-                    groups = [
-                        ''
-                        ], 
-                    groups_obj = [
-                        authentik_client.models.user_group.UserGroup(
-                            pk = '', 
-                            num_pk = 56, 
-                            name = '', 
-                            is_superuser = True, 
-                            parent = '', 
-                            parent_name = '', 
-                            attributes = {
-                                'key' : null
-                                }, )
-                        ], 
                     email = '', 
-                    avatar = '', 
                     attributes = {
                         'key' : null
                         }, 
-                    uid = '', 
-                    path = '', 
-                    type = 'internal', 
-                    uuid = '', 
-                    password_change_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    last_updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
+                    uid = '', ),
                 target = '',
                 order = -2147483648,
         )

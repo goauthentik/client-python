@@ -18,22 +18,33 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
-class UserGroupRequest(BaseModel):
+class PartialUser(BaseModel):
     """
-    Simplified Group Serializer for user's groups
+    Partial User Serializer, does not include child relations.
     """ # noqa: E501
-    name: Annotated[str, Field(min_length=1, strict=True)]
-    is_superuser: Optional[StrictBool] = Field(default=None, description="Users added to this group will be superusers.")
-    parent: Optional[UUID] = None
+    pk: StrictInt
+    username: Annotated[str, Field(strict=True, max_length=150)] = Field(description="Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.")
+    name: StrictStr = Field(description="User's display name.")
+    is_active: Optional[StrictBool] = Field(default=None, description="Designates whether this user should be treated as active. Unselect this instead of deleting accounts.")
+    last_login: Optional[datetime] = None
+    email: Optional[Annotated[str, Field(strict=True, max_length=254)]] = None
     attributes: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["name", "is_superuser", "parent", "attributes"]
+    uid: StrictStr
+    __properties: ClassVar[List[str]] = ["pk", "username", "name", "is_active", "last_login", "email", "attributes", "uid"]
+
+    @field_validator('username')
+    def username_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if not re.match(r"^[\w.@+-]+$", value):
+            raise ValueError(r"must validate the regular expression /^[\w.@+-]+$/")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +64,7 @@ class UserGroupRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of UserGroupRequest from a JSON string"""
+        """Create an instance of PartialUser from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -65,8 +76,12 @@ class UserGroupRequest(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
+            "pk",
+            "uid",
         ])
 
         _dict = self.model_dump(
@@ -74,16 +89,16 @@ class UserGroupRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if parent (nullable) is None
+        # set to None if last_login (nullable) is None
         # and model_fields_set contains the field
-        if self.parent is None and "parent" in self.model_fields_set:
-            _dict['parent'] = None
+        if self.last_login is None and "last_login" in self.model_fields_set:
+            _dict['last_login'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of UserGroupRequest from a dict"""
+        """Create an instance of PartialUser from a dict"""
         if obj is None:
             return None
 
@@ -91,10 +106,14 @@ class UserGroupRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "pk": obj.get("pk"),
+            "username": obj.get("username"),
             "name": obj.get("name"),
-            "is_superuser": obj.get("is_superuser"),
-            "parent": obj.get("parent"),
-            "attributes": obj.get("attributes")
+            "is_active": obj.get("is_active"),
+            "last_login": obj.get("last_login"),
+            "email": obj.get("email"),
+            "attributes": obj.get("attributes"),
+            "uid": obj.get("uid")
         })
         return _obj
 

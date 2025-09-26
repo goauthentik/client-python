@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from authentik_client.models.group_child import GroupChild
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 from authentik_client.models.role import Role
 from typing import Optional, Set
 from typing_extensions import Self
@@ -38,7 +38,7 @@ class Group(BaseModel):
     parent: Optional[UUID] = None
     parent_name: Optional[StrictStr]
     users: Optional[List[StrictInt]] = None
-    users_obj: Optional[List[GroupMember]]
+    users_obj: Optional[List[PartialUser]]
     attributes: Optional[Dict[str, Any]] = None
     roles: Optional[List[UUID]] = None
     roles_obj: List[Role]
@@ -157,7 +157,7 @@ class Group(BaseModel):
             "parent": obj.get("parent"),
             "parent_name": obj.get("parent_name"),
             "users": obj.get("users"),
-            "users_obj": [GroupMember.from_dict(_item) for _item in obj["users_obj"]] if obj.get("users_obj") is not None else None,
+            "users_obj": [PartialUser.from_dict(_item) for _item in obj["users_obj"]] if obj.get("users_obj") is not None else None,
             "attributes": obj.get("attributes"),
             "roles": obj.get("roles"),
             "roles_obj": [Role.from_dict(_item) for _item in obj["roles_obj"]] if obj.get("roles_obj") is not None else None,

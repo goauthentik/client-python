@@ -39,7 +39,7 @@ class TestSCIMSourceGroup(unittest.TestCase):
                 id = '',
                 external_id = '',
                 group = '',
-                group_obj = authentik_client.models.user_group.UserGroup(
+                group_obj = authentik_client.models.partial_group.PartialGroup(
                     pk = '', 
                     num_pk = 56, 
                     name = '', 
@@ -58,7 +58,7 @@ class TestSCIMSourceGroup(unittest.TestCase):
             return SCIMSourceGroup(
                 external_id = '',
                 group = '',
-                group_obj = authentik_client.models.user_group.UserGroup(
+                group_obj = authentik_client.models.partial_group.PartialGroup(
                     pk = '', 
                     num_pk = 56, 
                     name = '', 

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **parent** | **str** |  | [optional] 
 **parent_name** | **str** |  | [readonly] 
 **users** | **List[int]** |  | [optional] 
-**users_obj** | [**List[GroupMember]**](GroupMember.md) |  | [readonly] 
+**users_obj** | [**List[PartialUser]**](PartialUser.md) |  | [readonly] 
 **attributes** | **Dict[str, object]** |  | [optional] 
 **roles** | **List[str]** |  | [optional] 
 **roles_obj** | [**List[Role]**](Role.md) |  | [readonly] 

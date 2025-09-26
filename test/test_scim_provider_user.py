@@ -39,7 +39,7 @@ class TestSCIMProviderUser(unittest.TestCase):
                 id = '',
                 scim_id = '',
                 user = 56,
-                user_obj = authentik_client.models.group_member.GroupMember(
+                user_obj = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
@@ -60,7 +60,7 @@ class TestSCIMProviderUser(unittest.TestCase):
                 id = '',
                 scim_id = '',
                 user = 56,
-                user_obj = authentik_client.models.group_member.GroupMember(
+                user_obj = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 

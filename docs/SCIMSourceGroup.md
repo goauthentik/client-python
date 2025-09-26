@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **external_id** | **str** |  | 
 **group** | **str** |  | 
-**group_obj** | [**UserGroup**](UserGroup.md) |  | [readonly] 
+**group_obj** | [**PartialGroup**](PartialGroup.md) |  | [readonly] 
 **source** | **str** |  | 
 **attributes** | **Dict[str, object]** |  | [optional] 
 

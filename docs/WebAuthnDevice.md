@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **created_on** | **datetime** |  | [readonly] 
 **device_type** | [**WebAuthnDeviceType**](WebAuthnDeviceType.md) |  | [readonly] 
 **aaguid** | **str** |  | [readonly] 
-**user** | [**GroupMember**](GroupMember.md) |  | [readonly] 
+**user** | [**PartialUser**](PartialUser.md) |  | [readonly] 
 
 ## Example
 

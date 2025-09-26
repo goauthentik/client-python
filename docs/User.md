@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **date_joined** | **datetime** |  | [readonly] 
 **is_superuser** | **bool** |  | [readonly] 
 **groups** | **List[str]** |  | [optional] 
-**groups_obj** | [**List[UserGroup]**](UserGroup.md) |  | [readonly] 
+**groups_obj** | [**List[PartialGroup]**](PartialGroup.md) |  | [readonly] 
 **email** | **str** |  | [optional] 
 **avatar** | **str** | User&#39;s avatar, either a http/https URL or a data URI | [readonly] 
 **attributes** | **Dict[str, object]** |  | [optional] 

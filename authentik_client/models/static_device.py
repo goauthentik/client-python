@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from typing_extensions import Annotated
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 from authentik_client.models.static_device_token import StaticDeviceToken
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +33,7 @@ class StaticDevice(BaseModel):
     name: Annotated[str, Field(strict=True, max_length=64)] = Field(description="The human-readable name of this device.")
     token_set: List[StaticDeviceToken]
     pk: StrictInt
-    user: GroupMember
+    user: PartialUser
     __properties: ClassVar[List[str]] = ["name", "token_set", "pk", "user"]
 
     model_config = ConfigDict(
@@ -106,7 +106,7 @@ class StaticDevice(BaseModel):
             "name": obj.get("name"),
             "token_set": [StaticDeviceToken.from_dict(_item) for _item in obj["token_set"]] if obj.get("token_set") is not None else None,
             "pk": obj.get("pk"),
-            "user": GroupMember.from_dict(obj["user"]) if obj.get("user") is not None else None
+            "user": PartialUser.from_dict(obj["user"]) if obj.get("user") is not None else None
         })
         return _obj
 

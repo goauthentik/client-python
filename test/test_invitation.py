@@ -42,7 +42,7 @@ class TestInvitation(unittest.TestCase):
                 fixed_data = {
                     'key' : null
                     },
-                created_by = authentik_client.models.group_member.GroupMember(
+                created_by = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
@@ -81,7 +81,7 @@ class TestInvitation(unittest.TestCase):
             return Invitation(
                 pk = '',
                 name = 'z',
-                created_by = authentik_client.models.group_member.GroupMember(
+                created_by = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 

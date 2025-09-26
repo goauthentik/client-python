@@ -22,7 +22,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 from authentik_client.models.web_authn_device_type import WebAuthnDeviceType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -36,7 +36,7 @@ class WebAuthnDevice(BaseModel):
     created_on: datetime
     device_type: Optional[WebAuthnDeviceType]
     aaguid: StrictStr
-    user: GroupMember
+    user: PartialUser
     __properties: ClassVar[List[str]] = ["pk", "name", "created_on", "device_type", "aaguid", "user"]
 
     model_config = ConfigDict(
@@ -116,7 +116,7 @@ class WebAuthnDevice(BaseModel):
             "created_on": obj.get("created_on"),
             "device_type": WebAuthnDeviceType.from_dict(obj["device_type"]) if obj.get("device_type") is not None else None,
             "aaguid": obj.get("aaguid"),
-            "user": GroupMember.from_dict(obj["user"]) if obj.get("user") is not None else None
+            "user": PartialUser.from_dict(obj["user"]) if obj.get("user") is not None else None
         })
         return _obj
 

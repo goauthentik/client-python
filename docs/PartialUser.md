@@ -1,6 +1,6 @@
-# GroupMember
+# PartialUser
 
-Stripped down user serializer to show relevant users for groups
+Partial User Serializer, does not include child relations.
 
 ## Properties
 
@@ -18,19 +18,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of GroupMember from a JSON string
-group_member_instance = GroupMember.from_json(json)
+# create an instance of PartialUser from a JSON string
+partial_user_instance = PartialUser.from_json(json)
 # print the JSON string representation of the object
-print(GroupMember.to_json())
+print(PartialUser.to_json())
 
 # convert the object into a dict
-group_member_dict = group_member_instance.to_dict()
-# create an instance of GroupMember from a dict
-group_member_from_dict = GroupMember.from_dict(group_member_dict)
+partial_user_dict = partial_user_instance.to_dict()
+# create an instance of PartialUser from a dict
+partial_user_from_dict = PartialUser.from_dict(partial_user_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

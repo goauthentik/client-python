@@ -15,10 +15,10 @@
 
 import unittest
 
-from authentik_client.models.user_group import UserGroup
+from authentik_client.models.partial_group import PartialGroup
 
-class TestUserGroup(unittest.TestCase):
-    """UserGroup unit test stubs"""
+class TestPartialGroup(unittest.TestCase):
+    """PartialGroup unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestUserGroup(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserGroup:
-        """Test UserGroup
+    def make_instance(self, include_optional) -> PartialGroup:
+        """Test PartialGroup
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `UserGroup`
+        # uncomment below to create an instance of `PartialGroup`
         """
-        model = UserGroup()
+        model = PartialGroup()
         if include_optional:
-            return UserGroup(
+            return PartialGroup(
                 pk = '',
                 num_pk = 56,
                 name = '',
@@ -47,7 +47,7 @@ class TestUserGroup(unittest.TestCase):
                     }
             )
         else:
-            return UserGroup(
+            return PartialGroup(
                 pk = '',
                 num_pk = 56,
                 name = '',
@@ -55,8 +55,8 @@ class TestUserGroup(unittest.TestCase):
         )
         """
 
-    def testUserGroup(self):
-        """Test UserGroup"""
+    def testPartialGroup(self):
+        """Test PartialGroup"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class MicrosoftEntraProviderUser(BaseModel):
     id: UUID
     microsoft_id: StrictStr
     user: StrictInt
-    user_obj: GroupMember
+    user_obj: PartialUser
     provider: StrictInt
     attributes: Dict[str, Any]
     __properties: ClassVar[List[str]] = ["id", "microsoft_id", "user", "user_obj", "provider", "attributes"]
@@ -100,7 +100,7 @@ class MicrosoftEntraProviderUser(BaseModel):
             "id": obj.get("id"),
             "microsoft_id": obj.get("microsoft_id"),
             "user": obj.get("user"),
-            "user_obj": GroupMember.from_dict(obj["user_obj"]) if obj.get("user_obj") is not None else None,
+            "user_obj": PartialUser.from_dict(obj["user_obj"]) if obj.get("user_obj") is not None else None,
             "provider": obj.get("provider"),
             "attributes": obj.get("attributes")
         })

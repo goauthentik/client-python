@@ -79,7 +79,7 @@ class TestConnectionToken(unittest.TestCase):
                     auth_mode = 'static', 
                     launch_url = '', 
                     maximum_connections = -2147483648, ),
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
@@ -135,7 +135,7 @@ class TestConnectionToken(unittest.TestCase):
                     auth_mode = 'static', 
                     launch_url = '', 
                     maximum_connections = -2147483648, ),
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 

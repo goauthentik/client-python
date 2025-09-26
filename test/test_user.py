@@ -47,7 +47,7 @@ class TestUser(unittest.TestCase):
                     ''
                     ],
                 groups_obj = [
-                    authentik_client.models.user_group.UserGroup(
+                    authentik_client.models.partial_group.PartialGroup(
                         pk = '', 
                         num_pk = 56, 
                         name = '', 
@@ -78,7 +78,7 @@ class TestUser(unittest.TestCase):
                 date_joined = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 is_superuser = True,
                 groups_obj = [
-                    authentik_client.models.user_group.UserGroup(
+                    authentik_client.models.partial_group.PartialGroup(
                         pk = '', 
                         num_pk = 56, 
                         name = '', 

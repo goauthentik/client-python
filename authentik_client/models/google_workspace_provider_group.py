@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
-from authentik_client.models.user_group import UserGroup
+from authentik_client.models.partial_group import PartialGroup
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class GoogleWorkspaceProviderGroup(BaseModel):
     id: UUID
     google_id: StrictStr
     group: UUID
-    group_obj: UserGroup
+    group_obj: PartialGroup
     provider: StrictInt
     attributes: Dict[str, Any]
     __properties: ClassVar[List[str]] = ["id", "google_id", "group", "group_obj", "provider", "attributes"]
@@ -100,7 +100,7 @@ class GoogleWorkspaceProviderGroup(BaseModel):
             "id": obj.get("id"),
             "google_id": obj.get("google_id"),
             "group": obj.get("group"),
-            "group_obj": UserGroup.from_dict(obj["group_obj"]) if obj.get("group_obj") is not None else None,
+            "group_obj": PartialGroup.from_dict(obj["group_obj"]) if obj.get("group_obj") is not None else None,
             "provider": obj.get("provider"),
             "attributes": obj.get("attributes")
         })

@@ -43,7 +43,7 @@ class TestWebAuthnDevice(unittest.TestCase):
                     aaguid = '', 
                     description = '', ),
                 aaguid = '',
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
@@ -64,7 +64,7 @@ class TestWebAuthnDevice(unittest.TestCase):
                     aaguid = '', 
                     description = '', ),
                 aaguid = '',
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 

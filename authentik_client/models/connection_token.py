@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from authentik_client.models.endpoint import Endpoint
-from authentik_client.models.group_member import GroupMember
+from authentik_client.models.partial_user import PartialUser
 from authentik_client.models.rac_provider import RACProvider
 from typing import Optional, Set
 from typing_extensions import Self
@@ -36,7 +36,7 @@ class ConnectionToken(BaseModel):
     provider_obj: RACProvider
     endpoint: UUID
     endpoint_obj: Endpoint
-    user: GroupMember
+    user: PartialUser
     __properties: ClassVar[List[str]] = ["pk", "provider", "provider_obj", "endpoint", "endpoint_obj", "user"]
 
     model_config = ConfigDict(
@@ -110,7 +110,7 @@ class ConnectionToken(BaseModel):
             "provider_obj": RACProvider.from_dict(obj["provider_obj"]) if obj.get("provider_obj") is not None else None,
             "endpoint": obj.get("endpoint"),
             "endpoint_obj": Endpoint.from_dict(obj["endpoint_obj"]) if obj.get("endpoint_obj") is not None else None,
-            "user": GroupMember.from_dict(obj["user"]) if obj.get("user") is not None else None
+            "user": PartialUser.from_dict(obj["user"]) if obj.get("user") is not None else None
         })
         return _obj
 

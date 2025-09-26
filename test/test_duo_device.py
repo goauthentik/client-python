@@ -38,7 +38,7 @@ class TestDuoDevice(unittest.TestCase):
             return DuoDevice(
                 pk = 56,
                 name = '',
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
@@ -54,7 +54,7 @@ class TestDuoDevice(unittest.TestCase):
             return DuoDevice(
                 pk = 56,
                 name = '',
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 

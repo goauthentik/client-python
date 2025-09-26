@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **provider_obj** | [**RACProvider**](RACProvider.md) |  | [readonly] 
 **endpoint** | **str** |  | 
 **endpoint_obj** | [**Endpoint**](Endpoint.md) |  | [readonly] 
-**user** | [**GroupMember**](GroupMember.md) |  | [readonly] 
+**user** | [**PartialUser**](PartialUser.md) |  | [readonly] 
 
 ## Example
 

@@ -39,7 +39,7 @@ class TestSMSDevice(unittest.TestCase):
                 name = '',
                 pk = 56,
                 phone_number = '',
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
@@ -56,7 +56,7 @@ class TestSMSDevice(unittest.TestCase):
                 name = '',
                 pk = 56,
                 phone_number = '',
-                user = authentik_client.models.group_member.GroupMember(
+                user = authentik_client.models.partial_user.PartialUser(
                     pk = 56, 
                     username = 'A', 
                     name = '', 
