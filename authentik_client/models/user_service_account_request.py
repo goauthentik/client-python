@@ -27,7 +27,7 @@ from typing_extensions import Self
 
 class UserServiceAccountRequest(BaseModel):
     """
-    UserServiceAccountRequest
+    Payload to create a service account
     """ # noqa: E501
     name: Annotated[str, Field(min_length=1, strict=True)]
     create_group: Optional[StrictBool] = False

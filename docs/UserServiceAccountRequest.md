@@ -1,5 +1,6 @@
 # UserServiceAccountRequest
 
+Payload to create a service account
 
 ## Properties
 
