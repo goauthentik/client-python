@@ -169,7 +169,9 @@ class TestChallengeTypes(unittest.TestCase):
                 application_launch_url = '',
                 invalidation_flow_url = '',
                 brand_name = '',
-                body = ''
+                body = '',
+                bot_username = '',
+                request_message_access = True
             )
         else:
             return ChallengeTypes(
@@ -251,6 +253,8 @@ class TestChallengeTypes(unittest.TestCase):
                 to = '',
                 brand_name = '',
                 body = '',
+                bot_username = '',
+                request_message_access = True,
         )
         """
 

@@ -129,6 +129,14 @@
 
 * `AUTHENTIK_SOURCES_SCIM_DOT_SCIMSOURCEPROPERTYMAPPING` (value: `'authentik_sources_scim.scimsourcepropertymapping'`)
 
+* `AUTHENTIK_SOURCES_TELEGRAM_DOT_TELEGRAMSOURCE` (value: `'authentik_sources_telegram.telegramsource'`)
+
+* `AUTHENTIK_SOURCES_TELEGRAM_DOT_TELEGRAMSOURCEPROPERTYMAPPING` (value: `'authentik_sources_telegram.telegramsourcepropertymapping'`)
+
+* `AUTHENTIK_SOURCES_TELEGRAM_DOT_USERTELEGRAMSOURCECONNECTION` (value: `'authentik_sources_telegram.usertelegramsourceconnection'`)
+
+* `AUTHENTIK_SOURCES_TELEGRAM_DOT_GROUPTELEGRAMSOURCECONNECTION` (value: `'authentik_sources_telegram.grouptelegramsourceconnection'`)
+
 * `AUTHENTIK_STAGES_AUTHENTICATOR_DUO_DOT_AUTHENTICATORDUOSTAGE` (value: `'authentik_stages_authenticator_duo.authenticatorduostage'`)
 
 * `AUTHENTIK_STAGES_AUTHENTICATOR_DUO_DOT_DUODEVICE` (value: `'authentik_stages_authenticator_duo.duodevice'`)

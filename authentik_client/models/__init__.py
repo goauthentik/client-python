@@ -207,6 +207,8 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.group_saml_source_connection_request import GroupSAMLSourceConnectionRequest
     from authentik_client.models.group_source_connection import GroupSourceConnection
     from authentik_client.models.group_source_connection_request import GroupSourceConnectionRequest
+    from authentik_client.models.group_telegram_source_connection import GroupTelegramSourceConnection
+    from authentik_client.models.group_telegram_source_connection_request import GroupTelegramSourceConnectionRequest
     from authentik_client.models.identification_challenge import IdentificationChallenge
     from authentik_client.models.identification_challenge_response_request import IdentificationChallengeResponseRequest
     from authentik_client.models.identification_stage import IdentificationStage
@@ -344,6 +346,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.paginated_group_plex_source_connection_list import PaginatedGroupPlexSourceConnectionList
     from authentik_client.models.paginated_group_saml_source_connection_list import PaginatedGroupSAMLSourceConnectionList
     from authentik_client.models.paginated_group_source_connection_list import PaginatedGroupSourceConnectionList
+    from authentik_client.models.paginated_group_telegram_source_connection_list import PaginatedGroupTelegramSourceConnectionList
     from authentik_client.models.paginated_identification_stage_list import PaginatedIdentificationStageList
     from authentik_client.models.paginated_initial_permissions_list import PaginatedInitialPermissionsList
     from authentik_client.models.paginated_invitation_list import PaginatedInvitationList
@@ -417,6 +420,8 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.paginated_static_device_list import PaginatedStaticDeviceList
     from authentik_client.models.paginated_totp_device_list import PaginatedTOTPDeviceList
     from authentik_client.models.paginated_task_list import PaginatedTaskList
+    from authentik_client.models.paginated_telegram_source_list import PaginatedTelegramSourceList
+    from authentik_client.models.paginated_telegram_source_property_mapping_list import PaginatedTelegramSourcePropertyMappingList
     from authentik_client.models.paginated_tenant_list import PaginatedTenantList
     from authentik_client.models.paginated_token_list import PaginatedTokenList
     from authentik_client.models.paginated_token_model_list import PaginatedTokenModelList
@@ -433,6 +438,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.paginated_user_plex_source_connection_list import PaginatedUserPlexSourceConnectionList
     from authentik_client.models.paginated_user_saml_source_connection_list import PaginatedUserSAMLSourceConnectionList
     from authentik_client.models.paginated_user_source_connection_list import PaginatedUserSourceConnectionList
+    from authentik_client.models.paginated_user_telegram_source_connection_list import PaginatedUserTelegramSourceConnectionList
     from authentik_client.models.paginated_user_write_stage_list import PaginatedUserWriteStageList
     from authentik_client.models.paginated_web_authn_device_list import PaginatedWebAuthnDeviceList
     from authentik_client.models.paginated_web_authn_device_type_list import PaginatedWebAuthnDeviceTypeList
@@ -490,6 +496,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.patched_group_request import PatchedGroupRequest
     from authentik_client.models.patched_group_saml_source_connection_request import PatchedGroupSAMLSourceConnectionRequest
     from authentik_client.models.patched_group_source_connection_request import PatchedGroupSourceConnectionRequest
+    from authentik_client.models.patched_group_telegram_source_connection_request import PatchedGroupTelegramSourceConnectionRequest
     from authentik_client.models.patched_identification_stage_request import PatchedIdentificationStageRequest
     from authentik_client.models.patched_initial_permissions_request import PatchedInitialPermissionsRequest
     from authentik_client.models.patched_invitation_request import PatchedInvitationRequest
@@ -548,6 +555,8 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.patched_source_stage_request import PatchedSourceStageRequest
     from authentik_client.models.patched_static_device_request import PatchedStaticDeviceRequest
     from authentik_client.models.patched_totp_device_request import PatchedTOTPDeviceRequest
+    from authentik_client.models.patched_telegram_source_property_mapping_request import PatchedTelegramSourcePropertyMappingRequest
+    from authentik_client.models.patched_telegram_source_request import PatchedTelegramSourceRequest
     from authentik_client.models.patched_tenant_request import PatchedTenantRequest
     from authentik_client.models.patched_token_request import PatchedTokenRequest
     from authentik_client.models.patched_unique_password_policy_request import PatchedUniquePasswordPolicyRequest
@@ -561,6 +570,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.patched_user_request import PatchedUserRequest
     from authentik_client.models.patched_user_saml_source_connection_request import PatchedUserSAMLSourceConnectionRequest
     from authentik_client.models.patched_user_source_connection_request import PatchedUserSourceConnectionRequest
+    from authentik_client.models.patched_user_telegram_source_connection_request import PatchedUserTelegramSourceConnectionRequest
     from authentik_client.models.patched_user_write_stage_request import PatchedUserWriteStageRequest
     from authentik_client.models.patched_web_authn_device_request import PatchedWebAuthnDeviceRequest
     from authentik_client.models.permission import Permission
@@ -698,6 +708,12 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.totp_device_request import TOTPDeviceRequest
     from authentik_client.models.task import Task
     from authentik_client.models.task_aggregated_status_enum import TaskAggregatedStatusEnum
+    from authentik_client.models.telegram_challenge_response_request import TelegramChallengeResponseRequest
+    from authentik_client.models.telegram_login_challenge import TelegramLoginChallenge
+    from authentik_client.models.telegram_source import TelegramSource
+    from authentik_client.models.telegram_source_property_mapping import TelegramSourcePropertyMapping
+    from authentik_client.models.telegram_source_property_mapping_request import TelegramSourcePropertyMappingRequest
+    from authentik_client.models.telegram_source_request import TelegramSourceRequest
     from authentik_client.models.tenant import Tenant
     from authentik_client.models.tenant_admin_group_request_request import TenantAdminGroupRequestRequest
     from authentik_client.models.tenant_recovery_key_request_request import TenantRecoveryKeyRequestRequest
@@ -754,6 +770,8 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.user_setting import UserSetting
     from authentik_client.models.user_source_connection import UserSourceConnection
     from authentik_client.models.user_source_connection_request import UserSourceConnectionRequest
+    from authentik_client.models.user_telegram_source_connection import UserTelegramSourceConnection
+    from authentik_client.models.user_telegram_source_connection_request import UserTelegramSourceConnectionRequest
     from authentik_client.models.user_type_enum import UserTypeEnum
     from authentik_client.models.user_verification_enum import UserVerificationEnum
     from authentik_client.models.user_write_stage import UserWriteStage
@@ -964,6 +982,8 @@ from authentik_client.models.group_saml_source_connection import GroupSAMLSource
 from authentik_client.models.group_saml_source_connection_request import GroupSAMLSourceConnectionRequest
 from authentik_client.models.group_source_connection import GroupSourceConnection
 from authentik_client.models.group_source_connection_request import GroupSourceConnectionRequest
+from authentik_client.models.group_telegram_source_connection import GroupTelegramSourceConnection
+from authentik_client.models.group_telegram_source_connection_request import GroupTelegramSourceConnectionRequest
 from authentik_client.models.identification_challenge import IdentificationChallenge
 from authentik_client.models.identification_challenge_response_request import IdentificationChallengeResponseRequest
 from authentik_client.models.identification_stage import IdentificationStage
@@ -1101,6 +1121,7 @@ from authentik_client.models.paginated_group_o_auth_source_connection_list impor
 from authentik_client.models.paginated_group_plex_source_connection_list import PaginatedGroupPlexSourceConnectionList
 from authentik_client.models.paginated_group_saml_source_connection_list import PaginatedGroupSAMLSourceConnectionList
 from authentik_client.models.paginated_group_source_connection_list import PaginatedGroupSourceConnectionList
+from authentik_client.models.paginated_group_telegram_source_connection_list import PaginatedGroupTelegramSourceConnectionList
 from authentik_client.models.paginated_identification_stage_list import PaginatedIdentificationStageList
 from authentik_client.models.paginated_initial_permissions_list import PaginatedInitialPermissionsList
 from authentik_client.models.paginated_invitation_list import PaginatedInvitationList
@@ -1174,6 +1195,8 @@ from authentik_client.models.paginated_stage_list import PaginatedStageList
 from authentik_client.models.paginated_static_device_list import PaginatedStaticDeviceList
 from authentik_client.models.paginated_totp_device_list import PaginatedTOTPDeviceList
 from authentik_client.models.paginated_task_list import PaginatedTaskList
+from authentik_client.models.paginated_telegram_source_list import PaginatedTelegramSourceList
+from authentik_client.models.paginated_telegram_source_property_mapping_list import PaginatedTelegramSourcePropertyMappingList
 from authentik_client.models.paginated_tenant_list import PaginatedTenantList
 from authentik_client.models.paginated_token_list import PaginatedTokenList
 from authentik_client.models.paginated_token_model_list import PaginatedTokenModelList
@@ -1190,6 +1213,7 @@ from authentik_client.models.paginated_user_o_auth_source_connection_list import
 from authentik_client.models.paginated_user_plex_source_connection_list import PaginatedUserPlexSourceConnectionList
 from authentik_client.models.paginated_user_saml_source_connection_list import PaginatedUserSAMLSourceConnectionList
 from authentik_client.models.paginated_user_source_connection_list import PaginatedUserSourceConnectionList
+from authentik_client.models.paginated_user_telegram_source_connection_list import PaginatedUserTelegramSourceConnectionList
 from authentik_client.models.paginated_user_write_stage_list import PaginatedUserWriteStageList
 from authentik_client.models.paginated_web_authn_device_list import PaginatedWebAuthnDeviceList
 from authentik_client.models.paginated_web_authn_device_type_list import PaginatedWebAuthnDeviceTypeList
@@ -1247,6 +1271,7 @@ from authentik_client.models.patched_group_plex_source_connection_request import
 from authentik_client.models.patched_group_request import PatchedGroupRequest
 from authentik_client.models.patched_group_saml_source_connection_request import PatchedGroupSAMLSourceConnectionRequest
 from authentik_client.models.patched_group_source_connection_request import PatchedGroupSourceConnectionRequest
+from authentik_client.models.patched_group_telegram_source_connection_request import PatchedGroupTelegramSourceConnectionRequest
 from authentik_client.models.patched_identification_stage_request import PatchedIdentificationStageRequest
 from authentik_client.models.patched_initial_permissions_request import PatchedInitialPermissionsRequest
 from authentik_client.models.patched_invitation_request import PatchedInvitationRequest
@@ -1305,6 +1330,8 @@ from authentik_client.models.patched_settings_request_flags import PatchedSettin
 from authentik_client.models.patched_source_stage_request import PatchedSourceStageRequest
 from authentik_client.models.patched_static_device_request import PatchedStaticDeviceRequest
 from authentik_client.models.patched_totp_device_request import PatchedTOTPDeviceRequest
+from authentik_client.models.patched_telegram_source_property_mapping_request import PatchedTelegramSourcePropertyMappingRequest
+from authentik_client.models.patched_telegram_source_request import PatchedTelegramSourceRequest
 from authentik_client.models.patched_tenant_request import PatchedTenantRequest
 from authentik_client.models.patched_token_request import PatchedTokenRequest
 from authentik_client.models.patched_unique_password_policy_request import PatchedUniquePasswordPolicyRequest
@@ -1318,6 +1345,7 @@ from authentik_client.models.patched_user_plex_source_connection_request import 
 from authentik_client.models.patched_user_request import PatchedUserRequest
 from authentik_client.models.patched_user_saml_source_connection_request import PatchedUserSAMLSourceConnectionRequest
 from authentik_client.models.patched_user_source_connection_request import PatchedUserSourceConnectionRequest
+from authentik_client.models.patched_user_telegram_source_connection_request import PatchedUserTelegramSourceConnectionRequest
 from authentik_client.models.patched_user_write_stage_request import PatchedUserWriteStageRequest
 from authentik_client.models.patched_web_authn_device_request import PatchedWebAuthnDeviceRequest
 from authentik_client.models.permission import Permission
@@ -1455,6 +1483,12 @@ from authentik_client.models.totp_device import TOTPDevice
 from authentik_client.models.totp_device_request import TOTPDeviceRequest
 from authentik_client.models.task import Task
 from authentik_client.models.task_aggregated_status_enum import TaskAggregatedStatusEnum
+from authentik_client.models.telegram_challenge_response_request import TelegramChallengeResponseRequest
+from authentik_client.models.telegram_login_challenge import TelegramLoginChallenge
+from authentik_client.models.telegram_source import TelegramSource
+from authentik_client.models.telegram_source_property_mapping import TelegramSourcePropertyMapping
+from authentik_client.models.telegram_source_property_mapping_request import TelegramSourcePropertyMappingRequest
+from authentik_client.models.telegram_source_request import TelegramSourceRequest
 from authentik_client.models.tenant import Tenant
 from authentik_client.models.tenant_admin_group_request_request import TenantAdminGroupRequestRequest
 from authentik_client.models.tenant_recovery_key_request_request import TenantRecoveryKeyRequestRequest
@@ -1511,6 +1545,8 @@ from authentik_client.models.user_service_account_response import UserServiceAcc
 from authentik_client.models.user_setting import UserSetting
 from authentik_client.models.user_source_connection import UserSourceConnection
 from authentik_client.models.user_source_connection_request import UserSourceConnectionRequest
+from authentik_client.models.user_telegram_source_connection import UserTelegramSourceConnection
+from authentik_client.models.user_telegram_source_connection_request import UserTelegramSourceConnectionRequest
 from authentik_client.models.user_type_enum import UserTypeEnum
 from authentik_client.models.user_verification_enum import UserVerificationEnum
 from authentik_client.models.user_write_stage import UserWriteStage

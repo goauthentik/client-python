@@ -321,6 +321,48 @@ class TestSourcesApi(unittest.TestCase):
         """
         pass
 
+    def test_sources_group_connections_telegram_create(self) -> None:
+        """Test case for sources_group_connections_telegram_create
+
+        """
+        pass
+
+    def test_sources_group_connections_telegram_destroy(self) -> None:
+        """Test case for sources_group_connections_telegram_destroy
+
+        """
+        pass
+
+    def test_sources_group_connections_telegram_list(self) -> None:
+        """Test case for sources_group_connections_telegram_list
+
+        """
+        pass
+
+    def test_sources_group_connections_telegram_partial_update(self) -> None:
+        """Test case for sources_group_connections_telegram_partial_update
+
+        """
+        pass
+
+    def test_sources_group_connections_telegram_retrieve(self) -> None:
+        """Test case for sources_group_connections_telegram_retrieve
+
+        """
+        pass
+
+    def test_sources_group_connections_telegram_update(self) -> None:
+        """Test case for sources_group_connections_telegram_update
+
+        """
+        pass
+
+    def test_sources_group_connections_telegram_used_by_list(self) -> None:
+        """Test case for sources_group_connections_telegram_used_by_list
+
+        """
+        pass
+
     def test_sources_kerberos_create(self) -> None:
         """Test case for sources_kerberos_create
 
@@ -699,6 +741,48 @@ class TestSourcesApi(unittest.TestCase):
         """
         pass
 
+    def test_sources_telegram_create(self) -> None:
+        """Test case for sources_telegram_create
+
+        """
+        pass
+
+    def test_sources_telegram_destroy(self) -> None:
+        """Test case for sources_telegram_destroy
+
+        """
+        pass
+
+    def test_sources_telegram_list(self) -> None:
+        """Test case for sources_telegram_list
+
+        """
+        pass
+
+    def test_sources_telegram_partial_update(self) -> None:
+        """Test case for sources_telegram_partial_update
+
+        """
+        pass
+
+    def test_sources_telegram_retrieve(self) -> None:
+        """Test case for sources_telegram_retrieve
+
+        """
+        pass
+
+    def test_sources_telegram_update(self) -> None:
+        """Test case for sources_telegram_update
+
+        """
+        pass
+
+    def test_sources_telegram_used_by_list(self) -> None:
+        """Test case for sources_telegram_used_by_list
+
+        """
+        pass
+
     def test_sources_user_connections_all_destroy(self) -> None:
         """Test case for sources_user_connections_all_destroy
 
@@ -941,6 +1025,48 @@ class TestSourcesApi(unittest.TestCase):
 
     def test_sources_user_connections_saml_used_by_list(self) -> None:
         """Test case for sources_user_connections_saml_used_by_list
+
+        """
+        pass
+
+    def test_sources_user_connections_telegram_create(self) -> None:
+        """Test case for sources_user_connections_telegram_create
+
+        """
+        pass
+
+    def test_sources_user_connections_telegram_destroy(self) -> None:
+        """Test case for sources_user_connections_telegram_destroy
+
+        """
+        pass
+
+    def test_sources_user_connections_telegram_list(self) -> None:
+        """Test case for sources_user_connections_telegram_list
+
+        """
+        pass
+
+    def test_sources_user_connections_telegram_partial_update(self) -> None:
+        """Test case for sources_user_connections_telegram_partial_update
+
+        """
+        pass
+
+    def test_sources_user_connections_telegram_retrieve(self) -> None:
+        """Test case for sources_user_connections_telegram_retrieve
+
+        """
+        pass
+
+    def test_sources_user_connections_telegram_update(self) -> None:
+        """Test case for sources_user_connections_telegram_update
+
+        """
+        pass
+
+    def test_sources_user_connections_telegram_used_by_list(self) -> None:
+        """Test case for sources_user_connections_telegram_used_by_list
 
         """
         pass

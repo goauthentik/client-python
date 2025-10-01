@@ -19,6 +19,13 @@ Name | Type | Description | Notes
 **password** | **str** |  | 
 **captcha_token** | **str** |  | [optional] 
 **to** | **str** |  | 
+**id** | **int** |  | 
+**first_name** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
+**photo_url** | **str** |  | [optional] 
+**auth_date** | **int** |  | 
+**hash** | **str** |  | 
 **remember_me** | **bool** |  | 
 
 ## Example

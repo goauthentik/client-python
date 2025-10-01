@@ -651,6 +651,48 @@ class TestPropertymappingsApi(unittest.TestCase):
         """
         pass
 
+    def test_propertymappings_source_telegram_create(self) -> None:
+        """Test case for propertymappings_source_telegram_create
+
+        """
+        pass
+
+    def test_propertymappings_source_telegram_destroy(self) -> None:
+        """Test case for propertymappings_source_telegram_destroy
+
+        """
+        pass
+
+    def test_propertymappings_source_telegram_list(self) -> None:
+        """Test case for propertymappings_source_telegram_list
+
+        """
+        pass
+
+    def test_propertymappings_source_telegram_partial_update(self) -> None:
+        """Test case for propertymappings_source_telegram_partial_update
+
+        """
+        pass
+
+    def test_propertymappings_source_telegram_retrieve(self) -> None:
+        """Test case for propertymappings_source_telegram_retrieve
+
+        """
+        pass
+
+    def test_propertymappings_source_telegram_update(self) -> None:
+        """Test case for propertymappings_source_telegram_update
+
+        """
+        pass
+
+    def test_propertymappings_source_telegram_used_by_list(self) -> None:
+        """Test case for propertymappings_source_telegram_used_by_list
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -63,6 +63,8 @@ Name | Type | Description | Notes
 **invalidation_flow_url** | **str** |  | [optional] 
 **brand_name** | **str** |  | 
 **body** | **str** |  | 
+**bot_username** | **str** | Telegram bot username | 
+**request_message_access** | **bool** |  | 
 
 ## Example
 

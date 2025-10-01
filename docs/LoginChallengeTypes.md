@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **flow_info** | [**ContextualFlowInfo**](ContextualFlowInfo.md) |  | [optional] 
-**component** | **str** |  | [optional] [default to 'ak-source-plex']
+**component** | **str** |  | [optional] [default to 'ak-source-telegram']
 **response_errors** | **Dict[str, List[ErrorDetail]]** |  | [optional] 
 **to** | **str** |  | 
 **client_id** | **str** |  | 
@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **redirect_uri** | **str** |  | 
 **state** | **str** |  | 
 **slug** | **str** |  | 
+**bot_username** | **str** | Telegram bot username | 
+**request_message_access** | **bool** |  | 
 
 ## Example
 

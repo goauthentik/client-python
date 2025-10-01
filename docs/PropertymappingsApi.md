@@ -108,6 +108,13 @@ Method | HTTP request | Description
 [**propertymappings_source_scim_retrieve**](PropertymappingsApi.md#propertymappings_source_scim_retrieve) | **GET** /propertymappings/source/scim/{pm_uuid}/ | 
 [**propertymappings_source_scim_update**](PropertymappingsApi.md#propertymappings_source_scim_update) | **PUT** /propertymappings/source/scim/{pm_uuid}/ | 
 [**propertymappings_source_scim_used_by_list**](PropertymappingsApi.md#propertymappings_source_scim_used_by_list) | **GET** /propertymappings/source/scim/{pm_uuid}/used_by/ | 
+[**propertymappings_source_telegram_create**](PropertymappingsApi.md#propertymappings_source_telegram_create) | **POST** /propertymappings/source/telegram/ | 
+[**propertymappings_source_telegram_destroy**](PropertymappingsApi.md#propertymappings_source_telegram_destroy) | **DELETE** /propertymappings/source/telegram/{pm_uuid}/ | 
+[**propertymappings_source_telegram_list**](PropertymappingsApi.md#propertymappings_source_telegram_list) | **GET** /propertymappings/source/telegram/ | 
+[**propertymappings_source_telegram_partial_update**](PropertymappingsApi.md#propertymappings_source_telegram_partial_update) | **PATCH** /propertymappings/source/telegram/{pm_uuid}/ | 
+[**propertymappings_source_telegram_retrieve**](PropertymappingsApi.md#propertymappings_source_telegram_retrieve) | **GET** /propertymappings/source/telegram/{pm_uuid}/ | 
+[**propertymappings_source_telegram_update**](PropertymappingsApi.md#propertymappings_source_telegram_update) | **PUT** /propertymappings/source/telegram/{pm_uuid}/ | 
+[**propertymappings_source_telegram_used_by_list**](PropertymappingsApi.md#propertymappings_source_telegram_used_by_list) | **GET** /propertymappings/source/telegram/{pm_uuid}/used_by/ | 
 
 
 # **propertymappings_all_destroy**
@@ -8332,6 +8339,561 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pm_uuid** | **str**| A UUID string identifying this SCIM Source Property Mapping. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_telegram_create**
+> TelegramSourcePropertyMapping propertymappings_source_telegram_create(telegram_source_property_mapping_request)
+
+TelegramSourcePropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.telegram_source_property_mapping import TelegramSourcePropertyMapping
+from authentik_client.models.telegram_source_property_mapping_request import TelegramSourcePropertyMappingRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.PropertymappingsApi(api_client)
+    telegram_source_property_mapping_request = authentik_client.TelegramSourcePropertyMappingRequest() # TelegramSourcePropertyMappingRequest | 
+
+    try:
+        api_response = api_instance.propertymappings_source_telegram_create(telegram_source_property_mapping_request)
+        print("The response of PropertymappingsApi->propertymappings_source_telegram_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_telegram_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **telegram_source_property_mapping_request** | [**TelegramSourcePropertyMappingRequest**](TelegramSourcePropertyMappingRequest.md)|  | 
+
+### Return type
+
+[**TelegramSourcePropertyMapping**](TelegramSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_telegram_destroy**
+> propertymappings_source_telegram_destroy(pm_uuid)
+
+TelegramSourcePropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+
+    try:
+        api_instance.propertymappings_source_telegram_destroy(pm_uuid)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_telegram_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_telegram_list**
+> PaginatedTelegramSourcePropertyMappingList propertymappings_source_telegram_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+TelegramSourcePropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_telegram_source_property_mapping_list import PaginatedTelegramSourcePropertyMappingList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.PropertymappingsApi(api_client)
+    managed = ['managed_example'] # List[str] |  (optional)
+    managed__isnull = True # bool |  (optional)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = api_instance.propertymappings_source_telegram_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of PropertymappingsApi->propertymappings_source_telegram_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_telegram_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **managed** | [**List[str]**](str.md)|  | [optional] 
+ **managed__isnull** | **bool**|  | [optional] 
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedTelegramSourcePropertyMappingList**](PaginatedTelegramSourcePropertyMappingList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_telegram_partial_update**
+> TelegramSourcePropertyMapping propertymappings_source_telegram_partial_update(pm_uuid, patched_telegram_source_property_mapping_request=patched_telegram_source_property_mapping_request)
+
+TelegramSourcePropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.patched_telegram_source_property_mapping_request import PatchedTelegramSourcePropertyMappingRequest
+from authentik_client.models.telegram_source_property_mapping import TelegramSourcePropertyMapping
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+    patched_telegram_source_property_mapping_request = authentik_client.PatchedTelegramSourcePropertyMappingRequest() # PatchedTelegramSourcePropertyMappingRequest |  (optional)
+
+    try:
+        api_response = api_instance.propertymappings_source_telegram_partial_update(pm_uuid, patched_telegram_source_property_mapping_request=patched_telegram_source_property_mapping_request)
+        print("The response of PropertymappingsApi->propertymappings_source_telegram_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_telegram_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+ **patched_telegram_source_property_mapping_request** | [**PatchedTelegramSourcePropertyMappingRequest**](PatchedTelegramSourcePropertyMappingRequest.md)|  | [optional] 
+
+### Return type
+
+[**TelegramSourcePropertyMapping**](TelegramSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_telegram_retrieve**
+> TelegramSourcePropertyMapping propertymappings_source_telegram_retrieve(pm_uuid)
+
+TelegramSourcePropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.telegram_source_property_mapping import TelegramSourcePropertyMapping
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+
+    try:
+        api_response = api_instance.propertymappings_source_telegram_retrieve(pm_uuid)
+        print("The response of PropertymappingsApi->propertymappings_source_telegram_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_telegram_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+
+### Return type
+
+[**TelegramSourcePropertyMapping**](TelegramSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_telegram_update**
+> TelegramSourcePropertyMapping propertymappings_source_telegram_update(pm_uuid, telegram_source_property_mapping_request)
+
+TelegramSourcePropertyMapping Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.telegram_source_property_mapping import TelegramSourcePropertyMapping
+from authentik_client.models.telegram_source_property_mapping_request import TelegramSourcePropertyMappingRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+    telegram_source_property_mapping_request = authentik_client.TelegramSourcePropertyMappingRequest() # TelegramSourcePropertyMappingRequest | 
+
+    try:
+        api_response = api_instance.propertymappings_source_telegram_update(pm_uuid, telegram_source_property_mapping_request)
+        print("The response of PropertymappingsApi->propertymappings_source_telegram_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_telegram_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+ **telegram_source_property_mapping_request** | [**TelegramSourcePropertyMappingRequest**](TelegramSourcePropertyMappingRequest.md)|  | 
+
+### Return type
+
+[**TelegramSourcePropertyMapping**](TelegramSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **propertymappings_source_telegram_used_by_list**
+> List[UsedBy] propertymappings_source_telegram_used_by_list(pm_uuid)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.used_by import UsedBy
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.PropertymappingsApi(api_client)
+    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+
+    try:
+        api_response = api_instance.propertymappings_source_telegram_used_by_list(pm_uuid)
+        print("The response of PropertymappingsApi->propertymappings_source_telegram_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PropertymappingsApi->propertymappings_source_telegram_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
 
 ### Return type
 

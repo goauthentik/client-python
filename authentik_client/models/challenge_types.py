@@ -43,12 +43,13 @@ from authentik_client.models.prompt_challenge import PromptChallenge
 from authentik_client.models.redirect_challenge import RedirectChallenge
 from authentik_client.models.session_end_challenge import SessionEndChallenge
 from authentik_client.models.shell_challenge import ShellChallenge
+from authentik_client.models.telegram_login_challenge import TelegramLoginChallenge
 from authentik_client.models.user_login_challenge import UserLoginChallenge
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-CHALLENGETYPES_ONE_OF_SCHEMAS = ["AccessDeniedChallenge", "AppleLoginChallenge", "AuthenticatorDuoChallenge", "AuthenticatorEmailChallenge", "AuthenticatorSMSChallenge", "AuthenticatorStaticChallenge", "AuthenticatorTOTPChallenge", "AuthenticatorValidationChallenge", "AuthenticatorWebAuthnChallenge", "AutosubmitChallenge", "CaptchaChallenge", "ConsentChallenge", "DummyChallenge", "EmailChallenge", "FlowErrorChallenge", "FrameChallenge", "IdentificationChallenge", "OAuthDeviceCodeChallenge", "OAuthDeviceCodeFinishChallenge", "PasswordChallenge", "PlexAuthenticationChallenge", "PromptChallenge", "RedirectChallenge", "SessionEndChallenge", "ShellChallenge", "UserLoginChallenge"]
+CHALLENGETYPES_ONE_OF_SCHEMAS = ["AccessDeniedChallenge", "AppleLoginChallenge", "AuthenticatorDuoChallenge", "AuthenticatorEmailChallenge", "AuthenticatorSMSChallenge", "AuthenticatorStaticChallenge", "AuthenticatorTOTPChallenge", "AuthenticatorValidationChallenge", "AuthenticatorWebAuthnChallenge", "AutosubmitChallenge", "CaptchaChallenge", "ConsentChallenge", "DummyChallenge", "EmailChallenge", "FlowErrorChallenge", "FrameChallenge", "IdentificationChallenge", "OAuthDeviceCodeChallenge", "OAuthDeviceCodeFinishChallenge", "PasswordChallenge", "PlexAuthenticationChallenge", "PromptChallenge", "RedirectChallenge", "SessionEndChallenge", "ShellChallenge", "TelegramLoginChallenge", "UserLoginChallenge"]
 
 class ChallengeTypes(BaseModel):
     """
@@ -104,10 +105,12 @@ class ChallengeTypes(BaseModel):
     oneof_schema_24_validator: Optional[SessionEndChallenge] = None
     # data type: ShellChallenge
     oneof_schema_25_validator: Optional[ShellChallenge] = None
+    # data type: TelegramLoginChallenge
+    oneof_schema_26_validator: Optional[TelegramLoginChallenge] = None
     # data type: UserLoginChallenge
-    oneof_schema_26_validator: Optional[UserLoginChallenge] = None
-    actual_instance: Optional[Union[AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, UserLoginChallenge]] = None
-    one_of_schemas: Set[str] = { "AccessDeniedChallenge", "AppleLoginChallenge", "AuthenticatorDuoChallenge", "AuthenticatorEmailChallenge", "AuthenticatorSMSChallenge", "AuthenticatorStaticChallenge", "AuthenticatorTOTPChallenge", "AuthenticatorValidationChallenge", "AuthenticatorWebAuthnChallenge", "AutosubmitChallenge", "CaptchaChallenge", "ConsentChallenge", "DummyChallenge", "EmailChallenge", "FlowErrorChallenge", "FrameChallenge", "IdentificationChallenge", "OAuthDeviceCodeChallenge", "OAuthDeviceCodeFinishChallenge", "PasswordChallenge", "PlexAuthenticationChallenge", "PromptChallenge", "RedirectChallenge", "SessionEndChallenge", "ShellChallenge", "UserLoginChallenge" }
+    oneof_schema_27_validator: Optional[UserLoginChallenge] = None
+    actual_instance: Optional[Union[AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, TelegramLoginChallenge, UserLoginChallenge]] = None
+    one_of_schemas: Set[str] = { "AccessDeniedChallenge", "AppleLoginChallenge", "AuthenticatorDuoChallenge", "AuthenticatorEmailChallenge", "AuthenticatorSMSChallenge", "AuthenticatorStaticChallenge", "AuthenticatorTOTPChallenge", "AuthenticatorValidationChallenge", "AuthenticatorWebAuthnChallenge", "AutosubmitChallenge", "CaptchaChallenge", "ConsentChallenge", "DummyChallenge", "EmailChallenge", "FlowErrorChallenge", "FrameChallenge", "IdentificationChallenge", "OAuthDeviceCodeChallenge", "OAuthDeviceCodeFinishChallenge", "PasswordChallenge", "PlexAuthenticationChallenge", "PromptChallenge", "RedirectChallenge", "SessionEndChallenge", "ShellChallenge", "TelegramLoginChallenge", "UserLoginChallenge" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -258,6 +261,11 @@ class ChallengeTypes(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ShellChallenge`")
         else:
             match += 1
+        # validate data type: TelegramLoginChallenge
+        if not isinstance(v, TelegramLoginChallenge):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TelegramLoginChallenge`")
+        else:
+            match += 1
         # validate data type: UserLoginChallenge
         if not isinstance(v, UserLoginChallenge):
             error_messages.append(f"Error! Input type `{type(v)}` is not `UserLoginChallenge`")
@@ -265,10 +273,10 @@ class ChallengeTypes(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in ChallengeTypes with oneOf schemas: AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, UserLoginChallenge. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in ChallengeTypes with oneOf schemas: AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, TelegramLoginChallenge, UserLoginChallenge. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in ChallengeTypes with oneOf schemas: AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, UserLoginChallenge. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in ChallengeTypes with oneOf schemas: AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, TelegramLoginChallenge, UserLoginChallenge. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -433,6 +441,12 @@ class ChallengeTypes(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into TelegramLoginChallenge
+        try:
+            instance.actual_instance = TelegramLoginChallenge.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into UserLoginChallenge
         try:
             instance.actual_instance = UserLoginChallenge.from_json(json_str)
@@ -442,10 +456,10 @@ class ChallengeTypes(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into ChallengeTypes with oneOf schemas: AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, UserLoginChallenge. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into ChallengeTypes with oneOf schemas: AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, TelegramLoginChallenge, UserLoginChallenge. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into ChallengeTypes with oneOf schemas: AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, UserLoginChallenge. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into ChallengeTypes with oneOf schemas: AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, TelegramLoginChallenge, UserLoginChallenge. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -459,7 +473,7 @@ class ChallengeTypes(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, UserLoginChallenge]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AccessDeniedChallenge, AppleLoginChallenge, AuthenticatorDuoChallenge, AuthenticatorEmailChallenge, AuthenticatorSMSChallenge, AuthenticatorStaticChallenge, AuthenticatorTOTPChallenge, AuthenticatorValidationChallenge, AuthenticatorWebAuthnChallenge, AutosubmitChallenge, CaptchaChallenge, ConsentChallenge, DummyChallenge, EmailChallenge, FlowErrorChallenge, FrameChallenge, IdentificationChallenge, OAuthDeviceCodeChallenge, OAuthDeviceCodeFinishChallenge, PasswordChallenge, PlexAuthenticationChallenge, PromptChallenge, RedirectChallenge, SessionEndChallenge, ShellChallenge, TelegramLoginChallenge, UserLoginChallenge]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

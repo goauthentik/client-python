@@ -69,6 +69,8 @@
 
 * `AUTHENTIK_DOT_SOURCES_DOT_SCIM` (value: `'authentik.sources.scim'`)
 
+* `AUTHENTIK_DOT_SOURCES_DOT_TELEGRAM` (value: `'authentik.sources.telegram'`)
+
 * `AUTHENTIK_DOT_STAGES_DOT_AUTHENTICATOR` (value: `'authentik.stages.authenticator'`)
 
 * `AUTHENTIK_DOT_STAGES_DOT_AUTHENTICATOR_DUO` (value: `'authentik.stages.authenticator_duo'`)

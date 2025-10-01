@@ -60,6 +60,7 @@ class AppEnum(str, Enum):
     AUTHENTIK_DOT_SOURCES_DOT_PLEX = 'authentik.sources.plex'
     AUTHENTIK_DOT_SOURCES_DOT_SAML = 'authentik.sources.saml'
     AUTHENTIK_DOT_SOURCES_DOT_SCIM = 'authentik.sources.scim'
+    AUTHENTIK_DOT_SOURCES_DOT_TELEGRAM = 'authentik.sources.telegram'
     AUTHENTIK_DOT_STAGES_DOT_AUTHENTICATOR = 'authentik.stages.authenticator'
     AUTHENTIK_DOT_STAGES_DOT_AUTHENTICATOR_DUO = 'authentik.stages.authenticator_duo'
     AUTHENTIK_DOT_STAGES_DOT_AUTHENTICATOR_EMAIL = 'authentik.stages.authenticator_email'

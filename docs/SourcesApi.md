@@ -53,6 +53,13 @@ Method | HTTP request | Description
 [**sources_group_connections_saml_retrieve**](SourcesApi.md#sources_group_connections_saml_retrieve) | **GET** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_update**](SourcesApi.md#sources_group_connections_saml_update) | **PUT** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_used_by_list**](SourcesApi.md#sources_group_connections_saml_used_by_list) | **GET** /sources/group_connections/saml/{id}/used_by/ | 
+[**sources_group_connections_telegram_create**](SourcesApi.md#sources_group_connections_telegram_create) | **POST** /sources/group_connections/telegram/ | 
+[**sources_group_connections_telegram_destroy**](SourcesApi.md#sources_group_connections_telegram_destroy) | **DELETE** /sources/group_connections/telegram/{id}/ | 
+[**sources_group_connections_telegram_list**](SourcesApi.md#sources_group_connections_telegram_list) | **GET** /sources/group_connections/telegram/ | 
+[**sources_group_connections_telegram_partial_update**](SourcesApi.md#sources_group_connections_telegram_partial_update) | **PATCH** /sources/group_connections/telegram/{id}/ | 
+[**sources_group_connections_telegram_retrieve**](SourcesApi.md#sources_group_connections_telegram_retrieve) | **GET** /sources/group_connections/telegram/{id}/ | 
+[**sources_group_connections_telegram_update**](SourcesApi.md#sources_group_connections_telegram_update) | **PUT** /sources/group_connections/telegram/{id}/ | 
+[**sources_group_connections_telegram_used_by_list**](SourcesApi.md#sources_group_connections_telegram_used_by_list) | **GET** /sources/group_connections/telegram/{id}/used_by/ | 
 [**sources_kerberos_create**](SourcesApi.md#sources_kerberos_create) | **POST** /sources/kerberos/ | 
 [**sources_kerberos_destroy**](SourcesApi.md#sources_kerberos_destroy) | **DELETE** /sources/kerberos/{slug}/ | 
 [**sources_kerberos_list**](SourcesApi.md#sources_kerberos_list) | **GET** /sources/kerberos/ | 
@@ -116,6 +123,13 @@ Method | HTTP request | Description
 [**sources_scim_users_retrieve**](SourcesApi.md#sources_scim_users_retrieve) | **GET** /sources/scim_users/{id}/ | 
 [**sources_scim_users_update**](SourcesApi.md#sources_scim_users_update) | **PUT** /sources/scim_users/{id}/ | 
 [**sources_scim_users_used_by_list**](SourcesApi.md#sources_scim_users_used_by_list) | **GET** /sources/scim_users/{id}/used_by/ | 
+[**sources_telegram_create**](SourcesApi.md#sources_telegram_create) | **POST** /sources/telegram/ | 
+[**sources_telegram_destroy**](SourcesApi.md#sources_telegram_destroy) | **DELETE** /sources/telegram/{slug}/ | 
+[**sources_telegram_list**](SourcesApi.md#sources_telegram_list) | **GET** /sources/telegram/ | 
+[**sources_telegram_partial_update**](SourcesApi.md#sources_telegram_partial_update) | **PATCH** /sources/telegram/{slug}/ | 
+[**sources_telegram_retrieve**](SourcesApi.md#sources_telegram_retrieve) | **GET** /sources/telegram/{slug}/ | 
+[**sources_telegram_update**](SourcesApi.md#sources_telegram_update) | **PUT** /sources/telegram/{slug}/ | 
+[**sources_telegram_used_by_list**](SourcesApi.md#sources_telegram_used_by_list) | **GET** /sources/telegram/{slug}/used_by/ | 
 [**sources_user_connections_all_destroy**](SourcesApi.md#sources_user_connections_all_destroy) | **DELETE** /sources/user_connections/all/{id}/ | 
 [**sources_user_connections_all_list**](SourcesApi.md#sources_user_connections_all_list) | **GET** /sources/user_connections/all/ | 
 [**sources_user_connections_all_partial_update**](SourcesApi.md#sources_user_connections_all_partial_update) | **PATCH** /sources/user_connections/all/{id}/ | 
@@ -157,6 +171,13 @@ Method | HTTP request | Description
 [**sources_user_connections_saml_retrieve**](SourcesApi.md#sources_user_connections_saml_retrieve) | **GET** /sources/user_connections/saml/{id}/ | 
 [**sources_user_connections_saml_update**](SourcesApi.md#sources_user_connections_saml_update) | **PUT** /sources/user_connections/saml/{id}/ | 
 [**sources_user_connections_saml_used_by_list**](SourcesApi.md#sources_user_connections_saml_used_by_list) | **GET** /sources/user_connections/saml/{id}/used_by/ | 
+[**sources_user_connections_telegram_create**](SourcesApi.md#sources_user_connections_telegram_create) | **POST** /sources/user_connections/telegram/ | 
+[**sources_user_connections_telegram_destroy**](SourcesApi.md#sources_user_connections_telegram_destroy) | **DELETE** /sources/user_connections/telegram/{id}/ | 
+[**sources_user_connections_telegram_list**](SourcesApi.md#sources_user_connections_telegram_list) | **GET** /sources/user_connections/telegram/ | 
+[**sources_user_connections_telegram_partial_update**](SourcesApi.md#sources_user_connections_telegram_partial_update) | **PATCH** /sources/user_connections/telegram/{id}/ | 
+[**sources_user_connections_telegram_retrieve**](SourcesApi.md#sources_user_connections_telegram_retrieve) | **GET** /sources/user_connections/telegram/{id}/ | 
+[**sources_user_connections_telegram_update**](SourcesApi.md#sources_user_connections_telegram_update) | **PUT** /sources/user_connections/telegram/{id}/ | 
+[**sources_user_connections_telegram_used_by_list**](SourcesApi.md#sources_user_connections_telegram_used_by_list) | **GET** /sources/user_connections/telegram/{id}/used_by/ | 
 
 
 # **sources_all_destroy**
@@ -3995,6 +4016,559 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Group SAML Source Connection. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_telegram_create**
+> GroupTelegramSourceConnection sources_group_connections_telegram_create(group_telegram_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.group_telegram_source_connection import GroupTelegramSourceConnection
+from authentik_client.models.group_telegram_source_connection_request import GroupTelegramSourceConnectionRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    group_telegram_source_connection_request = authentik_client.GroupTelegramSourceConnectionRequest() # GroupTelegramSourceConnectionRequest | 
+
+    try:
+        api_response = api_instance.sources_group_connections_telegram_create(group_telegram_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_telegram_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_telegram_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_telegram_source_connection_request** | [**GroupTelegramSourceConnectionRequest**](GroupTelegramSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupTelegramSourceConnection**](GroupTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_telegram_destroy**
+> sources_group_connections_telegram_destroy(id)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Telegram Source Connection.
+
+    try:
+        api_instance.sources_group_connections_telegram_destroy(id)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_telegram_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Telegram Source Connection. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_telegram_list**
+> PaginatedGroupTelegramSourceConnectionList sources_group_connections_telegram_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_group_telegram_source_connection_list import PaginatedGroupTelegramSourceConnectionList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    group = 'group_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    source__slug = 'source__slug_example' # str |  (optional)
+
+    try:
+        api_response = api_instance.sources_group_connections_telegram_list(group=group, ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug)
+        print("The response of SourcesApi->sources_group_connections_telegram_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_telegram_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **source__slug** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedGroupTelegramSourceConnectionList**](PaginatedGroupTelegramSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_telegram_partial_update**
+> GroupTelegramSourceConnection sources_group_connections_telegram_partial_update(id, patched_group_telegram_source_connection_request=patched_group_telegram_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.group_telegram_source_connection import GroupTelegramSourceConnection
+from authentik_client.models.patched_group_telegram_source_connection_request import PatchedGroupTelegramSourceConnectionRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Telegram Source Connection.
+    patched_group_telegram_source_connection_request = authentik_client.PatchedGroupTelegramSourceConnectionRequest() # PatchedGroupTelegramSourceConnectionRequest |  (optional)
+
+    try:
+        api_response = api_instance.sources_group_connections_telegram_partial_update(id, patched_group_telegram_source_connection_request=patched_group_telegram_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_telegram_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_telegram_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Telegram Source Connection. | 
+ **patched_group_telegram_source_connection_request** | [**PatchedGroupTelegramSourceConnectionRequest**](PatchedGroupTelegramSourceConnectionRequest.md)|  | [optional] 
+
+### Return type
+
+[**GroupTelegramSourceConnection**](GroupTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_telegram_retrieve**
+> GroupTelegramSourceConnection sources_group_connections_telegram_retrieve(id)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.group_telegram_source_connection import GroupTelegramSourceConnection
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Telegram Source Connection.
+
+    try:
+        api_response = api_instance.sources_group_connections_telegram_retrieve(id)
+        print("The response of SourcesApi->sources_group_connections_telegram_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_telegram_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Telegram Source Connection. | 
+
+### Return type
+
+[**GroupTelegramSourceConnection**](GroupTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_telegram_update**
+> GroupTelegramSourceConnection sources_group_connections_telegram_update(id, group_telegram_source_connection_request)
+
+Group-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.group_telegram_source_connection import GroupTelegramSourceConnection
+from authentik_client.models.group_telegram_source_connection_request import GroupTelegramSourceConnectionRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Telegram Source Connection.
+    group_telegram_source_connection_request = authentik_client.GroupTelegramSourceConnectionRequest() # GroupTelegramSourceConnectionRequest | 
+
+    try:
+        api_response = api_instance.sources_group_connections_telegram_update(id, group_telegram_source_connection_request)
+        print("The response of SourcesApi->sources_group_connections_telegram_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_telegram_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Telegram Source Connection. | 
+ **group_telegram_source_connection_request** | [**GroupTelegramSourceConnectionRequest**](GroupTelegramSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**GroupTelegramSourceConnection**](GroupTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_group_connections_telegram_used_by_list**
+> List[UsedBy] sources_group_connections_telegram_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.used_by import UsedBy
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this Group Telegram Source Connection.
+
+    try:
+        api_response = api_instance.sources_group_connections_telegram_used_by_list(id)
+        print("The response of SourcesApi->sources_group_connections_telegram_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_group_connections_telegram_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Group Telegram Source Connection. | 
 
 ### Return type
 
@@ -9151,6 +9725,577 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sources_telegram_create**
+> TelegramSource sources_telegram_create(telegram_source_request)
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.telegram_source import TelegramSource
+from authentik_client.models.telegram_source_request import TelegramSourceRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    telegram_source_request = authentik_client.TelegramSourceRequest() # TelegramSourceRequest | 
+
+    try:
+        api_response = api_instance.sources_telegram_create(telegram_source_request)
+        print("The response of SourcesApi->sources_telegram_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **telegram_source_request** | [**TelegramSourceRequest**](TelegramSourceRequest.md)|  | 
+
+### Return type
+
+[**TelegramSource**](TelegramSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_telegram_destroy**
+> sources_telegram_destroy(slug)
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+
+    try:
+        api_instance.sources_telegram_destroy(slug)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_telegram_list**
+> PaginatedTelegramSourceList sources_telegram_list(authentication_flow=authentication_flow, bot_username=bot_username, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, request_message_access=request_message_access, search=search, slug=slug, user_matching_mode=user_matching_mode)
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_telegram_source_list import PaginatedTelegramSourceList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    authentication_flow = 'authentication_flow_example' # str |  (optional)
+    bot_username = 'bot_username_example' # str |  (optional)
+    enabled = True # bool |  (optional)
+    enrollment_flow = 'enrollment_flow_example' # str |  (optional)
+    group_matching_mode = 'group_matching_mode_example' # str | How the source determines if an existing group should be used or a new group created.   (optional)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
+    request_message_access = True # bool |  (optional)
+    search = 'search_example' # str | A search term. (optional)
+    slug = 'slug_example' # str |  (optional)
+    user_matching_mode = 'user_matching_mode_example' # str | How the source determines if an existing user should be authenticated or a new user enrolled.   (optional)
+
+    try:
+        api_response = api_instance.sources_telegram_list(authentication_flow=authentication_flow, bot_username=bot_username, enabled=enabled, enrollment_flow=enrollment_flow, group_matching_mode=group_matching_mode, name=name, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, request_message_access=request_message_access, search=search, slug=slug, user_matching_mode=user_matching_mode)
+        print("The response of SourcesApi->sources_telegram_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authentication_flow** | **str**|  | [optional] 
+ **bot_username** | **str**|  | [optional] 
+ **enabled** | **bool**|  | [optional] 
+ **enrollment_flow** | **str**|  | [optional] 
+ **group_matching_mode** | **str**| How the source determines if an existing group should be used or a new group created.   | [optional] 
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **pbm_uuid** | **str**|  | [optional] 
+ **policy_engine_mode** | **str**|  | [optional] 
+ **request_message_access** | **bool**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **slug** | **str**|  | [optional] 
+ **user_matching_mode** | **str**| How the source determines if an existing user should be authenticated or a new user enrolled.   | [optional] 
+
+### Return type
+
+[**PaginatedTelegramSourceList**](PaginatedTelegramSourceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_telegram_partial_update**
+> TelegramSource sources_telegram_partial_update(slug, patched_telegram_source_request=patched_telegram_source_request)
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.patched_telegram_source_request import PatchedTelegramSourceRequest
+from authentik_client.models.telegram_source import TelegramSource
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+    patched_telegram_source_request = authentik_client.PatchedTelegramSourceRequest() # PatchedTelegramSourceRequest |  (optional)
+
+    try:
+        api_response = api_instance.sources_telegram_partial_update(slug, patched_telegram_source_request=patched_telegram_source_request)
+        print("The response of SourcesApi->sources_telegram_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+ **patched_telegram_source_request** | [**PatchedTelegramSourceRequest**](PatchedTelegramSourceRequest.md)|  | [optional] 
+
+### Return type
+
+[**TelegramSource**](TelegramSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_telegram_retrieve**
+> TelegramSource sources_telegram_retrieve(slug)
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.telegram_source import TelegramSource
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+
+    try:
+        api_response = api_instance.sources_telegram_retrieve(slug)
+        print("The response of SourcesApi->sources_telegram_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+
+### Return type
+
+[**TelegramSource**](TelegramSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_telegram_update**
+> TelegramSource sources_telegram_update(slug, telegram_source_request)
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.telegram_source import TelegramSource
+from authentik_client.models.telegram_source_request import TelegramSourceRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+    telegram_source_request = authentik_client.TelegramSourceRequest() # TelegramSourceRequest | 
+
+    try:
+        api_response = api_instance.sources_telegram_update(slug, telegram_source_request)
+        print("The response of SourcesApi->sources_telegram_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+ **telegram_source_request** | [**TelegramSourceRequest**](TelegramSourceRequest.md)|  | 
+
+### Return type
+
+[**TelegramSource**](TelegramSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_telegram_used_by_list**
+> List[UsedBy] sources_telegram_used_by_list(slug)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.used_by import UsedBy
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+
+    try:
+        api_response = api_instance.sources_telegram_used_by_list(slug)
+        print("The response of SourcesApi->sources_telegram_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **sources_user_connections_all_destroy**
 > sources_user_connections_all_destroy(id)
 
@@ -12367,6 +13512,559 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this User SAML Source Connection. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_telegram_create**
+> UserTelegramSourceConnection sources_user_connections_telegram_create(user_telegram_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.user_telegram_source_connection import UserTelegramSourceConnection
+from authentik_client.models.user_telegram_source_connection_request import UserTelegramSourceConnectionRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    user_telegram_source_connection_request = authentik_client.UserTelegramSourceConnectionRequest() # UserTelegramSourceConnectionRequest | 
+
+    try:
+        api_response = api_instance.sources_user_connections_telegram_create(user_telegram_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_telegram_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_telegram_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_telegram_source_connection_request** | [**UserTelegramSourceConnectionRequest**](UserTelegramSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_telegram_destroy**
+> sources_user_connections_telegram_destroy(id)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Telegram Source Connection.
+
+    try:
+        api_instance.sources_user_connections_telegram_destroy(id)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_telegram_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Telegram Source Connection. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_telegram_list**
+> PaginatedUserTelegramSourceConnectionList sources_user_connections_telegram_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_user_telegram_source_connection_list import PaginatedUserTelegramSourceConnectionList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    source__slug = 'source__slug_example' # str |  (optional)
+    user = 56 # int |  (optional)
+
+    try:
+        api_response = api_instance.sources_user_connections_telegram_list(ordering=ordering, page=page, page_size=page_size, search=search, source__slug=source__slug, user=user)
+        print("The response of SourcesApi->sources_user_connections_telegram_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_telegram_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **source__slug** | **str**|  | [optional] 
+ **user** | **int**|  | [optional] 
+
+### Return type
+
+[**PaginatedUserTelegramSourceConnectionList**](PaginatedUserTelegramSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_telegram_partial_update**
+> UserTelegramSourceConnection sources_user_connections_telegram_partial_update(id, patched_user_telegram_source_connection_request=patched_user_telegram_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.patched_user_telegram_source_connection_request import PatchedUserTelegramSourceConnectionRequest
+from authentik_client.models.user_telegram_source_connection import UserTelegramSourceConnection
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Telegram Source Connection.
+    patched_user_telegram_source_connection_request = authentik_client.PatchedUserTelegramSourceConnectionRequest() # PatchedUserTelegramSourceConnectionRequest |  (optional)
+
+    try:
+        api_response = api_instance.sources_user_connections_telegram_partial_update(id, patched_user_telegram_source_connection_request=patched_user_telegram_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_telegram_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_telegram_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Telegram Source Connection. | 
+ **patched_user_telegram_source_connection_request** | [**PatchedUserTelegramSourceConnectionRequest**](PatchedUserTelegramSourceConnectionRequest.md)|  | [optional] 
+
+### Return type
+
+[**UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_telegram_retrieve**
+> UserTelegramSourceConnection sources_user_connections_telegram_retrieve(id)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.user_telegram_source_connection import UserTelegramSourceConnection
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Telegram Source Connection.
+
+    try:
+        api_response = api_instance.sources_user_connections_telegram_retrieve(id)
+        print("The response of SourcesApi->sources_user_connections_telegram_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_telegram_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Telegram Source Connection. | 
+
+### Return type
+
+[**UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_telegram_update**
+> UserTelegramSourceConnection sources_user_connections_telegram_update(id, user_telegram_source_connection_request)
+
+User-source connection Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.user_telegram_source_connection import UserTelegramSourceConnection
+from authentik_client.models.user_telegram_source_connection_request import UserTelegramSourceConnectionRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Telegram Source Connection.
+    user_telegram_source_connection_request = authentik_client.UserTelegramSourceConnectionRequest() # UserTelegramSourceConnectionRequest | 
+
+    try:
+        api_response = api_instance.sources_user_connections_telegram_update(id, user_telegram_source_connection_request)
+        print("The response of SourcesApi->sources_user_connections_telegram_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_telegram_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Telegram Source Connection. | 
+ **user_telegram_source_connection_request** | [**UserTelegramSourceConnectionRequest**](UserTelegramSourceConnectionRequest.md)|  | 
+
+### Return type
+
+[**UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_user_connections_telegram_used_by_list**
+> List[UsedBy] sources_user_connections_telegram_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.used_by import UsedBy
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    id = 56 # int | A unique integer value identifying this User Telegram Source Connection.
+
+    try:
+        api_response = api_instance.sources_user_connections_telegram_used_by_list(id)
+        print("The response of SourcesApi->sources_user_connections_telegram_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_user_connections_telegram_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this User Telegram Source Connection. | 
 
 ### Return type
 

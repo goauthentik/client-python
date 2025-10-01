@@ -21,11 +21,12 @@ from typing import Any, List, Optional
 from authentik_client.models.apple_login_challenge import AppleLoginChallenge
 from authentik_client.models.plex_authentication_challenge import PlexAuthenticationChallenge
 from authentik_client.models.redirect_challenge import RedirectChallenge
+from authentik_client.models.telegram_login_challenge import TelegramLoginChallenge
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-LOGINCHALLENGETYPES_ONE_OF_SCHEMAS = ["AppleLoginChallenge", "PlexAuthenticationChallenge", "RedirectChallenge"]
+LOGINCHALLENGETYPES_ONE_OF_SCHEMAS = ["AppleLoginChallenge", "PlexAuthenticationChallenge", "RedirectChallenge", "TelegramLoginChallenge"]
 
 class LoginChallengeTypes(BaseModel):
     """
@@ -37,8 +38,10 @@ class LoginChallengeTypes(BaseModel):
     oneof_schema_2_validator: Optional[AppleLoginChallenge] = None
     # data type: PlexAuthenticationChallenge
     oneof_schema_3_validator: Optional[PlexAuthenticationChallenge] = None
-    actual_instance: Optional[Union[AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge]] = None
-    one_of_schemas: Set[str] = { "AppleLoginChallenge", "PlexAuthenticationChallenge", "RedirectChallenge" }
+    # data type: TelegramLoginChallenge
+    oneof_schema_4_validator: Optional[TelegramLoginChallenge] = None
+    actual_instance: Optional[Union[AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge, TelegramLoginChallenge]] = None
+    one_of_schemas: Set[str] = { "AppleLoginChallenge", "PlexAuthenticationChallenge", "RedirectChallenge", "TelegramLoginChallenge" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -79,12 +82,17 @@ class LoginChallengeTypes(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `PlexAuthenticationChallenge`")
         else:
             match += 1
+        # validate data type: TelegramLoginChallenge
+        if not isinstance(v, TelegramLoginChallenge):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TelegramLoginChallenge`")
+        else:
+            match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in LoginChallengeTypes with oneOf schemas: AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in LoginChallengeTypes with oneOf schemas: AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge, TelegramLoginChallenge. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in LoginChallengeTypes with oneOf schemas: AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in LoginChallengeTypes with oneOf schemas: AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge, TelegramLoginChallenge. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -117,13 +125,19 @@ class LoginChallengeTypes(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into TelegramLoginChallenge
+        try:
+            instance.actual_instance = TelegramLoginChallenge.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into LoginChallengeTypes with oneOf schemas: AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into LoginChallengeTypes with oneOf schemas: AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge, TelegramLoginChallenge. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into LoginChallengeTypes with oneOf schemas: AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into LoginChallengeTypes with oneOf schemas: AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge, TelegramLoginChallenge. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -137,7 +151,7 @@ class LoginChallengeTypes(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AppleLoginChallenge, PlexAuthenticationChallenge, RedirectChallenge, TelegramLoginChallenge]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

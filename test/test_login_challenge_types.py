@@ -41,7 +41,7 @@ class TestLoginChallengeTypes(unittest.TestCase):
                     background = '', 
                     cancel_url = '', 
                     layout = 'stacked', ),
-                component = 'ak-source-plex',
+                component = 'ak-source-telegram',
                 response_errors = {
                     'key' : [
                         authentik_client.models.error_detail.ErrorDetail(
@@ -54,7 +54,9 @@ class TestLoginChallengeTypes(unittest.TestCase):
                 scope = '',
                 redirect_uri = '',
                 state = '',
-                slug = ''
+                slug = '',
+                bot_username = '',
+                request_message_access = True
             )
         else:
             return LoginChallengeTypes(
@@ -64,6 +66,8 @@ class TestLoginChallengeTypes(unittest.TestCase):
                 redirect_uri = '',
                 state = '',
                 slug = '',
+                bot_username = '',
+                request_message_access = True,
         )
         """
 

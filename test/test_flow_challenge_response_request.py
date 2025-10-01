@@ -60,6 +60,13 @@ class TestFlowChallengeResponseRequest(unittest.TestCase):
                 password = '0',
                 captcha_token = '',
                 to = '0',
+                id = 56,
+                first_name = '0',
+                last_name = '0',
+                username = '0',
+                photo_url = '0',
+                auth_date = 56,
+                hash = '0',
                 remember_me = True
             )
         else:
@@ -72,6 +79,9 @@ class TestFlowChallengeResponseRequest(unittest.TestCase):
                 uid_field = '0',
                 password = '0',
                 to = '0',
+                id = 56,
+                auth_date = 56,
+                hash = '0',
                 remember_me = True,
         )
         """

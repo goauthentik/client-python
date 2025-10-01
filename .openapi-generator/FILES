@@ -223,6 +223,8 @@ authentik_client/models/group_saml_source_connection.py
 authentik_client/models/group_saml_source_connection_request.py
 authentik_client/models/group_source_connection.py
 authentik_client/models/group_source_connection_request.py
+authentik_client/models/group_telegram_source_connection.py
+authentik_client/models/group_telegram_source_connection_request.py
 authentik_client/models/identification_challenge.py
 authentik_client/models/identification_challenge_response_request.py
 authentik_client/models/identification_stage.py
@@ -360,6 +362,7 @@ authentik_client/models/paginated_group_o_auth_source_connection_list.py
 authentik_client/models/paginated_group_plex_source_connection_list.py
 authentik_client/models/paginated_group_saml_source_connection_list.py
 authentik_client/models/paginated_group_source_connection_list.py
+authentik_client/models/paginated_group_telegram_source_connection_list.py
 authentik_client/models/paginated_identification_stage_list.py
 authentik_client/models/paginated_initial_permissions_list.py
 authentik_client/models/paginated_invitation_list.py
@@ -432,6 +435,8 @@ authentik_client/models/paginated_ssf_stream_list.py
 authentik_client/models/paginated_stage_list.py
 authentik_client/models/paginated_static_device_list.py
 authentik_client/models/paginated_task_list.py
+authentik_client/models/paginated_telegram_source_list.py
+authentik_client/models/paginated_telegram_source_property_mapping_list.py
 authentik_client/models/paginated_tenant_list.py
 authentik_client/models/paginated_token_list.py
 authentik_client/models/paginated_token_model_list.py
@@ -449,6 +454,7 @@ authentik_client/models/paginated_user_o_auth_source_connection_list.py
 authentik_client/models/paginated_user_plex_source_connection_list.py
 authentik_client/models/paginated_user_saml_source_connection_list.py
 authentik_client/models/paginated_user_source_connection_list.py
+authentik_client/models/paginated_user_telegram_source_connection_list.py
 authentik_client/models/paginated_user_write_stage_list.py
 authentik_client/models/paginated_web_authn_device_list.py
 authentik_client/models/paginated_web_authn_device_type_list.py
@@ -506,6 +512,7 @@ authentik_client/models/patched_group_plex_source_connection_request.py
 authentik_client/models/patched_group_request.py
 authentik_client/models/patched_group_saml_source_connection_request.py
 authentik_client/models/patched_group_source_connection_request.py
+authentik_client/models/patched_group_telegram_source_connection_request.py
 authentik_client/models/patched_identification_stage_request.py
 authentik_client/models/patched_initial_permissions_request.py
 authentik_client/models/patched_invitation_request.py
@@ -563,6 +570,8 @@ authentik_client/models/patched_sms_device_request.py
 authentik_client/models/patched_source_stage_request.py
 authentik_client/models/patched_ssf_provider_request.py
 authentik_client/models/patched_static_device_request.py
+authentik_client/models/patched_telegram_source_property_mapping_request.py
+authentik_client/models/patched_telegram_source_request.py
 authentik_client/models/patched_tenant_request.py
 authentik_client/models/patched_token_request.py
 authentik_client/models/patched_totp_device_request.py
@@ -577,6 +586,7 @@ authentik_client/models/patched_user_plex_source_connection_request.py
 authentik_client/models/patched_user_request.py
 authentik_client/models/patched_user_saml_source_connection_request.py
 authentik_client/models/patched_user_source_connection_request.py
+authentik_client/models/patched_user_telegram_source_connection_request.py
 authentik_client/models/patched_user_write_stage_request.py
 authentik_client/models/patched_web_authn_device_request.py
 authentik_client/models/permission.py
@@ -712,6 +722,12 @@ authentik_client/models/system_info.py
 authentik_client/models/system_info_runtime.py
 authentik_client/models/task.py
 authentik_client/models/task_aggregated_status_enum.py
+authentik_client/models/telegram_challenge_response_request.py
+authentik_client/models/telegram_login_challenge.py
+authentik_client/models/telegram_source.py
+authentik_client/models/telegram_source_property_mapping.py
+authentik_client/models/telegram_source_property_mapping_request.py
+authentik_client/models/telegram_source_request.py
 authentik_client/models/tenant.py
 authentik_client/models/tenant_admin_group_request_request.py
 authentik_client/models/tenant_recovery_key_request_request.py
@@ -770,6 +786,8 @@ authentik_client/models/user_service_account_response.py
 authentik_client/models/user_setting.py
 authentik_client/models/user_source_connection.py
 authentik_client/models/user_source_connection_request.py
+authentik_client/models/user_telegram_source_connection.py
+authentik_client/models/user_telegram_source_connection_request.py
 authentik_client/models/user_type_enum.py
 authentik_client/models/user_verification_enum.py
 authentik_client/models/user_write_stage.py
@@ -981,6 +999,8 @@ docs/GroupSAMLSourceConnection.md
 docs/GroupSAMLSourceConnectionRequest.md
 docs/GroupSourceConnection.md
 docs/GroupSourceConnectionRequest.md
+docs/GroupTelegramSourceConnection.md
+docs/GroupTelegramSourceConnectionRequest.md
 docs/IdentificationChallenge.md
 docs/IdentificationChallengeResponseRequest.md
 docs/IdentificationStage.md
@@ -1121,6 +1141,7 @@ docs/PaginatedGroupOAuthSourceConnectionList.md
 docs/PaginatedGroupPlexSourceConnectionList.md
 docs/PaginatedGroupSAMLSourceConnectionList.md
 docs/PaginatedGroupSourceConnectionList.md
+docs/PaginatedGroupTelegramSourceConnectionList.md
 docs/PaginatedIdentificationStageList.md
 docs/PaginatedInitialPermissionsList.md
 docs/PaginatedInvitationList.md
@@ -1194,6 +1215,8 @@ docs/PaginatedStageList.md
 docs/PaginatedStaticDeviceList.md
 docs/PaginatedTOTPDeviceList.md
 docs/PaginatedTaskList.md
+docs/PaginatedTelegramSourceList.md
+docs/PaginatedTelegramSourcePropertyMappingList.md
 docs/PaginatedTenantList.md
 docs/PaginatedTokenList.md
 docs/PaginatedTokenModelList.md
@@ -1210,6 +1233,7 @@ docs/PaginatedUserOAuthSourceConnectionList.md
 docs/PaginatedUserPlexSourceConnectionList.md
 docs/PaginatedUserSAMLSourceConnectionList.md
 docs/PaginatedUserSourceConnectionList.md
+docs/PaginatedUserTelegramSourceConnectionList.md
 docs/PaginatedUserWriteStageList.md
 docs/PaginatedWebAuthnDeviceList.md
 docs/PaginatedWebAuthnDeviceTypeList.md
@@ -1267,6 +1291,7 @@ docs/PatchedGroupPlexSourceConnectionRequest.md
 docs/PatchedGroupRequest.md
 docs/PatchedGroupSAMLSourceConnectionRequest.md
 docs/PatchedGroupSourceConnectionRequest.md
+docs/PatchedGroupTelegramSourceConnectionRequest.md
 docs/PatchedIdentificationStageRequest.md
 docs/PatchedInitialPermissionsRequest.md
 docs/PatchedInvitationRequest.md
@@ -1325,6 +1350,8 @@ docs/PatchedSettingsRequestFlags.md
 docs/PatchedSourceStageRequest.md
 docs/PatchedStaticDeviceRequest.md
 docs/PatchedTOTPDeviceRequest.md
+docs/PatchedTelegramSourcePropertyMappingRequest.md
+docs/PatchedTelegramSourceRequest.md
 docs/PatchedTenantRequest.md
 docs/PatchedTokenRequest.md
 docs/PatchedUniquePasswordPolicyRequest.md
@@ -1338,6 +1365,7 @@ docs/PatchedUserPlexSourceConnectionRequest.md
 docs/PatchedUserRequest.md
 docs/PatchedUserSAMLSourceConnectionRequest.md
 docs/PatchedUserSourceConnectionRequest.md
+docs/PatchedUserTelegramSourceConnectionRequest.md
 docs/PatchedUserWriteStageRequest.md
 docs/PatchedWebAuthnDeviceRequest.md
 docs/Permission.md
@@ -1486,6 +1514,12 @@ docs/TOTPDeviceRequest.md
 docs/Task.md
 docs/TaskAggregatedStatusEnum.md
 docs/TasksApi.md
+docs/TelegramChallengeResponseRequest.md
+docs/TelegramLoginChallenge.md
+docs/TelegramSource.md
+docs/TelegramSourcePropertyMapping.md
+docs/TelegramSourcePropertyMappingRequest.md
+docs/TelegramSourceRequest.md
 docs/Tenant.md
 docs/TenantAdminGroupRequestRequest.md
 docs/TenantRecoveryKeyRequestRequest.md
@@ -1543,6 +1577,8 @@ docs/UserServiceAccountResponse.md
 docs/UserSetting.md
 docs/UserSourceConnection.md
 docs/UserSourceConnectionRequest.md
+docs/UserTelegramSourceConnection.md
+docs/UserTelegramSourceConnectionRequest.md
 docs/UserTypeEnum.md
 docs/UserVerificationEnum.md
 docs/UserWriteStage.md
@@ -1759,6 +1795,8 @@ test/test_group_saml_source_connection.py
 test/test_group_saml_source_connection_request.py
 test/test_group_source_connection.py
 test/test_group_source_connection_request.py
+test/test_group_telegram_source_connection.py
+test/test_group_telegram_source_connection_request.py
 test/test_identification_challenge.py
 test/test_identification_challenge_response_request.py
 test/test_identification_stage.py
@@ -1899,6 +1937,7 @@ test/test_paginated_group_o_auth_source_connection_list.py
 test/test_paginated_group_plex_source_connection_list.py
 test/test_paginated_group_saml_source_connection_list.py
 test/test_paginated_group_source_connection_list.py
+test/test_paginated_group_telegram_source_connection_list.py
 test/test_paginated_identification_stage_list.py
 test/test_paginated_initial_permissions_list.py
 test/test_paginated_invitation_list.py
@@ -1971,6 +2010,8 @@ test/test_paginated_ssf_stream_list.py
 test/test_paginated_stage_list.py
 test/test_paginated_static_device_list.py
 test/test_paginated_task_list.py
+test/test_paginated_telegram_source_list.py
+test/test_paginated_telegram_source_property_mapping_list.py
 test/test_paginated_tenant_list.py
 test/test_paginated_token_list.py
 test/test_paginated_token_model_list.py
@@ -1988,6 +2029,7 @@ test/test_paginated_user_o_auth_source_connection_list.py
 test/test_paginated_user_plex_source_connection_list.py
 test/test_paginated_user_saml_source_connection_list.py
 test/test_paginated_user_source_connection_list.py
+test/test_paginated_user_telegram_source_connection_list.py
 test/test_paginated_user_write_stage_list.py
 test/test_paginated_web_authn_device_list.py
 test/test_paginated_web_authn_device_type_list.py
@@ -2045,6 +2087,7 @@ test/test_patched_group_plex_source_connection_request.py
 test/test_patched_group_request.py
 test/test_patched_group_saml_source_connection_request.py
 test/test_patched_group_source_connection_request.py
+test/test_patched_group_telegram_source_connection_request.py
 test/test_patched_identification_stage_request.py
 test/test_patched_initial_permissions_request.py
 test/test_patched_invitation_request.py
@@ -2102,6 +2145,8 @@ test/test_patched_sms_device_request.py
 test/test_patched_source_stage_request.py
 test/test_patched_ssf_provider_request.py
 test/test_patched_static_device_request.py
+test/test_patched_telegram_source_property_mapping_request.py
+test/test_patched_telegram_source_request.py
 test/test_patched_tenant_request.py
 test/test_patched_token_request.py
 test/test_patched_totp_device_request.py
@@ -2116,6 +2161,7 @@ test/test_patched_user_plex_source_connection_request.py
 test/test_patched_user_request.py
 test/test_patched_user_saml_source_connection_request.py
 test/test_patched_user_source_connection_request.py
+test/test_patched_user_telegram_source_connection_request.py
 test/test_patched_user_write_stage_request.py
 test/test_patched_web_authn_device_request.py
 test/test_permission.py
@@ -2262,6 +2308,12 @@ test/test_system_info_runtime.py
 test/test_task.py
 test/test_task_aggregated_status_enum.py
 test/test_tasks_api.py
+test/test_telegram_challenge_response_request.py
+test/test_telegram_login_challenge.py
+test/test_telegram_source.py
+test/test_telegram_source_property_mapping.py
+test/test_telegram_source_property_mapping_request.py
+test/test_telegram_source_request.py
 test/test_tenant.py
 test/test_tenant_admin_group_request_request.py
 test/test_tenant_recovery_key_request_request.py
@@ -2321,6 +2373,8 @@ test/test_user_service_account_response.py
 test/test_user_setting.py
 test/test_user_source_connection.py
 test/test_user_source_connection_request.py
+test/test_user_telegram_source_connection.py
+test/test_user_telegram_source_connection_request.py
 test/test_user_type_enum.py
 test/test_user_verification_enum.py
 test/test_user_write_stage.py
