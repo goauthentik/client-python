@@ -29,6 +29,9 @@ class LastTaskStatusEnum(str, Enum):
     """
     QUEUED = 'queued'
     CONSUMED = 'consumed'
+    PREPROCESS = 'preprocess'
+    RUNNING = 'running'
+    POSTPROCESS = 'postprocess'
     REJECTED = 'rejected'
     DONE = 'done'
     INFO = 'info'

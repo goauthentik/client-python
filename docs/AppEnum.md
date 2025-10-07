@@ -3,6 +3,8 @@
 
 ## Enum
 
+* `AUTHENTIK_DOT_COMMANDS` (value: `'authentik.commands'`)
+
 * `AUTHENTIK_DOT_TENANTS` (value: `'authentik.tenants'`)
 
 * `AUTHENTIK_DOT_TASKS` (value: `'authentik.tasks'`)

@@ -40,7 +40,7 @@ class TestPatchedEventMatcherPolicyRequest(unittest.TestCase):
                 execution_logging = True,
                 action = 'login',
                 client_ip = '0',
-                app = 'authentik.tenants',
+                app = 'authentik.commands',
                 model = 'authentik_tenants.domain'
             )
         else:

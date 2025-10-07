@@ -27,6 +27,7 @@ class AppEnum(str, Enum):
     """
     allowed enum values
     """
+    AUTHENTIK_DOT_COMMANDS = 'authentik.commands'
     AUTHENTIK_DOT_TENANTS = 'authentik.tenants'
     AUTHENTIK_DOT_TASKS = 'authentik.tasks'
     AUTHENTIK_DOT_ADMIN = 'authentik.admin'

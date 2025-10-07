@@ -46,7 +46,7 @@ class TestEventMatcherPolicy(unittest.TestCase):
                 bound_to = 56,
                 action = 'login',
                 client_ip = '',
-                app = 'authentik.tenants',
+                app = 'authentik.commands',
                 model = 'authentik_tenants.domain'
             )
         else:
