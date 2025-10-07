@@ -183,6 +183,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.geo_ip_policy import GeoIPPolicy
     from authentik_client.models.geo_ip_policy_request import GeoIPPolicyRequest
     from authentik_client.models.geoip_binding_enum import GeoipBindingEnum
+    from authentik_client.models.global_task_status import GlobalTaskStatus
     from authentik_client.models.google_workspace_provider import GoogleWorkspaceProvider
     from authentik_client.models.google_workspace_provider_group import GoogleWorkspaceProviderGroup
     from authentik_client.models.google_workspace_provider_group_request import GoogleWorkspaceProviderGroupRequest
@@ -958,6 +959,7 @@ from authentik_client.models.generic_error import GenericError
 from authentik_client.models.geo_ip_policy import GeoIPPolicy
 from authentik_client.models.geo_ip_policy_request import GeoIPPolicyRequest
 from authentik_client.models.geoip_binding_enum import GeoipBindingEnum
+from authentik_client.models.global_task_status import GlobalTaskStatus
 from authentik_client.models.google_workspace_provider import GoogleWorkspaceProvider
 from authentik_client.models.google_workspace_provider_group import GoogleWorkspaceProviderGroup
 from authentik_client.models.google_workspace_provider_group_request import GoogleWorkspaceProviderGroupRequest

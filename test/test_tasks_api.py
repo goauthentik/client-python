@@ -75,6 +75,12 @@ class TestTasksApi(unittest.TestCase):
         """
         pass
 
+    def test_tasks_tasks_status_retrieve(self) -> None:
+        """Test case for tasks_tasks_status_retrieve
+
+        """
+        pass
+
     def test_tasks_workers_list(self) -> None:
         """Test case for tasks_workers_list
 

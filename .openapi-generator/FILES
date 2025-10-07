@@ -199,6 +199,7 @@ authentik_client/models/generic_error.py
 authentik_client/models/geo_ip_policy.py
 authentik_client/models/geo_ip_policy_request.py
 authentik_client/models/geoip_binding_enum.py
+authentik_client/models/global_task_status.py
 authentik_client/models/google_workspace_provider.py
 authentik_client/models/google_workspace_provider_group.py
 authentik_client/models/google_workspace_provider_group_request.py
@@ -975,6 +976,7 @@ docs/GenericError.md
 docs/GeoIPPolicy.md
 docs/GeoIPPolicyRequest.md
 docs/GeoipBindingEnum.md
+docs/GlobalTaskStatus.md
 docs/GoogleWorkspaceProvider.md
 docs/GoogleWorkspaceProviderGroup.md
 docs/GoogleWorkspaceProviderGroupRequest.md
@@ -1771,6 +1773,7 @@ test/test_generic_error.py
 test/test_geo_ip_policy.py
 test/test_geo_ip_policy_request.py
 test/test_geoip_binding_enum.py
+test/test_global_task_status.py
 test/test_google_workspace_provider.py
 test/test_google_workspace_provider_group.py
 test/test_google_workspace_provider_group_request.py

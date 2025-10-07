@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2025.10.0-rc1-1759847168"
+__version__ = "2025.10.0-rc1-1759854394"
 
 # Define package exports
 __all__ = [
@@ -217,6 +217,7 @@ __all__ = [
     "GeoIPPolicy",
     "GeoIPPolicyRequest",
     "GeoipBindingEnum",
+    "GlobalTaskStatus",
     "GoogleWorkspaceProvider",
     "GoogleWorkspaceProviderGroup",
     "GoogleWorkspaceProviderGroupRequest",
@@ -1023,6 +1024,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.geo_ip_policy import GeoIPPolicy as GeoIPPolicy
     from authentik_client.models.geo_ip_policy_request import GeoIPPolicyRequest as GeoIPPolicyRequest
     from authentik_client.models.geoip_binding_enum import GeoipBindingEnum as GeoipBindingEnum
+    from authentik_client.models.global_task_status import GlobalTaskStatus as GlobalTaskStatus
     from authentik_client.models.google_workspace_provider import GoogleWorkspaceProvider as GoogleWorkspaceProvider
     from authentik_client.models.google_workspace_provider_group import GoogleWorkspaceProviderGroup as GoogleWorkspaceProviderGroup
     from authentik_client.models.google_workspace_provider_group_request import GoogleWorkspaceProviderGroupRequest as GoogleWorkspaceProviderGroupRequest
@@ -1835,6 +1837,7 @@ from authentik_client.models.generic_error import GenericError as GenericError
 from authentik_client.models.geo_ip_policy import GeoIPPolicy as GeoIPPolicy
 from authentik_client.models.geo_ip_policy_request import GeoIPPolicyRequest as GeoIPPolicyRequest
 from authentik_client.models.geoip_binding_enum import GeoipBindingEnum as GeoipBindingEnum
+from authentik_client.models.global_task_status import GlobalTaskStatus as GlobalTaskStatus
 from authentik_client.models.google_workspace_provider import GoogleWorkspaceProvider as GoogleWorkspaceProvider
 from authentik_client.models.google_workspace_provider_group import GoogleWorkspaceProviderGroup as GoogleWorkspaceProviderGroup
 from authentik_client.models.google_workspace_provider_group_request import GoogleWorkspaceProviderGroupRequest as GoogleWorkspaceProviderGroupRequest
