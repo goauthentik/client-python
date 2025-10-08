@@ -577,7 +577,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.permission import Permission
     from authentik_client.models.permission_assign_request import PermissionAssignRequest
     from authentik_client.models.permission_assign_result import PermissionAssignResult
-    from authentik_client.models.permission_request import PermissionRequest
     from authentik_client.models.plex_authentication_challenge import PlexAuthenticationChallenge
     from authentik_client.models.plex_authentication_challenge_response_request import PlexAuthenticationChallengeResponseRequest
     from authentik_client.models.plex_source import PlexSource
@@ -589,7 +588,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.policy_binding import PolicyBinding
     from authentik_client.models.policy_binding_request import PolicyBindingRequest
     from authentik_client.models.policy_engine_mode import PolicyEngineMode
-    from authentik_client.models.policy_request import PolicyRequest
     from authentik_client.models.policy_test_request import PolicyTestRequest
     from authentik_client.models.policy_test_result import PolicyTestResult
     from authentik_client.models.prompt import Prompt
@@ -607,7 +605,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.provider import Provider
     from authentik_client.models.provider_enum import ProviderEnum
     from authentik_client.models.provider_model_enum import ProviderModelEnum
-    from authentik_client.models.provider_request import ProviderRequest
     from authentik_client.models.provider_type_enum import ProviderTypeEnum
     from authentik_client.models.proxy_mode import ProxyMode
     from authentik_client.models.proxy_outpost_config import ProxyOutpostConfig
@@ -676,7 +673,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.scope_mapping_request import ScopeMappingRequest
     from authentik_client.models.selectable_stage import SelectableStage
     from authentik_client.models.service_connection import ServiceConnection
-    from authentik_client.models.service_connection_request import ServiceConnectionRequest
     from authentik_client.models.service_connection_state import ServiceConnectionState
     from authentik_client.models.session_end_challenge import SessionEndChallenge
     from authentik_client.models.session_user import SessionUser
@@ -686,14 +682,12 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.shell_challenge import ShellChallenge
     from authentik_client.models.signature_algorithm_enum import SignatureAlgorithmEnum
     from authentik_client.models.source import Source
-    from authentik_client.models.source_request import SourceRequest
     from authentik_client.models.source_stage import SourceStage
     from authentik_client.models.source_stage_request import SourceStageRequest
     from authentik_client.models.source_type import SourceType
     from authentik_client.models.sp_binding_enum import SpBindingEnum
     from authentik_client.models.stage import Stage
     from authentik_client.models.stage_prompt import StagePrompt
-    from authentik_client.models.stage_request import StageRequest
     from authentik_client.models.state_enum import StateEnum
     from authentik_client.models.static_device import StaticDevice
     from authentik_client.models.static_device_request import StaticDeviceRequest
@@ -1353,7 +1347,6 @@ from authentik_client.models.patched_web_authn_device_request import PatchedWebA
 from authentik_client.models.permission import Permission
 from authentik_client.models.permission_assign_request import PermissionAssignRequest
 from authentik_client.models.permission_assign_result import PermissionAssignResult
-from authentik_client.models.permission_request import PermissionRequest
 from authentik_client.models.plex_authentication_challenge import PlexAuthenticationChallenge
 from authentik_client.models.plex_authentication_challenge_response_request import PlexAuthenticationChallengeResponseRequest
 from authentik_client.models.plex_source import PlexSource
@@ -1365,7 +1358,6 @@ from authentik_client.models.policy import Policy
 from authentik_client.models.policy_binding import PolicyBinding
 from authentik_client.models.policy_binding_request import PolicyBindingRequest
 from authentik_client.models.policy_engine_mode import PolicyEngineMode
-from authentik_client.models.policy_request import PolicyRequest
 from authentik_client.models.policy_test_request import PolicyTestRequest
 from authentik_client.models.policy_test_result import PolicyTestResult
 from authentik_client.models.prompt import Prompt
@@ -1383,7 +1375,6 @@ from authentik_client.models.protocol_enum import ProtocolEnum
 from authentik_client.models.provider import Provider
 from authentik_client.models.provider_enum import ProviderEnum
 from authentik_client.models.provider_model_enum import ProviderModelEnum
-from authentik_client.models.provider_request import ProviderRequest
 from authentik_client.models.provider_type_enum import ProviderTypeEnum
 from authentik_client.models.proxy_mode import ProxyMode
 from authentik_client.models.proxy_outpost_config import ProxyOutpostConfig
@@ -1452,7 +1443,6 @@ from authentik_client.models.scope_mapping import ScopeMapping
 from authentik_client.models.scope_mapping_request import ScopeMappingRequest
 from authentik_client.models.selectable_stage import SelectableStage
 from authentik_client.models.service_connection import ServiceConnection
-from authentik_client.models.service_connection_request import ServiceConnectionRequest
 from authentik_client.models.service_connection_state import ServiceConnectionState
 from authentik_client.models.session_end_challenge import SessionEndChallenge
 from authentik_client.models.session_user import SessionUser
@@ -1462,14 +1452,12 @@ from authentik_client.models.severity_enum import SeverityEnum
 from authentik_client.models.shell_challenge import ShellChallenge
 from authentik_client.models.signature_algorithm_enum import SignatureAlgorithmEnum
 from authentik_client.models.source import Source
-from authentik_client.models.source_request import SourceRequest
 from authentik_client.models.source_stage import SourceStage
 from authentik_client.models.source_stage_request import SourceStageRequest
 from authentik_client.models.source_type import SourceType
 from authentik_client.models.sp_binding_enum import SpBindingEnum
 from authentik_client.models.stage import Stage
 from authentik_client.models.stage_prompt import StagePrompt
-from authentik_client.models.stage_request import StageRequest
 from authentik_client.models.state_enum import StateEnum
 from authentik_client.models.static_device import StaticDevice
 from authentik_client.models.static_device_request import StaticDeviceRequest

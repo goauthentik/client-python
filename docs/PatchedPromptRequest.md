@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **placeholder** | **str** | Optionally provide a short hint that describes the expected input value. When creating a fixed choice field, enable interpreting as expression and return a list to return multiple choices. | [optional] 
 **initial_value** | **str** | Optionally pre-fill the input with an initial value. When creating a fixed choice field, enable interpreting as expression and return a list to return multiple default choices. | [optional] 
 **order** | **int** |  | [optional] 
-**promptstage_set** | [**List[StageRequest]**](StageRequest.md) |  | [optional] 
 **sub_text** | **str** |  | [optional] 
 **placeholder_expression** | **bool** |  | [optional] 
 **initial_value_expression** | **bool** |  | [optional] 

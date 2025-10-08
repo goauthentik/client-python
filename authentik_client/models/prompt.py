@@ -22,8 +22,8 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
+from authentik_client.models.prompt_stage import PromptStage
 from authentik_client.models.prompt_type_enum import PromptTypeEnum
-from authentik_client.models.stage import Stage
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -40,11 +40,11 @@ class Prompt(BaseModel):
     placeholder: Optional[StrictStr] = Field(default=None, description="Optionally provide a short hint that describes the expected input value. When creating a fixed choice field, enable interpreting as expression and return a list to return multiple choices.")
     initial_value: Optional[StrictStr] = Field(default=None, description="Optionally pre-fill the input with an initial value. When creating a fixed choice field, enable interpreting as expression and return a list to return multiple default choices.")
     order: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
-    promptstage_set: Optional[List[Stage]] = None
+    prompt_stages_obj: List[PromptStage]
     sub_text: Optional[StrictStr] = None
     placeholder_expression: Optional[StrictBool] = None
     initial_value_expression: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["pk", "name", "field_key", "label", "type", "required", "placeholder", "initial_value", "order", "promptstage_set", "sub_text", "placeholder_expression", "initial_value_expression"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "field_key", "label", "type", "required", "placeholder", "initial_value", "order", "prompt_stages_obj", "sub_text", "placeholder_expression", "initial_value_expression"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,9 +77,11 @@ class Prompt(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "pk",
+            "prompt_stages_obj",
         ])
 
         _dict = self.model_dump(
@@ -87,13 +89,13 @@ class Prompt(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in promptstage_set (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in prompt_stages_obj (list)
         _items = []
-        if self.promptstage_set:
-            for _item_promptstage_set in self.promptstage_set:
-                if _item_promptstage_set:
-                    _items.append(_item_promptstage_set.to_dict())
-            _dict['promptstage_set'] = _items
+        if self.prompt_stages_obj:
+            for _item_prompt_stages_obj in self.prompt_stages_obj:
+                if _item_prompt_stages_obj:
+                    _items.append(_item_prompt_stages_obj.to_dict())
+            _dict['prompt_stages_obj'] = _items
         return _dict
 
     @classmethod
@@ -115,7 +117,7 @@ class Prompt(BaseModel):
             "placeholder": obj.get("placeholder"),
             "initial_value": obj.get("initial_value"),
             "order": obj.get("order"),
-            "promptstage_set": [Stage.from_dict(_item) for _item in obj["promptstage_set"]] if obj.get("promptstage_set") is not None else None,
+            "prompt_stages_obj": [PromptStage.from_dict(_item) for _item in obj["prompt_stages_obj"]] if obj.get("prompt_stages_obj") is not None else None,
             "sub_text": obj.get("sub_text"),
             "placeholder_expression": obj.get("placeholder_expression"),
             "initial_value_expression": obj.get("initial_value_expression")

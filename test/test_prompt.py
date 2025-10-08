@@ -45,8 +45,8 @@ class TestPrompt(unittest.TestCase):
                 placeholder = '',
                 initial_value = '',
                 order = -2147483648,
-                promptstage_set = [
-                    authentik_client.models.stage.Stage(
+                prompt_stages_obj = [
+                    authentik_client.models.prompt_stage.PromptStage(
                         pk = '', 
                         name = '', 
                         component = '', 
@@ -67,6 +67,12 @@ class TestPrompt(unittest.TestCase):
                                 export_url = '', 
                                 layout = 'stacked', 
                                 denied_action = null, )
+                            ], 
+                        fields = [
+                            ''
+                            ], 
+                        validation_policies = [
+                            ''
                             ], )
                     ],
                 sub_text = '',
@@ -80,6 +86,36 @@ class TestPrompt(unittest.TestCase):
                 field_key = '',
                 label = '',
                 type = 'text',
+                prompt_stages_obj = [
+                    authentik_client.models.prompt_stage.PromptStage(
+                        pk = '', 
+                        name = '', 
+                        component = '', 
+                        verbose_name = '', 
+                        verbose_name_plural = '', 
+                        meta_model_name = '', 
+                        flow_set = [
+                            authentik_client.models.flow_set.FlowSet(
+                                pk = '', 
+                                policybindingmodel_ptr_id = '', 
+                                name = '', 
+                                slug = 'z', 
+                                title = '', 
+                                designation = null, 
+                                background = '', 
+                                policy_engine_mode = 'all', 
+                                compatibility_mode = True, 
+                                export_url = '', 
+                                layout = 'stacked', 
+                                denied_action = null, )
+                            ], 
+                        fields = [
+                            ''
+                            ], 
+                        validation_policies = [
+                            ''
+                            ], )
+                    ],
         )
         """
 

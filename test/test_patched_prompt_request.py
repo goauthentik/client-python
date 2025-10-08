@@ -44,21 +44,6 @@ class TestPatchedPromptRequest(unittest.TestCase):
                 placeholder = '',
                 initial_value = '',
                 order = -2147483648,
-                promptstage_set = [
-                    authentik_client.models.stage_request.StageRequest(
-                        name = '0', 
-                        flow_set = [
-                            authentik_client.models.flow_set_request.FlowSetRequest(
-                                name = '0', 
-                                slug = 'z0', 
-                                title = '0', 
-                                designation = null, 
-                                policy_engine_mode = 'all', 
-                                compatibility_mode = True, 
-                                layout = 'stacked', 
-                                denied_action = null, )
-                            ], )
-                    ],
                 sub_text = '',
                 placeholder_expression = True,
                 initial_value_expression = True

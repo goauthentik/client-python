@@ -55,8 +55,8 @@ class TestPaginatedPromptList(unittest.TestCase):
                         placeholder = '', 
                         initial_value = '', 
                         order = -2147483648, 
-                        promptstage_set = [
-                            authentik_client.models.stage.Stage(
+                        prompt_stages_obj = [
+                            authentik_client.models.prompt_stage.PromptStage(
                                 pk = '', 
                                 name = '', 
                                 component = '', 
@@ -77,6 +77,12 @@ class TestPaginatedPromptList(unittest.TestCase):
                                         export_url = '', 
                                         layout = 'stacked', 
                                         denied_action = null, )
+                                    ], 
+                                fields = [
+                                    ''
+                                    ], 
+                                validation_policies = [
+                                    ''
                                     ], )
                             ], 
                         sub_text = '', 
@@ -108,8 +114,8 @@ class TestPaginatedPromptList(unittest.TestCase):
                         placeholder = '', 
                         initial_value = '', 
                         order = -2147483648, 
-                        promptstage_set = [
-                            authentik_client.models.stage.Stage(
+                        prompt_stages_obj = [
+                            authentik_client.models.prompt_stage.PromptStage(
                                 pk = '', 
                                 name = '', 
                                 component = '', 
@@ -130,6 +136,12 @@ class TestPaginatedPromptList(unittest.TestCase):
                                         export_url = '', 
                                         layout = 'stacked', 
                                         denied_action = null, )
+                                    ], 
+                                fields = [
+                                    ''
+                                    ], 
+                                validation_policies = [
+                                    ''
                                     ], )
                             ], 
                         sub_text = '', 

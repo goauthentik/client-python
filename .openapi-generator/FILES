@@ -593,7 +593,6 @@ authentik_client/models/patched_web_authn_device_request.py
 authentik_client/models/permission.py
 authentik_client/models/permission_assign_request.py
 authentik_client/models/permission_assign_result.py
-authentik_client/models/permission_request.py
 authentik_client/models/plex_authentication_challenge.py
 authentik_client/models/plex_authentication_challenge_response_request.py
 authentik_client/models/plex_source.py
@@ -605,7 +604,6 @@ authentik_client/models/policy.py
 authentik_client/models/policy_binding.py
 authentik_client/models/policy_binding_request.py
 authentik_client/models/policy_engine_mode.py
-authentik_client/models/policy_request.py
 authentik_client/models/policy_test_request.py
 authentik_client/models/policy_test_result.py
 authentik_client/models/prompt.py
@@ -623,7 +621,6 @@ authentik_client/models/protocol_enum.py
 authentik_client/models/provider.py
 authentik_client/models/provider_enum.py
 authentik_client/models/provider_model_enum.py
-authentik_client/models/provider_request.py
 authentik_client/models/provider_type_enum.py
 authentik_client/models/proxy_mode.py
 authentik_client/models/proxy_outpost_config.py
@@ -687,7 +684,6 @@ authentik_client/models/scope_mapping.py
 authentik_client/models/scope_mapping_request.py
 authentik_client/models/selectable_stage.py
 authentik_client/models/service_connection.py
-authentik_client/models/service_connection_request.py
 authentik_client/models/service_connection_state.py
 authentik_client/models/session_end_challenge.py
 authentik_client/models/session_user.py
@@ -699,7 +695,6 @@ authentik_client/models/signature_algorithm_enum.py
 authentik_client/models/sms_device.py
 authentik_client/models/sms_device_request.py
 authentik_client/models/source.py
-authentik_client/models/source_request.py
 authentik_client/models/source_stage.py
 authentik_client/models/source_stage_request.py
 authentik_client/models/source_type.py
@@ -709,7 +704,6 @@ authentik_client/models/ssf_provider_request.py
 authentik_client/models/ssf_stream.py
 authentik_client/models/stage.py
 authentik_client/models/stage_prompt.py
-authentik_client/models/stage_request.py
 authentik_client/models/state_enum.py
 authentik_client/models/static_device.py
 authentik_client/models/static_device_request.py
@@ -1373,7 +1367,6 @@ docs/PatchedWebAuthnDeviceRequest.md
 docs/Permission.md
 docs/PermissionAssignRequest.md
 docs/PermissionAssignResult.md
-docs/PermissionRequest.md
 docs/PlexAuthenticationChallenge.md
 docs/PlexAuthenticationChallengeResponseRequest.md
 docs/PlexSource.md
@@ -1386,7 +1379,6 @@ docs/Policy.md
 docs/PolicyBinding.md
 docs/PolicyBindingRequest.md
 docs/PolicyEngineMode.md
-docs/PolicyRequest.md
 docs/PolicyTestRequest.md
 docs/PolicyTestResult.md
 docs/Prompt.md
@@ -1405,7 +1397,6 @@ docs/ProtocolEnum.md
 docs/Provider.md
 docs/ProviderEnum.md
 docs/ProviderModelEnum.md
-docs/ProviderRequest.md
 docs/ProviderTypeEnum.md
 docs/ProvidersApi.md
 docs/ProxyMode.md
@@ -1479,7 +1470,6 @@ docs/ScopeMapping.md
 docs/ScopeMappingRequest.md
 docs/SelectableStage.md
 docs/ServiceConnection.md
-docs/ServiceConnectionRequest.md
 docs/ServiceConnectionState.md
 docs/SessionEndChallenge.md
 docs/SessionUser.md
@@ -1489,7 +1479,6 @@ docs/SeverityEnum.md
 docs/ShellChallenge.md
 docs/SignatureAlgorithmEnum.md
 docs/Source.md
-docs/SourceRequest.md
 docs/SourceStage.md
 docs/SourceStageRequest.md
 docs/SourceType.md
@@ -1498,7 +1487,6 @@ docs/SpBindingEnum.md
 docs/SsfApi.md
 docs/Stage.md
 docs/StagePrompt.md
-docs/StageRequest.md
 docs/StagesApi.md
 docs/StateEnum.md
 docs/StaticDevice.md
@@ -2170,7 +2158,6 @@ test/test_patched_web_authn_device_request.py
 test/test_permission.py
 test/test_permission_assign_request.py
 test/test_permission_assign_result.py
-test/test_permission_request.py
 test/test_plex_authentication_challenge.py
 test/test_plex_authentication_challenge_response_request.py
 test/test_plex_source.py
@@ -2183,7 +2170,6 @@ test/test_policy.py
 test/test_policy_binding.py
 test/test_policy_binding_request.py
 test/test_policy_engine_mode.py
-test/test_policy_request.py
 test/test_policy_test_request.py
 test/test_policy_test_result.py
 test/test_prompt.py
@@ -2202,7 +2188,6 @@ test/test_protocol_enum.py
 test/test_provider.py
 test/test_provider_enum.py
 test/test_provider_model_enum.py
-test/test_provider_request.py
 test/test_provider_type_enum.py
 test/test_providers_api.py
 test/test_proxy_mode.py
@@ -2271,7 +2256,6 @@ test/test_scope_mapping.py
 test/test_scope_mapping_request.py
 test/test_selectable_stage.py
 test/test_service_connection.py
-test/test_service_connection_request.py
 test/test_service_connection_state.py
 test/test_session_end_challenge.py
 test/test_session_user.py
@@ -2283,7 +2267,6 @@ test/test_signature_algorithm_enum.py
 test/test_sms_device.py
 test/test_sms_device_request.py
 test/test_source.py
-test/test_source_request.py
 test/test_source_stage.py
 test/test_source_stage_request.py
 test/test_source_type.py
@@ -2295,7 +2278,6 @@ test/test_ssf_provider_request.py
 test/test_ssf_stream.py
 test/test_stage.py
 test/test_stage_prompt.py
-test/test_stage_request.py
 test/test_stages_api.py
 test/test_state_enum.py
 test/test_static_device.py

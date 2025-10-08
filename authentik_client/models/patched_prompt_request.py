@@ -22,7 +22,6 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from authentik_client.models.prompt_type_enum import PromptTypeEnum
-from authentik_client.models.stage_request import StageRequest
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,11 +37,10 @@ class PatchedPromptRequest(BaseModel):
     placeholder: Optional[StrictStr] = Field(default=None, description="Optionally provide a short hint that describes the expected input value. When creating a fixed choice field, enable interpreting as expression and return a list to return multiple choices.")
     initial_value: Optional[StrictStr] = Field(default=None, description="Optionally pre-fill the input with an initial value. When creating a fixed choice field, enable interpreting as expression and return a list to return multiple default choices.")
     order: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
-    promptstage_set: Optional[List[StageRequest]] = None
     sub_text: Optional[StrictStr] = None
     placeholder_expression: Optional[StrictBool] = None
     initial_value_expression: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["name", "field_key", "label", "type", "required", "placeholder", "initial_value", "order", "promptstage_set", "sub_text", "placeholder_expression", "initial_value_expression"]
+    __properties: ClassVar[List[str]] = ["name", "field_key", "label", "type", "required", "placeholder", "initial_value", "order", "sub_text", "placeholder_expression", "initial_value_expression"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,13 +81,6 @@ class PatchedPromptRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in promptstage_set (list)
-        _items = []
-        if self.promptstage_set:
-            for _item_promptstage_set in self.promptstage_set:
-                if _item_promptstage_set:
-                    _items.append(_item_promptstage_set.to_dict())
-            _dict['promptstage_set'] = _items
         return _dict
 
     @classmethod
@@ -110,7 +101,6 @@ class PatchedPromptRequest(BaseModel):
             "placeholder": obj.get("placeholder"),
             "initial_value": obj.get("initial_value"),
             "order": obj.get("order"),
-            "promptstage_set": [StageRequest.from_dict(_item) for _item in obj["promptstage_set"]] if obj.get("promptstage_set") is not None else None,
             "sub_text": obj.get("sub_text"),
             "placeholder_expression": obj.get("placeholder_expression"),
             "initial_value_expression": obj.get("initial_value_expression")
