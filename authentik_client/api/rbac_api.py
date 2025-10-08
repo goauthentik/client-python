@@ -8104,7 +8104,7 @@ class RbacApi:
     @validate_call
     def rbac_roles_list(
         self,
-        group__name: Optional[StrictStr] = None,
+        name: Optional[StrictStr] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
         page: Annotated[Optional[StrictInt], Field(description="A page number within the paginated result set.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
@@ -8126,8 +8126,8 @@ class RbacApi:
 
         Role viewset
 
-        :param group__name:
-        :type group__name: str
+        :param name:
+        :type name: str
         :param ordering: Which field to use when ordering the results.
         :type ordering: str
         :param page: A page number within the paginated result set.
@@ -8159,7 +8159,7 @@ class RbacApi:
         """ # noqa: E501
 
         _param = self._rbac_roles_list_serialize(
-            group__name=group__name,
+            name=name,
             ordering=ordering,
             page=page,
             page_size=page_size,
@@ -8189,7 +8189,7 @@ class RbacApi:
     @validate_call
     def rbac_roles_list_with_http_info(
         self,
-        group__name: Optional[StrictStr] = None,
+        name: Optional[StrictStr] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
         page: Annotated[Optional[StrictInt], Field(description="A page number within the paginated result set.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
@@ -8211,8 +8211,8 @@ class RbacApi:
 
         Role viewset
 
-        :param group__name:
-        :type group__name: str
+        :param name:
+        :type name: str
         :param ordering: Which field to use when ordering the results.
         :type ordering: str
         :param page: A page number within the paginated result set.
@@ -8244,7 +8244,7 @@ class RbacApi:
         """ # noqa: E501
 
         _param = self._rbac_roles_list_serialize(
-            group__name=group__name,
+            name=name,
             ordering=ordering,
             page=page,
             page_size=page_size,
@@ -8274,7 +8274,7 @@ class RbacApi:
     @validate_call
     def rbac_roles_list_without_preload_content(
         self,
-        group__name: Optional[StrictStr] = None,
+        name: Optional[StrictStr] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
         page: Annotated[Optional[StrictInt], Field(description="A page number within the paginated result set.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
@@ -8296,8 +8296,8 @@ class RbacApi:
 
         Role viewset
 
-        :param group__name:
-        :type group__name: str
+        :param name:
+        :type name: str
         :param ordering: Which field to use when ordering the results.
         :type ordering: str
         :param page: A page number within the paginated result set.
@@ -8329,7 +8329,7 @@ class RbacApi:
         """ # noqa: E501
 
         _param = self._rbac_roles_list_serialize(
-            group__name=group__name,
+            name=name,
             ordering=ordering,
             page=page,
             page_size=page_size,
@@ -8354,7 +8354,7 @@ class RbacApi:
 
     def _rbac_roles_list_serialize(
         self,
-        group__name,
+        name,
         ordering,
         page,
         page_size,
@@ -8381,9 +8381,9 @@ class RbacApi:
 
         # process the path parameters
         # process the query parameters
-        if group__name is not None:
+        if name is not None:
             
-            _query_params.append(('group__name', group__name))
+            _query_params.append(('name', name))
             
         if ordering is not None:
             

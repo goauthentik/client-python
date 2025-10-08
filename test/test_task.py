@@ -41,6 +41,8 @@ class TestTask(unittest.TestCase):
                 actor_name = '',
                 state = 'queued',
                 mtime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                retries = 0,
+                eta = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 rel_obj_app_label = '',
                 rel_obj_model = '',
                 rel_obj_id = '',

@@ -2195,7 +2195,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rbac_roles_list**
-> PaginatedRoleList rbac_roles_list(group__name=group__name, ordering=ordering, page=page, page_size=page_size, search=search)
+> PaginatedRoleList rbac_roles_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 Role viewset
 
@@ -2229,14 +2229,14 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RbacApi(api_client)
-    group__name = 'group__name_example' # str |  (optional)
+    name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
 
     try:
-        api_response = api_instance.rbac_roles_list(group__name=group__name, ordering=ordering, page=page, page_size=page_size, search=search)
+        api_response = api_instance.rbac_roles_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
         print("The response of RbacApi->rbac_roles_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -2250,7 +2250,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group__name** | **str**|  | [optional] 
+ **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 

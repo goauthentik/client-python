@@ -21,6 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from uuid import UUID
 from authentik_client.models.log_event import LogEvent
 from authentik_client.models.state_enum import StateEnum
@@ -37,6 +38,8 @@ class Task(BaseModel):
     actor_name: StrictStr = Field(description="Dramatiq actor name")
     state: Optional[StateEnum] = Field(default=None, description="Task status")
     mtime: Optional[datetime] = Field(default=None, description="Task last modified time")
+    retries: Optional[Annotated[int, Field(le=9223372036854775807, strict=True, ge=0)]] = Field(default=None, description="Number of retries")
+    eta: Optional[datetime] = Field(default=None, description="Planned execution time")
     rel_obj_app_label: StrictStr
     rel_obj_model: StrictStr
     rel_obj_id: Optional[StrictStr] = None
@@ -45,7 +48,7 @@ class Task(BaseModel):
     previous_messages: List[LogEvent]
     aggregated_status: TaskAggregatedStatusEnum
     description: Optional[StrictStr]
-    __properties: ClassVar[List[str]] = ["message_id", "queue_name", "actor_name", "state", "mtime", "rel_obj_app_label", "rel_obj_model", "rel_obj_id", "uid", "messages", "previous_messages", "aggregated_status", "description"]
+    __properties: ClassVar[List[str]] = ["message_id", "queue_name", "actor_name", "state", "mtime", "retries", "eta", "rel_obj_app_label", "rel_obj_model", "rel_obj_id", "uid", "messages", "previous_messages", "aggregated_status", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,6 +111,11 @@ class Task(BaseModel):
                 if _item_previous_messages:
                     _items.append(_item_previous_messages.to_dict())
             _dict['previous_messages'] = _items
+        # set to None if eta (nullable) is None
+        # and model_fields_set contains the field
+        if self.eta is None and "eta" in self.model_fields_set:
+            _dict['eta'] = None
+
         # set to None if rel_obj_id (nullable) is None
         # and model_fields_set contains the field
         if self.rel_obj_id is None and "rel_obj_id" in self.model_fields_set:
@@ -135,6 +143,8 @@ class Task(BaseModel):
             "actor_name": obj.get("actor_name"),
             "state": obj.get("state"),
             "mtime": obj.get("mtime"),
+            "retries": obj.get("retries"),
+            "eta": obj.get("eta"),
             "rel_obj_app_label": obj.get("rel_obj_app_label"),
             "rel_obj_model": obj.get("rel_obj_model"),
             "rel_obj_id": obj.get("rel_obj_id"),
