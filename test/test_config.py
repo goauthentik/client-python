@@ -47,8 +47,7 @@ class TestConfig(unittest.TestCase):
                     ],
                 cache_timeout = 56,
                 cache_timeout_flows = 56,
-                cache_timeout_policies = 56,
-                cache_timeout_reputation = 56
+                cache_timeout_policies = 56
             )
         else:
             return Config(
@@ -64,7 +63,6 @@ class TestConfig(unittest.TestCase):
                 cache_timeout = 56,
                 cache_timeout_flows = 56,
                 cache_timeout_policies = 56,
-                cache_timeout_reputation = 56,
         )
         """
 

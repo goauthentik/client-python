@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **cache_timeout** | **int** |  | 
 **cache_timeout_flows** | **int** |  | 
 **cache_timeout_policies** | **int** |  | 
-**cache_timeout_reputation** | **int** |  | 
 
 ## Example
 

@@ -34,8 +34,7 @@ class Config(BaseModel):
     cache_timeout: StrictInt
     cache_timeout_flows: StrictInt
     cache_timeout_policies: StrictInt
-    cache_timeout_reputation: StrictInt
-    __properties: ClassVar[List[str]] = ["error_reporting", "capabilities", "cache_timeout", "cache_timeout_flows", "cache_timeout_policies", "cache_timeout_reputation"]
+    __properties: ClassVar[List[str]] = ["error_reporting", "capabilities", "cache_timeout", "cache_timeout_flows", "cache_timeout_policies"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,8 +94,7 @@ class Config(BaseModel):
             "capabilities": obj.get("capabilities"),
             "cache_timeout": obj.get("cache_timeout"),
             "cache_timeout_flows": obj.get("cache_timeout_flows"),
-            "cache_timeout_policies": obj.get("cache_timeout_policies"),
-            "cache_timeout_reputation": obj.get("cache_timeout_reputation")
+            "cache_timeout_policies": obj.get("cache_timeout_policies")
         })
         return _obj
 
