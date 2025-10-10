@@ -57,7 +57,7 @@ class TestPaginatedTaskList(unittest.TestCase):
                         rel_obj_model = '', 
                         rel_obj_id = '', 
                         uid = '', 
-                        messages = [
+                        logs = [
                             authentik_client.models.log_event.LogEvent(
                                 timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 log_level = 'critical', 
@@ -67,7 +67,7 @@ class TestPaginatedTaskList(unittest.TestCase):
                                     'key' : null
                                     }, )
                             ], 
-                        previous_messages = [
+                        previous_logs = [
                             authentik_client.models.log_event.LogEvent(
                                 timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 log_level = 'critical', 
@@ -107,7 +107,7 @@ class TestPaginatedTaskList(unittest.TestCase):
                         rel_obj_model = '', 
                         rel_obj_id = '', 
                         uid = '', 
-                        messages = [
+                        logs = [
                             authentik_client.models.log_event.LogEvent(
                                 timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 log_level = 'critical', 
@@ -117,7 +117,7 @@ class TestPaginatedTaskList(unittest.TestCase):
                                     'key' : null
                                     }, )
                             ], 
-                        previous_messages = [
+                        previous_logs = [
                             authentik_client.models.log_event.LogEvent(
                                 timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 log_level = 'critical', 

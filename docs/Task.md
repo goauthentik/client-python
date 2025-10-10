@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **rel_obj_model** | **str** |  | [readonly] 
 **rel_obj_id** | **str** |  | [optional] 
 **uid** | **str** |  | [readonly] 
-**messages** | [**List[LogEvent]**](LogEvent.md) |  | 
-**previous_messages** | [**List[LogEvent]**](LogEvent.md) |  | 
+**logs** | [**List[LogEvent]**](LogEvent.md) |  | [readonly] 
+**previous_logs** | [**List[LogEvent]**](LogEvent.md) |  | [readonly] 
 **aggregated_status** | [**TaskAggregatedStatusEnum**](TaskAggregatedStatusEnum.md) |  | 
 **description** | **str** |  | [readonly] 
 

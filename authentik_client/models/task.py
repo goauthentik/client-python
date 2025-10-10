@@ -44,11 +44,11 @@ class Task(BaseModel):
     rel_obj_model: StrictStr
     rel_obj_id: Optional[StrictStr] = None
     uid: StrictStr
-    messages: List[LogEvent]
-    previous_messages: List[LogEvent]
+    logs: List[LogEvent]
+    previous_logs: List[LogEvent]
     aggregated_status: TaskAggregatedStatusEnum
     description: Optional[StrictStr]
-    __properties: ClassVar[List[str]] = ["message_id", "queue_name", "actor_name", "state", "mtime", "retries", "eta", "rel_obj_app_label", "rel_obj_model", "rel_obj_id", "uid", "messages", "previous_messages", "aggregated_status", "description"]
+    __properties: ClassVar[List[str]] = ["message_id", "queue_name", "actor_name", "state", "mtime", "retries", "eta", "rel_obj_app_label", "rel_obj_model", "rel_obj_id", "uid", "logs", "previous_logs", "aggregated_status", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,11 +84,15 @@ class Task(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "rel_obj_app_label",
             "rel_obj_model",
             "uid",
+            "logs",
+            "previous_logs",
             "description",
         ])
 
@@ -97,20 +101,20 @@ class Task(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in messages (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in logs (list)
         _items = []
-        if self.messages:
-            for _item_messages in self.messages:
-                if _item_messages:
-                    _items.append(_item_messages.to_dict())
-            _dict['messages'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in previous_messages (list)
+        if self.logs:
+            for _item_logs in self.logs:
+                if _item_logs:
+                    _items.append(_item_logs.to_dict())
+            _dict['logs'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in previous_logs (list)
         _items = []
-        if self.previous_messages:
-            for _item_previous_messages in self.previous_messages:
-                if _item_previous_messages:
-                    _items.append(_item_previous_messages.to_dict())
-            _dict['previous_messages'] = _items
+        if self.previous_logs:
+            for _item_previous_logs in self.previous_logs:
+                if _item_previous_logs:
+                    _items.append(_item_previous_logs.to_dict())
+            _dict['previous_logs'] = _items
         # set to None if eta (nullable) is None
         # and model_fields_set contains the field
         if self.eta is None and "eta" in self.model_fields_set:
@@ -149,8 +153,8 @@ class Task(BaseModel):
             "rel_obj_model": obj.get("rel_obj_model"),
             "rel_obj_id": obj.get("rel_obj_id"),
             "uid": obj.get("uid"),
-            "messages": [LogEvent.from_dict(_item) for _item in obj["messages"]] if obj.get("messages") is not None else None,
-            "previous_messages": [LogEvent.from_dict(_item) for _item in obj["previous_messages"]] if obj.get("previous_messages") is not None else None,
+            "logs": [LogEvent.from_dict(_item) for _item in obj["logs"]] if obj.get("logs") is not None else None,
+            "previous_logs": [LogEvent.from_dict(_item) for _item in obj["previous_logs"]] if obj.get("previous_logs") is not None else None,
             "aggregated_status": obj.get("aggregated_status"),
             "description": obj.get("description")
         })
