@@ -1,4 +1,4 @@
-# SpBindingEnum
+# SAMLBindingsEnum
 
 
 ## Enum

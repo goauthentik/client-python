@@ -55,6 +55,14 @@ Name | Type | Description | Notes
 **sources** | [**List[LoginSource]**](LoginSource.md) |  | [optional] 
 **show_source_labels** | **bool** |  | 
 **enable_remember_me** | **bool** |  | [optional] [default to True]
+**logout_urls** | **List[Dict[str, object]]** |  | [optional] 
+**post_url** | **str** |  | [optional] 
+**saml_request** | **str** |  | [optional] 
+**relay_state** | **str** |  | [optional] 
+**provider_name** | **str** |  | [optional] 
+**binding** | **str** |  | [optional] 
+**redirect_url** | **str** |  | [optional] 
+**is_complete** | **bool** |  | [optional] [default to False]
 **slug** | **str** |  | 
 **fields** | [**List[StagePrompt]**](StagePrompt.md) |  | 
 **to** | **str** |  | 

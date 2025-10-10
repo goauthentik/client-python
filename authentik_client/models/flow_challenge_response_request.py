@@ -33,6 +33,8 @@ from authentik_client.models.dummy_challenge_response_request import DummyChalle
 from authentik_client.models.email_challenge_response_request import EmailChallengeResponseRequest
 from authentik_client.models.frame_challenge_response_request import FrameChallengeResponseRequest
 from authentik_client.models.identification_challenge_response_request import IdentificationChallengeResponseRequest
+from authentik_client.models.iframe_logout_challenge_response_request import IframeLogoutChallengeResponseRequest
+from authentik_client.models.native_logout_challenge_response_request import NativeLogoutChallengeResponseRequest
 from authentik_client.models.o_auth_device_code_challenge_response_request import OAuthDeviceCodeChallengeResponseRequest
 from authentik_client.models.o_auth_device_code_finish_challenge_response_request import OAuthDeviceCodeFinishChallengeResponseRequest
 from authentik_client.models.password_challenge_response_request import PasswordChallengeResponseRequest
@@ -45,7 +47,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-FLOWCHALLENGERESPONSEREQUEST_ONE_OF_SCHEMAS = ["AppleChallengeResponseRequest", "AuthenticatorDuoChallengeResponseRequest", "AuthenticatorEmailChallengeResponseRequest", "AuthenticatorSMSChallengeResponseRequest", "AuthenticatorStaticChallengeResponseRequest", "AuthenticatorTOTPChallengeResponseRequest", "AuthenticatorValidationChallengeResponseRequest", "AuthenticatorWebAuthnChallengeResponseRequest", "AutoSubmitChallengeResponseRequest", "CaptchaChallengeResponseRequest", "ConsentChallengeResponseRequest", "DummyChallengeResponseRequest", "EmailChallengeResponseRequest", "FrameChallengeResponseRequest", "IdentificationChallengeResponseRequest", "OAuthDeviceCodeChallengeResponseRequest", "OAuthDeviceCodeFinishChallengeResponseRequest", "PasswordChallengeResponseRequest", "PlexAuthenticationChallengeResponseRequest", "PromptChallengeResponseRequest", "RedirectChallengeResponseRequest", "TelegramChallengeResponseRequest", "UserLoginChallengeResponseRequest"]
+FLOWCHALLENGERESPONSEREQUEST_ONE_OF_SCHEMAS = ["AppleChallengeResponseRequest", "AuthenticatorDuoChallengeResponseRequest", "AuthenticatorEmailChallengeResponseRequest", "AuthenticatorSMSChallengeResponseRequest", "AuthenticatorStaticChallengeResponseRequest", "AuthenticatorTOTPChallengeResponseRequest", "AuthenticatorValidationChallengeResponseRequest", "AuthenticatorWebAuthnChallengeResponseRequest", "AutoSubmitChallengeResponseRequest", "CaptchaChallengeResponseRequest", "ConsentChallengeResponseRequest", "DummyChallengeResponseRequest", "EmailChallengeResponseRequest", "FrameChallengeResponseRequest", "IdentificationChallengeResponseRequest", "IframeLogoutChallengeResponseRequest", "NativeLogoutChallengeResponseRequest", "OAuthDeviceCodeChallengeResponseRequest", "OAuthDeviceCodeFinishChallengeResponseRequest", "PasswordChallengeResponseRequest", "PlexAuthenticationChallengeResponseRequest", "PromptChallengeResponseRequest", "RedirectChallengeResponseRequest", "TelegramChallengeResponseRequest", "UserLoginChallengeResponseRequest"]
 
 class FlowChallengeResponseRequest(BaseModel):
     """
@@ -81,24 +83,28 @@ class FlowChallengeResponseRequest(BaseModel):
     oneof_schema_14_validator: Optional[FrameChallengeResponseRequest] = None
     # data type: IdentificationChallengeResponseRequest
     oneof_schema_15_validator: Optional[IdentificationChallengeResponseRequest] = None
+    # data type: IframeLogoutChallengeResponseRequest
+    oneof_schema_16_validator: Optional[IframeLogoutChallengeResponseRequest] = None
+    # data type: NativeLogoutChallengeResponseRequest
+    oneof_schema_17_validator: Optional[NativeLogoutChallengeResponseRequest] = None
     # data type: OAuthDeviceCodeChallengeResponseRequest
-    oneof_schema_16_validator: Optional[OAuthDeviceCodeChallengeResponseRequest] = None
+    oneof_schema_18_validator: Optional[OAuthDeviceCodeChallengeResponseRequest] = None
     # data type: OAuthDeviceCodeFinishChallengeResponseRequest
-    oneof_schema_17_validator: Optional[OAuthDeviceCodeFinishChallengeResponseRequest] = None
+    oneof_schema_19_validator: Optional[OAuthDeviceCodeFinishChallengeResponseRequest] = None
     # data type: PasswordChallengeResponseRequest
-    oneof_schema_18_validator: Optional[PasswordChallengeResponseRequest] = None
+    oneof_schema_20_validator: Optional[PasswordChallengeResponseRequest] = None
     # data type: PlexAuthenticationChallengeResponseRequest
-    oneof_schema_19_validator: Optional[PlexAuthenticationChallengeResponseRequest] = None
+    oneof_schema_21_validator: Optional[PlexAuthenticationChallengeResponseRequest] = None
     # data type: PromptChallengeResponseRequest
-    oneof_schema_20_validator: Optional[PromptChallengeResponseRequest] = None
+    oneof_schema_22_validator: Optional[PromptChallengeResponseRequest] = None
     # data type: RedirectChallengeResponseRequest
-    oneof_schema_21_validator: Optional[RedirectChallengeResponseRequest] = None
+    oneof_schema_23_validator: Optional[RedirectChallengeResponseRequest] = None
     # data type: TelegramChallengeResponseRequest
-    oneof_schema_22_validator: Optional[TelegramChallengeResponseRequest] = None
+    oneof_schema_24_validator: Optional[TelegramChallengeResponseRequest] = None
     # data type: UserLoginChallengeResponseRequest
-    oneof_schema_23_validator: Optional[UserLoginChallengeResponseRequest] = None
-    actual_instance: Optional[Union[AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest]] = None
-    one_of_schemas: Set[str] = { "AppleChallengeResponseRequest", "AuthenticatorDuoChallengeResponseRequest", "AuthenticatorEmailChallengeResponseRequest", "AuthenticatorSMSChallengeResponseRequest", "AuthenticatorStaticChallengeResponseRequest", "AuthenticatorTOTPChallengeResponseRequest", "AuthenticatorValidationChallengeResponseRequest", "AuthenticatorWebAuthnChallengeResponseRequest", "AutoSubmitChallengeResponseRequest", "CaptchaChallengeResponseRequest", "ConsentChallengeResponseRequest", "DummyChallengeResponseRequest", "EmailChallengeResponseRequest", "FrameChallengeResponseRequest", "IdentificationChallengeResponseRequest", "OAuthDeviceCodeChallengeResponseRequest", "OAuthDeviceCodeFinishChallengeResponseRequest", "PasswordChallengeResponseRequest", "PlexAuthenticationChallengeResponseRequest", "PromptChallengeResponseRequest", "RedirectChallengeResponseRequest", "TelegramChallengeResponseRequest", "UserLoginChallengeResponseRequest" }
+    oneof_schema_25_validator: Optional[UserLoginChallengeResponseRequest] = None
+    actual_instance: Optional[Union[AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, IframeLogoutChallengeResponseRequest, NativeLogoutChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest]] = None
+    one_of_schemas: Set[str] = { "AppleChallengeResponseRequest", "AuthenticatorDuoChallengeResponseRequest", "AuthenticatorEmailChallengeResponseRequest", "AuthenticatorSMSChallengeResponseRequest", "AuthenticatorStaticChallengeResponseRequest", "AuthenticatorTOTPChallengeResponseRequest", "AuthenticatorValidationChallengeResponseRequest", "AuthenticatorWebAuthnChallengeResponseRequest", "AutoSubmitChallengeResponseRequest", "CaptchaChallengeResponseRequest", "ConsentChallengeResponseRequest", "DummyChallengeResponseRequest", "EmailChallengeResponseRequest", "FrameChallengeResponseRequest", "IdentificationChallengeResponseRequest", "IframeLogoutChallengeResponseRequest", "NativeLogoutChallengeResponseRequest", "OAuthDeviceCodeChallengeResponseRequest", "OAuthDeviceCodeFinishChallengeResponseRequest", "PasswordChallengeResponseRequest", "PlexAuthenticationChallengeResponseRequest", "PromptChallengeResponseRequest", "RedirectChallengeResponseRequest", "TelegramChallengeResponseRequest", "UserLoginChallengeResponseRequest" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -199,6 +205,16 @@ class FlowChallengeResponseRequest(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `IdentificationChallengeResponseRequest`")
         else:
             match += 1
+        # validate data type: IframeLogoutChallengeResponseRequest
+        if not isinstance(v, IframeLogoutChallengeResponseRequest):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `IframeLogoutChallengeResponseRequest`")
+        else:
+            match += 1
+        # validate data type: NativeLogoutChallengeResponseRequest
+        if not isinstance(v, NativeLogoutChallengeResponseRequest):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `NativeLogoutChallengeResponseRequest`")
+        else:
+            match += 1
         # validate data type: OAuthDeviceCodeChallengeResponseRequest
         if not isinstance(v, OAuthDeviceCodeChallengeResponseRequest):
             error_messages.append(f"Error! Input type `{type(v)}` is not `OAuthDeviceCodeChallengeResponseRequest`")
@@ -241,10 +257,10 @@ class FlowChallengeResponseRequest(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in FlowChallengeResponseRequest with oneOf schemas: AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in FlowChallengeResponseRequest with oneOf schemas: AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, IframeLogoutChallengeResponseRequest, NativeLogoutChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in FlowChallengeResponseRequest with oneOf schemas: AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in FlowChallengeResponseRequest with oneOf schemas: AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, IframeLogoutChallengeResponseRequest, NativeLogoutChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -349,6 +365,18 @@ class FlowChallengeResponseRequest(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into IframeLogoutChallengeResponseRequest
+        try:
+            instance.actual_instance = IframeLogoutChallengeResponseRequest.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into NativeLogoutChallengeResponseRequest
+        try:
+            instance.actual_instance = NativeLogoutChallengeResponseRequest.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into OAuthDeviceCodeChallengeResponseRequest
         try:
             instance.actual_instance = OAuthDeviceCodeChallengeResponseRequest.from_json(json_str)
@@ -400,10 +428,10 @@ class FlowChallengeResponseRequest(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into FlowChallengeResponseRequest with oneOf schemas: AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into FlowChallengeResponseRequest with oneOf schemas: AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, IframeLogoutChallengeResponseRequest, NativeLogoutChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into FlowChallengeResponseRequest with oneOf schemas: AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into FlowChallengeResponseRequest with oneOf schemas: AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, IframeLogoutChallengeResponseRequest, NativeLogoutChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -417,7 +445,7 @@ class FlowChallengeResponseRequest(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AppleChallengeResponseRequest, AuthenticatorDuoChallengeResponseRequest, AuthenticatorEmailChallengeResponseRequest, AuthenticatorSMSChallengeResponseRequest, AuthenticatorStaticChallengeResponseRequest, AuthenticatorTOTPChallengeResponseRequest, AuthenticatorValidationChallengeResponseRequest, AuthenticatorWebAuthnChallengeResponseRequest, AutoSubmitChallengeResponseRequest, CaptchaChallengeResponseRequest, ConsentChallengeResponseRequest, DummyChallengeResponseRequest, EmailChallengeResponseRequest, FrameChallengeResponseRequest, IdentificationChallengeResponseRequest, IframeLogoutChallengeResponseRequest, NativeLogoutChallengeResponseRequest, OAuthDeviceCodeChallengeResponseRequest, OAuthDeviceCodeFinishChallengeResponseRequest, PasswordChallengeResponseRequest, PlexAuthenticationChallengeResponseRequest, PromptChallengeResponseRequest, RedirectChallengeResponseRequest, TelegramChallengeResponseRequest, UserLoginChallengeResponseRequest]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

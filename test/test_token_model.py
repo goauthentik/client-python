@@ -69,7 +69,8 @@ class TestTokenModel(unittest.TestCase):
                             matching_mode = 'strict', 
                             url = '', )
                         ], 
-                    backchannel_logout_uri = '', 
+                    logout_uri = '', 
+                    logout_method = null, 
                     sub_mode = null, 
                     issuer_mode = null, 
                     jwt_federation_sources = [
@@ -155,7 +156,8 @@ class TestTokenModel(unittest.TestCase):
                             matching_mode = 'strict', 
                             url = '', )
                         ], 
-                    backchannel_logout_uri = '', 
+                    logout_uri = '', 
+                    logout_method = null, 
                     sub_mode = null, 
                     issuer_mode = null, 
                     jwt_federation_sources = [

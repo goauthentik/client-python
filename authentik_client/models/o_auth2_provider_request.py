@@ -24,6 +24,7 @@ from typing_extensions import Annotated
 from uuid import UUID
 from authentik_client.models.client_type_enum import ClientTypeEnum
 from authentik_client.models.issuer_mode_enum import IssuerModeEnum
+from authentik_client.models.o_auth2_provider_logout_method_enum import OAuth2ProviderLogoutMethodEnum
 from authentik_client.models.redirect_uri_request import RedirectURIRequest
 from authentik_client.models.sub_mode_enum import SubModeEnum
 from typing import Optional, Set
@@ -49,12 +50,13 @@ class OAuth2ProviderRequest(BaseModel):
     signing_key: Optional[UUID] = Field(default=None, description="Key used to sign the tokens.")
     encryption_key: Optional[UUID] = Field(default=None, description="Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs.")
     redirect_uris: List[RedirectURIRequest]
-    backchannel_logout_uri: Optional[StrictStr] = None
+    logout_uri: Optional[StrictStr] = None
+    logout_method: Optional[OAuth2ProviderLogoutMethodEnum] = Field(default=None, description="Backchannel logs out with server to server calls. Frontchannel uses iframes in your browser")
     sub_mode: Optional[SubModeEnum] = Field(default=None, description="Configure what data should be used as unique User Identifier. For most cases, the default should be fine.")
     issuer_mode: Optional[IssuerModeEnum] = Field(default=None, description="Configure how the issuer field of the ID Token should be filled.")
     jwt_federation_sources: Optional[List[UUID]] = None
     jwt_federation_providers: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "client_type", "client_id", "client_secret", "access_code_validity", "access_token_validity", "refresh_token_validity", "refresh_token_threshold", "include_claims_in_id_token", "signing_key", "encryption_key", "redirect_uris", "backchannel_logout_uri", "sub_mode", "issuer_mode", "jwt_federation_sources", "jwt_federation_providers"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "client_type", "client_id", "client_secret", "access_code_validity", "access_token_validity", "refresh_token_validity", "refresh_token_threshold", "include_claims_in_id_token", "signing_key", "encryption_key", "redirect_uris", "logout_uri", "logout_method", "sub_mode", "issuer_mode", "jwt_federation_sources", "jwt_federation_providers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -145,7 +147,8 @@ class OAuth2ProviderRequest(BaseModel):
             "signing_key": obj.get("signing_key"),
             "encryption_key": obj.get("encryption_key"),
             "redirect_uris": [RedirectURIRequest.from_dict(_item) for _item in obj["redirect_uris"]] if obj.get("redirect_uris") is not None else None,
-            "backchannel_logout_uri": obj.get("backchannel_logout_uri"),
+            "logout_uri": obj.get("logout_uri"),
+            "logout_method": obj.get("logout_method"),
             "sub_mode": obj.get("sub_mode"),
             "issuer_mode": obj.get("issuer_mode"),
             "jwt_federation_sources": obj.get("jwt_federation_sources"),

@@ -44,6 +44,7 @@ class TestPatchedSAMLProviderRequest(unittest.TestCase):
                     ''
                     ],
                 acs_url = '0',
+                sls_url = '',
                 audience = '',
                 issuer = '0',
                 assertion_valid_not_before = '0',
@@ -58,7 +59,10 @@ class TestPatchedSAMLProviderRequest(unittest.TestCase):
                 encryption_kp = '',
                 sign_assertion = True,
                 sign_response = True,
+                sign_logout_request = True,
                 sp_binding = 'redirect',
+                sls_binding = 'redirect',
+                logout_method = 'frontchannel_iframe',
                 default_relay_state = '',
                 default_name_id_policy = 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress'
             )

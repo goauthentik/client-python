@@ -149,6 +149,18 @@ class TestChallengeTypes(unittest.TestCase):
                     ],
                 show_source_labels = True,
                 enable_remember_me = True,
+                logout_urls = [
+                    {
+                        'key' : None
+                        }
+                    ],
+                post_url = '',
+                saml_request = '',
+                relay_state = '',
+                provider_name = '',
+                binding = '',
+                redirect_url = '',
+                is_complete = True,
                 slug = '',
                 fields = [
                     authentik_client.models.stage_prompt.StagePrompt(

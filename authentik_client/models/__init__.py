@@ -214,6 +214,8 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.identification_challenge_response_request import IdentificationChallengeResponseRequest
     from authentik_client.models.identification_stage import IdentificationStage
     from authentik_client.models.identification_stage_request import IdentificationStageRequest
+    from authentik_client.models.iframe_logout_challenge import IframeLogoutChallenge
+    from authentik_client.models.iframe_logout_challenge_response_request import IframeLogoutChallengeResponseRequest
     from authentik_client.models.impersonation_request import ImpersonationRequest
     from authentik_client.models.initial_permissions import InitialPermissions
     from authentik_client.models.initial_permissions_mode_enum import InitialPermissionsModeEnum
@@ -270,6 +272,8 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.mutual_tls_stage import MutualTLSStage
     from authentik_client.models.mutual_tls_stage_mode_enum import MutualTLSStageModeEnum
     from authentik_client.models.mutual_tls_stage_request import MutualTLSStageRequest
+    from authentik_client.models.native_logout_challenge import NativeLogoutChallenge
+    from authentik_client.models.native_logout_challenge_response_request import NativeLogoutChallengeResponseRequest
     from authentik_client.models.network_binding_enum import NetworkBindingEnum
     from authentik_client.models.not_configured_action_enum import NotConfiguredActionEnum
     from authentik_client.models.notification import Notification
@@ -283,6 +287,7 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.notification_webhook_mapping import NotificationWebhookMapping
     from authentik_client.models.notification_webhook_mapping_request import NotificationWebhookMappingRequest
     from authentik_client.models.o_auth2_provider import OAuth2Provider
+    from authentik_client.models.o_auth2_provider_logout_method_enum import OAuth2ProviderLogoutMethodEnum
     from authentik_client.models.o_auth2_provider_request import OAuth2ProviderRequest
     from authentik_client.models.o_auth2_provider_setup_urls import OAuth2ProviderSetupURLs
     from authentik_client.models.o_auth_device_code_challenge import OAuthDeviceCodeChallenge
@@ -635,11 +640,13 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.role_assigned_object_permission import RoleAssignedObjectPermission
     from authentik_client.models.role_object_permission import RoleObjectPermission
     from authentik_client.models.role_request import RoleRequest
+    from authentik_client.models.saml_bindings_enum import SAMLBindingsEnum
     from authentik_client.models.saml_metadata import SAMLMetadata
     from authentik_client.models.saml_name_id_policy_enum import SAMLNameIDPolicyEnum
     from authentik_client.models.saml_property_mapping import SAMLPropertyMapping
     from authentik_client.models.saml_property_mapping_request import SAMLPropertyMappingRequest
     from authentik_client.models.saml_provider import SAMLProvider
+    from authentik_client.models.saml_provider_logout_method_enum import SAMLProviderLogoutMethodEnum
     from authentik_client.models.saml_provider_request import SAMLProviderRequest
     from authentik_client.models.saml_source import SAMLSource
     from authentik_client.models.saml_source_property_mapping import SAMLSourcePropertyMapping
@@ -685,7 +692,6 @@ if __import__("typing").TYPE_CHECKING:
     from authentik_client.models.source_stage import SourceStage
     from authentik_client.models.source_stage_request import SourceStageRequest
     from authentik_client.models.source_type import SourceType
-    from authentik_client.models.sp_binding_enum import SpBindingEnum
     from authentik_client.models.stage import Stage
     from authentik_client.models.stage_prompt import StagePrompt
     from authentik_client.models.state_enum import StateEnum
@@ -984,6 +990,8 @@ from authentik_client.models.identification_challenge import IdentificationChall
 from authentik_client.models.identification_challenge_response_request import IdentificationChallengeResponseRequest
 from authentik_client.models.identification_stage import IdentificationStage
 from authentik_client.models.identification_stage_request import IdentificationStageRequest
+from authentik_client.models.iframe_logout_challenge import IframeLogoutChallenge
+from authentik_client.models.iframe_logout_challenge_response_request import IframeLogoutChallengeResponseRequest
 from authentik_client.models.impersonation_request import ImpersonationRequest
 from authentik_client.models.initial_permissions import InitialPermissions
 from authentik_client.models.initial_permissions_mode_enum import InitialPermissionsModeEnum
@@ -1040,6 +1048,8 @@ from authentik_client.models.model_request import ModelRequest
 from authentik_client.models.mutual_tls_stage import MutualTLSStage
 from authentik_client.models.mutual_tls_stage_mode_enum import MutualTLSStageModeEnum
 from authentik_client.models.mutual_tls_stage_request import MutualTLSStageRequest
+from authentik_client.models.native_logout_challenge import NativeLogoutChallenge
+from authentik_client.models.native_logout_challenge_response_request import NativeLogoutChallengeResponseRequest
 from authentik_client.models.network_binding_enum import NetworkBindingEnum
 from authentik_client.models.not_configured_action_enum import NotConfiguredActionEnum
 from authentik_client.models.notification import Notification
@@ -1053,6 +1063,7 @@ from authentik_client.models.notification_transport_test import NotificationTran
 from authentik_client.models.notification_webhook_mapping import NotificationWebhookMapping
 from authentik_client.models.notification_webhook_mapping_request import NotificationWebhookMappingRequest
 from authentik_client.models.o_auth2_provider import OAuth2Provider
+from authentik_client.models.o_auth2_provider_logout_method_enum import OAuth2ProviderLogoutMethodEnum
 from authentik_client.models.o_auth2_provider_request import OAuth2ProviderRequest
 from authentik_client.models.o_auth2_provider_setup_urls import OAuth2ProviderSetupURLs
 from authentik_client.models.o_auth_device_code_challenge import OAuthDeviceCodeChallenge
@@ -1405,11 +1416,13 @@ from authentik_client.models.role import Role
 from authentik_client.models.role_assigned_object_permission import RoleAssignedObjectPermission
 from authentik_client.models.role_object_permission import RoleObjectPermission
 from authentik_client.models.role_request import RoleRequest
+from authentik_client.models.saml_bindings_enum import SAMLBindingsEnum
 from authentik_client.models.saml_metadata import SAMLMetadata
 from authentik_client.models.saml_name_id_policy_enum import SAMLNameIDPolicyEnum
 from authentik_client.models.saml_property_mapping import SAMLPropertyMapping
 from authentik_client.models.saml_property_mapping_request import SAMLPropertyMappingRequest
 from authentik_client.models.saml_provider import SAMLProvider
+from authentik_client.models.saml_provider_logout_method_enum import SAMLProviderLogoutMethodEnum
 from authentik_client.models.saml_provider_request import SAMLProviderRequest
 from authentik_client.models.saml_source import SAMLSource
 from authentik_client.models.saml_source_property_mapping import SAMLSourcePropertyMapping
@@ -1455,7 +1468,6 @@ from authentik_client.models.source import Source
 from authentik_client.models.source_stage import SourceStage
 from authentik_client.models.source_stage_request import SourceStageRequest
 from authentik_client.models.source_type import SourceType
-from authentik_client.models.sp_binding_enum import SpBindingEnum
 from authentik_client.models.stage import Stage
 from authentik_client.models.stage_prompt import StagePrompt
 from authentik_client.models.state_enum import StateEnum

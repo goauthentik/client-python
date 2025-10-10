@@ -19,9 +19,9 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class SpBindingEnum(str, Enum):
+class SAMLBindingsEnum(str, Enum):
     """
-    SpBindingEnum
+    SAMLBindingsEnum
     """
 
     """
@@ -32,7 +32,7 @@ class SpBindingEnum(str, Enum):
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of SpBindingEnum from a JSON string"""
+        """Create an instance of SAMLBindingsEnum from a JSON string"""
         return cls(json.loads(json_str))
 
 

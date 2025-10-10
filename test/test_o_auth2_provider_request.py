@@ -58,7 +58,8 @@ class TestOAuth2ProviderRequest(unittest.TestCase):
                         matching_mode = 'strict', 
                         url = '0', )
                     ],
-                backchannel_logout_uri = '',
+                logout_uri = '',
+                logout_method = 'backchannel',
                 sub_mode = 'hashed_user_id',
                 issuer_mode = 'global',
                 jwt_federation_sources = [

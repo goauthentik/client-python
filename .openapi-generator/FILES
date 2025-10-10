@@ -230,6 +230,8 @@ authentik_client/models/identification_challenge.py
 authentik_client/models/identification_challenge_response_request.py
 authentik_client/models/identification_stage.py
 authentik_client/models/identification_stage_request.py
+authentik_client/models/iframe_logout_challenge.py
+authentik_client/models/iframe_logout_challenge_response_request.py
 authentik_client/models/impersonation_request.py
 authentik_client/models/initial_permissions.py
 authentik_client/models/initial_permissions_mode_enum.py
@@ -286,6 +288,8 @@ authentik_client/models/model_request.py
 authentik_client/models/mutual_tls_stage.py
 authentik_client/models/mutual_tls_stage_mode_enum.py
 authentik_client/models/mutual_tls_stage_request.py
+authentik_client/models/native_logout_challenge.py
+authentik_client/models/native_logout_challenge_response_request.py
 authentik_client/models/network_binding_enum.py
 authentik_client/models/not_configured_action_enum.py
 authentik_client/models/notification.py
@@ -299,6 +303,7 @@ authentik_client/models/notification_transport_test.py
 authentik_client/models/notification_webhook_mapping.py
 authentik_client/models/notification_webhook_mapping_request.py
 authentik_client/models/o_auth2_provider.py
+authentik_client/models/o_auth2_provider_logout_method_enum.py
 authentik_client/models/o_auth2_provider_request.py
 authentik_client/models/o_auth2_provider_setup_urls.py
 authentik_client/models/o_auth_device_code_challenge.py
@@ -651,11 +656,13 @@ authentik_client/models/role.py
 authentik_client/models/role_assigned_object_permission.py
 authentik_client/models/role_object_permission.py
 authentik_client/models/role_request.py
+authentik_client/models/saml_bindings_enum.py
 authentik_client/models/saml_metadata.py
 authentik_client/models/saml_name_id_policy_enum.py
 authentik_client/models/saml_property_mapping.py
 authentik_client/models/saml_property_mapping_request.py
 authentik_client/models/saml_provider.py
+authentik_client/models/saml_provider_logout_method_enum.py
 authentik_client/models/saml_provider_request.py
 authentik_client/models/saml_source.py
 authentik_client/models/saml_source_property_mapping.py
@@ -698,7 +705,6 @@ authentik_client/models/source.py
 authentik_client/models/source_stage.py
 authentik_client/models/source_stage_request.py
 authentik_client/models/source_type.py
-authentik_client/models/sp_binding_enum.py
 authentik_client/models/ssf_provider.py
 authentik_client/models/ssf_provider_request.py
 authentik_client/models/ssf_stream.py
@@ -1001,6 +1007,8 @@ docs/IdentificationChallenge.md
 docs/IdentificationChallengeResponseRequest.md
 docs/IdentificationStage.md
 docs/IdentificationStageRequest.md
+docs/IframeLogoutChallenge.md
+docs/IframeLogoutChallengeResponseRequest.md
 docs/ImpersonationRequest.md
 docs/InitialPermissions.md
 docs/InitialPermissionsModeEnum.md
@@ -1058,6 +1066,8 @@ docs/ModelRequest.md
 docs/MutualTLSStage.md
 docs/MutualTLSStageModeEnum.md
 docs/MutualTLSStageRequest.md
+docs/NativeLogoutChallenge.md
+docs/NativeLogoutChallengeResponseRequest.md
 docs/NetworkBindingEnum.md
 docs/NotConfiguredActionEnum.md
 docs/Notification.md
@@ -1071,6 +1081,7 @@ docs/NotificationTransportTest.md
 docs/NotificationWebhookMapping.md
 docs/NotificationWebhookMappingRequest.md
 docs/OAuth2Provider.md
+docs/OAuth2ProviderLogoutMethodEnum.md
 docs/OAuth2ProviderRequest.md
 docs/OAuth2ProviderSetupURLs.md
 docs/OAuthDeviceCodeChallenge.md
@@ -1431,11 +1442,13 @@ docs/RoleAssignedObjectPermission.md
 docs/RoleObjectPermission.md
 docs/RoleRequest.md
 docs/RootApi.md
+docs/SAMLBindingsEnum.md
 docs/SAMLMetadata.md
 docs/SAMLNameIDPolicyEnum.md
 docs/SAMLPropertyMapping.md
 docs/SAMLPropertyMappingRequest.md
 docs/SAMLProvider.md
+docs/SAMLProviderLogoutMethodEnum.md
 docs/SAMLProviderRequest.md
 docs/SAMLSource.md
 docs/SAMLSourcePropertyMapping.md
@@ -1483,7 +1496,6 @@ docs/SourceStage.md
 docs/SourceStageRequest.md
 docs/SourceType.md
 docs/SourcesApi.md
-docs/SpBindingEnum.md
 docs/SsfApi.md
 docs/Stage.md
 docs/StagePrompt.md
@@ -1792,6 +1804,8 @@ test/test_identification_challenge.py
 test/test_identification_challenge_response_request.py
 test/test_identification_stage.py
 test/test_identification_stage_request.py
+test/test_iframe_logout_challenge.py
+test/test_iframe_logout_challenge_response_request.py
 test/test_impersonation_request.py
 test/test_initial_permissions.py
 test/test_initial_permissions_mode_enum.py
@@ -1849,6 +1863,8 @@ test/test_model_request.py
 test/test_mutual_tls_stage.py
 test/test_mutual_tls_stage_mode_enum.py
 test/test_mutual_tls_stage_request.py
+test/test_native_logout_challenge.py
+test/test_native_logout_challenge_response_request.py
 test/test_network_binding_enum.py
 test/test_not_configured_action_enum.py
 test/test_notification.py
@@ -1862,6 +1878,7 @@ test/test_notification_transport_test.py
 test/test_notification_webhook_mapping.py
 test/test_notification_webhook_mapping_request.py
 test/test_o_auth2_provider.py
+test/test_o_auth2_provider_logout_method_enum.py
 test/test_o_auth2_provider_request.py
 test/test_o_auth2_provider_setup_urls.py
 test/test_o_auth_device_code_challenge.py
@@ -2222,11 +2239,13 @@ test/test_role_assigned_object_permission.py
 test/test_role_object_permission.py
 test/test_role_request.py
 test/test_root_api.py
+test/test_saml_bindings_enum.py
 test/test_saml_metadata.py
 test/test_saml_name_id_policy_enum.py
 test/test_saml_property_mapping.py
 test/test_saml_property_mapping_request.py
 test/test_saml_provider.py
+test/test_saml_provider_logout_method_enum.py
 test/test_saml_provider_request.py
 test/test_saml_source.py
 test/test_saml_source_property_mapping.py
@@ -2271,7 +2290,6 @@ test/test_source_stage.py
 test/test_source_stage_request.py
 test/test_source_type.py
 test/test_sources_api.py
-test/test_sp_binding_enum.py
 test/test_ssf_api.py
 test/test_ssf_provider.py
 test/test_ssf_provider_request.py

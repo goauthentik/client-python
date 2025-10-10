@@ -24680,6 +24680,7 @@ class ProvidersApi:
         invalidation_flow: Optional[UUID] = None,
         is_backchannel: Optional[StrictBool] = None,
         issuer: Optional[StrictStr] = None,
+        logout_method: Annotated[Optional[StrictStr], Field(description="Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).  ")] = None,
         name: Optional[StrictStr] = None,
         name_id_mapping: Optional[UUID] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
@@ -24689,9 +24690,12 @@ class ProvidersApi:
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
+        sign_logout_request: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
+        sls_binding: Annotated[Optional[StrictStr], Field(description="This determines how authentik sends the logout response back to the Service Provider.  ")] = None,
+        sls_url: Optional[StrictStr] = None,
         sp_binding: Annotated[Optional[StrictStr], Field(description="This determines how authentik sends the response back to the Service Provider.  ")] = None,
         verification_kp: Optional[UUID] = None,
         _request_timeout: Union[
@@ -24741,6 +24745,8 @@ class ProvidersApi:
         :type is_backchannel: bool
         :param issuer:
         :type issuer: str
+        :param logout_method: Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).  
+        :type logout_method: str
         :param name:
         :type name: str
         :param name_id_mapping:
@@ -24759,12 +24765,18 @@ class ProvidersApi:
         :type session_valid_not_on_or_after: str
         :param sign_assertion:
         :type sign_assertion: bool
+        :param sign_logout_request:
+        :type sign_logout_request: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
         :type signature_algorithm: str
         :param signing_kp:
         :type signing_kp: str
+        :param sls_binding: This determines how authentik sends the logout response back to the Service Provider.  
+        :type sls_binding: str
+        :param sls_url:
+        :type sls_url: str
         :param sp_binding: This determines how authentik sends the response back to the Service Provider.  
         :type sp_binding: str
         :param verification_kp:
@@ -24807,6 +24819,7 @@ class ProvidersApi:
             invalidation_flow=invalidation_flow,
             is_backchannel=is_backchannel,
             issuer=issuer,
+            logout_method=logout_method,
             name=name,
             name_id_mapping=name_id_mapping,
             ordering=ordering,
@@ -24816,9 +24829,12 @@ class ProvidersApi:
             search=search,
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
+            sign_logout_request=sign_logout_request,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
+            sls_binding=sls_binding,
+            sls_url=sls_url,
             sp_binding=sp_binding,
             verification_kp=verification_kp,
             _request_auth=_request_auth,
@@ -24861,6 +24877,7 @@ class ProvidersApi:
         invalidation_flow: Optional[UUID] = None,
         is_backchannel: Optional[StrictBool] = None,
         issuer: Optional[StrictStr] = None,
+        logout_method: Annotated[Optional[StrictStr], Field(description="Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).  ")] = None,
         name: Optional[StrictStr] = None,
         name_id_mapping: Optional[UUID] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
@@ -24870,9 +24887,12 @@ class ProvidersApi:
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
+        sign_logout_request: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
+        sls_binding: Annotated[Optional[StrictStr], Field(description="This determines how authentik sends the logout response back to the Service Provider.  ")] = None,
+        sls_url: Optional[StrictStr] = None,
         sp_binding: Annotated[Optional[StrictStr], Field(description="This determines how authentik sends the response back to the Service Provider.  ")] = None,
         verification_kp: Optional[UUID] = None,
         _request_timeout: Union[
@@ -24922,6 +24942,8 @@ class ProvidersApi:
         :type is_backchannel: bool
         :param issuer:
         :type issuer: str
+        :param logout_method: Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).  
+        :type logout_method: str
         :param name:
         :type name: str
         :param name_id_mapping:
@@ -24940,12 +24962,18 @@ class ProvidersApi:
         :type session_valid_not_on_or_after: str
         :param sign_assertion:
         :type sign_assertion: bool
+        :param sign_logout_request:
+        :type sign_logout_request: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
         :type signature_algorithm: str
         :param signing_kp:
         :type signing_kp: str
+        :param sls_binding: This determines how authentik sends the logout response back to the Service Provider.  
+        :type sls_binding: str
+        :param sls_url:
+        :type sls_url: str
         :param sp_binding: This determines how authentik sends the response back to the Service Provider.  
         :type sp_binding: str
         :param verification_kp:
@@ -24988,6 +25016,7 @@ class ProvidersApi:
             invalidation_flow=invalidation_flow,
             is_backchannel=is_backchannel,
             issuer=issuer,
+            logout_method=logout_method,
             name=name,
             name_id_mapping=name_id_mapping,
             ordering=ordering,
@@ -24997,9 +25026,12 @@ class ProvidersApi:
             search=search,
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
+            sign_logout_request=sign_logout_request,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
+            sls_binding=sls_binding,
+            sls_url=sls_url,
             sp_binding=sp_binding,
             verification_kp=verification_kp,
             _request_auth=_request_auth,
@@ -25042,6 +25074,7 @@ class ProvidersApi:
         invalidation_flow: Optional[UUID] = None,
         is_backchannel: Optional[StrictBool] = None,
         issuer: Optional[StrictStr] = None,
+        logout_method: Annotated[Optional[StrictStr], Field(description="Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).  ")] = None,
         name: Optional[StrictStr] = None,
         name_id_mapping: Optional[UUID] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
@@ -25051,9 +25084,12 @@ class ProvidersApi:
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
+        sign_logout_request: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
+        sls_binding: Annotated[Optional[StrictStr], Field(description="This determines how authentik sends the logout response back to the Service Provider.  ")] = None,
+        sls_url: Optional[StrictStr] = None,
         sp_binding: Annotated[Optional[StrictStr], Field(description="This determines how authentik sends the response back to the Service Provider.  ")] = None,
         verification_kp: Optional[UUID] = None,
         _request_timeout: Union[
@@ -25103,6 +25139,8 @@ class ProvidersApi:
         :type is_backchannel: bool
         :param issuer:
         :type issuer: str
+        :param logout_method: Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).  
+        :type logout_method: str
         :param name:
         :type name: str
         :param name_id_mapping:
@@ -25121,12 +25159,18 @@ class ProvidersApi:
         :type session_valid_not_on_or_after: str
         :param sign_assertion:
         :type sign_assertion: bool
+        :param sign_logout_request:
+        :type sign_logout_request: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
         :type signature_algorithm: str
         :param signing_kp:
         :type signing_kp: str
+        :param sls_binding: This determines how authentik sends the logout response back to the Service Provider.  
+        :type sls_binding: str
+        :param sls_url:
+        :type sls_url: str
         :param sp_binding: This determines how authentik sends the response back to the Service Provider.  
         :type sp_binding: str
         :param verification_kp:
@@ -25169,6 +25213,7 @@ class ProvidersApi:
             invalidation_flow=invalidation_flow,
             is_backchannel=is_backchannel,
             issuer=issuer,
+            logout_method=logout_method,
             name=name,
             name_id_mapping=name_id_mapping,
             ordering=ordering,
@@ -25178,9 +25223,12 @@ class ProvidersApi:
             search=search,
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
+            sign_logout_request=sign_logout_request,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
+            sls_binding=sls_binding,
+            sls_url=sls_url,
             sp_binding=sp_binding,
             verification_kp=verification_kp,
             _request_auth=_request_auth,
@@ -25218,6 +25266,7 @@ class ProvidersApi:
         invalidation_flow,
         is_backchannel,
         issuer,
+        logout_method,
         name,
         name_id_mapping,
         ordering,
@@ -25227,9 +25276,12 @@ class ProvidersApi:
         search,
         session_valid_not_on_or_after,
         sign_assertion,
+        sign_logout_request,
         sign_response,
         signature_algorithm,
         signing_kp,
+        sls_binding,
+        sls_url,
         sp_binding,
         verification_kp,
         _request_auth,
@@ -25315,6 +25367,10 @@ class ProvidersApi:
             
             _query_params.append(('issuer', issuer))
             
+        if logout_method is not None:
+            
+            _query_params.append(('logout_method', logout_method))
+            
         if name is not None:
             
             _query_params.append(('name', name))
@@ -25351,6 +25407,10 @@ class ProvidersApi:
             
             _query_params.append(('sign_assertion', sign_assertion))
             
+        if sign_logout_request is not None:
+            
+            _query_params.append(('sign_logout_request', sign_logout_request))
+            
         if sign_response is not None:
             
             _query_params.append(('sign_response', sign_response))
@@ -25362,6 +25422,14 @@ class ProvidersApi:
         if signing_kp is not None:
             
             _query_params.append(('signing_kp', signing_kp))
+            
+        if sls_binding is not None:
+            
+            _query_params.append(('sls_binding', sls_binding))
+            
+        if sls_url is not None:
+            
+            _query_params.append(('sls_url', sls_url))
             
         if sp_binding is not None:
             

@@ -23,9 +23,10 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
 from authentik_client.models.digest_algorithm_enum import DigestAlgorithmEnum
+from authentik_client.models.saml_bindings_enum import SAMLBindingsEnum
 from authentik_client.models.saml_name_id_policy_enum import SAMLNameIDPolicyEnum
+from authentik_client.models.saml_provider_logout_method_enum import SAMLProviderLogoutMethodEnum
 from authentik_client.models.signature_algorithm_enum import SignatureAlgorithmEnum
-from authentik_client.models.sp_binding_enum import SpBindingEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,6 +40,7 @@ class PatchedSAMLProviderRequest(BaseModel):
     invalidation_flow: Optional[UUID] = Field(default=None, description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[UUID]] = None
     acs_url: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
+    sls_url: Optional[StrictStr] = Field(default=None, description="Single Logout Service URL where the logout response should be sent.")
     audience: Optional[StrictStr] = Field(default=None, description="Value of the audience restriction field of the assertion. When left empty, no audience restriction will be added.")
     issuer: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Also known as EntityID")
     assertion_valid_not_before: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Assertion valid not before current time + this value (Format: hours=-1;minutes=-2;seconds=-3).")
@@ -53,10 +55,13 @@ class PatchedSAMLProviderRequest(BaseModel):
     encryption_kp: Optional[UUID] = Field(default=None, description="When selected, incoming assertions are encrypted by the IdP using the public key of the encryption keypair. The assertion is decrypted by the SP using the the private key.")
     sign_assertion: Optional[StrictBool] = None
     sign_response: Optional[StrictBool] = None
-    sp_binding: Optional[SpBindingEnum] = Field(default=None, description="This determines how authentik sends the response back to the Service Provider.")
+    sign_logout_request: Optional[StrictBool] = None
+    sp_binding: Optional[SAMLBindingsEnum] = Field(default=None, description="This determines how authentik sends the response back to the Service Provider.")
+    sls_binding: Optional[SAMLBindingsEnum] = Field(default=None, description="This determines how authentik sends the logout response back to the Service Provider.")
+    logout_method: Optional[SAMLProviderLogoutMethodEnum] = Field(default=None, description="Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).")
     default_relay_state: Optional[StrictStr] = Field(default=None, description="Default relay_state value for IDP-initiated logins")
     default_name_id_policy: Optional[SAMLNameIDPolicyEnum] = None
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "acs_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sp_binding", "default_relay_state", "default_name_id_policy"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "acs_url", "sls_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sign_logout_request", "sp_binding", "sls_binding", "logout_method", "default_relay_state", "default_name_id_policy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -145,6 +150,7 @@ class PatchedSAMLProviderRequest(BaseModel):
             "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "acs_url": obj.get("acs_url"),
+            "sls_url": obj.get("sls_url"),
             "audience": obj.get("audience"),
             "issuer": obj.get("issuer"),
             "assertion_valid_not_before": obj.get("assertion_valid_not_before"),
@@ -159,7 +165,10 @@ class PatchedSAMLProviderRequest(BaseModel):
             "encryption_kp": obj.get("encryption_kp"),
             "sign_assertion": obj.get("sign_assertion"),
             "sign_response": obj.get("sign_response"),
+            "sign_logout_request": obj.get("sign_logout_request"),
             "sp_binding": obj.get("sp_binding"),
+            "sls_binding": obj.get("sls_binding"),
+            "logout_method": obj.get("logout_method"),
             "default_relay_state": obj.get("default_relay_state"),
             "default_name_id_policy": obj.get("default_name_id_policy")
         })

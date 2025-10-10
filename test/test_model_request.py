@@ -81,7 +81,8 @@ class TestModelRequest(unittest.TestCase):
                         matching_mode = 'strict', 
                         url = '0', )
                     ],
-                backchannel_logout_uri = '',
+                logout_uri = '',
+                logout_method = 'frontchannel_iframe',
                 sub_mode = 'hashed_user_id',
                 issuer_mode = 'global',
                 jwt_federation_sources = [
@@ -108,6 +109,7 @@ class TestModelRequest(unittest.TestCase):
                 client_networks = '0',
                 shared_secret = '0',
                 acs_url = '0',
+                sls_url = '',
                 audience = '',
                 issuer = '0',
                 assertion_valid_not_before = '0',
@@ -122,7 +124,9 @@ class TestModelRequest(unittest.TestCase):
                 encryption_kp = '',
                 sign_assertion = True,
                 sign_response = True,
+                sign_logout_request = True,
                 sp_binding = 'redirect',
+                sls_binding = 'redirect',
                 default_relay_state = '',
                 default_name_id_policy = 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
                 url = '0',

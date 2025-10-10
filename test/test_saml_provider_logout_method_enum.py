@@ -15,10 +15,10 @@
 
 import unittest
 
-from authentik_client.models.sp_binding_enum import SpBindingEnum
+from authentik_client.models.saml_provider_logout_method_enum import SAMLProviderLogoutMethodEnum
 
-class TestSpBindingEnum(unittest.TestCase):
-    """SpBindingEnum unit test stubs"""
+class TestSAMLProviderLogoutMethodEnum(unittest.TestCase):
+    """SAMLProviderLogoutMethodEnum unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,9 +26,9 @@ class TestSpBindingEnum(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSpBindingEnum(self):
-        """Test SpBindingEnum"""
-        # inst = SpBindingEnum()
+    def testSAMLProviderLogoutMethodEnum(self):
+        """Test SAMLProviderLogoutMethodEnum"""
+        # inst = SAMLProviderLogoutMethodEnum()
 
 if __name__ == '__main__':
     unittest.main()
