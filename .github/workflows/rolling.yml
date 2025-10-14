@@ -47,14 +47,24 @@ jobs:
           sparse-checkout: |
             schema.yml
           sparse-checkout-cone-mode: false
+      - id: changes
+        name: Check for changes
+        run: |
+          if git diff --exit-code -- schema.yml > /dev/null; then
+            echo "schema_has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "schema_has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Publish to GitHub
+        if: "${{ steps.changes.outputs.schema_has_changes == 'true' }}"
         working-directory: client-python
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
+          git diff --exit-code schema.yml && exit 0 || echo
+
           version="$(yq -r '.info.version' schema.yml)-$(date +%s)"
           make version="$version"
-          [ "$(wc -l < diff.test)" -lt 4 ] && exit 0 || echo
 
           git config --global user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
           git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
@@ -67,10 +77,12 @@ jobs:
           truncate -s '<125000' diff.test
           gh release create v$version -F diff.test --prerelease
       - name: Build package
+        if: "${{ steps.changes.outputs.schema_has_changes == 'true' }}"
         working-directory: client-python
         run: |
           poetry build
       - name: Publish to PyPi
+        if: "${{ steps.changes.outputs.schema_has_changes == 'true' }}"
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: client-python/dist/
