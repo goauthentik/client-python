@@ -49,6 +49,7 @@ jobs:
           sparse-checkout-cone-mode: false
       - id: changes
         name: Check for changes
+        working-directory: authentik
         run: |
           if git diff --exit-code -- schema.yml > /dev/null; then
             echo "schema_has_changes=false" >> "$GITHUB_OUTPUT"
