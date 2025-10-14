@@ -62,8 +62,6 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          git diff --exit-code schema.yml && exit 0 || echo
-
           version="$(yq -r '.info.version' schema.yml)-$(date +%s)"
           make version="$version"
 
