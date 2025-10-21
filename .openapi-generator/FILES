@@ -598,6 +598,7 @@ authentik_client/models/patched_web_authn_device_request.py
 authentik_client/models/permission.py
 authentik_client/models/permission_assign_request.py
 authentik_client/models/permission_assign_result.py
+authentik_client/models/pkce_method_enum.py
 authentik_client/models/plex_authentication_challenge.py
 authentik_client/models/plex_authentication_challenge_response_request.py
 authentik_client/models/plex_source.py
@@ -614,6 +615,7 @@ authentik_client/models/policy_test_result.py
 authentik_client/models/prompt.py
 authentik_client/models/prompt_challenge.py
 authentik_client/models/prompt_challenge_response_request.py
+authentik_client/models/prompt_choice.py
 authentik_client/models/prompt_request.py
 authentik_client/models/prompt_stage.py
 authentik_client/models/prompt_stage_request.py
@@ -1101,6 +1103,7 @@ docs/OutpostHealth.md
 docs/OutpostRequest.md
 docs/OutpostTypeEnum.md
 docs/OutpostsApi.md
+docs/PKCEMethodEnum.md
 docs/PaginatedApplicationEntitlementList.md
 docs/PaginatedApplicationList.md
 docs/PaginatedAuthenticatedSessionList.md
@@ -1395,6 +1398,7 @@ docs/PolicyTestResult.md
 docs/Prompt.md
 docs/PromptChallenge.md
 docs/PromptChallengeResponseRequest.md
+docs/PromptChoice.md
 docs/PromptRequest.md
 docs/PromptStage.md
 docs/PromptStageRequest.md
@@ -2175,6 +2179,7 @@ test/test_patched_web_authn_device_request.py
 test/test_permission.py
 test/test_permission_assign_request.py
 test/test_permission_assign_result.py
+test/test_pkce_method_enum.py
 test/test_plex_authentication_challenge.py
 test/test_plex_authentication_challenge_response_request.py
 test/test_plex_source.py
@@ -2192,6 +2197,7 @@ test/test_policy_test_result.py
 test/test_prompt.py
 test/test_prompt_challenge.py
 test/test_prompt_challenge_response_request.py
+test/test_prompt_choice.py
 test/test_prompt_request.py
 test/test_prompt_stage.py
 test/test_prompt_stage_request.py
