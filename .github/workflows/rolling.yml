@@ -25,7 +25,7 @@ jobs:
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
       - name: Check out code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
@@ -38,7 +38,7 @@ jobs:
         with:
           python-version-file: client-python/pyproject.toml
       - name: Fetch schema
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: goauthentik/authentik
           token: "${{ steps.app-token.outputs.token }}"
