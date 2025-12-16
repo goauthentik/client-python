@@ -7,7 +7,6 @@ DenyStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
 **deny_message** | **str** |  | [optional] 
 
 ## Example

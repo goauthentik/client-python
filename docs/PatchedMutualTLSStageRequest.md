@@ -7,8 +7,7 @@ MutualTLSStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
-**mode** | [**MutualTLSStageModeEnum**](MutualTLSStageModeEnum.md) |  | [optional] 
+**mode** | [**StageModeEnum**](StageModeEnum.md) |  | [optional] 
 **certificate_authorities** | **List[str]** | Configure certificate authorities to validate the certificate against. This option has a higher priority than the &#x60;client_certificate&#x60; option on &#x60;Brand&#x60;. | [optional] 
 **cert_attribute** | [**CertAttributeEnum**](CertAttributeEnum.md) |  | [optional] 
 **user_attribute** | [**UserAttributeEnum**](UserAttributeEnum.md) |  | [optional] 

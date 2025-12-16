@@ -1,13 +1,17 @@
 # PatchedEndpointDeviceRequest
 
-Serializer for Endpoint authenticator devices
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [optional] 
-**name** | **str** | The human-readable name of this device. | [optional] 
+**device_uuid** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**access_group** | **str** |  | [optional] 
+**access_group_obj** | [**DeviceAccessGroupRequest**](DeviceAccessGroupRequest.md) |  | [optional] 
+**expiring** | **bool** |  | [optional] 
+**expires** | **datetime** |  | [optional] 
+**attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

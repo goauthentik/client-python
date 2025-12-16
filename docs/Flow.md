@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **slug** | **str** | Visible in the URL. | 
 **title** | **str** | Shown as the Title in Flow pages. | 
 **designation** | [**FlowDesignationEnum**](FlowDesignationEnum.md) | Decides what this Flow is used for. For example, the Authentication flow is redirect to when an un-authenticated user visits authentik. | 
-**background** | **str** | Get the URL to the background image. If the name is /static or starts with http it is returned as-is | [readonly] 
+**background** | **str** | Background shown during execution | [optional] 
+**background_url** | **str** | Get the URL to the background image | [readonly] 
 **stages** | **List[str]** |  | [readonly] 
 **policies** | **List[str]** |  | [readonly] 
 **cache_count** | **int** | Get count of cached flows | [readonly] 

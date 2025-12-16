@@ -1,5 +1,6 @@
 # TokenSetKeyRequest
 
+Set token's key
 
 ## Properties
 

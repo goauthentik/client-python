@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
 **user_creation_mode** | [**UserCreationModeEnum**](UserCreationModeEnum.md) |  | [optional] 
 **create_users_as_inactive** | **bool** | When set, newly created users are inactive and cannot login. | [optional] 
 **create_users_group** | **str** | Optionally add newly created users to this group. | [optional] 

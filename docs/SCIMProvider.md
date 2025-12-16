@@ -23,8 +23,11 @@ Name | Type | Description | Notes
 **auth_oauth** | **str** | OAuth Source used for authentication | [optional] 
 **auth_oauth_params** | **Dict[str, object]** | Additional OAuth parameters, such as grant_type | [optional] 
 **compatibility_mode** | [**CompatibilityModeEnum**](CompatibilityModeEnum.md) | Alter authentik behavior for vendor-specific SCIM implementations. | [optional] 
+**service_provider_config_cache_timeout** | **str** | Cache duration for ServiceProviderConfig responses. Set minutes&#x3D;0 to disable. | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **str** |  | [optional] 
+**sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
+**sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 
 ## Example

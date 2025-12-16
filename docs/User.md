@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **is_superuser** | **bool** |  | [readonly] 
 **groups** | **List[str]** |  | [optional] 
 **groups_obj** | [**List[PartialGroup]**](PartialGroup.md) |  | [readonly] 
+**roles** | **List[str]** |  | [optional] 
+**roles_obj** | [**List[Role]**](Role.md) |  | [readonly] 
 **email** | **str** |  | [optional] 
 **avatar** | **str** | User&#39;s avatar, either a http/https URL or a data URI | [readonly] 
 **attributes** | **Dict[str, object]** |  | [optional] 

@@ -7,8 +7,6 @@ Method | HTTP request | Description
 [**sources_all_destroy**](SourcesApi.md#sources_all_destroy) | **DELETE** /sources/all/{slug}/ | 
 [**sources_all_list**](SourcesApi.md#sources_all_list) | **GET** /sources/all/ | 
 [**sources_all_retrieve**](SourcesApi.md#sources_all_retrieve) | **GET** /sources/all/{slug}/ | 
-[**sources_all_set_icon_create**](SourcesApi.md#sources_all_set_icon_create) | **POST** /sources/all/{slug}/set_icon/ | 
-[**sources_all_set_icon_url_create**](SourcesApi.md#sources_all_set_icon_url_create) | **POST** /sources/all/{slug}/set_icon_url/ | 
 [**sources_all_types_list**](SourcesApi.md#sources_all_types_list) | **GET** /sources/all/types/ | 
 [**sources_all_used_by_list**](SourcesApi.md#sources_all_used_by_list) | **GET** /sources/all/{slug}/used_by/ | 
 [**sources_all_user_settings_list**](SourcesApi.md#sources_all_user_settings_list) | **GET** /sources/all/user_settings/ | 
@@ -123,6 +121,7 @@ Method | HTTP request | Description
 [**sources_scim_users_retrieve**](SourcesApi.md#sources_scim_users_retrieve) | **GET** /sources/scim_users/{id}/ | 
 [**sources_scim_users_update**](SourcesApi.md#sources_scim_users_update) | **PUT** /sources/scim_users/{id}/ | 
 [**sources_scim_users_used_by_list**](SourcesApi.md#sources_scim_users_used_by_list) | **GET** /sources/scim_users/{id}/used_by/ | 
+[**sources_telegram_connect_user_create**](SourcesApi.md#sources_telegram_connect_user_create) | **POST** /sources/telegram/{slug}/connect_user/ | 
 [**sources_telegram_create**](SourcesApi.md#sources_telegram_create) | **POST** /sources/telegram/ | 
 [**sources_telegram_destroy**](SourcesApi.md#sources_telegram_destroy) | **DELETE** /sources/telegram/{slug}/ | 
 [**sources_telegram_list**](SourcesApi.md#sources_telegram_list) | **GET** /sources/telegram/ | 
@@ -418,161 +417,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **sources_all_set_icon_create**
-> sources_all_set_icon_create(slug, file=file, clear=clear)
-
-Set source icon
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.SourcesApi(api_client)
-    slug = 'slug_example' # str | 
-    file = None # bytearray |  (optional)
-    clear = False # bool |  (optional) (default to False)
-
-    try:
-        api_instance.sources_all_set_icon_create(slug, file=file, clear=clear)
-    except Exception as e:
-        print("Exception when calling SourcesApi->sources_all_set_icon_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file** | **bytearray**|  | [optional] 
- **clear** | **bool**|  | [optional] [default to False]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **sources_all_set_icon_url_create**
-> sources_all_set_icon_url_create(slug, file_path_request)
-
-Set source icon (as URL)
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.models.file_path_request import FilePathRequest
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.SourcesApi(api_client)
-    slug = 'slug_example' # str | 
-    file_path_request = authentik_client.FilePathRequest() # FilePathRequest | 
-
-    try:
-        api_instance.sources_all_set_icon_url_create(slug, file_path_request)
-    except Exception as e:
-        print("Exception when calling SourcesApi->sources_all_set_icon_url_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file_path_request** | [**FilePathRequest**](FilePathRequest.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
 **403** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -9722,6 +9566,86 @@ Name | Type | Description  | Notes
 **200** |  |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sources_telegram_connect_user_create**
+> UserTelegramSourceConnection sources_telegram_connect_user_create(slug, telegram_auth_request)
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.telegram_auth_request import TelegramAuthRequest
+from authentik_client.models.user_telegram_source_connection import UserTelegramSourceConnection
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+    telegram_auth_request = authentik_client.TelegramAuthRequest() # TelegramAuthRequest | 
+
+    try:
+        api_response = api_instance.sources_telegram_connect_user_create(slug, telegram_auth_request)
+        print("The response of SourcesApi->sources_telegram_connect_user_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_connect_user_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+ **telegram_auth_request** | [**TelegramAuthRequest**](TelegramAuthRequest.md)|  | 
+
+### Return type
+
+[**UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**403** | Access denied |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -7,7 +7,6 @@ RedirectStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
 **keep_context** | **bool** |  | [optional] 
 **mode** | [**RedirectStageModeEnum**](RedirectStageModeEnum.md) |  | 
 **target_static** | **str** |  | [optional] 

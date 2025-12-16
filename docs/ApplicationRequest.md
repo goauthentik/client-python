@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **backchannel_providers** | **List[int]** |  | [optional] 
 **open_in_new_tab** | **bool** | Open launch URL in a new browser tab or window. | [optional] 
 **meta_launch_url** | **str** |  | [optional] 
+**meta_icon** | **str** |  | [optional] 
 **meta_description** | **str** |  | [optional] 
 **meta_publisher** | **str** |  | [optional] 
 **policy_engine_mode** | [**PolicyEngineMode**](PolicyEngineMode.md) |  | [optional] 

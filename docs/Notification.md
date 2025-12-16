@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **pk** | **str** |  | [readonly] 
 **severity** | [**SeverityEnum**](SeverityEnum.md) |  | [readonly] 
 **body** | **str** |  | [readonly] 
+**hyperlink** | **str** |  | [optional] 
+**hyperlink_label** | **str** |  | [optional] 
 **created** | **datetime** |  | [readonly] 
 **event** | [**Event**](Event.md) |  | [optional] 
 **seen** | **bool** |  | [optional] 

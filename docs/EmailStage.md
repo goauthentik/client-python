@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
 **use_global_settings** | **bool** | When enabled, global Email connection settings will be used and connection settings below will be ignored. | [optional] 
 **host** | **str** |  | [optional] 
 **port** | **int** |  | [optional] 

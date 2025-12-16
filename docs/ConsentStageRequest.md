@@ -7,7 +7,6 @@ ConsentStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
 **mode** | [**ConsentStageModeEnum**](ConsentStageModeEnum.md) |  | [optional] 
 **consent_expire_in** | **str** | Offset after which consent expires. (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 

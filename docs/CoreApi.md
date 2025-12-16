@@ -17,8 +17,6 @@ Method | HTTP request | Description
 [**core_applications_list**](CoreApi.md#core_applications_list) | **GET** /core/applications/ | 
 [**core_applications_partial_update**](CoreApi.md#core_applications_partial_update) | **PATCH** /core/applications/{slug}/ | 
 [**core_applications_retrieve**](CoreApi.md#core_applications_retrieve) | **GET** /core/applications/{slug}/ | 
-[**core_applications_set_icon_create**](CoreApi.md#core_applications_set_icon_create) | **POST** /core/applications/{slug}/set_icon/ | 
-[**core_applications_set_icon_url_create**](CoreApi.md#core_applications_set_icon_url_create) | **POST** /core/applications/{slug}/set_icon_url/ | 
 [**core_applications_update**](CoreApi.md#core_applications_update) | **PUT** /core/applications/{slug}/ | 
 [**core_applications_used_by_list**](CoreApi.md#core_applications_used_by_list) | **GET** /core/applications/{slug}/used_by/ | 
 [**core_authenticated_sessions_destroy**](CoreApi.md#core_authenticated_sessions_destroy) | **DELETE** /core/authenticated_sessions/{uuid}/ | 
@@ -58,6 +56,7 @@ Method | HTTP request | Description
 [**core_user_consent_used_by_list**](CoreApi.md#core_user_consent_used_by_list) | **GET** /core/user_consent/{id}/used_by/ | 
 [**core_users_create**](CoreApi.md#core_users_create) | **POST** /core/users/ | 
 [**core_users_destroy**](CoreApi.md#core_users_destroy) | **DELETE** /core/users/{id}/ | 
+[**core_users_export_create**](CoreApi.md#core_users_export_create) | **POST** /core/users/export/ | 
 [**core_users_impersonate_create**](CoreApi.md#core_users_impersonate_create) | **POST** /core/users/{id}/impersonate/ | 
 [**core_users_impersonate_end_retrieve**](CoreApi.md#core_users_impersonate_end_retrieve) | **GET** /core/users/impersonate_end/ | 
 [**core_users_list**](CoreApi.md#core_users_list) | **GET** /core/users/ | 
@@ -1113,161 +1112,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **core_applications_set_icon_create**
-> core_applications_set_icon_create(slug, file=file, clear=clear)
-
-Set application icon
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.CoreApi(api_client)
-    slug = 'slug_example' # str | 
-    file = None # bytearray |  (optional)
-    clear = False # bool |  (optional) (default to False)
-
-    try:
-        api_instance.core_applications_set_icon_create(slug, file=file, clear=clear)
-    except Exception as e:
-        print("Exception when calling CoreApi->core_applications_set_icon_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file** | **bytearray**|  | [optional] 
- **clear** | **bool**|  | [optional] [default to False]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **core_applications_set_icon_url_create**
-> core_applications_set_icon_url_create(slug, file_path_request)
-
-Set application icon (as URL)
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.models.file_path_request import FilePathRequest
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.CoreApi(api_client)
-    slug = 'slug_example' # str | 
-    file_path_request = authentik_client.FilePathRequest() # FilePathRequest | 
-
-    try:
-        api_instance.core_applications_set_icon_url_create(slug, file_path_request)
-    except Exception as e:
-        print("Exception when calling CoreApi->core_applications_set_icon_url_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file_path_request** | [**FilePathRequest**](FilePathRequest.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
 **403** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2629,7 +2473,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_groups_list**
-> PaginatedGroupList core_groups_list(attributes=attributes, include_children=include_children, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+> PaginatedGroupList core_groups_list(attributes=attributes, include_children=include_children, include_parents=include_parents, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 Group Viewset
 
@@ -2665,6 +2509,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.CoreApi(api_client)
     attributes = 'attributes_example' # str | Attributes (optional)
     include_children = False # bool |  (optional) (default to False)
+    include_parents = False # bool |  (optional) (default to False)
     include_users = True # bool |  (optional) (default to True)
     is_superuser = True # bool |  (optional)
     members_by_pk = [56] # List[int] |  (optional)
@@ -2676,7 +2521,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     search = 'search_example' # str | A search term. (optional)
 
     try:
-        api_response = api_instance.core_groups_list(attributes=attributes, include_children=include_children, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        api_response = api_instance.core_groups_list(attributes=attributes, include_children=include_children, include_parents=include_parents, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
         print("The response of CoreApi->core_groups_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -2692,6 +2537,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **attributes** | **str**| Attributes | [optional] 
  **include_children** | **bool**|  | [optional] [default to False]
+ **include_parents** | **bool**|  | [optional] [default to False]
  **include_users** | **bool**|  | [optional] [default to True]
  **is_superuser** | **bool**|  | [optional] 
  **members_by_pk** | [**List[int]**](int.md)|  | [optional] 
@@ -2884,7 +2730,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_groups_retrieve**
-> Group core_groups_retrieve(group_uuid, include_children=include_children, include_users=include_users)
+> Group core_groups_retrieve(group_uuid, include_children=include_children, include_parents=include_parents, include_users=include_users)
 
 Group Viewset
 
@@ -2920,10 +2766,11 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.CoreApi(api_client)
     group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
     include_children = False # bool |  (optional) (default to False)
+    include_parents = False # bool |  (optional) (default to False)
     include_users = True # bool |  (optional) (default to True)
 
     try:
-        api_response = api_instance.core_groups_retrieve(group_uuid, include_children=include_children, include_users=include_users)
+        api_response = api_instance.core_groups_retrieve(group_uuid, include_children=include_children, include_parents=include_parents, include_users=include_users)
         print("The response of CoreApi->core_groups_retrieve:\n")
         pprint(api_response)
     except Exception as e:
@@ -2939,6 +2786,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_uuid** | **str**| A UUID string identifying this Group. | 
  **include_children** | **bool**|  | [optional] [default to False]
+ **include_parents** | **bool**|  | [optional] [default to False]
  **include_users** | **bool**|  | [optional] [default to True]
 
 ### Return type
@@ -4386,6 +4234,129 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **core_users_export_create**
+> DataExport core_users_export_create(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, path=path, path_startswith=path_startswith, roles_by_name=roles_by_name, roles_by_pk=roles_by_pk, search=search, type=type, username=username, uuid=uuid)
+
+Create a data export for this data type. Note that the export is generated asynchronously:
+this method returns a `DataExport` object that will initially have `completed=false` as well
+as the permanent URL to that object in the `Location` header.
+You can poll that URL until `completed=true`, at which point the `file_url` property will
+contain a URL to download
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.data_export import DataExport
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.CoreApi(api_client)
+    attributes = 'attributes_example' # str | Attributes (optional)
+    date_joined = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    date_joined__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    date_joined__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    email = 'email_example' # str |  (optional)
+    groups_by_name = ['groups_by_name_example'] # List[str] |  (optional)
+    groups_by_pk = ['groups_by_pk_example'] # List[str] |  (optional)
+    is_active = True # bool |  (optional)
+    is_superuser = True # bool |  (optional)
+    last_updated = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_updated__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_updated__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    path = 'path_example' # str |  (optional)
+    path_startswith = 'path_startswith_example' # str |  (optional)
+    roles_by_name = ['roles_by_name_example'] # List[str] |  (optional)
+    roles_by_pk = ['roles_by_pk_example'] # List[str] |  (optional)
+    search = 'search_example' # str | A search term. (optional)
+    type = ['type_example'] # List[str] |  (optional)
+    username = 'username_example' # str |  (optional)
+    uuid = 'uuid_example' # str |  (optional)
+
+    try:
+        api_response = api_instance.core_users_export_create(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, path=path, path_startswith=path_startswith, roles_by_name=roles_by_name, roles_by_pk=roles_by_pk, search=search, type=type, username=username, uuid=uuid)
+        print("The response of CoreApi->core_users_export_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_users_export_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **attributes** | **str**| Attributes | [optional] 
+ **date_joined** | **datetime**|  | [optional] 
+ **date_joined__gt** | **datetime**|  | [optional] 
+ **date_joined__lt** | **datetime**|  | [optional] 
+ **email** | **str**|  | [optional] 
+ **groups_by_name** | [**List[str]**](str.md)|  | [optional] 
+ **groups_by_pk** | [**List[str]**](str.md)|  | [optional] 
+ **is_active** | **bool**|  | [optional] 
+ **is_superuser** | **bool**|  | [optional] 
+ **last_updated** | **datetime**|  | [optional] 
+ **last_updated__gt** | **datetime**|  | [optional] 
+ **last_updated__lt** | **datetime**|  | [optional] 
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **path** | **str**|  | [optional] 
+ **path_startswith** | **str**|  | [optional] 
+ **roles_by_name** | [**List[str]**](str.md)|  | [optional] 
+ **roles_by_pk** | [**List[str]**](str.md)|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **type** | [**List[str]**](str.md)|  | [optional] 
+ **username** | **str**|  | [optional] 
+ **uuid** | **str**|  | [optional] 
+
+### Return type
+
+[**DataExport**](DataExport.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **core_users_impersonate_create**
 > core_users_impersonate_create(id, impersonation_request)
 
@@ -4534,7 +4505,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_users_list**
-> PaginatedUserList core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, search=search, type=type, username=username, uuid=uuid)
+> PaginatedUserList core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, include_roles=include_roles, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, roles_by_name=roles_by_name, roles_by_pk=roles_by_pk, search=search, type=type, username=username, uuid=uuid)
 
 User Viewset
 
@@ -4576,6 +4547,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     groups_by_name = ['groups_by_name_example'] # List[str] |  (optional)
     groups_by_pk = ['groups_by_pk_example'] # List[str] |  (optional)
     include_groups = True # bool |  (optional) (default to True)
+    include_roles = True # bool |  (optional) (default to True)
     is_active = True # bool |  (optional)
     is_superuser = True # bool |  (optional)
     last_updated = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
@@ -4587,13 +4559,15 @@ with authentik_client.ApiClient(configuration) as api_client:
     page_size = 56 # int | Number of results to return per page. (optional)
     path = 'path_example' # str |  (optional)
     path_startswith = 'path_startswith_example' # str |  (optional)
+    roles_by_name = ['roles_by_name_example'] # List[str] |  (optional)
+    roles_by_pk = ['roles_by_pk_example'] # List[str] |  (optional)
     search = 'search_example' # str | A search term. (optional)
     type = ['type_example'] # List[str] |  (optional)
     username = 'username_example' # str |  (optional)
     uuid = 'uuid_example' # str |  (optional)
 
     try:
-        api_response = api_instance.core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, search=search, type=type, username=username, uuid=uuid)
+        api_response = api_instance.core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, include_roles=include_roles, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, roles_by_name=roles_by_name, roles_by_pk=roles_by_pk, search=search, type=type, username=username, uuid=uuid)
         print("The response of CoreApi->core_users_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -4615,6 +4589,7 @@ Name | Type | Description  | Notes
  **groups_by_name** | [**List[str]**](str.md)|  | [optional] 
  **groups_by_pk** | [**List[str]**](str.md)|  | [optional] 
  **include_groups** | **bool**|  | [optional] [default to True]
+ **include_roles** | **bool**|  | [optional] [default to True]
  **is_active** | **bool**|  | [optional] 
  **is_superuser** | **bool**|  | [optional] 
  **last_updated** | **datetime**|  | [optional] 
@@ -4626,6 +4601,8 @@ Name | Type | Description  | Notes
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **path** | **str**|  | [optional] 
  **path_startswith** | **str**|  | [optional] 
+ **roles_by_name** | [**List[str]**](str.md)|  | [optional] 
+ **roles_by_pk** | [**List[str]**](str.md)|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **type** | [**List[str]**](str.md)|  | [optional] 
  **username** | **str**|  | [optional] 

@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
-**mode** | [**MutualTLSStageModeEnum**](MutualTLSStageModeEnum.md) |  | 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
+**mode** | [**StageModeEnum**](StageModeEnum.md) |  | 
 **certificate_authorities** | **List[str]** | Configure certificate authorities to validate the certificate against. This option has a higher priority than the &#x60;client_certificate&#x60; option on &#x60;Brand&#x60;. | [optional] 
 **cert_attribute** | [**CertAttributeEnum**](CertAttributeEnum.md) |  | 
 **user_attribute** | [**UserAttributeEnum**](UserAttributeEnum.md) |  | 

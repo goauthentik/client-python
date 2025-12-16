@@ -6657,7 +6657,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **providers_saml_import_metadata_create**
-> providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
+> SAMLProvider providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
 
 Create provider from SAML Metadata
 
@@ -6667,6 +6667,7 @@ Create provider from SAML Metadata
 
 ```python
 import authentik_client
+from authentik_client.models.saml_provider import SAMLProvider
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -6696,7 +6697,9 @@ with authentik_client.ApiClient(configuration) as api_client:
     file = None # bytearray | 
 
     try:
-        api_instance.providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
+        api_response = api_instance.providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
+        print("The response of ProvidersApi->providers_saml_import_metadata_create:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ProvidersApi->providers_saml_import_metadata_create: %s\n" % e)
 ```
@@ -6715,7 +6718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**SAMLProvider**](SAMLProvider.md)
 
 ### Authorization
 
@@ -6730,7 +6733,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Successfully imported provider |  -  |
+**201** |  |  -  |
 **400** | Bad request |  -  |
 **403** |  |  -  |
 

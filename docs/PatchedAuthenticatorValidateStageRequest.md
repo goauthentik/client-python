@@ -7,7 +7,6 @@ AuthenticatorValidateStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
 **not_configured_action** | [**NotConfiguredActionEnum**](NotConfiguredActionEnum.md) |  | [optional] 
 **device_classes** | [**List[DeviceClassesEnum]**](DeviceClassesEnum.md) | Device classes which can be used to authenticate | [optional] 
 **configuration_stages** | **List[str]** | Stages used to configure Authenticator when user doesn&#39;t have any compatible devices. After this configuration Stage passes, the user is not prompted again. | [optional] 

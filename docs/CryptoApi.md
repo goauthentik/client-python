@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crypto_certificatekeypairs_list**
-> PaginatedCertificateKeyPairList crypto_certificatekeypairs_list(has_key=has_key, include_details=include_details, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+> PaginatedCertificateKeyPairList crypto_certificatekeypairs_list(has_key=has_key, include_details=include_details, key_type=key_type, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 CertificateKeyPair Viewset
 
@@ -283,6 +283,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.CryptoApi(api_client)
     has_key = True # bool | Only return certificate-key pairs with keys (optional)
     include_details = True # bool |  (optional) (default to True)
+    key_type = ['key_type_example'] # List[str] | Filter by key algorithm type (RSA, EC, DSA, etc). Can be specified multiple times (e.g. '?key_type=rsa&key_type=ec') (optional)
     managed = 'managed_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
@@ -291,7 +292,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     search = 'search_example' # str | A search term. (optional)
 
     try:
-        api_response = api_instance.crypto_certificatekeypairs_list(has_key=has_key, include_details=include_details, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        api_response = api_instance.crypto_certificatekeypairs_list(has_key=has_key, include_details=include_details, key_type=key_type, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
         print("The response of CryptoApi->crypto_certificatekeypairs_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -307,6 +308,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **has_key** | **bool**| Only return certificate-key pairs with keys | [optional] 
  **include_details** | **bool**|  | [optional] [default to True]
+ **key_type** | [**List[str]**](str.md)| Filter by key algorithm type (RSA, EC, DSA, etc). Can be specified multiple times (e.g. &#39;?key_type&#x3D;rsa&amp;key_type&#x3D;ec&#39;) | [optional] 
  **managed** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 

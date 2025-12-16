@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **default_group_email_domain** | **str** |  | 
+**sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
+**sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 **authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
 **authorization_flow** | **str** | Flow used when authorizing this provider. | 
@@ -89,6 +91,7 @@ Name | Type | Description | Notes
 **auth_oauth** | **str** | OAuth Source used for authentication | [optional] 
 **auth_oauth_params** | **Dict[str, object]** | Additional OAuth parameters, such as grant_type | [optional] 
 **compatibility_mode** | [**CompatibilityModeEnum**](CompatibilityModeEnum.md) | Alter authentik behavior for vendor-specific SCIM implementations. | [optional] 
+**service_provider_config_cache_timeout** | **str** | Cache duration for ServiceProviderConfig responses. Set minutes&#x3D;0 to disable. | [optional] 
 **oidc_auth_providers** | **List[int]** |  | [optional] 
 **event_retention** | **str** |  | [optional] 
 

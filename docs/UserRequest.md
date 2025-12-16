@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **is_active** | **bool** | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional] 
 **last_login** | **datetime** |  | [optional] 
 **groups** | **List[str]** |  | [optional] 
+**roles** | **List[str]** |  | [optional] 
 **email** | **str** |  | [optional] 
 **attributes** | **Dict[str, object]** |  | [optional] 
 **path** | **str** |  | [optional] 

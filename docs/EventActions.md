@@ -55,6 +55,8 @@
 
 * `UPDATE_AVAILABLE` (value: `'update_available'`)
 
+* `EXPORT_READY` (value: `'export_ready'`)
+
 * `CUSTOM` (value: `'custom_'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

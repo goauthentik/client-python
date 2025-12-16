@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** | Source&#39;s display Name. | 
 **slug** | **str** | Internal source name, used in URLs. | 
 **enabled** | **bool** |  | [optional] 
+**promoted** | **bool** | When enabled, this source will be displayed as a prominent button on the login page, instead of a small icon. | [optional] 
 **authentication_flow** | **str** | Flow to use when authenticating existing users. | [optional] 
 **enrollment_flow** | **str** | Flow to use when enrolling new users. | [optional] 
 **user_property_mappings** | **List[str]** |  | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **policy_engine_mode** | [**PolicyEngineMode**](PolicyEngineMode.md) |  | [optional] 
 **user_matching_mode** | [**UserMatchingModeEnum**](UserMatchingModeEnum.md) | How the source determines if an existing user should be authenticated or a new user enrolled. | [optional] 
 **user_path_template** | **str** |  | [optional] 
+**icon** | **str** |  | [optional] 
 **bot_username** | **str** | Telegram bot username | 
 **bot_token** | **str** | Telegram bot token | 
 **request_message_access** | **bool** | Request access to send messages from your bot. | [optional] 

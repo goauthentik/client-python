@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **filter_group** | **str** |  | [optional] 
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
+**sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
+**sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 
 ## Example

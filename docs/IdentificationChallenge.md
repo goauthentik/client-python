@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **sources** | [**List[LoginSource]**](LoginSource.md) |  | [optional] 
 **show_source_labels** | **bool** |  | 
 **enable_remember_me** | **bool** |  | [optional] [default to True]
+**passkey_challenge** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

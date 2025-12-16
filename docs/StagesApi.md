@@ -107,6 +107,13 @@ Method | HTTP request | Description
 [**stages_email_templates_list**](StagesApi.md#stages_email_templates_list) | **GET** /stages/email/templates/ | 
 [**stages_email_update**](StagesApi.md#stages_email_update) | **PUT** /stages/email/{stage_uuid}/ | 
 [**stages_email_used_by_list**](StagesApi.md#stages_email_used_by_list) | **GET** /stages/email/{stage_uuid}/used_by/ | 
+[**stages_endpoints_create**](StagesApi.md#stages_endpoints_create) | **POST** /stages/endpoints/ | 
+[**stages_endpoints_destroy**](StagesApi.md#stages_endpoints_destroy) | **DELETE** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_list**](StagesApi.md#stages_endpoints_list) | **GET** /stages/endpoints/ | 
+[**stages_endpoints_partial_update**](StagesApi.md#stages_endpoints_partial_update) | **PATCH** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_retrieve**](StagesApi.md#stages_endpoints_retrieve) | **GET** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_update**](StagesApi.md#stages_endpoints_update) | **PUT** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_used_by_list**](StagesApi.md#stages_endpoints_used_by_list) | **GET** /stages/endpoints/{stage_uuid}/used_by/ | 
 [**stages_identification_create**](StagesApi.md#stages_identification_create) | **POST** /stages/identification/ | 
 [**stages_identification_destroy**](StagesApi.md#stages_identification_destroy) | **DELETE** /stages/identification/{stage_uuid}/ | 
 [**stages_identification_list**](StagesApi.md#stages_identification_list) | **GET** /stages/identification/ | 
@@ -8431,6 +8438,557 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **stages_endpoints_create**
+> EndpointStage stages_endpoints_create(endpoint_stage_request)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.endpoint_stage import EndpointStage
+from authentik_client.models.endpoint_stage_request import EndpointStageRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    endpoint_stage_request = authentik_client.EndpointStageRequest() # EndpointStageRequest | 
+
+    try:
+        api_response = api_instance.stages_endpoints_create(endpoint_stage_request)
+        print("The response of StagesApi->stages_endpoints_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **endpoint_stage_request** | [**EndpointStageRequest**](EndpointStageRequest.md)|  | 
+
+### Return type
+
+[**EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_destroy**
+> stages_endpoints_destroy(stage_uuid)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Stage.
+
+    try:
+        api_instance.stages_endpoints_destroy(stage_uuid)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **str**| A UUID string identifying this Endpoint Stage. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_list**
+> PaginatedEndpointStageList stages_endpoints_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_endpoint_stage_list import PaginatedEndpointStageList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = api_instance.stages_endpoints_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of StagesApi->stages_endpoints_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedEndpointStageList**](PaginatedEndpointStageList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_partial_update**
+> EndpointStage stages_endpoints_partial_update(stage_uuid, patched_endpoint_stage_request=patched_endpoint_stage_request)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.endpoint_stage import EndpointStage
+from authentik_client.models.patched_endpoint_stage_request import PatchedEndpointStageRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Stage.
+    patched_endpoint_stage_request = authentik_client.PatchedEndpointStageRequest() # PatchedEndpointStageRequest |  (optional)
+
+    try:
+        api_response = api_instance.stages_endpoints_partial_update(stage_uuid, patched_endpoint_stage_request=patched_endpoint_stage_request)
+        print("The response of StagesApi->stages_endpoints_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **str**| A UUID string identifying this Endpoint Stage. | 
+ **patched_endpoint_stage_request** | [**PatchedEndpointStageRequest**](PatchedEndpointStageRequest.md)|  | [optional] 
+
+### Return type
+
+[**EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_retrieve**
+> EndpointStage stages_endpoints_retrieve(stage_uuid)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.endpoint_stage import EndpointStage
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Stage.
+
+    try:
+        api_response = api_instance.stages_endpoints_retrieve(stage_uuid)
+        print("The response of StagesApi->stages_endpoints_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **str**| A UUID string identifying this Endpoint Stage. | 
+
+### Return type
+
+[**EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_update**
+> EndpointStage stages_endpoints_update(stage_uuid, endpoint_stage_request)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.endpoint_stage import EndpointStage
+from authentik_client.models.endpoint_stage_request import EndpointStageRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Stage.
+    endpoint_stage_request = authentik_client.EndpointStageRequest() # EndpointStageRequest | 
+
+    try:
+        api_response = api_instance.stages_endpoints_update(stage_uuid, endpoint_stage_request)
+        print("The response of StagesApi->stages_endpoints_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **str**| A UUID string identifying this Endpoint Stage. | 
+ **endpoint_stage_request** | [**EndpointStageRequest**](EndpointStageRequest.md)|  | 
+
+### Return type
+
+[**EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_used_by_list**
+> List[UsedBy] stages_endpoints_used_by_list(stage_uuid)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.used_by import UsedBy
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Stage.
+
+    try:
+        api_response = api_instance.stages_endpoints_used_by_list(stage_uuid)
+        print("The response of StagesApi->stages_endpoints_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **str**| A UUID string identifying this Endpoint Stage. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **stages_identification_create**
 > IdentificationStage stages_identification_create(identification_stage_request)
 
@@ -8584,7 +9142,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stages_identification_list**
-> PaginatedIdentificationStageList stages_identification_list(captcha_stage=captcha_stage, case_insensitive_matching=case_insensitive_matching, enrollment_flow=enrollment_flow, name=name, ordering=ordering, page=page, page_size=page_size, password_stage=password_stage, passwordless_flow=passwordless_flow, recovery_flow=recovery_flow, search=search, show_matched_user=show_matched_user, show_source_labels=show_source_labels)
+> PaginatedIdentificationStageList stages_identification_list(captcha_stage=captcha_stage, case_insensitive_matching=case_insensitive_matching, enrollment_flow=enrollment_flow, name=name, ordering=ordering, page=page, page_size=page_size, password_stage=password_stage, passwordless_flow=passwordless_flow, recovery_flow=recovery_flow, search=search, show_matched_user=show_matched_user, show_source_labels=show_source_labels, webauthn_stage=webauthn_stage)
 
 IdentificationStage Viewset
 
@@ -8631,9 +9189,10 @@ with authentik_client.ApiClient(configuration) as api_client:
     search = 'search_example' # str | A search term. (optional)
     show_matched_user = True # bool |  (optional)
     show_source_labels = True # bool |  (optional)
+    webauthn_stage = 'webauthn_stage_example' # str |  (optional)
 
     try:
-        api_response = api_instance.stages_identification_list(captcha_stage=captcha_stage, case_insensitive_matching=case_insensitive_matching, enrollment_flow=enrollment_flow, name=name, ordering=ordering, page=page, page_size=page_size, password_stage=password_stage, passwordless_flow=passwordless_flow, recovery_flow=recovery_flow, search=search, show_matched_user=show_matched_user, show_source_labels=show_source_labels)
+        api_response = api_instance.stages_identification_list(captcha_stage=captcha_stage, case_insensitive_matching=case_insensitive_matching, enrollment_flow=enrollment_flow, name=name, ordering=ordering, page=page, page_size=page_size, password_stage=password_stage, passwordless_flow=passwordless_flow, recovery_flow=recovery_flow, search=search, show_matched_user=show_matched_user, show_source_labels=show_source_labels, webauthn_stage=webauthn_stage)
         print("The response of StagesApi->stages_identification_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -8660,6 +9219,7 @@ Name | Type | Description  | Notes
  **search** | **str**| A search term. | [optional] 
  **show_matched_user** | **bool**|  | [optional] 
  **show_source_labels** | **bool**|  | [optional] 
+ **webauthn_stage** | **str**|  | [optional] 
 
 ### Return type
 

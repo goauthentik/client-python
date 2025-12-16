@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
 **user_fields** | [**List[UserFieldsEnum]**](UserFieldsEnum.md) | Fields of the user object to match against. (Hold shift to select multiple options) | [optional] 
 **password_stage** | **str** | When set, shows a password field, instead of showing the password field as separate step. | [optional] 
 **captcha_stage** | **str** | When set, adds functionality exactly like a Captcha stage, but baked into the Identification stage. | [optional] 
@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **show_source_labels** | **bool** |  | [optional] 
 **pretend_user_exists** | **bool** | When enabled, the stage will succeed and continue even when incorrect user info is entered. | [optional] 
 **enable_remember_me** | **bool** | Show the user the &#39;Remember me on this device&#39; toggle, allowing repeat users to skip straight to entering their password. | [optional] 
+**webauthn_stage** | **str** | When set, and conditional WebAuthn is available, allow the user to use their passkey as a first factor. | [optional] 
 
 ## Example
 

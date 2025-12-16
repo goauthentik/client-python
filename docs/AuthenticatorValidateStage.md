@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
 **not_configured_action** | [**NotConfiguredActionEnum**](NotConfiguredActionEnum.md) |  | [optional] 
 **device_classes** | [**List[DeviceClassesEnum]**](DeviceClassesEnum.md) | Device classes which can be used to authenticate | [optional] 
 **configuration_stages** | **List[str]** | Stages used to configure Authenticator when user doesn&#39;t have any compatible devices. After this configuration Stage passes, the user is not prompted again. | [optional] 

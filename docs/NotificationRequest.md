@@ -6,6 +6,8 @@ Notification Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**hyperlink** | **str** |  | [optional] 
+**hyperlink_label** | **str** |  | [optional] 
 **event** | [**EventRequest**](EventRequest.md) |  | [optional] 
 **seen** | **bool** |  | [optional] 
 

@@ -7,7 +7,6 @@ PromptStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
 **fields** | **List[str]** |  | 
 **validation_policies** | **List[str]** |  | [optional] 
 

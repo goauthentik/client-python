@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **icon_url** | **str** |  | [optional] 
+**promoted** | **bool** |  | [optional] [default to False]
 **challenge** | [**LoginChallengeTypes**](LoginChallengeTypes.md) |  | 
 
 ## Example

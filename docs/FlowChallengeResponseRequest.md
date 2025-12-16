@@ -13,11 +13,12 @@ Name | Type | Description | Notes
 **selected_stage** | **str** |  | [optional] 
 **webauthn** | **Dict[str, object]** |  | [optional] 
 **duo** | **int** |  | [optional] 
-**response** | **Dict[str, object]** |  | 
+**response** | **str** |  | 
 **token** | **str** |  | 
-**uid_field** | **str** |  | 
+**uid_field** | **str** |  | [optional] 
 **password** | **str** |  | 
 **captcha_token** | **str** |  | [optional] 
+**passkey** | **Dict[str, object]** |  | [optional] 
 **to** | **str** |  | 
 **id** | **int** |  | 
 **first_name** | **str** |  | [optional] 

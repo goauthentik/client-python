@@ -7,7 +7,6 @@ AuthenticatorSMSStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
 **configure_flow** | **str** | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional] 
 **friendly_name** | **str** |  | [optional] 
 **provider** | [**ProviderEnum**](ProviderEnum.md) |  | 

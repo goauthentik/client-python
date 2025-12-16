@@ -7,9 +7,10 @@ Identification challenge
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component** | **str** |  | [optional] [default to 'ak-stage-identification']
-**uid_field** | **str** |  | 
+**uid_field** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
 **captcha_token** | **str** |  | [optional] 
+**passkey** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

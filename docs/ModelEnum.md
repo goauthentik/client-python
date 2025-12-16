@@ -17,6 +17,18 @@
 
 * `AUTHENTIK_CRYPTO_DOT_CERTIFICATEKEYPAIR` (value: `'authentik_crypto.certificatekeypair'`)
 
+* `AUTHENTIK_ENDPOINTS_DOT_DEVICEUSERBINDING` (value: `'authentik_endpoints.deviceuserbinding'`)
+
+* `AUTHENTIK_ENDPOINTS_DOT_DEVICEACCESSGROUP` (value: `'authentik_endpoints.deviceaccessgroup'`)
+
+* `AUTHENTIK_ENDPOINTS_DOT_ENDPOINTSTAGE` (value: `'authentik_endpoints.endpointstage'`)
+
+* `AUTHENTIK_ENDPOINTS_CONNECTORS_AGENT_DOT_AGENTCONNECTOR` (value: `'authentik_endpoints_connectors_agent.agentconnector'`)
+
+* `AUTHENTIK_ENDPOINTS_CONNECTORS_AGENT_DOT_AGENTDEVICEUSERBINDING` (value: `'authentik_endpoints_connectors_agent.agentdeviceuserbinding'`)
+
+* `AUTHENTIK_ENDPOINTS_CONNECTORS_AGENT_DOT_ENROLLMENTTOKEN` (value: `'authentik_endpoints_connectors_agent.enrollmenttoken'`)
+
 * `AUTHENTIK_ENTERPRISE_DOT_LICENSE` (value: `'authentik_enterprise.license'`)
 
 * `AUTHENTIK_EVENTS_DOT_EVENT` (value: `'authentik_events.event'`)
@@ -212,6 +224,8 @@
 * `AUTHENTIK_PROVIDERS_MICROSOFT_ENTRA_DOT_MICROSOFTENTRAPROVIDERMAPPING` (value: `'authentik_providers_microsoft_entra.microsoftentraprovidermapping'`)
 
 * `AUTHENTIK_PROVIDERS_SSF_DOT_SSFPROVIDER` (value: `'authentik_providers_ssf.ssfprovider'`)
+
+* `AUTHENTIK_REPORTS_DOT_DATAEXPORT` (value: `'authentik_reports.dataexport'`)
 
 * `AUTHENTIK_STAGES_AUTHENTICATOR_ENDPOINT_GDTC_DOT_AUTHENTICATORENDPOINTGDTCSTAGE` (value: `'authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage'`)
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **slug** | **str** | Visible in the URL. | 
 **title** | **str** | Shown as the Title in Flow pages. | 
 **designation** | [**FlowDesignationEnum**](FlowDesignationEnum.md) | Decides what this Flow is used for. For example, the Authentication flow is redirect to when an un-authenticated user visits authentik. | 
-**background** | **str** | Get the URL to the background image. If the name is /static or starts with http it is returned as-is | [readonly] 
+**background_url** | **str** | Get the URL to the background image | [readonly] 
 **policy_engine_mode** | [**PolicyEngineMode**](PolicyEngineMode.md) |  | [optional] 
 **compatibility_mode** | **bool** | Enable compatibility mode, increases compatibility with password managers on mobile devices. | [optional] 
 **export_url** | **str** | Get export URL for flow | [readonly] 

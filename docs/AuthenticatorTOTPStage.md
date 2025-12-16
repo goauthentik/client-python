@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
 **configure_flow** | **str** | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional] 
 **friendly_name** | **str** |  | [optional] 
 **digits** | [**DigitsEnum**](DigitsEnum.md) |  | 

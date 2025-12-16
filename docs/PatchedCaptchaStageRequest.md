@@ -7,7 +7,6 @@ CaptchaStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
 **public_key** | **str** | Public key, acquired your captcha Provider. | [optional] 
 **private_key** | **str** | Private key, acquired your captcha Provider. | [optional] 
 **js_url** | **str** |  | [optional] 
