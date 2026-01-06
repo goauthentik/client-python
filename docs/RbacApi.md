@@ -1311,7 +1311,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rbac_roles_list**
-> PaginatedRoleList rbac_roles_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search, users=users)
+> PaginatedRoleList rbac_roles_list(ak_groups=ak_groups, inherited=inherited, managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search, users=users)
 
 Role viewset
 
@@ -1345,6 +1345,8 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RbacApi(api_client)
+    ak_groups = 'ak_groups_example' # str |  (optional)
+    inherited = True # bool | Include inherited roles (requires users or ak_groups filter) (optional)
     managed = ['managed_example'] # List[str] |  (optional)
     managed__isnull = True # bool |  (optional)
     name = 'name_example' # str |  (optional)
@@ -1352,10 +1354,10 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    users = [56] # List[int] |  (optional)
+    users = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.rbac_roles_list(managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search, users=users)
+        api_response = api_instance.rbac_roles_list(ak_groups=ak_groups, inherited=inherited, managed=managed, managed__isnull=managed__isnull, name=name, ordering=ordering, page=page, page_size=page_size, search=search, users=users)
         print("The response of RbacApi->rbac_roles_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -1369,6 +1371,8 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ak_groups** | **str**|  | [optional] 
+ **inherited** | **bool**| Include inherited roles (requires users or ak_groups filter) | [optional] 
  **managed** | [**List[str]**](str.md)|  | [optional] 
  **managed__isnull** | **bool**|  | [optional] 
  **name** | **str**|  | [optional] 
@@ -1376,7 +1380,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **users** | [**List[int]**](int.md)|  | [optional] 
+ **users** | **int**|  | [optional] 
 
 ### Return type
 

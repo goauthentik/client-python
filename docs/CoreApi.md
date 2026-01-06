@@ -2473,7 +2473,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_groups_list**
-> PaginatedGroupList core_groups_list(attributes=attributes, include_children=include_children, include_parents=include_parents, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+> PaginatedGroupList core_groups_list(attributes=attributes, include_children=include_children, include_inherited_roles=include_inherited_roles, include_parents=include_parents, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 Group Viewset
 
@@ -2509,6 +2509,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.CoreApi(api_client)
     attributes = 'attributes_example' # str | Attributes (optional)
     include_children = False # bool |  (optional) (default to False)
+    include_inherited_roles = False # bool |  (optional) (default to False)
     include_parents = False # bool |  (optional) (default to False)
     include_users = True # bool |  (optional) (default to True)
     is_superuser = True # bool |  (optional)
@@ -2521,7 +2522,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     search = 'search_example' # str | A search term. (optional)
 
     try:
-        api_response = api_instance.core_groups_list(attributes=attributes, include_children=include_children, include_parents=include_parents, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        api_response = api_instance.core_groups_list(attributes=attributes, include_children=include_children, include_inherited_roles=include_inherited_roles, include_parents=include_parents, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
         print("The response of CoreApi->core_groups_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -2537,6 +2538,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **attributes** | **str**| Attributes | [optional] 
  **include_children** | **bool**|  | [optional] [default to False]
+ **include_inherited_roles** | **bool**|  | [optional] [default to False]
  **include_parents** | **bool**|  | [optional] [default to False]
  **include_users** | **bool**|  | [optional] [default to True]
  **is_superuser** | **bool**|  | [optional] 
@@ -2730,7 +2732,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_groups_retrieve**
-> Group core_groups_retrieve(group_uuid, include_children=include_children, include_parents=include_parents, include_users=include_users)
+> Group core_groups_retrieve(group_uuid, include_children=include_children, include_inherited_roles=include_inherited_roles, include_parents=include_parents, include_users=include_users)
 
 Group Viewset
 
@@ -2766,11 +2768,12 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.CoreApi(api_client)
     group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
     include_children = False # bool |  (optional) (default to False)
+    include_inherited_roles = False # bool |  (optional) (default to False)
     include_parents = False # bool |  (optional) (default to False)
     include_users = True # bool |  (optional) (default to True)
 
     try:
-        api_response = api_instance.core_groups_retrieve(group_uuid, include_children=include_children, include_parents=include_parents, include_users=include_users)
+        api_response = api_instance.core_groups_retrieve(group_uuid, include_children=include_children, include_inherited_roles=include_inherited_roles, include_parents=include_parents, include_users=include_users)
         print("The response of CoreApi->core_groups_retrieve:\n")
         pprint(api_response)
     except Exception as e:
@@ -2786,6 +2789,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_uuid** | **str**| A UUID string identifying this Group. | 
  **include_children** | **bool**|  | [optional] [default to False]
+ **include_inherited_roles** | **bool**|  | [optional] [default to False]
  **include_parents** | **bool**|  | [optional] [default to False]
  **include_users** | **bool**|  | [optional] [default to True]
 

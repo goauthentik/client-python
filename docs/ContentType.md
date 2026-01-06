@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [readonly] 
 **app_label** | **str** |  | [readonly] 
 **model** | **str** |  | [readonly] 
+**verbose_name_plural** | **str** |  | [readonly] 
 
 ## Example
 

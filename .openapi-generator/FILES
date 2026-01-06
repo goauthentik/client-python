@@ -709,7 +709,6 @@ authentik_client/models/related_group.py
 authentik_client/models/reputation.py
 authentik_client/models/reputation_policy.py
 authentik_client/models/reputation_policy_request.py
-authentik_client/models/requested_by.py
 authentik_client/models/resident_key_requirement_enum.py
 authentik_client/models/role.py
 authentik_client/models/role_assigned_object_permission.py
@@ -1559,7 +1558,6 @@ docs/ReportsApi.md
 docs/Reputation.md
 docs/ReputationPolicy.md
 docs/ReputationPolicyRequest.md
-docs/RequestedBy.md
 docs/ResidentKeyRequirementEnum.md
 docs/Role.md
 docs/RoleAssignedObjectPermission.md
@@ -2421,7 +2419,6 @@ test/test_reports_api.py
 test/test_reputation.py
 test/test_reputation_policy.py
 test/test_reputation_policy_request.py
-test/test_requested_by.py
 test/test_resident_key_requirement_enum.py
 test/test_role.py
 test/test_role_assigned_object_permission.py

@@ -7,7 +7,7 @@ Mixin to validate that a valid enterprise license exists before allowing to save
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [readonly] 
-**requested_by** | [**RequestedBy**](RequestedBy.md) |  | [readonly] 
+**requested_by** | [**PartialUser**](PartialUser.md) |  | [readonly] 
 **requested_on** | **datetime** |  | [readonly] 
 **content_type** | [**ContentType**](ContentType.md) |  | [readonly] 
 **var_query_params** | **Dict[str, object]** |  | 
