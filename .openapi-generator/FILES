@@ -302,6 +302,7 @@ authentik_client/models/license.py
 authentik_client/models/license_flags_enum.py
 authentik_client/models/license_forecast.py
 authentik_client/models/license_request.py
+authentik_client/models/license_status_enum.py
 authentik_client/models/license_summary.py
 authentik_client/models/license_summary_status_enum.py
 authentik_client/models/link.py
@@ -1142,6 +1143,7 @@ docs/License.md
 docs/LicenseFlagsEnum.md
 docs/LicenseForecast.md
 docs/LicenseRequest.md
+docs/LicenseStatusEnum.md
 docs/LicenseSummary.md
 docs/LicenseSummaryStatusEnum.md
 docs/Link.md
@@ -2003,6 +2005,7 @@ test/test_license.py
 test/test_license_flags_enum.py
 test/test_license_forecast.py
 test/test_license_request.py
+test/test_license_status_enum.py
 test/test_license_summary.py
 test/test_license_summary_status_enum.py
 test/test_link.py

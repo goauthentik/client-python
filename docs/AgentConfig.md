@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **nss_gid_offset** | **int** |  | 
 **auth_terminate_session_on_expiry** | **bool** |  | 
 **system_config** | [**Config**](Config.md) |  | [readonly] 
+**license_status** | [**LicenseStatusEnum**](LicenseStatusEnum.md) |  | [readonly] 
 
 ## Example
 
