@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **user_path_template** | **str** |  | [optional] 
 **icon** | **str** |  | [optional] 
 **icon_url** | **str** |  | [readonly] 
+**icon_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **group_matching_mode** | [**GroupMatchingModeEnum**](GroupMatchingModeEnum.md) | How the source determines if an existing group should be used or a new group created. | [optional] 
 **client_id** | **str** | Client identifier used to talk to Plex. | [optional] 
 **allowed_servers** | **List[str]** | Which servers a user has to be a member of to be granted access. Empty list allows every server. | [optional] 

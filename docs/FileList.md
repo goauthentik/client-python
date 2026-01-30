@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **mime_type** | **str** |  | 
 **url** | **str** |  | 
+**themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [optional] 
 
 ## Example
 

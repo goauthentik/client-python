@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **user_path_template** | **str** |  | [optional] 
 **icon** | **str** |  | [optional] 
 **icon_url** | **str** |  | [readonly] 
+**icon_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **server_uri** | **str** |  | 
 **peer_certificate** | **str** | Optionally verify the LDAP Server&#39;s Certificate against the CA Chain in this keypair. | [optional] 
 **client_certificate** | **str** | Client certificate to authenticate against the LDAP Server&#39;s Certificate. | [optional] 

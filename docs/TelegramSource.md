@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **user_path_template** | **str** |  | [optional] 
 **icon** | **str** |  | [optional] 
 **icon_url** | **str** |  | [readonly] 
+**icon_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **bot_username** | **str** | Telegram bot username | 
 **request_message_access** | **bool** | Request access to send messages from your bot. | [optional] 
 **pre_authentication_flow** | **str** | Flow used before authentication. | 

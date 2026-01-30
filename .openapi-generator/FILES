@@ -799,6 +799,7 @@ authentik_client/models/tenant_admin_group_request_request.py
 authentik_client/models/tenant_recovery_key_request_request.py
 authentik_client/models/tenant_recovery_key_response.py
 authentik_client/models/tenant_request.py
+authentik_client/models/themed_urls.py
 authentik_client/models/token.py
 authentik_client/models/token_model.py
 authentik_client/models/token_request.py
@@ -1658,6 +1659,7 @@ docs/TenantRecoveryKeyRequestRequest.md
 docs/TenantRecoveryKeyResponse.md
 docs/TenantRequest.md
 docs/TenantsApi.md
+docs/ThemedUrls.md
 docs/Token.md
 docs/TokenModel.md
 docs/TokenRequest.md
@@ -2518,6 +2520,7 @@ test/test_tenant_recovery_key_request_request.py
 test/test_tenant_recovery_key_response.py
 test/test_tenant_request.py
 test/test_tenants_api.py
+test/test_themed_urls.py
 test/test_token.py
 test/test_token_model.py
 test/test_token_request.py

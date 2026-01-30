@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **user_path_template** | **str** |  | [optional] 
 **icon** | **str** |  | [optional] 
 **icon_url** | **str** |  | [readonly] 
+**icon_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **group_matching_mode** | [**GroupMatchingModeEnum**](GroupMatchingModeEnum.md) | How the source determines if an existing group should be used or a new group created. | [optional] 
 **provider_type** | [**ProviderTypeEnum**](ProviderTypeEnum.md) |  | 
 **request_token_url** | **str** | URL used to request the initial token. This URL is only required for OAuth 1. | [optional] 
