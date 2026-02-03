@@ -849,6 +849,8 @@ authentik_client/models/user_password_set_request.py
 authentik_client/models/user_path.py
 authentik_client/models/user_plex_source_connection.py
 authentik_client/models/user_plex_source_connection_request.py
+authentik_client/models/user_recovery_email_request.py
+authentik_client/models/user_recovery_link_request.py
 authentik_client/models/user_request.py
 authentik_client/models/user_saml_source_connection.py
 authentik_client/models/user_saml_source_connection_request.py
@@ -1717,6 +1719,8 @@ docs/UserPasswordSetRequest.md
 docs/UserPath.md
 docs/UserPlexSourceConnection.md
 docs/UserPlexSourceConnectionRequest.md
+docs/UserRecoveryEmailRequest.md
+docs/UserRecoveryLinkRequest.md
 docs/UserRequest.md
 docs/UserSAMLSourceConnection.md
 docs/UserSAMLSourceConnectionRequest.md
@@ -2590,6 +2594,8 @@ test/test_user_password_set_request.py
 test/test_user_path.py
 test/test_user_plex_source_connection.py
 test/test_user_plex_source_connection_request.py
+test/test_user_recovery_email_request.py
+test/test_user_recovery_link_request.py
 test/test_user_request.py
 test/test_user_saml_source_connection.py
 test/test_user_saml_source_connection_request.py

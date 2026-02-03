@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2026.2.0-rc1-1770131035"
+__version__ = "2026.2.0-rc1-1770134694"
 
 # Define package exports
 __all__ = [
@@ -867,6 +867,8 @@ __all__ = [
     "UserPath",
     "UserPlexSourceConnection",
     "UserPlexSourceConnectionRequest",
+    "UserRecoveryEmailRequest",
+    "UserRecoveryLinkRequest",
     "UserRequest",
     "UserSAMLSourceConnection",
     "UserSAMLSourceConnectionRequest",
@@ -1749,6 +1751,8 @@ from authentik_client.models.user_password_set_request import UserPasswordSetReq
 from authentik_client.models.user_path import UserPath as UserPath
 from authentik_client.models.user_plex_source_connection import UserPlexSourceConnection as UserPlexSourceConnection
 from authentik_client.models.user_plex_source_connection_request import UserPlexSourceConnectionRequest as UserPlexSourceConnectionRequest
+from authentik_client.models.user_recovery_email_request import UserRecoveryEmailRequest as UserRecoveryEmailRequest
+from authentik_client.models.user_recovery_link_request import UserRecoveryLinkRequest as UserRecoveryLinkRequest
 from authentik_client.models.user_request import UserRequest as UserRequest
 from authentik_client.models.user_saml_source_connection import UserSAMLSourceConnection as UserSAMLSourceConnection
 from authentik_client.models.user_saml_source_connection_request import UserSAMLSourceConnectionRequest as UserSAMLSourceConnectionRequest

@@ -4960,7 +4960,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_users_recovery_create**
-> Link core_users_recovery_create(id)
+> Link core_users_recovery_create(id, user_recovery_link_request=user_recovery_link_request)
 
 Create a temporary link that a user can use to recover their account
 
@@ -4971,6 +4971,7 @@ Create a temporary link that a user can use to recover their account
 ```python
 import authentik_client
 from authentik_client.models.link import Link
+from authentik_client.models.user_recovery_link_request import UserRecoveryLinkRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -4995,9 +4996,10 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
     id = 56 # int | A unique integer value identifying this User.
+    user_recovery_link_request = authentik_client.UserRecoveryLinkRequest() # UserRecoveryLinkRequest |  (optional)
 
     try:
-        api_response = api_instance.core_users_recovery_create(id)
+        api_response = api_instance.core_users_recovery_create(id, user_recovery_link_request=user_recovery_link_request)
         print("The response of CoreApi->core_users_recovery_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -5012,6 +5014,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this User. | 
+ **user_recovery_link_request** | [**UserRecoveryLinkRequest**](UserRecoveryLinkRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -5023,7 +5026,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5037,7 +5040,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_users_recovery_email_create**
-> core_users_recovery_email_create(email_stage, id)
+> core_users_recovery_email_create(id, user_recovery_email_request)
 
 Send an email with a temporary link that a user can use to recover their account
 
@@ -5047,6 +5050,7 @@ Send an email with a temporary link that a user can use to recover their account
 
 ```python
 import authentik_client
+from authentik_client.models.user_recovery_email_request import UserRecoveryEmailRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -5070,11 +5074,11 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    email_stage = 'email_stage_example' # str | 
     id = 56 # int | A unique integer value identifying this User.
+    user_recovery_email_request = authentik_client.UserRecoveryEmailRequest() # UserRecoveryEmailRequest | 
 
     try:
-        api_instance.core_users_recovery_email_create(email_stage, id)
+        api_instance.core_users_recovery_email_create(id, user_recovery_email_request)
     except Exception as e:
         print("Exception when calling CoreApi->core_users_recovery_email_create: %s\n" % e)
 ```
@@ -5086,8 +5090,8 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email_stage** | **str**|  | 
  **id** | **int**| A unique integer value identifying this User. | 
+ **user_recovery_email_request** | [**UserRecoveryEmailRequest**](UserRecoveryEmailRequest.md)|  | 
 
 ### Return type
 
@@ -5099,7 +5103,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

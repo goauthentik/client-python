@@ -64,6 +64,8 @@ from authentik_client.models.user_account_request import UserAccountRequest
 from authentik_client.models.user_consent import UserConsent
 from authentik_client.models.user_password_set_request import UserPasswordSetRequest
 from authentik_client.models.user_path import UserPath
+from authentik_client.models.user_recovery_email_request import UserRecoveryEmailRequest
+from authentik_client.models.user_recovery_link_request import UserRecoveryLinkRequest
 from authentik_client.models.user_request import UserRequest
 from authentik_client.models.user_service_account_request import UserServiceAccountRequest
 from authentik_client.models.user_service_account_response import UserServiceAccountResponse
@@ -18971,6 +18973,7 @@ class CoreApi:
     def core_users_recovery_create(
         self,
         id: Annotated[StrictInt, Field(description="A unique integer value identifying this User.")],
+        user_recovery_link_request: Optional[UserRecoveryLinkRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18990,6 +18993,8 @@ class CoreApi:
 
         :param id: A unique integer value identifying this User. (required)
         :type id: int
+        :param user_recovery_link_request:
+        :type user_recovery_link_request: UserRecoveryLinkRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19014,6 +19019,7 @@ class CoreApi:
 
         _param = self._core_users_recovery_create_serialize(
             id=id,
+            user_recovery_link_request=user_recovery_link_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19040,6 +19046,7 @@ class CoreApi:
     def core_users_recovery_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="A unique integer value identifying this User.")],
+        user_recovery_link_request: Optional[UserRecoveryLinkRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19059,6 +19066,8 @@ class CoreApi:
 
         :param id: A unique integer value identifying this User. (required)
         :type id: int
+        :param user_recovery_link_request:
+        :type user_recovery_link_request: UserRecoveryLinkRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19083,6 +19092,7 @@ class CoreApi:
 
         _param = self._core_users_recovery_create_serialize(
             id=id,
+            user_recovery_link_request=user_recovery_link_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19109,6 +19119,7 @@ class CoreApi:
     def core_users_recovery_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="A unique integer value identifying this User.")],
+        user_recovery_link_request: Optional[UserRecoveryLinkRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19128,6 +19139,8 @@ class CoreApi:
 
         :param id: A unique integer value identifying this User. (required)
         :type id: int
+        :param user_recovery_link_request:
+        :type user_recovery_link_request: UserRecoveryLinkRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19152,6 +19165,7 @@ class CoreApi:
 
         _param = self._core_users_recovery_create_serialize(
             id=id,
+            user_recovery_link_request=user_recovery_link_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19173,6 +19187,7 @@ class CoreApi:
     def _core_users_recovery_create_serialize(
         self,
         id,
+        user_recovery_link_request,
         _request_auth,
         _content_type,
         _headers,
@@ -19200,6 +19215,8 @@ class CoreApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if user_recovery_link_request is not None:
+            _body_params = user_recovery_link_request
 
 
         # set the HTTP header `Accept`
@@ -19210,6 +19227,19 @@ class CoreApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -19237,8 +19267,8 @@ class CoreApi:
     @validate_call
     def core_users_recovery_email_create(
         self,
-        email_stage: StrictStr,
         id: Annotated[StrictInt, Field(description="A unique integer value identifying this User.")],
+        user_recovery_email_request: UserRecoveryEmailRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19256,10 +19286,10 @@ class CoreApi:
 
         Send an email with a temporary link that a user can use to recover their account
 
-        :param email_stage: (required)
-        :type email_stage: str
         :param id: A unique integer value identifying this User. (required)
         :type id: int
+        :param user_recovery_email_request: (required)
+        :type user_recovery_email_request: UserRecoveryEmailRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19283,8 +19313,8 @@ class CoreApi:
         """ # noqa: E501
 
         _param = self._core_users_recovery_email_create_serialize(
-            email_stage=email_stage,
             id=id,
+            user_recovery_email_request=user_recovery_email_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19310,8 +19340,8 @@ class CoreApi:
     @validate_call
     def core_users_recovery_email_create_with_http_info(
         self,
-        email_stage: StrictStr,
         id: Annotated[StrictInt, Field(description="A unique integer value identifying this User.")],
+        user_recovery_email_request: UserRecoveryEmailRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19329,10 +19359,10 @@ class CoreApi:
 
         Send an email with a temporary link that a user can use to recover their account
 
-        :param email_stage: (required)
-        :type email_stage: str
         :param id: A unique integer value identifying this User. (required)
         :type id: int
+        :param user_recovery_email_request: (required)
+        :type user_recovery_email_request: UserRecoveryEmailRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19356,8 +19386,8 @@ class CoreApi:
         """ # noqa: E501
 
         _param = self._core_users_recovery_email_create_serialize(
-            email_stage=email_stage,
             id=id,
+            user_recovery_email_request=user_recovery_email_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19383,8 +19413,8 @@ class CoreApi:
     @validate_call
     def core_users_recovery_email_create_without_preload_content(
         self,
-        email_stage: StrictStr,
         id: Annotated[StrictInt, Field(description="A unique integer value identifying this User.")],
+        user_recovery_email_request: UserRecoveryEmailRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19402,10 +19432,10 @@ class CoreApi:
 
         Send an email with a temporary link that a user can use to recover their account
 
-        :param email_stage: (required)
-        :type email_stage: str
         :param id: A unique integer value identifying this User. (required)
         :type id: int
+        :param user_recovery_email_request: (required)
+        :type user_recovery_email_request: UserRecoveryEmailRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19429,8 +19459,8 @@ class CoreApi:
         """ # noqa: E501
 
         _param = self._core_users_recovery_email_create_serialize(
-            email_stage=email_stage,
             id=id,
+            user_recovery_email_request=user_recovery_email_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19451,8 +19481,8 @@ class CoreApi:
 
     def _core_users_recovery_email_create_serialize(
         self,
-        email_stage,
         id,
+        user_recovery_email_request,
         _request_auth,
         _content_type,
         _headers,
@@ -19477,13 +19507,11 @@ class CoreApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
-        if email_stage is not None:
-            
-            _query_params.append(('email_stage', email_stage))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if user_recovery_email_request is not None:
+            _body_params = user_recovery_email_request
 
 
         # set the HTTP header `Accept`
@@ -19494,6 +19522,19 @@ class CoreApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
