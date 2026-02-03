@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**signing_key** | **str** | Key used to sign the SSF Events. | 
+**signing_key** | **UUID** | Key used to sign the SSF Events. | 
 **token_obj** | [**Token**](Token.md) |  | [readonly] 
 **oidc_auth_providers** | **List[int]** |  | [optional] 
 **ssf_url** | **str** |  | [readonly] 

@@ -7,8 +7,7 @@ InitialPermissions serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**mode** | [**InitialPermissionsModeEnum**](InitialPermissionsModeEnum.md) |  | 
-**role** | **str** |  | 
+**role** | **UUID** |  | 
 **permissions** | **List[int]** |  | [optional] 
 
 ## Example

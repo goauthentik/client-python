@@ -7,7 +7,7 @@ MicrosoftEntraProviderGroup Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **microsoft_id** | **str** |  | 
-**group** | **str** |  | 
+**group** | **UUID** |  | 
 **provider** | **int** |  | 
 
 ## Example

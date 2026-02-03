@@ -6,7 +6,7 @@ Prompt Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **field_key** | **str** | Name of the form field, also used to store the value | 
 **label** | **str** |  | 

@@ -7,7 +7,7 @@ SCIMProviderGroup Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **scim_id** | **str** |  | 
-**group** | **str** |  | 
+**group** | **UUID** |  | 
 **provider** | **int** |  | 
 
 ## Example

@@ -6,7 +6,7 @@ Info about a single blueprint instance file
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **path** | **str** |  | [optional] [default to '']
 **context** | **Dict[str, object]** |  | [optional] 

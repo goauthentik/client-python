@@ -6,9 +6,9 @@ ConnectionToken Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [optional] 
+**pk** | **UUID** |  | [optional] 
 **provider** | **int** |  | [optional] 
-**endpoint** | **str** |  | [optional] 
+**endpoint** | **UUID** |  | [optional] 
 
 ## Example
 

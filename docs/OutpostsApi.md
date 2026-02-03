@@ -225,7 +225,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost.
 
     try:
         api_instance.outposts_instances_destroy(uuid)
@@ -240,7 +240,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost. | 
 
 ### Return type
 
@@ -300,7 +300,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost.
     managed__icontains = 'managed__icontains_example' # str |  (optional)
     managed__iexact = 'managed__iexact_example' # str |  (optional)
     name__icontains = 'name__icontains_example' # str |  (optional)
@@ -327,7 +327,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost. | 
  **managed__icontains** | **str**|  | [optional] 
  **managed__iexact** | **str**|  | [optional] 
  **name__icontains** | **str**|  | [optional] 
@@ -497,7 +497,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost.
     patched_outpost_request = authentik_client.PatchedOutpostRequest() # PatchedOutpostRequest |  (optional)
 
     try:
@@ -515,7 +515,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost. | 
  **patched_outpost_request** | [**PatchedOutpostRequest**](PatchedOutpostRequest.md)|  | [optional] 
 
 ### Return type
@@ -576,7 +576,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost.
 
     try:
         api_response = api_instance.outposts_instances_retrieve(uuid)
@@ -593,7 +593,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost. | 
 
 ### Return type
 
@@ -654,7 +654,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost.
     outpost_request = authentik_client.OutpostRequest() # OutpostRequest | 
 
     try:
@@ -672,7 +672,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost. | 
  **outpost_request** | [**OutpostRequest**](OutpostRequest.md)|  | 
 
 ### Return type
@@ -733,7 +733,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost.
 
     try:
         api_response = api_instance.outposts_instances_used_by_list(uuid)
@@ -750,7 +750,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost. | 
 
 ### Return type
 
@@ -1222,7 +1222,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost Service-Connection.
 
     try:
         api_instance.outposts_service_connections_all_destroy(uuid)
@@ -1237,7 +1237,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost Service-Connection. | 
 
 ### Return type
 
@@ -1382,7 +1382,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost Service-Connection.
 
     try:
         api_response = api_instance.outposts_service_connections_all_retrieve(uuid)
@@ -1399,7 +1399,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost Service-Connection. | 
 
 ### Return type
 
@@ -1459,7 +1459,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost Service-Connection.
 
     try:
         api_response = api_instance.outposts_service_connections_all_state_retrieve(uuid)
@@ -1476,7 +1476,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost Service-Connection. | 
 
 ### Return type
 
@@ -1609,7 +1609,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Outpost Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Outpost Service-Connection.
 
     try:
         api_response = api_instance.outposts_service_connections_all_used_by_list(uuid)
@@ -1626,7 +1626,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Outpost Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Outpost Service-Connection. | 
 
 ### Return type
 
@@ -1763,7 +1763,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Docker Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Docker Service-Connection.
 
     try:
         api_instance.outposts_service_connections_docker_destroy(uuid)
@@ -1778,7 +1778,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Docker Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Docker Service-Connection. | 
 
 ### Return type
 
@@ -1844,8 +1844,8 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    tls_authentication = 'tls_authentication_example' # str |  (optional)
-    tls_verification = 'tls_verification_example' # str |  (optional)
+    tls_authentication = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    tls_verification = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     url = 'url_example' # str |  (optional)
 
     try:
@@ -1869,8 +1869,8 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **tls_authentication** | **str**|  | [optional] 
- **tls_verification** | **str**|  | [optional] 
+ **tls_authentication** | **UUID**|  | [optional] 
+ **tls_verification** | **UUID**|  | [optional] 
  **url** | **str**|  | [optional] 
 
 ### Return type
@@ -1932,7 +1932,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Docker Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Docker Service-Connection.
     patched_docker_service_connection_request = authentik_client.PatchedDockerServiceConnectionRequest() # PatchedDockerServiceConnectionRequest |  (optional)
 
     try:
@@ -1950,7 +1950,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Docker Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Docker Service-Connection. | 
  **patched_docker_service_connection_request** | [**PatchedDockerServiceConnectionRequest**](PatchedDockerServiceConnectionRequest.md)|  | [optional] 
 
 ### Return type
@@ -2011,7 +2011,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Docker Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Docker Service-Connection.
 
     try:
         api_response = api_instance.outposts_service_connections_docker_retrieve(uuid)
@@ -2028,7 +2028,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Docker Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Docker Service-Connection. | 
 
 ### Return type
 
@@ -2089,7 +2089,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Docker Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Docker Service-Connection.
     docker_service_connection_request = authentik_client.DockerServiceConnectionRequest() # DockerServiceConnectionRequest | 
 
     try:
@@ -2107,7 +2107,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Docker Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Docker Service-Connection. | 
  **docker_service_connection_request** | [**DockerServiceConnectionRequest**](DockerServiceConnectionRequest.md)|  | 
 
 ### Return type
@@ -2168,7 +2168,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Docker Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Docker Service-Connection.
 
     try:
         api_response = api_instance.outposts_service_connections_docker_used_by_list(uuid)
@@ -2185,7 +2185,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Docker Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Docker Service-Connection. | 
 
 ### Return type
 
@@ -2322,7 +2322,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Kubernetes Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kubernetes Service-Connection.
 
     try:
         api_instance.outposts_service_connections_kubernetes_destroy(uuid)
@@ -2337,7 +2337,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Kubernetes Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Kubernetes Service-Connection. | 
 
 ### Return type
 
@@ -2485,7 +2485,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Kubernetes Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kubernetes Service-Connection.
     patched_kubernetes_service_connection_request = authentik_client.PatchedKubernetesServiceConnectionRequest() # PatchedKubernetesServiceConnectionRequest |  (optional)
 
     try:
@@ -2503,7 +2503,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Kubernetes Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Kubernetes Service-Connection. | 
  **patched_kubernetes_service_connection_request** | [**PatchedKubernetesServiceConnectionRequest**](PatchedKubernetesServiceConnectionRequest.md)|  | [optional] 
 
 ### Return type
@@ -2564,7 +2564,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Kubernetes Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kubernetes Service-Connection.
 
     try:
         api_response = api_instance.outposts_service_connections_kubernetes_retrieve(uuid)
@@ -2581,7 +2581,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Kubernetes Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Kubernetes Service-Connection. | 
 
 ### Return type
 
@@ -2642,7 +2642,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Kubernetes Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kubernetes Service-Connection.
     kubernetes_service_connection_request = authentik_client.KubernetesServiceConnectionRequest() # KubernetesServiceConnectionRequest | 
 
     try:
@@ -2660,7 +2660,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Kubernetes Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Kubernetes Service-Connection. | 
  **kubernetes_service_connection_request** | [**KubernetesServiceConnectionRequest**](KubernetesServiceConnectionRequest.md)|  | 
 
 ### Return type
@@ -2721,7 +2721,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.OutpostsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Kubernetes Service-Connection.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kubernetes Service-Connection.
 
     try:
         api_response = api_instance.outposts_service_connections_kubernetes_used_by_list(uuid)
@@ -2738,7 +2738,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Kubernetes Service-Connection. | 
+ **uuid** | **UUID**| A UUID string identifying this Kubernetes Service-Connection. | 
 
 ### Return type
 

@@ -7,7 +7,7 @@ User source connection
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | **int** |  | 
-**source** | **str** |  | 
+**source** | **UUID** |  | 
 **identifier** | **str** |  | 
 
 ## Example

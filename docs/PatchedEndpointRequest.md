@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **protocol** | [**ProtocolEnum**](ProtocolEnum.md) |  | [optional] 
 **host** | **str** |  | [optional] 
 **settings** | **Dict[str, object]** |  | [optional] 
-**property_mappings** | **List[str]** |  | [optional] 
+**property_mappings** | **List[UUID]** |  | [optional] 
 **auth_mode** | [**EndpointAuthModeEnum**](EndpointAuthModeEnum.md) |  | [optional] 
 **maximum_connections** | **int** |  | [optional] 
 

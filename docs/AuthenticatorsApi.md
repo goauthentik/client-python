@@ -1115,7 +1115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticators_admin_endpoint_create**
-> EndpointDevice authenticators_admin_endpoint_create(endpoint_device_request)
+> GoogleEndpointDevice authenticators_admin_endpoint_create(google_endpoint_device_request)
 
 Viewset for Endpoint authenticator devices (for admins)
 
@@ -1125,8 +1125,8 @@ Viewset for Endpoint authenticator devices (for admins)
 
 ```python
 import authentik_client
-from authentik_client.models.endpoint_device import EndpointDevice
-from authentik_client.models.endpoint_device_request import EndpointDeviceRequest
+from authentik_client.models.google_endpoint_device import GoogleEndpointDevice
+from authentik_client.models.google_endpoint_device_request import GoogleEndpointDeviceRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -1150,10 +1150,10 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.AuthenticatorsApi(api_client)
-    endpoint_device_request = authentik_client.EndpointDeviceRequest() # EndpointDeviceRequest | 
+    google_endpoint_device_request = authentik_client.GoogleEndpointDeviceRequest() # GoogleEndpointDeviceRequest | 
 
     try:
-        api_response = api_instance.authenticators_admin_endpoint_create(endpoint_device_request)
+        api_response = api_instance.authenticators_admin_endpoint_create(google_endpoint_device_request)
         print("The response of AuthenticatorsApi->authenticators_admin_endpoint_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -1167,11 +1167,11 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **endpoint_device_request** | [**EndpointDeviceRequest**](EndpointDeviceRequest.md)|  | 
+ **google_endpoint_device_request** | [**GoogleEndpointDeviceRequest**](GoogleEndpointDeviceRequest.md)|  | 
 
 ### Return type
 
-[**EndpointDevice**](EndpointDevice.md)
+[**GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -1226,7 +1226,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.AuthenticatorsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Device.
 
     try:
         api_instance.authenticators_admin_endpoint_destroy(uuid)
@@ -1241,7 +1241,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+ **uuid** | **UUID**| A UUID string identifying this Endpoint Device. | 
 
 ### Return type
 
@@ -1267,7 +1267,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticators_admin_endpoint_list**
-> PaginatedEndpointDeviceList authenticators_admin_endpoint_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+> PaginatedGoogleEndpointDeviceList authenticators_admin_endpoint_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 Viewset for Endpoint authenticator devices (for admins)
 
@@ -1277,7 +1277,7 @@ Viewset for Endpoint authenticator devices (for admins)
 
 ```python
 import authentik_client
-from authentik_client.models.paginated_endpoint_device_list import PaginatedEndpointDeviceList
+from authentik_client.models.paginated_google_endpoint_device_list import PaginatedGoogleEndpointDeviceList
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -1330,7 +1330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedEndpointDeviceList**](PaginatedEndpointDeviceList.md)
+[**PaginatedGoogleEndpointDeviceList**](PaginatedGoogleEndpointDeviceList.md)
 
 ### Authorization
 
@@ -1352,7 +1352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticators_admin_endpoint_partial_update**
-> EndpointDevice authenticators_admin_endpoint_partial_update(uuid, patched_endpoint_device_request=patched_endpoint_device_request)
+> GoogleEndpointDevice authenticators_admin_endpoint_partial_update(uuid, patched_google_endpoint_device_request=patched_google_endpoint_device_request)
 
 Viewset for Endpoint authenticator devices (for admins)
 
@@ -1362,8 +1362,8 @@ Viewset for Endpoint authenticator devices (for admins)
 
 ```python
 import authentik_client
-from authentik_client.models.endpoint_device import EndpointDevice
-from authentik_client.models.patched_endpoint_device_request import PatchedEndpointDeviceRequest
+from authentik_client.models.google_endpoint_device import GoogleEndpointDevice
+from authentik_client.models.patched_google_endpoint_device_request import PatchedGoogleEndpointDeviceRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -1387,11 +1387,11 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.AuthenticatorsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
-    patched_endpoint_device_request = authentik_client.PatchedEndpointDeviceRequest() # PatchedEndpointDeviceRequest |  (optional)
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Device.
+    patched_google_endpoint_device_request = authentik_client.PatchedGoogleEndpointDeviceRequest() # PatchedGoogleEndpointDeviceRequest |  (optional)
 
     try:
-        api_response = api_instance.authenticators_admin_endpoint_partial_update(uuid, patched_endpoint_device_request=patched_endpoint_device_request)
+        api_response = api_instance.authenticators_admin_endpoint_partial_update(uuid, patched_google_endpoint_device_request=patched_google_endpoint_device_request)
         print("The response of AuthenticatorsApi->authenticators_admin_endpoint_partial_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -1405,12 +1405,12 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
- **patched_endpoint_device_request** | [**PatchedEndpointDeviceRequest**](PatchedEndpointDeviceRequest.md)|  | [optional] 
+ **uuid** | **UUID**| A UUID string identifying this Endpoint Device. | 
+ **patched_google_endpoint_device_request** | [**PatchedGoogleEndpointDeviceRequest**](PatchedGoogleEndpointDeviceRequest.md)|  | [optional] 
 
 ### Return type
 
-[**EndpointDevice**](EndpointDevice.md)
+[**GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -1432,7 +1432,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticators_admin_endpoint_retrieve**
-> EndpointDevice authenticators_admin_endpoint_retrieve(uuid)
+> GoogleEndpointDevice authenticators_admin_endpoint_retrieve(uuid)
 
 Viewset for Endpoint authenticator devices (for admins)
 
@@ -1442,7 +1442,7 @@ Viewset for Endpoint authenticator devices (for admins)
 
 ```python
 import authentik_client
-from authentik_client.models.endpoint_device import EndpointDevice
+from authentik_client.models.google_endpoint_device import GoogleEndpointDevice
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -1466,7 +1466,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.AuthenticatorsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Device.
 
     try:
         api_response = api_instance.authenticators_admin_endpoint_retrieve(uuid)
@@ -1483,11 +1483,11 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+ **uuid** | **UUID**| A UUID string identifying this Endpoint Device. | 
 
 ### Return type
 
-[**EndpointDevice**](EndpointDevice.md)
+[**GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -1509,7 +1509,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticators_admin_endpoint_update**
-> EndpointDevice authenticators_admin_endpoint_update(uuid, endpoint_device_request)
+> GoogleEndpointDevice authenticators_admin_endpoint_update(uuid, google_endpoint_device_request)
 
 Viewset for Endpoint authenticator devices (for admins)
 
@@ -1519,8 +1519,8 @@ Viewset for Endpoint authenticator devices (for admins)
 
 ```python
 import authentik_client
-from authentik_client.models.endpoint_device import EndpointDevice
-from authentik_client.models.endpoint_device_request import EndpointDeviceRequest
+from authentik_client.models.google_endpoint_device import GoogleEndpointDevice
+from authentik_client.models.google_endpoint_device_request import GoogleEndpointDeviceRequest
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -1544,11 +1544,11 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.AuthenticatorsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
-    endpoint_device_request = authentik_client.EndpointDeviceRequest() # EndpointDeviceRequest | 
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Device.
+    google_endpoint_device_request = authentik_client.GoogleEndpointDeviceRequest() # GoogleEndpointDeviceRequest | 
 
     try:
-        api_response = api_instance.authenticators_admin_endpoint_update(uuid, endpoint_device_request)
+        api_response = api_instance.authenticators_admin_endpoint_update(uuid, google_endpoint_device_request)
         print("The response of AuthenticatorsApi->authenticators_admin_endpoint_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -1562,12 +1562,12 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
- **endpoint_device_request** | [**EndpointDeviceRequest**](EndpointDeviceRequest.md)|  | 
+ **uuid** | **UUID**| A UUID string identifying this Endpoint Device. | 
+ **google_endpoint_device_request** | [**GoogleEndpointDeviceRequest**](GoogleEndpointDeviceRequest.md)|  | 
 
 ### Return type
 
-[**EndpointDevice**](EndpointDevice.md)
+[**GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -4504,7 +4504,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticators_endpoint_list**
-> PaginatedEndpointDeviceList authenticators_endpoint_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+> PaginatedGoogleEndpointDeviceList authenticators_endpoint_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 Viewset for Endpoint authenticator devices
 
@@ -4514,7 +4514,7 @@ Viewset for Endpoint authenticator devices
 
 ```python
 import authentik_client
-from authentik_client.models.paginated_endpoint_device_list import PaginatedEndpointDeviceList
+from authentik_client.models.paginated_google_endpoint_device_list import PaginatedGoogleEndpointDeviceList
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -4567,7 +4567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedEndpointDeviceList**](PaginatedEndpointDeviceList.md)
+[**PaginatedGoogleEndpointDeviceList**](PaginatedGoogleEndpointDeviceList.md)
 
 ### Authorization
 
@@ -4589,7 +4589,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticators_endpoint_retrieve**
-> EndpointDevice authenticators_endpoint_retrieve(uuid)
+> GoogleEndpointDevice authenticators_endpoint_retrieve(uuid)
 
 Viewset for Endpoint authenticator devices
 
@@ -4599,7 +4599,7 @@ Viewset for Endpoint authenticator devices
 
 ```python
 import authentik_client
-from authentik_client.models.endpoint_device import EndpointDevice
+from authentik_client.models.google_endpoint_device import GoogleEndpointDevice
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -4623,7 +4623,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.AuthenticatorsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Device.
 
     try:
         api_response = api_instance.authenticators_endpoint_retrieve(uuid)
@@ -4640,11 +4640,11 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+ **uuid** | **UUID**| A UUID string identifying this Endpoint Device. | 
 
 ### Return type
 
-[**EndpointDevice**](EndpointDevice.md)
+[**GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -4700,7 +4700,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.AuthenticatorsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Endpoint Device.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Device.
 
     try:
         api_response = api_instance.authenticators_endpoint_used_by_list(uuid)
@@ -4717,7 +4717,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Endpoint Device. | 
+ **uuid** | **UUID**| A UUID string identifying this Endpoint Device. | 
 
 ### Return type
 

@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **name** | **str** | User&#39;s display name. | 
 **is_active** | **bool** | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional] 
 **last_login** | **datetime** |  | [optional] 
-**groups** | **List[str]** |  | [optional] 
+**groups** | **List[UUID]** |  | [optional] 
+**roles** | **List[UUID]** |  | [optional] 
 **email** | **str** |  | [optional] 
 **attributes** | **Dict[str, object]** |  | [optional] 
 **path** | **str** |  | [optional] 

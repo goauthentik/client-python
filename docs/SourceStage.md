@@ -6,14 +6,14 @@ SourceStage Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **component** | **str** | Get object type so that we know how to edit the object | [readonly] 
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
-**source** | **str** |  | 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
+**source** | **UUID** |  | 
 **resume_timeout** | **str** | Amount of time a user can take to return from the source to continue the flow (Format: hours&#x3D;-1;minutes&#x3D;-2;seconds&#x3D;-3) | [optional] 
 
 ## Example

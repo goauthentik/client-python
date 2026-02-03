@@ -107,6 +107,13 @@ Method | HTTP request | Description
 [**stages_email_templates_list**](StagesApi.md#stages_email_templates_list) | **GET** /stages/email/templates/ | 
 [**stages_email_update**](StagesApi.md#stages_email_update) | **PUT** /stages/email/{stage_uuid}/ | 
 [**stages_email_used_by_list**](StagesApi.md#stages_email_used_by_list) | **GET** /stages/email/{stage_uuid}/used_by/ | 
+[**stages_endpoints_create**](StagesApi.md#stages_endpoints_create) | **POST** /stages/endpoints/ | 
+[**stages_endpoints_destroy**](StagesApi.md#stages_endpoints_destroy) | **DELETE** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_list**](StagesApi.md#stages_endpoints_list) | **GET** /stages/endpoints/ | 
+[**stages_endpoints_partial_update**](StagesApi.md#stages_endpoints_partial_update) | **PATCH** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_retrieve**](StagesApi.md#stages_endpoints_retrieve) | **GET** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_update**](StagesApi.md#stages_endpoints_update) | **PUT** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_used_by_list**](StagesApi.md#stages_endpoints_used_by_list) | **GET** /stages/endpoints/{stage_uuid}/used_by/ | 
 [**stages_identification_create**](StagesApi.md#stages_identification_create) | **POST** /stages/identification/ | 
 [**stages_identification_destroy**](StagesApi.md#stages_identification_destroy) | **DELETE** /stages/identification/{stage_uuid}/ | 
 [**stages_identification_list**](StagesApi.md#stages_identification_list) | **GET** /stages/identification/ | 
@@ -235,7 +242,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this stage.
 
     try:
         api_instance.stages_all_destroy(stage_uuid)
@@ -250,7 +257,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this stage. | 
 
 ### Return type
 
@@ -395,7 +402,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this stage.
 
     try:
         api_response = api_instance.stages_all_retrieve(stage_uuid)
@@ -412,7 +419,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this stage. | 
 
 ### Return type
 
@@ -545,7 +552,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this stage.
 
     try:
         api_response = api_instance.stages_all_used_by_list(stage_uuid)
@@ -562,7 +569,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this stage. | 
 
 ### Return type
 
@@ -772,7 +779,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Duo Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Duo Authenticator Setup Stage.
 
     try:
         api_instance.stages_authenticator_duo_destroy(stage_uuid)
@@ -787,7 +794,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Duo Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Duo Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -819,7 +826,6 @@ Check enrollment status of user details in current session
 
 ### Example
 
-* Bearer Authentication (authentik):
 
 ```python
 import authentik_client
@@ -833,21 +839,12 @@ configuration = authentik_client.Configuration(
     host = "/api/v3"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
 
 # Enter a context with an instance of the API client
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Duo Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Duo Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_duo_enrollment_status_create(stage_uuid)
@@ -864,7 +861,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Duo Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Duo Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -872,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentik](../README.md#authentik)
+No authorization required
 
 ### HTTP request headers
 
@@ -924,7 +921,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Duo Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Duo Authenticator Setup Stage.
     authenticator_duo_stage_manual_device_import_request = authentik_client.AuthenticatorDuoStageManualDeviceImportRequest() # AuthenticatorDuoStageManualDeviceImportRequest | 
 
     try:
@@ -940,7 +937,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Duo Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Duo Authenticator Setup Stage. | 
  **authenticator_duo_stage_manual_device_import_request** | [**AuthenticatorDuoStageManualDeviceImportRequest**](AuthenticatorDuoStageManualDeviceImportRequest.md)|  | 
 
 ### Return type
@@ -1001,7 +998,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Duo Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Duo Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_duo_import_devices_automatic_create(stage_uuid)
@@ -1018,7 +1015,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Duo Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Duo Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -1080,7 +1077,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.StagesApi(api_client)
     api_hostname = 'api_hostname_example' # str |  (optional)
     client_id = 'client_id_example' # str |  (optional)
-    configure_flow = 'configure_flow_example' # str |  (optional)
+    configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -1104,7 +1101,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **api_hostname** | **str**|  | [optional] 
  **client_id** | **str**|  | [optional] 
- **configure_flow** | **str**|  | [optional] 
+ **configure_flow** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -1170,7 +1167,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Duo Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Duo Authenticator Setup Stage.
     patched_authenticator_duo_stage_request = authentik_client.PatchedAuthenticatorDuoStageRequest() # PatchedAuthenticatorDuoStageRequest |  (optional)
 
     try:
@@ -1188,7 +1185,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Duo Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Duo Authenticator Setup Stage. | 
  **patched_authenticator_duo_stage_request** | [**PatchedAuthenticatorDuoStageRequest**](PatchedAuthenticatorDuoStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -1249,7 +1246,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Duo Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Duo Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_duo_retrieve(stage_uuid)
@@ -1266,7 +1263,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Duo Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Duo Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -1327,7 +1324,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Duo Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Duo Authenticator Setup Stage.
     authenticator_duo_stage_request = authentik_client.AuthenticatorDuoStageRequest() # AuthenticatorDuoStageRequest | 
 
     try:
@@ -1345,7 +1342,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Duo Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Duo Authenticator Setup Stage. | 
  **authenticator_duo_stage_request** | [**AuthenticatorDuoStageRequest**](AuthenticatorDuoStageRequest.md)|  | 
 
 ### Return type
@@ -1406,7 +1403,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Duo Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Duo Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_duo_used_by_list(stage_uuid)
@@ -1423,7 +1420,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Duo Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Duo Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -1560,7 +1557,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Authenticator Setup Stage.
 
     try:
         api_instance.stages_authenticator_email_destroy(stage_uuid)
@@ -1575,7 +1572,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -1635,7 +1632,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    configure_flow = 'configure_flow_example' # str |  (optional)
+    configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     friendly_name = 'friendly_name_example' # str |  (optional)
     from_address = 'from_address_example' # str |  (optional)
     host = 'host_example' # str |  (optional)
@@ -1646,7 +1643,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     password = 'password_example' # str |  (optional)
     port = 56 # int |  (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     subject = 'subject_example' # str |  (optional)
     template = 'template_example' # str |  (optional)
     timeout = 56 # int |  (optional)
@@ -1671,7 +1668,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **configure_flow** | **str**|  | [optional] 
+ **configure_flow** | **UUID**|  | [optional] 
  **friendly_name** | **str**|  | [optional] 
  **from_address** | **str**|  | [optional] 
  **host** | **str**|  | [optional] 
@@ -1682,7 +1679,7 @@ Name | Type | Description  | Notes
  **password** | **str**|  | [optional] 
  **port** | **int**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
  **subject** | **str**|  | [optional] 
  **template** | **str**|  | [optional] 
  **timeout** | **int**|  | [optional] 
@@ -1751,7 +1748,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Authenticator Setup Stage.
     patched_authenticator_email_stage_request = authentik_client.PatchedAuthenticatorEmailStageRequest() # PatchedAuthenticatorEmailStageRequest |  (optional)
 
     try:
@@ -1769,7 +1766,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Authenticator Setup Stage. | 
  **patched_authenticator_email_stage_request** | [**PatchedAuthenticatorEmailStageRequest**](PatchedAuthenticatorEmailStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -1830,7 +1827,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_email_retrieve(stage_uuid)
@@ -1847,7 +1844,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -1908,7 +1905,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Authenticator Setup Stage.
     authenticator_email_stage_request = authentik_client.AuthenticatorEmailStageRequest() # AuthenticatorEmailStageRequest | 
 
     try:
@@ -1926,7 +1923,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Authenticator Setup Stage. | 
  **authenticator_email_stage_request** | [**AuthenticatorEmailStageRequest**](AuthenticatorEmailStageRequest.md)|  | 
 
 ### Return type
@@ -1987,7 +1984,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_email_used_by_list(stage_uuid)
@@ -2004,7 +2001,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -2141,7 +2138,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
 
     try:
         api_instance.stages_authenticator_endpoint_gdtc_destroy(stage_uuid)
@@ -2156,7 +2153,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
 
 ### Return type
 
@@ -2216,7 +2213,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    configure_flow = 'configure_flow_example' # str |  (optional)
+    configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -2238,7 +2235,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **configure_flow** | **str**|  | [optional] 
+ **configure_flow** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -2304,7 +2301,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
     patched_authenticator_endpoint_gdtc_stage_request = authentik_client.PatchedAuthenticatorEndpointGDTCStageRequest() # PatchedAuthenticatorEndpointGDTCStageRequest |  (optional)
 
     try:
@@ -2322,7 +2319,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
  **patched_authenticator_endpoint_gdtc_stage_request** | [**PatchedAuthenticatorEndpointGDTCStageRequest**](PatchedAuthenticatorEndpointGDTCStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -2383,7 +2380,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
 
     try:
         api_response = api_instance.stages_authenticator_endpoint_gdtc_retrieve(stage_uuid)
@@ -2400,7 +2397,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
 
 ### Return type
 
@@ -2461,7 +2458,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
     authenticator_endpoint_gdtc_stage_request = authentik_client.AuthenticatorEndpointGDTCStageRequest() # AuthenticatorEndpointGDTCStageRequest | 
 
     try:
@@ -2479,7 +2476,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
  **authenticator_endpoint_gdtc_stage_request** | [**AuthenticatorEndpointGDTCStageRequest**](AuthenticatorEndpointGDTCStageRequest.md)|  | 
 
 ### Return type
@@ -2540,7 +2537,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage.
 
     try:
         api_response = api_instance.stages_authenticator_endpoint_gdtc_used_by_list(stage_uuid)
@@ -2557,7 +2554,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | 
 
 ### Return type
 
@@ -2694,7 +2691,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this SMS Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SMS Authenticator Setup Stage.
 
     try:
         api_instance.stages_authenticator_sms_destroy(stage_uuid)
@@ -2709,7 +2706,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this SMS Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this SMS Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -2773,17 +2770,17 @@ with authentik_client.ApiClient(configuration) as api_client:
     auth = 'auth_example' # str |  (optional)
     auth_password = 'auth_password_example' # str |  (optional)
     auth_type = 'auth_type_example' # str |  (optional)
-    configure_flow = 'configure_flow_example' # str |  (optional)
+    configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     friendly_name = 'friendly_name_example' # str |  (optional)
     from_number = 'from_number_example' # str |  (optional)
-    mapping = 'mapping_example' # str |  (optional)
+    mapping = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     provider = 'provider_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     verify_only = True # bool |  (optional)
 
     try:
@@ -2805,17 +2802,17 @@ Name | Type | Description  | Notes
  **auth** | **str**|  | [optional] 
  **auth_password** | **str**|  | [optional] 
  **auth_type** | **str**|  | [optional] 
- **configure_flow** | **str**|  | [optional] 
+ **configure_flow** | **UUID**|  | [optional] 
  **friendly_name** | **str**|  | [optional] 
  **from_number** | **str**|  | [optional] 
- **mapping** | **str**|  | [optional] 
+ **mapping** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **provider** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
  **verify_only** | **bool**|  | [optional] 
 
 ### Return type
@@ -2877,7 +2874,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this SMS Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SMS Authenticator Setup Stage.
     patched_authenticator_sms_stage_request = authentik_client.PatchedAuthenticatorSMSStageRequest() # PatchedAuthenticatorSMSStageRequest |  (optional)
 
     try:
@@ -2895,7 +2892,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this SMS Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this SMS Authenticator Setup Stage. | 
  **patched_authenticator_sms_stage_request** | [**PatchedAuthenticatorSMSStageRequest**](PatchedAuthenticatorSMSStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -2956,7 +2953,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this SMS Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SMS Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_sms_retrieve(stage_uuid)
@@ -2973,7 +2970,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this SMS Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this SMS Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -3034,7 +3031,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this SMS Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SMS Authenticator Setup Stage.
     authenticator_sms_stage_request = authentik_client.AuthenticatorSMSStageRequest() # AuthenticatorSMSStageRequest | 
 
     try:
@@ -3052,7 +3049,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this SMS Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this SMS Authenticator Setup Stage. | 
  **authenticator_sms_stage_request** | [**AuthenticatorSMSStageRequest**](AuthenticatorSMSStageRequest.md)|  | 
 
 ### Return type
@@ -3113,7 +3110,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this SMS Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SMS Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_sms_used_by_list(stage_uuid)
@@ -3130,7 +3127,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this SMS Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this SMS Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -3267,7 +3264,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Static Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Static Authenticator Setup Stage.
 
     try:
         api_instance.stages_authenticator_static_destroy(stage_uuid)
@@ -3282,7 +3279,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Static Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Static Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -3342,14 +3339,14 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    configure_flow = 'configure_flow_example' # str |  (optional)
+    configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     friendly_name = 'friendly_name_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     token_count = 56 # int |  (optional)
     token_length = 56 # int |  (optional)
 
@@ -3368,14 +3365,14 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **configure_flow** | **str**|  | [optional] 
+ **configure_flow** | **UUID**|  | [optional] 
  **friendly_name** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
  **token_count** | **int**|  | [optional] 
  **token_length** | **int**|  | [optional] 
 
@@ -3438,7 +3435,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Static Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Static Authenticator Setup Stage.
     patched_authenticator_static_stage_request = authentik_client.PatchedAuthenticatorStaticStageRequest() # PatchedAuthenticatorStaticStageRequest |  (optional)
 
     try:
@@ -3456,7 +3453,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Static Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Static Authenticator Setup Stage. | 
  **patched_authenticator_static_stage_request** | [**PatchedAuthenticatorStaticStageRequest**](PatchedAuthenticatorStaticStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -3517,7 +3514,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Static Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Static Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_static_retrieve(stage_uuid)
@@ -3534,7 +3531,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Static Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Static Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -3595,7 +3592,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Static Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Static Authenticator Setup Stage.
     authenticator_static_stage_request = authentik_client.AuthenticatorStaticStageRequest() # AuthenticatorStaticStageRequest | 
 
     try:
@@ -3613,7 +3610,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Static Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Static Authenticator Setup Stage. | 
  **authenticator_static_stage_request** | [**AuthenticatorStaticStageRequest**](AuthenticatorStaticStageRequest.md)|  | 
 
 ### Return type
@@ -3674,7 +3671,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Static Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Static Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_static_used_by_list(stage_uuid)
@@ -3691,7 +3688,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Static Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Static Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -3828,7 +3825,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this TOTP Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this TOTP Authenticator Setup Stage.
 
     try:
         api_instance.stages_authenticator_totp_destroy(stage_uuid)
@@ -3843,7 +3840,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -3903,7 +3900,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    configure_flow = 'configure_flow_example' # str |  (optional)
+    configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     digits = 'digits_example' # str |  (optional)
     friendly_name = 'friendly_name_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
@@ -3911,7 +3908,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.stages_authenticator_totp_list(configure_flow=configure_flow, digits=digits, friendly_name=friendly_name, name=name, ordering=ordering, page=page, page_size=page_size, search=search, stage_uuid=stage_uuid)
@@ -3928,7 +3925,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **configure_flow** | **str**|  | [optional] 
+ **configure_flow** | **UUID**|  | [optional] 
  **digits** | **str**|  | [optional] 
  **friendly_name** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
@@ -3936,7 +3933,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -3997,7 +3994,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this TOTP Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this TOTP Authenticator Setup Stage.
     patched_authenticator_totp_stage_request = authentik_client.PatchedAuthenticatorTOTPStageRequest() # PatchedAuthenticatorTOTPStageRequest |  (optional)
 
     try:
@@ -4015,7 +4012,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
  **patched_authenticator_totp_stage_request** | [**PatchedAuthenticatorTOTPStageRequest**](PatchedAuthenticatorTOTPStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -4076,7 +4073,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this TOTP Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this TOTP Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_totp_retrieve(stage_uuid)
@@ -4093,7 +4090,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -4154,7 +4151,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this TOTP Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this TOTP Authenticator Setup Stage.
     authenticator_totp_stage_request = authentik_client.AuthenticatorTOTPStageRequest() # AuthenticatorTOTPStageRequest | 
 
     try:
@@ -4172,7 +4169,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
  **authenticator_totp_stage_request** | [**AuthenticatorTOTPStageRequest**](AuthenticatorTOTPStageRequest.md)|  | 
 
 ### Return type
@@ -4233,7 +4230,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this TOTP Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this TOTP Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_totp_used_by_list(stage_uuid)
@@ -4250,7 +4247,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this TOTP Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -4387,7 +4384,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Authenticator Validation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Authenticator Validation Stage.
 
     try:
         api_instance.stages_authenticator_validate_destroy(stage_uuid)
@@ -4402,7 +4399,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Authenticator Validation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Authenticator Validation Stage. | 
 
 ### Return type
 
@@ -4462,7 +4459,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    configuration_stages = ['configuration_stages_example'] # List[str] |  (optional)
+    configuration_stages = None # List[UUID] |  (optional)
     name = 'name_example' # str |  (optional)
     not_configured_action = 'not_configured_action_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
@@ -4485,7 +4482,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **configuration_stages** | [**List[str]**](str.md)|  | [optional] 
+ **configuration_stages** | [**List[UUID]**](UUID.md)|  | [optional] 
  **name** | **str**|  | [optional] 
  **not_configured_action** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
@@ -4552,7 +4549,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Authenticator Validation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Authenticator Validation Stage.
     patched_authenticator_validate_stage_request = authentik_client.PatchedAuthenticatorValidateStageRequest() # PatchedAuthenticatorValidateStageRequest |  (optional)
 
     try:
@@ -4570,7 +4567,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Authenticator Validation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Authenticator Validation Stage. | 
  **patched_authenticator_validate_stage_request** | [**PatchedAuthenticatorValidateStageRequest**](PatchedAuthenticatorValidateStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -4631,7 +4628,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Authenticator Validation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Authenticator Validation Stage.
 
     try:
         api_response = api_instance.stages_authenticator_validate_retrieve(stage_uuid)
@@ -4648,7 +4645,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Authenticator Validation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Authenticator Validation Stage. | 
 
 ### Return type
 
@@ -4709,7 +4706,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Authenticator Validation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Authenticator Validation Stage.
     authenticator_validate_stage_request = authentik_client.AuthenticatorValidateStageRequest() # AuthenticatorValidateStageRequest | 
 
     try:
@@ -4727,7 +4724,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Authenticator Validation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Authenticator Validation Stage. | 
  **authenticator_validate_stage_request** | [**AuthenticatorValidateStageRequest**](AuthenticatorValidateStageRequest.md)|  | 
 
 ### Return type
@@ -4788,7 +4785,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Authenticator Validation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Authenticator Validation Stage.
 
     try:
         api_response = api_instance.stages_authenticator_validate_used_by_list(stage_uuid)
@@ -4805,7 +4802,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Authenticator Validation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Authenticator Validation Stage. | 
 
 ### Return type
 
@@ -4942,7 +4939,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this WebAuthn Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this WebAuthn Authenticator Setup Stage.
 
     try:
         api_instance.stages_authenticator_webauthn_destroy(stage_uuid)
@@ -4957,7 +4954,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -5017,7 +5014,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    aaguid = 'aaguid_example' # str |  (optional)
+    aaguid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     description = 'description_example' # str |  (optional)
     icon = 'icon_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
@@ -5040,7 +5037,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aaguid** | **str**|  | [optional] 
+ **aaguid** | **UUID**|  | [optional] 
  **description** | **str**|  | [optional] 
  **icon** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
@@ -5106,7 +5103,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    aaguid = 'aaguid_example' # str | A UUID string identifying this WebAuthn Device type.
+    aaguid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this WebAuthn Device type.
 
     try:
         api_response = api_instance.stages_authenticator_webauthn_device_types_retrieve(aaguid)
@@ -5123,7 +5120,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aaguid** | **str**| A UUID string identifying this WebAuthn Device type. | 
+ **aaguid** | **UUID**| A UUID string identifying this WebAuthn Device type. | 
 
 ### Return type
 
@@ -5184,8 +5181,8 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
     authenticator_attachment = 'authenticator_attachment_example' # str |  (optional)
-    configure_flow = 'configure_flow_example' # str |  (optional)
-    device_type_restrictions = ['device_type_restrictions_example'] # List[str] |  (optional)
+    configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    device_type_restrictions = None # List[UUID] |  (optional)
     friendly_name = 'friendly_name_example' # str |  (optional)
     max_attempts = 56 # int |  (optional)
     name = 'name_example' # str |  (optional)
@@ -5194,7 +5191,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page_size = 56 # int | Number of results to return per page. (optional)
     resident_key_requirement = 'resident_key_requirement_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     user_verification = 'user_verification_example' # str |  (optional)
 
     try:
@@ -5213,8 +5210,8 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authenticator_attachment** | **str**|  | [optional] 
- **configure_flow** | **str**|  | [optional] 
- **device_type_restrictions** | [**List[str]**](str.md)|  | [optional] 
+ **configure_flow** | **UUID**|  | [optional] 
+ **device_type_restrictions** | [**List[UUID]**](UUID.md)|  | [optional] 
  **friendly_name** | **str**|  | [optional] 
  **max_attempts** | **int**|  | [optional] 
  **name** | **str**|  | [optional] 
@@ -5223,7 +5220,7 @@ Name | Type | Description  | Notes
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **resident_key_requirement** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
  **user_verification** | **str**|  | [optional] 
 
 ### Return type
@@ -5285,7 +5282,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this WebAuthn Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this WebAuthn Authenticator Setup Stage.
     patched_authenticator_web_authn_stage_request = authentik_client.PatchedAuthenticatorWebAuthnStageRequest() # PatchedAuthenticatorWebAuthnStageRequest |  (optional)
 
     try:
@@ -5303,7 +5300,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
  **patched_authenticator_web_authn_stage_request** | [**PatchedAuthenticatorWebAuthnStageRequest**](PatchedAuthenticatorWebAuthnStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -5364,7 +5361,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this WebAuthn Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this WebAuthn Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_webauthn_retrieve(stage_uuid)
@@ -5381,7 +5378,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -5442,7 +5439,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this WebAuthn Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this WebAuthn Authenticator Setup Stage.
     authenticator_web_authn_stage_request = authentik_client.AuthenticatorWebAuthnStageRequest() # AuthenticatorWebAuthnStageRequest | 
 
     try:
@@ -5460,7 +5457,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
  **authenticator_web_authn_stage_request** | [**AuthenticatorWebAuthnStageRequest**](AuthenticatorWebAuthnStageRequest.md)|  | 
 
 ### Return type
@@ -5521,7 +5518,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this WebAuthn Authenticator Setup Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this WebAuthn Authenticator Setup Stage.
 
     try:
         api_response = api_instance.stages_authenticator_webauthn_used_by_list(stage_uuid)
@@ -5538,7 +5535,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this WebAuthn Authenticator Setup Stage. | 
 
 ### Return type
 
@@ -5675,7 +5672,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Captcha Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Captcha Stage.
 
     try:
         api_instance.stages_captcha_destroy(stage_uuid)
@@ -5690,7 +5687,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Captcha Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Captcha Stage. | 
 
 ### Return type
 
@@ -5838,7 +5835,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Captcha Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Captcha Stage.
     patched_captcha_stage_request = authentik_client.PatchedCaptchaStageRequest() # PatchedCaptchaStageRequest |  (optional)
 
     try:
@@ -5856,7 +5853,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Captcha Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Captcha Stage. | 
  **patched_captcha_stage_request** | [**PatchedCaptchaStageRequest**](PatchedCaptchaStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -5917,7 +5914,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Captcha Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Captcha Stage.
 
     try:
         api_response = api_instance.stages_captcha_retrieve(stage_uuid)
@@ -5934,7 +5931,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Captcha Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Captcha Stage. | 
 
 ### Return type
 
@@ -5995,7 +5992,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Captcha Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Captcha Stage.
     captcha_stage_request = authentik_client.CaptchaStageRequest() # CaptchaStageRequest | 
 
     try:
@@ -6013,7 +6010,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Captcha Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Captcha Stage. | 
  **captcha_stage_request** | [**CaptchaStageRequest**](CaptchaStageRequest.md)|  | 
 
 ### Return type
@@ -6074,7 +6071,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Captcha Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Captcha Stage.
 
     try:
         api_response = api_instance.stages_captcha_used_by_list(stage_uuid)
@@ -6091,7 +6088,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Captcha Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Captcha Stage. | 
 
 ### Return type
 
@@ -6228,7 +6225,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Consent Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Consent Stage.
 
     try:
         api_instance.stages_consent_destroy(stage_uuid)
@@ -6243,7 +6240,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Consent Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Consent Stage. | 
 
 ### Return type
 
@@ -6310,7 +6307,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.stages_consent_list(consent_expire_in=consent_expire_in, mode=mode, name=name, ordering=ordering, page=page, page_size=page_size, search=search, stage_uuid=stage_uuid)
@@ -6334,7 +6331,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -6395,7 +6392,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Consent Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Consent Stage.
     patched_consent_stage_request = authentik_client.PatchedConsentStageRequest() # PatchedConsentStageRequest |  (optional)
 
     try:
@@ -6413,7 +6410,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Consent Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Consent Stage. | 
  **patched_consent_stage_request** | [**PatchedConsentStageRequest**](PatchedConsentStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -6474,7 +6471,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Consent Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Consent Stage.
 
     try:
         api_response = api_instance.stages_consent_retrieve(stage_uuid)
@@ -6491,7 +6488,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Consent Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Consent Stage. | 
 
 ### Return type
 
@@ -6552,7 +6549,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Consent Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Consent Stage.
     consent_stage_request = authentik_client.ConsentStageRequest() # ConsentStageRequest | 
 
     try:
@@ -6570,7 +6567,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Consent Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Consent Stage. | 
  **consent_stage_request** | [**ConsentStageRequest**](ConsentStageRequest.md)|  | 
 
 ### Return type
@@ -6631,7 +6628,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Consent Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Consent Stage.
 
     try:
         api_response = api_instance.stages_consent_used_by_list(stage_uuid)
@@ -6648,7 +6645,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Consent Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Consent Stage. | 
 
 ### Return type
 
@@ -6785,7 +6782,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Deny Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Deny Stage.
 
     try:
         api_instance.stages_deny_destroy(stage_uuid)
@@ -6800,7 +6797,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Deny Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Deny Stage. | 
 
 ### Return type
 
@@ -6866,7 +6863,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.stages_deny_list(deny_message=deny_message, name=name, ordering=ordering, page=page, page_size=page_size, search=search, stage_uuid=stage_uuid)
@@ -6889,7 +6886,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -6950,7 +6947,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Deny Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Deny Stage.
     patched_deny_stage_request = authentik_client.PatchedDenyStageRequest() # PatchedDenyStageRequest |  (optional)
 
     try:
@@ -6968,7 +6965,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Deny Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Deny Stage. | 
  **patched_deny_stage_request** | [**PatchedDenyStageRequest**](PatchedDenyStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -7029,7 +7026,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Deny Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Deny Stage.
 
     try:
         api_response = api_instance.stages_deny_retrieve(stage_uuid)
@@ -7046,7 +7043,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Deny Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Deny Stage. | 
 
 ### Return type
 
@@ -7107,7 +7104,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Deny Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Deny Stage.
     deny_stage_request = authentik_client.DenyStageRequest() # DenyStageRequest | 
 
     try:
@@ -7125,7 +7122,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Deny Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Deny Stage. | 
  **deny_stage_request** | [**DenyStageRequest**](DenyStageRequest.md)|  | 
 
 ### Return type
@@ -7186,7 +7183,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Deny Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Deny Stage.
 
     try:
         api_response = api_instance.stages_deny_used_by_list(stage_uuid)
@@ -7203,7 +7200,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Deny Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Deny Stage. | 
 
 ### Return type
 
@@ -7340,7 +7337,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Dummy Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Stage.
 
     try:
         api_instance.stages_dummy_destroy(stage_uuid)
@@ -7355,7 +7352,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Dummy Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Dummy Stage. | 
 
 ### Return type
 
@@ -7420,7 +7417,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     throw_error = True # bool |  (optional)
 
     try:
@@ -7443,7 +7440,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
  **throw_error** | **bool**|  | [optional] 
 
 ### Return type
@@ -7505,7 +7502,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Dummy Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Stage.
     patched_dummy_stage_request = authentik_client.PatchedDummyStageRequest() # PatchedDummyStageRequest |  (optional)
 
     try:
@@ -7523,7 +7520,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Dummy Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Dummy Stage. | 
  **patched_dummy_stage_request** | [**PatchedDummyStageRequest**](PatchedDummyStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -7584,7 +7581,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Dummy Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Stage.
 
     try:
         api_response = api_instance.stages_dummy_retrieve(stage_uuid)
@@ -7601,7 +7598,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Dummy Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Dummy Stage. | 
 
 ### Return type
 
@@ -7662,7 +7659,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Dummy Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Stage.
     dummy_stage_request = authentik_client.DummyStageRequest() # DummyStageRequest | 
 
     try:
@@ -7680,7 +7677,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Dummy Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Dummy Stage. | 
  **dummy_stage_request** | [**DummyStageRequest**](DummyStageRequest.md)|  | 
 
 ### Return type
@@ -7741,7 +7738,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Dummy Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Stage.
 
     try:
         api_response = api_instance.stages_dummy_used_by_list(stage_uuid)
@@ -7758,7 +7755,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Dummy Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Dummy Stage. | 
 
 ### Return type
 
@@ -7895,7 +7892,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Stage.
 
     try:
         api_instance.stages_email_destroy(stage_uuid)
@@ -7910,7 +7907,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Stage. | 
 
 ### Return type
 
@@ -8080,7 +8077,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Stage.
     patched_email_stage_request = authentik_client.PatchedEmailStageRequest() # PatchedEmailStageRequest |  (optional)
 
     try:
@@ -8098,7 +8095,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Stage. | 
  **patched_email_stage_request** | [**PatchedEmailStageRequest**](PatchedEmailStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -8159,7 +8156,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Stage.
 
     try:
         api_response = api_instance.stages_email_retrieve(stage_uuid)
@@ -8176,7 +8173,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Stage. | 
 
 ### Return type
 
@@ -8310,7 +8307,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Stage.
     email_stage_request = authentik_client.EmailStageRequest() # EmailStageRequest | 
 
     try:
@@ -8328,7 +8325,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Stage. | 
  **email_stage_request** | [**EmailStageRequest**](EmailStageRequest.md)|  | 
 
 ### Return type
@@ -8389,7 +8386,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Email Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Email Stage.
 
     try:
         api_response = api_instance.stages_email_used_by_list(stage_uuid)
@@ -8406,7 +8403,558 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Email Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Email Stage. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_create**
+> EndpointStage stages_endpoints_create(endpoint_stage_request)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.endpoint_stage import EndpointStage
+from authentik_client.models.endpoint_stage_request import EndpointStageRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    endpoint_stage_request = authentik_client.EndpointStageRequest() # EndpointStageRequest | 
+
+    try:
+        api_response = api_instance.stages_endpoints_create(endpoint_stage_request)
+        print("The response of StagesApi->stages_endpoints_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **endpoint_stage_request** | [**EndpointStageRequest**](EndpointStageRequest.md)|  | 
+
+### Return type
+
+[**EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_destroy**
+> stages_endpoints_destroy(stage_uuid)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Stage.
+
+    try:
+        api_instance.stages_endpoints_destroy(stage_uuid)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Stage. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_list**
+> PaginatedEndpointStageList stages_endpoints_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_endpoint_stage_list import PaginatedEndpointStageList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = api_instance.stages_endpoints_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of StagesApi->stages_endpoints_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedEndpointStageList**](PaginatedEndpointStageList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_partial_update**
+> EndpointStage stages_endpoints_partial_update(stage_uuid, patched_endpoint_stage_request=patched_endpoint_stage_request)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.endpoint_stage import EndpointStage
+from authentik_client.models.patched_endpoint_stage_request import PatchedEndpointStageRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Stage.
+    patched_endpoint_stage_request = authentik_client.PatchedEndpointStageRequest() # PatchedEndpointStageRequest |  (optional)
+
+    try:
+        api_response = api_instance.stages_endpoints_partial_update(stage_uuid, patched_endpoint_stage_request=patched_endpoint_stage_request)
+        print("The response of StagesApi->stages_endpoints_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Stage. | 
+ **patched_endpoint_stage_request** | [**PatchedEndpointStageRequest**](PatchedEndpointStageRequest.md)|  | [optional] 
+
+### Return type
+
+[**EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_retrieve**
+> EndpointStage stages_endpoints_retrieve(stage_uuid)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.endpoint_stage import EndpointStage
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Stage.
+
+    try:
+        api_response = api_instance.stages_endpoints_retrieve(stage_uuid)
+        print("The response of StagesApi->stages_endpoints_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Stage. | 
+
+### Return type
+
+[**EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_update**
+> EndpointStage stages_endpoints_update(stage_uuid, endpoint_stage_request)
+
+EndpointStage Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.endpoint_stage import EndpointStage
+from authentik_client.models.endpoint_stage_request import EndpointStageRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Stage.
+    endpoint_stage_request = authentik_client.EndpointStageRequest() # EndpointStageRequest | 
+
+    try:
+        api_response = api_instance.stages_endpoints_update(stage_uuid, endpoint_stage_request)
+        print("The response of StagesApi->stages_endpoints_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Stage. | 
+ **endpoint_stage_request** | [**EndpointStageRequest**](EndpointStageRequest.md)|  | 
+
+### Return type
+
+[**EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_endpoints_used_by_list**
+> List[UsedBy] stages_endpoints_used_by_list(stage_uuid)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.used_by import UsedBy
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Endpoint Stage.
+
+    try:
+        api_response = api_instance.stages_endpoints_used_by_list(stage_uuid)
+        print("The response of StagesApi->stages_endpoints_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_endpoints_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stage_uuid** | **UUID**| A UUID string identifying this Endpoint Stage. | 
 
 ### Return type
 
@@ -8543,7 +9091,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Identification Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Identification Stage.
 
     try:
         api_instance.stages_identification_destroy(stage_uuid)
@@ -8558,7 +9106,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Identification Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Identification Stage. | 
 
 ### Return type
 
@@ -8584,7 +9132,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stages_identification_list**
-> PaginatedIdentificationStageList stages_identification_list(captcha_stage=captcha_stage, case_insensitive_matching=case_insensitive_matching, enrollment_flow=enrollment_flow, name=name, ordering=ordering, page=page, page_size=page_size, password_stage=password_stage, passwordless_flow=passwordless_flow, recovery_flow=recovery_flow, search=search, show_matched_user=show_matched_user, show_source_labels=show_source_labels)
+> PaginatedIdentificationStageList stages_identification_list(captcha_stage=captcha_stage, case_insensitive_matching=case_insensitive_matching, enrollment_flow=enrollment_flow, name=name, ordering=ordering, page=page, page_size=page_size, password_stage=password_stage, passwordless_flow=passwordless_flow, recovery_flow=recovery_flow, search=search, show_matched_user=show_matched_user, show_source_labels=show_source_labels, webauthn_stage=webauthn_stage)
 
 IdentificationStage Viewset
 
@@ -8618,22 +9166,23 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    captcha_stage = 'captcha_stage_example' # str |  (optional)
+    captcha_stage = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     case_insensitive_matching = True # bool |  (optional)
-    enrollment_flow = 'enrollment_flow_example' # str |  (optional)
+    enrollment_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    password_stage = 'password_stage_example' # str |  (optional)
-    passwordless_flow = 'passwordless_flow_example' # str |  (optional)
-    recovery_flow = 'recovery_flow_example' # str |  (optional)
+    password_stage = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    passwordless_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    recovery_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
     show_matched_user = True # bool |  (optional)
     show_source_labels = True # bool |  (optional)
+    webauthn_stage = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
-        api_response = api_instance.stages_identification_list(captcha_stage=captcha_stage, case_insensitive_matching=case_insensitive_matching, enrollment_flow=enrollment_flow, name=name, ordering=ordering, page=page, page_size=page_size, password_stage=password_stage, passwordless_flow=passwordless_flow, recovery_flow=recovery_flow, search=search, show_matched_user=show_matched_user, show_source_labels=show_source_labels)
+        api_response = api_instance.stages_identification_list(captcha_stage=captcha_stage, case_insensitive_matching=case_insensitive_matching, enrollment_flow=enrollment_flow, name=name, ordering=ordering, page=page, page_size=page_size, password_stage=password_stage, passwordless_flow=passwordless_flow, recovery_flow=recovery_flow, search=search, show_matched_user=show_matched_user, show_source_labels=show_source_labels, webauthn_stage=webauthn_stage)
         print("The response of StagesApi->stages_identification_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -8647,19 +9196,20 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **captcha_stage** | **str**|  | [optional] 
+ **captcha_stage** | **UUID**|  | [optional] 
  **case_insensitive_matching** | **bool**|  | [optional] 
- **enrollment_flow** | **str**|  | [optional] 
+ **enrollment_flow** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **password_stage** | **str**|  | [optional] 
- **passwordless_flow** | **str**|  | [optional] 
- **recovery_flow** | **str**|  | [optional] 
+ **password_stage** | **UUID**|  | [optional] 
+ **passwordless_flow** | **UUID**|  | [optional] 
+ **recovery_flow** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **show_matched_user** | **bool**|  | [optional] 
  **show_source_labels** | **bool**|  | [optional] 
+ **webauthn_stage** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -8720,7 +9270,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Identification Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Identification Stage.
     patched_identification_stage_request = authentik_client.PatchedIdentificationStageRequest() # PatchedIdentificationStageRequest |  (optional)
 
     try:
@@ -8738,7 +9288,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Identification Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Identification Stage. | 
  **patched_identification_stage_request** | [**PatchedIdentificationStageRequest**](PatchedIdentificationStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -8799,7 +9349,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Identification Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Identification Stage.
 
     try:
         api_response = api_instance.stages_identification_retrieve(stage_uuid)
@@ -8816,7 +9366,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Identification Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Identification Stage. | 
 
 ### Return type
 
@@ -8877,7 +9427,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Identification Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Identification Stage.
     identification_stage_request = authentik_client.IdentificationStageRequest() # IdentificationStageRequest | 
 
     try:
@@ -8895,7 +9445,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Identification Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Identification Stage. | 
  **identification_stage_request** | [**IdentificationStageRequest**](IdentificationStageRequest.md)|  | 
 
 ### Return type
@@ -8956,7 +9506,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Identification Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Identification Stage.
 
     try:
         api_response = api_instance.stages_identification_used_by_list(stage_uuid)
@@ -8973,7 +9523,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Identification Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Identification Stage. | 
 
 ### Return type
 
@@ -9110,7 +9660,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    invite_uuid = 'invite_uuid_example' # str | A UUID string identifying this Invitation.
+    invite_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation.
 
     try:
         api_instance.stages_invitation_invitations_destroy(invite_uuid)
@@ -9125,7 +9675,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invite_uuid** | **str**| A UUID string identifying this Invitation. | 
+ **invite_uuid** | **UUID**| A UUID string identifying this Invitation. | 
 
 ### Return type
 
@@ -9277,7 +9827,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    invite_uuid = 'invite_uuid_example' # str | A UUID string identifying this Invitation.
+    invite_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation.
     patched_invitation_request = authentik_client.PatchedInvitationRequest() # PatchedInvitationRequest |  (optional)
 
     try:
@@ -9295,7 +9845,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invite_uuid** | **str**| A UUID string identifying this Invitation. | 
+ **invite_uuid** | **UUID**| A UUID string identifying this Invitation. | 
  **patched_invitation_request** | [**PatchedInvitationRequest**](PatchedInvitationRequest.md)|  | [optional] 
 
 ### Return type
@@ -9356,7 +9906,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    invite_uuid = 'invite_uuid_example' # str | A UUID string identifying this Invitation.
+    invite_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation.
 
     try:
         api_response = api_instance.stages_invitation_invitations_retrieve(invite_uuid)
@@ -9373,7 +9923,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invite_uuid** | **str**| A UUID string identifying this Invitation. | 
+ **invite_uuid** | **UUID**| A UUID string identifying this Invitation. | 
 
 ### Return type
 
@@ -9434,7 +9984,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    invite_uuid = 'invite_uuid_example' # str | A UUID string identifying this Invitation.
+    invite_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation.
     invitation_request = authentik_client.InvitationRequest() # InvitationRequest | 
 
     try:
@@ -9452,7 +10002,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invite_uuid** | **str**| A UUID string identifying this Invitation. | 
+ **invite_uuid** | **UUID**| A UUID string identifying this Invitation. | 
  **invitation_request** | [**InvitationRequest**](InvitationRequest.md)|  | 
 
 ### Return type
@@ -9513,7 +10063,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    invite_uuid = 'invite_uuid_example' # str | A UUID string identifying this Invitation.
+    invite_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation.
 
     try:
         api_response = api_instance.stages_invitation_invitations_used_by_list(invite_uuid)
@@ -9530,7 +10080,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invite_uuid** | **str**| A UUID string identifying this Invitation. | 
+ **invite_uuid** | **UUID**| A UUID string identifying this Invitation. | 
 
 ### Return type
 
@@ -9667,7 +10217,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Invitation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation Stage.
 
     try:
         api_instance.stages_invitation_stages_destroy(stage_uuid)
@@ -9682,7 +10232,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Invitation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Invitation Stage. | 
 
 ### Return type
 
@@ -9749,7 +10299,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.stages_invitation_stages_list(continue_flow_without_invitation=continue_flow_without_invitation, name=name, no_flows=no_flows, ordering=ordering, page=page, page_size=page_size, search=search, stage_uuid=stage_uuid)
@@ -9773,7 +10323,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -9834,7 +10384,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Invitation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation Stage.
     patched_invitation_stage_request = authentik_client.PatchedInvitationStageRequest() # PatchedInvitationStageRequest |  (optional)
 
     try:
@@ -9852,7 +10402,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Invitation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Invitation Stage. | 
  **patched_invitation_stage_request** | [**PatchedInvitationStageRequest**](PatchedInvitationStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -9913,7 +10463,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Invitation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation Stage.
 
     try:
         api_response = api_instance.stages_invitation_stages_retrieve(stage_uuid)
@@ -9930,7 +10480,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Invitation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Invitation Stage. | 
 
 ### Return type
 
@@ -9991,7 +10541,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Invitation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation Stage.
     invitation_stage_request = authentik_client.InvitationStageRequest() # InvitationStageRequest | 
 
     try:
@@ -10009,7 +10559,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Invitation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Invitation Stage. | 
  **invitation_stage_request** | [**InvitationStageRequest**](InvitationStageRequest.md)|  | 
 
 ### Return type
@@ -10070,7 +10620,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Invitation Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation Stage.
 
     try:
         api_response = api_instance.stages_invitation_stages_used_by_list(stage_uuid)
@@ -10087,7 +10637,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Invitation Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Invitation Stage. | 
 
 ### Return type
 
@@ -10224,7 +10774,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Mutual TLS Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Mutual TLS Stage.
 
     try:
         api_instance.stages_mtls_destroy(stage_uuid)
@@ -10239,7 +10789,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Mutual TLS Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Mutual TLS Stage. | 
 
 ### Return type
 
@@ -10300,14 +10850,14 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
     cert_attribute = 'cert_attribute_example' # str |  (optional)
-    certificate_authorities = ['certificate_authorities_example'] # List[str] |  (optional)
+    certificate_authorities = None # List[UUID] |  (optional)
     mode = 'mode_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     user_attribute = 'user_attribute_example' # str |  (optional)
 
     try:
@@ -10326,14 +10876,14 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cert_attribute** | **str**|  | [optional] 
- **certificate_authorities** | [**List[str]**](str.md)|  | [optional] 
+ **certificate_authorities** | [**List[UUID]**](UUID.md)|  | [optional] 
  **mode** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
  **user_attribute** | **str**|  | [optional] 
 
 ### Return type
@@ -10395,7 +10945,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Mutual TLS Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Mutual TLS Stage.
     patched_mutual_tls_stage_request = authentik_client.PatchedMutualTLSStageRequest() # PatchedMutualTLSStageRequest |  (optional)
 
     try:
@@ -10413,7 +10963,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Mutual TLS Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Mutual TLS Stage. | 
  **patched_mutual_tls_stage_request** | [**PatchedMutualTLSStageRequest**](PatchedMutualTLSStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -10474,7 +11024,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Mutual TLS Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Mutual TLS Stage.
 
     try:
         api_response = api_instance.stages_mtls_retrieve(stage_uuid)
@@ -10491,7 +11041,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Mutual TLS Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Mutual TLS Stage. | 
 
 ### Return type
 
@@ -10552,7 +11102,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Mutual TLS Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Mutual TLS Stage.
     mutual_tls_stage_request = authentik_client.MutualTLSStageRequest() # MutualTLSStageRequest | 
 
     try:
@@ -10570,7 +11120,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Mutual TLS Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Mutual TLS Stage. | 
  **mutual_tls_stage_request** | [**MutualTLSStageRequest**](MutualTLSStageRequest.md)|  | 
 
 ### Return type
@@ -10631,7 +11181,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Mutual TLS Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Mutual TLS Stage.
 
     try:
         api_response = api_instance.stages_mtls_used_by_list(stage_uuid)
@@ -10648,7 +11198,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Mutual TLS Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Mutual TLS Stage. | 
 
 ### Return type
 
@@ -10785,7 +11335,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Password Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Stage.
 
     try:
         api_instance.stages_password_destroy(stage_uuid)
@@ -10800,7 +11350,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Password Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Password Stage. | 
 
 ### Return type
 
@@ -10861,7 +11411,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
     allow_show_password = True # bool |  (optional)
-    configure_flow = 'configure_flow_example' # str |  (optional)
+    configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     failed_attempts_before_cancel = 56 # int |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
@@ -10885,7 +11435,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allow_show_password** | **bool**|  | [optional] 
- **configure_flow** | **str**|  | [optional] 
+ **configure_flow** | **UUID**|  | [optional] 
  **failed_attempts_before_cancel** | **int**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
@@ -10952,7 +11502,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Password Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Stage.
     patched_password_stage_request = authentik_client.PatchedPasswordStageRequest() # PatchedPasswordStageRequest |  (optional)
 
     try:
@@ -10970,7 +11520,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Password Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Password Stage. | 
  **patched_password_stage_request** | [**PatchedPasswordStageRequest**](PatchedPasswordStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -11031,7 +11581,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Password Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Stage.
 
     try:
         api_response = api_instance.stages_password_retrieve(stage_uuid)
@@ -11048,7 +11598,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Password Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Password Stage. | 
 
 ### Return type
 
@@ -11109,7 +11659,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Password Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Stage.
     password_stage_request = authentik_client.PasswordStageRequest() # PasswordStageRequest | 
 
     try:
@@ -11127,7 +11677,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Password Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Password Stage. | 
  **password_stage_request** | [**PasswordStageRequest**](PasswordStageRequest.md)|  | 
 
 ### Return type
@@ -11188,7 +11738,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Password Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Stage.
 
     try:
         api_response = api_instance.stages_password_used_by_list(stage_uuid)
@@ -11205,7 +11755,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Password Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Password Stage. | 
 
 ### Return type
 
@@ -11342,7 +11892,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    prompt_uuid = 'prompt_uuid_example' # str | A UUID string identifying this Prompt.
+    prompt_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt.
 
     try:
         api_instance.stages_prompt_prompts_destroy(prompt_uuid)
@@ -11357,7 +11907,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prompt_uuid** | **str**| A UUID string identifying this Prompt. | 
+ **prompt_uuid** | **UUID**| A UUID string identifying this Prompt. | 
 
 ### Return type
 
@@ -11511,7 +12061,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    prompt_uuid = 'prompt_uuid_example' # str | A UUID string identifying this Prompt.
+    prompt_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt.
     patched_prompt_request = authentik_client.PatchedPromptRequest() # PatchedPromptRequest |  (optional)
 
     try:
@@ -11529,7 +12079,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prompt_uuid** | **str**| A UUID string identifying this Prompt. | 
+ **prompt_uuid** | **UUID**| A UUID string identifying this Prompt. | 
  **patched_prompt_request** | [**PatchedPromptRequest**](PatchedPromptRequest.md)|  | [optional] 
 
 ### Return type
@@ -11668,7 +12218,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    prompt_uuid = 'prompt_uuid_example' # str | A UUID string identifying this Prompt.
+    prompt_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt.
 
     try:
         api_response = api_instance.stages_prompt_prompts_retrieve(prompt_uuid)
@@ -11685,7 +12235,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prompt_uuid** | **str**| A UUID string identifying this Prompt. | 
+ **prompt_uuid** | **UUID**| A UUID string identifying this Prompt. | 
 
 ### Return type
 
@@ -11746,7 +12296,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    prompt_uuid = 'prompt_uuid_example' # str | A UUID string identifying this Prompt.
+    prompt_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt.
     prompt_request = authentik_client.PromptRequest() # PromptRequest | 
 
     try:
@@ -11764,7 +12314,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prompt_uuid** | **str**| A UUID string identifying this Prompt. | 
+ **prompt_uuid** | **UUID**| A UUID string identifying this Prompt. | 
  **prompt_request** | [**PromptRequest**](PromptRequest.md)|  | 
 
 ### Return type
@@ -11825,7 +12375,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    prompt_uuid = 'prompt_uuid_example' # str | A UUID string identifying this Prompt.
+    prompt_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt.
 
     try:
         api_response = api_instance.stages_prompt_prompts_used_by_list(prompt_uuid)
@@ -11842,7 +12392,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prompt_uuid** | **str**| A UUID string identifying this Prompt. | 
+ **prompt_uuid** | **UUID**| A UUID string identifying this Prompt. | 
 
 ### Return type
 
@@ -11979,7 +12529,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Prompt Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt Stage.
 
     try:
         api_instance.stages_prompt_stages_destroy(stage_uuid)
@@ -11994,7 +12544,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Prompt Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Prompt Stage. | 
 
 ### Return type
 
@@ -12054,14 +12604,14 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    fields = ['fields_example'] # List[str] |  (optional)
+    fields = None # List[UUID] |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
-    validation_policies = ['validation_policies_example'] # List[str] |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    validation_policies = None # List[UUID] |  (optional)
 
     try:
         api_response = api_instance.stages_prompt_stages_list(fields=fields, name=name, ordering=ordering, page=page, page_size=page_size, search=search, stage_uuid=stage_uuid, validation_policies=validation_policies)
@@ -12078,14 +12628,14 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | [**List[str]**](str.md)|  | [optional] 
+ **fields** | [**List[UUID]**](UUID.md)|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
- **validation_policies** | [**List[str]**](str.md)|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
+ **validation_policies** | [**List[UUID]**](UUID.md)|  | [optional] 
 
 ### Return type
 
@@ -12146,7 +12696,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Prompt Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt Stage.
     patched_prompt_stage_request = authentik_client.PatchedPromptStageRequest() # PatchedPromptStageRequest |  (optional)
 
     try:
@@ -12164,7 +12714,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Prompt Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Prompt Stage. | 
  **patched_prompt_stage_request** | [**PatchedPromptStageRequest**](PatchedPromptStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -12225,7 +12775,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Prompt Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt Stage.
 
     try:
         api_response = api_instance.stages_prompt_stages_retrieve(stage_uuid)
@@ -12242,7 +12792,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Prompt Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Prompt Stage. | 
 
 ### Return type
 
@@ -12303,7 +12853,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Prompt Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt Stage.
     prompt_stage_request = authentik_client.PromptStageRequest() # PromptStageRequest | 
 
     try:
@@ -12321,7 +12871,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Prompt Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Prompt Stage. | 
  **prompt_stage_request** | [**PromptStageRequest**](PromptStageRequest.md)|  | 
 
 ### Return type
@@ -12382,7 +12932,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Prompt Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Prompt Stage.
 
     try:
         api_response = api_instance.stages_prompt_stages_used_by_list(stage_uuid)
@@ -12399,7 +12949,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Prompt Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Prompt Stage. | 
 
 ### Return type
 
@@ -12536,7 +13086,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Redirect Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Redirect Stage.
 
     try:
         api_instance.stages_redirect_destroy(stage_uuid)
@@ -12551,7 +13101,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Redirect Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Redirect Stage. | 
 
 ### Return type
 
@@ -12697,7 +13247,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Redirect Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Redirect Stage.
     patched_redirect_stage_request = authentik_client.PatchedRedirectStageRequest() # PatchedRedirectStageRequest |  (optional)
 
     try:
@@ -12715,7 +13265,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Redirect Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Redirect Stage. | 
  **patched_redirect_stage_request** | [**PatchedRedirectStageRequest**](PatchedRedirectStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -12776,7 +13326,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Redirect Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Redirect Stage.
 
     try:
         api_response = api_instance.stages_redirect_retrieve(stage_uuid)
@@ -12793,7 +13343,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Redirect Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Redirect Stage. | 
 
 ### Return type
 
@@ -12854,7 +13404,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Redirect Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Redirect Stage.
     redirect_stage_request = authentik_client.RedirectStageRequest() # RedirectStageRequest | 
 
     try:
@@ -12872,7 +13422,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Redirect Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Redirect Stage. | 
  **redirect_stage_request** | [**RedirectStageRequest**](RedirectStageRequest.md)|  | 
 
 ### Return type
@@ -12933,7 +13483,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Redirect Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Redirect Stage.
 
     try:
         api_response = api_instance.stages_redirect_used_by_list(stage_uuid)
@@ -12950,7 +13500,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Redirect Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Redirect Stage. | 
 
 ### Return type
 
@@ -13087,7 +13637,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Source Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Source Stage.
 
     try:
         api_instance.stages_source_destroy(stage_uuid)
@@ -13102,7 +13652,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Source Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Source Stage. | 
 
 ### Return type
 
@@ -13168,8 +13718,8 @@ with authentik_client.ApiClient(configuration) as api_client:
     page_size = 56 # int | Number of results to return per page. (optional)
     resume_timeout = 'resume_timeout_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
-    source = 'source_example' # str |  (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    source = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.stages_source_list(name=name, ordering=ordering, page=page, page_size=page_size, resume_timeout=resume_timeout, search=search, source=source, stage_uuid=stage_uuid)
@@ -13192,8 +13742,8 @@ Name | Type | Description  | Notes
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **resume_timeout** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **source** | **str**|  | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **source** | **UUID**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -13254,7 +13804,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Source Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Source Stage.
     patched_source_stage_request = authentik_client.PatchedSourceStageRequest() # PatchedSourceStageRequest |  (optional)
 
     try:
@@ -13272,7 +13822,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Source Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Source Stage. | 
  **patched_source_stage_request** | [**PatchedSourceStageRequest**](PatchedSourceStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -13333,7 +13883,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Source Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Source Stage.
 
     try:
         api_response = api_instance.stages_source_retrieve(stage_uuid)
@@ -13350,7 +13900,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Source Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Source Stage. | 
 
 ### Return type
 
@@ -13411,7 +13961,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Source Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Source Stage.
     source_stage_request = authentik_client.SourceStageRequest() # SourceStageRequest | 
 
     try:
@@ -13429,7 +13979,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Source Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Source Stage. | 
  **source_stage_request** | [**SourceStageRequest**](SourceStageRequest.md)|  | 
 
 ### Return type
@@ -13490,7 +14040,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this Source Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Source Stage.
 
     try:
         api_response = api_instance.stages_source_used_by_list(stage_uuid)
@@ -13507,7 +14057,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this Source Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this Source Stage. | 
 
 ### Return type
 
@@ -13644,7 +14194,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Delete Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Delete Stage.
 
     try:
         api_instance.stages_user_delete_destroy(stage_uuid)
@@ -13659,7 +14209,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Delete Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Delete Stage. | 
 
 ### Return type
 
@@ -13724,7 +14274,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.stages_user_delete_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search, stage_uuid=stage_uuid)
@@ -13746,7 +14296,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -13807,7 +14357,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Delete Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Delete Stage.
     patched_user_delete_stage_request = authentik_client.PatchedUserDeleteStageRequest() # PatchedUserDeleteStageRequest |  (optional)
 
     try:
@@ -13825,7 +14375,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Delete Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Delete Stage. | 
  **patched_user_delete_stage_request** | [**PatchedUserDeleteStageRequest**](PatchedUserDeleteStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -13886,7 +14436,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Delete Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Delete Stage.
 
     try:
         api_response = api_instance.stages_user_delete_retrieve(stage_uuid)
@@ -13903,7 +14453,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Delete Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Delete Stage. | 
 
 ### Return type
 
@@ -13964,7 +14514,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Delete Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Delete Stage.
     user_delete_stage_request = authentik_client.UserDeleteStageRequest() # UserDeleteStageRequest | 
 
     try:
@@ -13982,7 +14532,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Delete Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Delete Stage. | 
  **user_delete_stage_request** | [**UserDeleteStageRequest**](UserDeleteStageRequest.md)|  | 
 
 ### Return type
@@ -14043,7 +14593,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Delete Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Delete Stage.
 
     try:
         api_response = api_instance.stages_user_delete_used_by_list(stage_uuid)
@@ -14060,7 +14610,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Delete Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Delete Stage. | 
 
 ### Return type
 
@@ -14197,7 +14747,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Login Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Login Stage.
 
     try:
         api_instance.stages_user_login_destroy(stage_uuid)
@@ -14212,7 +14762,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Login Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Login Stage. | 
 
 ### Return type
 
@@ -14282,7 +14832,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     remember_me_offset = 'remember_me_offset_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     session_duration = 'session_duration_example' # str |  (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     terminate_other_sessions = True # bool |  (optional)
 
     try:
@@ -14310,7 +14860,7 @@ Name | Type | Description  | Notes
  **remember_me_offset** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **session_duration** | **str**|  | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
  **terminate_other_sessions** | **bool**|  | [optional] 
 
 ### Return type
@@ -14372,7 +14922,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Login Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Login Stage.
     patched_user_login_stage_request = authentik_client.PatchedUserLoginStageRequest() # PatchedUserLoginStageRequest |  (optional)
 
     try:
@@ -14390,7 +14940,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Login Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Login Stage. | 
  **patched_user_login_stage_request** | [**PatchedUserLoginStageRequest**](PatchedUserLoginStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -14451,7 +15001,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Login Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Login Stage.
 
     try:
         api_response = api_instance.stages_user_login_retrieve(stage_uuid)
@@ -14468,7 +15018,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Login Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Login Stage. | 
 
 ### Return type
 
@@ -14529,7 +15079,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Login Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Login Stage.
     user_login_stage_request = authentik_client.UserLoginStageRequest() # UserLoginStageRequest | 
 
     try:
@@ -14547,7 +15097,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Login Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Login Stage. | 
  **user_login_stage_request** | [**UserLoginStageRequest**](UserLoginStageRequest.md)|  | 
 
 ### Return type
@@ -14608,7 +15158,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Login Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Login Stage.
 
     try:
         api_response = api_instance.stages_user_login_used_by_list(stage_uuid)
@@ -14625,7 +15175,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Login Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Login Stage. | 
 
 ### Return type
 
@@ -14762,7 +15312,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Logout Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Logout Stage.
 
     try:
         api_instance.stages_user_logout_destroy(stage_uuid)
@@ -14777,7 +15327,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Logout Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Logout Stage. | 
 
 ### Return type
 
@@ -14842,7 +15392,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.stages_user_logout_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search, stage_uuid=stage_uuid)
@@ -14864,7 +15414,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -14925,7 +15475,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Logout Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Logout Stage.
     patched_user_logout_stage_request = authentik_client.PatchedUserLogoutStageRequest() # PatchedUserLogoutStageRequest |  (optional)
 
     try:
@@ -14943,7 +15493,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Logout Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Logout Stage. | 
  **patched_user_logout_stage_request** | [**PatchedUserLogoutStageRequest**](PatchedUserLogoutStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -15004,7 +15554,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Logout Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Logout Stage.
 
     try:
         api_response = api_instance.stages_user_logout_retrieve(stage_uuid)
@@ -15021,7 +15571,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Logout Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Logout Stage. | 
 
 ### Return type
 
@@ -15082,7 +15632,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Logout Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Logout Stage.
     user_logout_stage_request = authentik_client.UserLogoutStageRequest() # UserLogoutStageRequest | 
 
     try:
@@ -15100,7 +15650,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Logout Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Logout Stage. | 
  **user_logout_stage_request** | [**UserLogoutStageRequest**](UserLogoutStageRequest.md)|  | 
 
 ### Return type
@@ -15161,7 +15711,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Logout Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Logout Stage.
 
     try:
         api_response = api_instance.stages_user_logout_used_by_list(stage_uuid)
@@ -15178,7 +15728,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Logout Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Logout Stage. | 
 
 ### Return type
 
@@ -15315,7 +15865,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Write Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Write Stage.
 
     try:
         api_instance.stages_user_write_destroy(stage_uuid)
@@ -15330,7 +15880,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Write Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Write Stage. | 
 
 ### Return type
 
@@ -15391,13 +15941,13 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
     create_users_as_inactive = True # bool |  (optional)
-    create_users_group = 'create_users_group_example' # str |  (optional)
+    create_users_group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = 'stage_uuid_example' # str |  (optional)
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     user_creation_mode = 'user_creation_mode_example' # str |  (optional)
     user_path_template = 'user_path_template_example' # str |  (optional)
     user_type = 'user_type_example' # str |  (optional)
@@ -15418,13 +15968,13 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_users_as_inactive** | **bool**|  | [optional] 
- **create_users_group** | **str**|  | [optional] 
+ **create_users_group** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **str**|  | [optional] 
+ **stage_uuid** | **UUID**|  | [optional] 
  **user_creation_mode** | **str**|  | [optional] 
  **user_path_template** | **str**|  | [optional] 
  **user_type** | **str**|  | [optional] 
@@ -15488,7 +16038,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Write Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Write Stage.
     patched_user_write_stage_request = authentik_client.PatchedUserWriteStageRequest() # PatchedUserWriteStageRequest |  (optional)
 
     try:
@@ -15506,7 +16056,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Write Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Write Stage. | 
  **patched_user_write_stage_request** | [**PatchedUserWriteStageRequest**](PatchedUserWriteStageRequest.md)|  | [optional] 
 
 ### Return type
@@ -15567,7 +16117,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Write Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Write Stage.
 
     try:
         api_response = api_instance.stages_user_write_retrieve(stage_uuid)
@@ -15584,7 +16134,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Write Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Write Stage. | 
 
 ### Return type
 
@@ -15645,7 +16195,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Write Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Write Stage.
     user_write_stage_request = authentik_client.UserWriteStageRequest() # UserWriteStageRequest | 
 
     try:
@@ -15663,7 +16213,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Write Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Write Stage. | 
  **user_write_stage_request** | [**UserWriteStageRequest**](UserWriteStageRequest.md)|  | 
 
 ### Return type
@@ -15724,7 +16274,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.StagesApi(api_client)
-    stage_uuid = 'stage_uuid_example' # str | A UUID string identifying this User Write Stage.
+    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this User Write Stage.
 
     try:
         api_response = api_instance.stages_user_write_used_by_list(stage_uuid)
@@ -15741,7 +16291,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage_uuid** | **str**| A UUID string identifying this User Write Stage. | 
+ **stage_uuid** | **UUID**| A UUID string identifying this User Write Stage. | 
 
 ### Return type
 

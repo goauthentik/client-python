@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **external_id** | **str** |  | [optional] 
-**group** | **str** |  | [optional] 
-**source** | **str** |  | [optional] 
+**group** | **UUID** |  | [optional] 
+**source** | **UUID** |  | [optional] 
 **attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example

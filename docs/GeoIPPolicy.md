@@ -6,7 +6,7 @@ GeoIP Policy Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **execution_logging** | **bool** | When this option is enabled, all executions of this policy will be logged. By default, only execution errors are logged. | [optional] 
 **component** | **str** | Get object component so that we know how to edit the object | [readonly] 

@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
 **name** | **str** |  | 
-**authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
-**authorization_flow** | **str** | Flow used when authorizing this provider. | 
-**invalidation_flow** | **str** | Flow used ending the session from a provider. | 
-**property_mappings** | **List[str]** |  | [optional] 
+**authentication_flow** | **UUID** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
+**authorization_flow** | **UUID** | Flow used when authorizing this provider. | 
+**invalidation_flow** | **UUID** | Flow used ending the session from a provider. | 
+**property_mappings** | **List[UUID]** |  | [optional] 
 **component** | **str** | Get object component so that we know how to edit the object | [readonly] 
 **assigned_application_slug** | **str** | Internal application name, used in URLs. | [readonly] 
 **assigned_application_name** | **str** | Application&#39;s display Name. | [readonly] 

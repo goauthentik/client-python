@@ -7,13 +7,12 @@ AuthenticatorWebAuthnStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
-**configure_flow** | **str** | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional] 
+**configure_flow** | **UUID** | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional] 
 **friendly_name** | **str** |  | [optional] 
 **user_verification** | [**UserVerificationEnum**](UserVerificationEnum.md) |  | [optional] 
 **authenticator_attachment** | [**AuthenticatorAttachmentEnum**](AuthenticatorAttachmentEnum.md) |  | [optional] 
 **resident_key_requirement** | [**ResidentKeyRequirementEnum**](ResidentKeyRequirementEnum.md) |  | [optional] 
-**device_type_restrictions** | **List[str]** |  | [optional] 
+**device_type_restrictions** | **List[UUID]** |  | [optional] 
 **max_attempts** | **int** |  | [optional] 
 
 ## Example

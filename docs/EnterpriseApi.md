@@ -128,7 +128,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EnterpriseApi(api_client)
-    license_uuid = 'license_uuid_example' # str | A UUID string identifying this License.
+    license_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this License.
 
     try:
         api_instance.enterprise_license_destroy(license_uuid)
@@ -143,7 +143,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_uuid** | **str**| A UUID string identifying this License. | 
+ **license_uuid** | **UUID**| A UUID string identifying this License. | 
 
 ### Return type
 
@@ -435,7 +435,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EnterpriseApi(api_client)
-    license_uuid = 'license_uuid_example' # str | A UUID string identifying this License.
+    license_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this License.
     patched_license_request = authentik_client.PatchedLicenseRequest() # PatchedLicenseRequest |  (optional)
 
     try:
@@ -453,7 +453,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_uuid** | **str**| A UUID string identifying this License. | 
+ **license_uuid** | **UUID**| A UUID string identifying this License. | 
  **patched_license_request** | [**PatchedLicenseRequest**](PatchedLicenseRequest.md)|  | [optional] 
 
 ### Return type
@@ -514,7 +514,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EnterpriseApi(api_client)
-    license_uuid = 'license_uuid_example' # str | A UUID string identifying this License.
+    license_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this License.
 
     try:
         api_response = api_instance.enterprise_license_retrieve(license_uuid)
@@ -531,7 +531,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_uuid** | **str**| A UUID string identifying this License. | 
+ **license_uuid** | **UUID**| A UUID string identifying this License. | 
 
 ### Return type
 
@@ -669,7 +669,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EnterpriseApi(api_client)
-    license_uuid = 'license_uuid_example' # str | A UUID string identifying this License.
+    license_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this License.
     license_request = authentik_client.LicenseRequest() # LicenseRequest | 
 
     try:
@@ -687,7 +687,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_uuid** | **str**| A UUID string identifying this License. | 
+ **license_uuid** | **UUID**| A UUID string identifying this License. | 
  **license_request** | [**LicenseRequest**](LicenseRequest.md)|  | 
 
 ### Return type
@@ -748,7 +748,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EnterpriseApi(api_client)
-    license_uuid = 'license_uuid_example' # str | A UUID string identifying this License.
+    license_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this License.
 
     try:
         api_response = api_instance.enterprise_license_used_by_list(license_uuid)
@@ -765,7 +765,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_uuid** | **str**| A UUID string identifying this License. | 
+ **license_uuid** | **UUID**| A UUID string identifying this License. | 
 
 ### Return type
 

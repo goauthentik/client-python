@@ -143,7 +143,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TasksApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Schedule.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Schedule.
     patched_schedule_request = authentik_client.PatchedScheduleRequest() # PatchedScheduleRequest |  (optional)
 
     try:
@@ -161,7 +161,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Schedule. | 
+ **id** | **UUID**| A UUID string identifying this Schedule. | 
  **patched_schedule_request** | [**PatchedScheduleRequest**](PatchedScheduleRequest.md)|  | [optional] 
 
 ### Return type
@@ -220,7 +220,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TasksApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Schedule.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Schedule.
 
     try:
         api_response = api_instance.tasks_schedules_retrieve(id)
@@ -237,7 +237,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Schedule. | 
+ **id** | **UUID**| A UUID string identifying this Schedule. | 
 
 ### Return type
 
@@ -296,7 +296,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TasksApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Schedule.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Schedule.
 
     try:
         api_instance.tasks_schedules_send_create(id)
@@ -311,7 +311,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Schedule. | 
+ **id** | **UUID**| A UUID string identifying this Schedule. | 
 
 ### Return type
 
@@ -372,7 +372,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TasksApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Schedule.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Schedule.
     schedule_request = authentik_client.ScheduleRequest() # ScheduleRequest | 
 
     try:
@@ -390,7 +390,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Schedule. | 
+ **id** | **UUID**| A UUID string identifying this Schedule. | 
  **schedule_request** | [**ScheduleRequest**](ScheduleRequest.md)|  | 
 
 ### Return type
@@ -546,7 +546,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TasksApi(api_client)
-    message_id = 'message_id_example' # str | A UUID string identifying this Task.
+    message_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Task.
 
     try:
         api_response = api_instance.tasks_tasks_retrieve(message_id)
@@ -563,7 +563,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **message_id** | **str**| A UUID string identifying this Task. | 
+ **message_id** | **UUID**| A UUID string identifying this Task. | 
 
 ### Return type
 
@@ -622,7 +622,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TasksApi(api_client)
-    message_id = 'message_id_example' # str | A UUID string identifying this Task.
+    message_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Task.
 
     try:
         api_instance.tasks_tasks_retry_create(message_id)
@@ -637,7 +637,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **message_id** | **str**| A UUID string identifying this Task. | 
+ **message_id** | **UUID**| A UUID string identifying this Task. | 
 
 ### Return type
 

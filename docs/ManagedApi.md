@@ -50,7 +50,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ManagedApi(api_client)
-    instance_uuid = 'instance_uuid_example' # str | A UUID string identifying this Blueprint Instance.
+    instance_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Blueprint Instance.
 
     try:
         api_response = api_instance.managed_blueprints_apply_create(instance_uuid)
@@ -67,7 +67,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instance_uuid** | **str**| A UUID string identifying this Blueprint Instance. | 
+ **instance_uuid** | **UUID**| A UUID string identifying this Blueprint Instance. | 
 
 ### Return type
 
@@ -277,7 +277,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ManagedApi(api_client)
-    instance_uuid = 'instance_uuid_example' # str | A UUID string identifying this Blueprint Instance.
+    instance_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Blueprint Instance.
 
     try:
         api_instance.managed_blueprints_destroy(instance_uuid)
@@ -292,7 +292,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instance_uuid** | **str**| A UUID string identifying this Blueprint Instance. | 
+ **instance_uuid** | **UUID**| A UUID string identifying this Blueprint Instance. | 
 
 ### Return type
 
@@ -440,7 +440,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ManagedApi(api_client)
-    instance_uuid = 'instance_uuid_example' # str | A UUID string identifying this Blueprint Instance.
+    instance_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Blueprint Instance.
     patched_blueprint_instance_request = authentik_client.PatchedBlueprintInstanceRequest() # PatchedBlueprintInstanceRequest |  (optional)
 
     try:
@@ -458,7 +458,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instance_uuid** | **str**| A UUID string identifying this Blueprint Instance. | 
+ **instance_uuid** | **UUID**| A UUID string identifying this Blueprint Instance. | 
  **patched_blueprint_instance_request** | [**PatchedBlueprintInstanceRequest**](PatchedBlueprintInstanceRequest.md)|  | [optional] 
 
 ### Return type
@@ -519,7 +519,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ManagedApi(api_client)
-    instance_uuid = 'instance_uuid_example' # str | A UUID string identifying this Blueprint Instance.
+    instance_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Blueprint Instance.
 
     try:
         api_response = api_instance.managed_blueprints_retrieve(instance_uuid)
@@ -536,7 +536,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instance_uuid** | **str**| A UUID string identifying this Blueprint Instance. | 
+ **instance_uuid** | **UUID**| A UUID string identifying this Blueprint Instance. | 
 
 ### Return type
 
@@ -597,7 +597,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ManagedApi(api_client)
-    instance_uuid = 'instance_uuid_example' # str | A UUID string identifying this Blueprint Instance.
+    instance_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Blueprint Instance.
     blueprint_instance_request = authentik_client.BlueprintInstanceRequest() # BlueprintInstanceRequest | 
 
     try:
@@ -615,7 +615,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instance_uuid** | **str**| A UUID string identifying this Blueprint Instance. | 
+ **instance_uuid** | **UUID**| A UUID string identifying this Blueprint Instance. | 
  **blueprint_instance_request** | [**BlueprintInstanceRequest**](BlueprintInstanceRequest.md)|  | 
 
 ### Return type
@@ -676,7 +676,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ManagedApi(api_client)
-    instance_uuid = 'instance_uuid_example' # str | A UUID string identifying this Blueprint Instance.
+    instance_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Blueprint Instance.
 
     try:
         api_response = api_instance.managed_blueprints_used_by_list(instance_uuid)
@@ -693,7 +693,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **instance_uuid** | **str**| A UUID string identifying this Blueprint Instance. | 
+ **instance_uuid** | **UUID**| A UUID string identifying this Blueprint Instance. | 
 
 ### Return type
 

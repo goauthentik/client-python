@@ -6,10 +6,10 @@ ConnectionToken Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [optional] 
+**pk** | **UUID** |  | [optional] 
 **provider** | **int** |  | 
 **provider_obj** | [**RACProvider**](RACProvider.md) |  | [readonly] 
-**endpoint** | **str** |  | 
+**endpoint** | **UUID** |  | 
 **endpoint_obj** | [**Endpoint**](Endpoint.md) |  | [readonly] 
 **user** | [**PartialUser**](PartialUser.md) |  | [readonly] 
 

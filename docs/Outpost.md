@@ -6,12 +6,12 @@ Outpost Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **type** | [**OutpostTypeEnum**](OutpostTypeEnum.md) |  | 
 **providers** | **List[int]** |  | 
 **providers_obj** | [**List[Provider]**](Provider.md) |  | [readonly] 
-**service_connection** | **str** | Select Service-Connection authentik should use to manage this outpost. Leave empty if authentik should not handle the deployment. | [optional] 
+**service_connection** | **UUID** | Select Service-Connection authentik should use to manage this outpost. Leave empty if authentik should not handle the deployment. | [optional] 
 **service_connection_obj** | [**ServiceConnection**](ServiceConnection.md) |  | [readonly] 
 **refresh_interval_s** | **int** |  | [readonly] 
 **token_identifier** | **str** | Get Token identifier | [readonly] 

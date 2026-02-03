@@ -6,7 +6,7 @@ WebAuthnDeviceType Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aaguid** | **str** |  | 
+**aaguid** | **UUID** |  | 
 **description** | **str** |  | 
 
 ## Example

@@ -53,7 +53,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    connection_token_uuid = 'connection_token_uuid_example' # str | A UUID string identifying this RAC Connection token.
+    connection_token_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Connection token.
 
     try:
         api_instance.rac_connection_tokens_destroy(connection_token_uuid)
@@ -68,7 +68,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connection_token_uuid** | **str**| A UUID string identifying this RAC Connection token. | 
+ **connection_token_uuid** | **UUID**| A UUID string identifying this RAC Connection token. | 
 
 ### Return type
 
@@ -128,7 +128,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    endpoint = 'endpoint_example' # str |  (optional)
+    endpoint = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -151,7 +151,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **endpoint** | **str**|  | [optional] 
+ **endpoint** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -218,7 +218,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    connection_token_uuid = 'connection_token_uuid_example' # str | A UUID string identifying this RAC Connection token.
+    connection_token_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Connection token.
     patched_connection_token_request = authentik_client.PatchedConnectionTokenRequest() # PatchedConnectionTokenRequest |  (optional)
 
     try:
@@ -236,7 +236,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connection_token_uuid** | **str**| A UUID string identifying this RAC Connection token. | 
+ **connection_token_uuid** | **UUID**| A UUID string identifying this RAC Connection token. | 
  **patched_connection_token_request** | [**PatchedConnectionTokenRequest**](PatchedConnectionTokenRequest.md)|  | [optional] 
 
 ### Return type
@@ -297,7 +297,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    connection_token_uuid = 'connection_token_uuid_example' # str | A UUID string identifying this RAC Connection token.
+    connection_token_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Connection token.
 
     try:
         api_response = api_instance.rac_connection_tokens_retrieve(connection_token_uuid)
@@ -314,7 +314,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connection_token_uuid** | **str**| A UUID string identifying this RAC Connection token. | 
+ **connection_token_uuid** | **UUID**| A UUID string identifying this RAC Connection token. | 
 
 ### Return type
 
@@ -375,7 +375,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    connection_token_uuid = 'connection_token_uuid_example' # str | A UUID string identifying this RAC Connection token.
+    connection_token_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Connection token.
     connection_token_request = authentik_client.ConnectionTokenRequest() # ConnectionTokenRequest | 
 
     try:
@@ -393,7 +393,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connection_token_uuid** | **str**| A UUID string identifying this RAC Connection token. | 
+ **connection_token_uuid** | **UUID**| A UUID string identifying this RAC Connection token. | 
  **connection_token_request** | [**ConnectionTokenRequest**](ConnectionTokenRequest.md)|  | 
 
 ### Return type
@@ -454,7 +454,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    connection_token_uuid = 'connection_token_uuid_example' # str | A UUID string identifying this RAC Connection token.
+    connection_token_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Connection token.
 
     try:
         api_response = api_instance.rac_connection_tokens_used_by_list(connection_token_uuid)
@@ -471,7 +471,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connection_token_uuid** | **str**| A UUID string identifying this RAC Connection token. | 
+ **connection_token_uuid** | **UUID**| A UUID string identifying this RAC Connection token. | 
 
 ### Return type
 
@@ -608,7 +608,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this RAC Endpoint.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Endpoint.
 
     try:
         api_instance.rac_endpoints_destroy(pbm_uuid)
@@ -623,7 +623,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this RAC Endpoint. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this RAC Endpoint. | 
 
 ### Return type
 
@@ -773,7 +773,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this RAC Endpoint.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Endpoint.
     patched_endpoint_request = authentik_client.PatchedEndpointRequest() # PatchedEndpointRequest |  (optional)
 
     try:
@@ -791,7 +791,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this RAC Endpoint. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this RAC Endpoint. | 
  **patched_endpoint_request** | [**PatchedEndpointRequest**](PatchedEndpointRequest.md)|  | [optional] 
 
 ### Return type
@@ -852,7 +852,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this RAC Endpoint.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Endpoint.
 
     try:
         api_response = api_instance.rac_endpoints_retrieve(pbm_uuid)
@@ -869,7 +869,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this RAC Endpoint. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this RAC Endpoint. | 
 
 ### Return type
 
@@ -930,7 +930,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this RAC Endpoint.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Endpoint.
     endpoint_request = authentik_client.EndpointRequest() # EndpointRequest | 
 
     try:
@@ -948,7 +948,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this RAC Endpoint. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this RAC Endpoint. | 
  **endpoint_request** | [**EndpointRequest**](EndpointRequest.md)|  | 
 
 ### Return type
@@ -1009,7 +1009,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.RacApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this RAC Endpoint.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Endpoint.
 
     try:
         api_response = api_instance.rac_endpoints_used_by_list(pbm_uuid)
@@ -1026,7 +1026,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this RAC Endpoint. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this RAC Endpoint. | 
 
 ### Return type
 

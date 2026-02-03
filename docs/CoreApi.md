@@ -17,10 +17,9 @@ Method | HTTP request | Description
 [**core_applications_list**](CoreApi.md#core_applications_list) | **GET** /core/applications/ | 
 [**core_applications_partial_update**](CoreApi.md#core_applications_partial_update) | **PATCH** /core/applications/{slug}/ | 
 [**core_applications_retrieve**](CoreApi.md#core_applications_retrieve) | **GET** /core/applications/{slug}/ | 
-[**core_applications_set_icon_create**](CoreApi.md#core_applications_set_icon_create) | **POST** /core/applications/{slug}/set_icon/ | 
-[**core_applications_set_icon_url_create**](CoreApi.md#core_applications_set_icon_url_create) | **POST** /core/applications/{slug}/set_icon_url/ | 
 [**core_applications_update**](CoreApi.md#core_applications_update) | **PUT** /core/applications/{slug}/ | 
 [**core_applications_used_by_list**](CoreApi.md#core_applications_used_by_list) | **GET** /core/applications/{slug}/used_by/ | 
+[**core_authenticated_sessions_bulk_delete_destroy**](CoreApi.md#core_authenticated_sessions_bulk_delete_destroy) | **DELETE** /core/authenticated_sessions/bulk_delete/ | 
 [**core_authenticated_sessions_destroy**](CoreApi.md#core_authenticated_sessions_destroy) | **DELETE** /core/authenticated_sessions/{uuid}/ | 
 [**core_authenticated_sessions_list**](CoreApi.md#core_authenticated_sessions_list) | **GET** /core/authenticated_sessions/ | 
 [**core_authenticated_sessions_retrieve**](CoreApi.md#core_authenticated_sessions_retrieve) | **GET** /core/authenticated_sessions/{uuid}/ | 
@@ -58,6 +57,7 @@ Method | HTTP request | Description
 [**core_user_consent_used_by_list**](CoreApi.md#core_user_consent_used_by_list) | **GET** /core/user_consent/{id}/used_by/ | 
 [**core_users_create**](CoreApi.md#core_users_create) | **POST** /core/users/ | 
 [**core_users_destroy**](CoreApi.md#core_users_destroy) | **DELETE** /core/users/{id}/ | 
+[**core_users_export_create**](CoreApi.md#core_users_export_create) | **POST** /core/users/export/ | 
 [**core_users_impersonate_create**](CoreApi.md#core_users_impersonate_create) | **POST** /core/users/{id}/impersonate/ | 
 [**core_users_impersonate_end_retrieve**](CoreApi.md#core_users_impersonate_end_retrieve) | **GET** /core/users/impersonate_end/ | 
 [**core_users_list**](CoreApi.md#core_users_list) | **GET** /core/users/ | 
@@ -185,7 +185,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Application Entitlement.
 
     try:
         api_instance.core_application_entitlements_destroy(pbm_uuid)
@@ -200,7 +200,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Application Entitlement. | 
 
 ### Return type
 
@@ -260,12 +260,12 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    app = 'app_example' # str |  (optional)
+    app = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
 
     try:
@@ -283,12 +283,12 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app** | **str**|  | [optional] 
+ **app** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
 
 ### Return type
@@ -350,7 +350,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Application Entitlement.
     patched_application_entitlement_request = authentik_client.PatchedApplicationEntitlementRequest() # PatchedApplicationEntitlementRequest |  (optional)
 
     try:
@@ -368,7 +368,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Application Entitlement. | 
  **patched_application_entitlement_request** | [**PatchedApplicationEntitlementRequest**](PatchedApplicationEntitlementRequest.md)|  | [optional] 
 
 ### Return type
@@ -429,7 +429,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Application Entitlement.
 
     try:
         api_response = api_instance.core_application_entitlements_retrieve(pbm_uuid)
@@ -446,7 +446,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Application Entitlement. | 
 
 ### Return type
 
@@ -507,7 +507,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Application Entitlement.
     application_entitlement_request = authentik_client.ApplicationEntitlementRequest() # ApplicationEntitlementRequest | 
 
     try:
@@ -525,7 +525,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Application Entitlement. | 
  **application_entitlement_request** | [**ApplicationEntitlementRequest**](ApplicationEntitlementRequest.md)|  | 
 
 ### Return type
@@ -586,7 +586,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Application Entitlement.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Application Entitlement.
 
     try:
         api_response = api_instance.core_application_entitlements_used_by_list(pbm_uuid)
@@ -603,7 +603,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Application Entitlement. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Application Entitlement. | 
 
 ### Return type
 
@@ -1117,161 +1117,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **core_applications_set_icon_create**
-> core_applications_set_icon_create(slug, file=file, clear=clear)
-
-Set application icon
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.CoreApi(api_client)
-    slug = 'slug_example' # str | 
-    file = None # bytearray |  (optional)
-    clear = False # bool |  (optional) (default to False)
-
-    try:
-        api_instance.core_applications_set_icon_create(slug, file=file, clear=clear)
-    except Exception as e:
-        print("Exception when calling CoreApi->core_applications_set_icon_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file** | **bytearray**|  | [optional] 
- **clear** | **bool**|  | [optional] [default to False]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **core_applications_set_icon_url_create**
-> core_applications_set_icon_url_create(slug, file_path_request)
-
-Set application icon (as URL)
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.models.file_path_request import FilePathRequest
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.CoreApi(api_client)
-    slug = 'slug_example' # str | 
-    file_path_request = authentik_client.FilePathRequest() # FilePathRequest | 
-
-    try:
-        api_instance.core_applications_set_icon_url_create(slug, file_path_request)
-    except Exception as e:
-        print("Exception when calling CoreApi->core_applications_set_icon_url_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file_path_request** | [**FilePathRequest**](FilePathRequest.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **core_applications_update**
 > Application core_applications_update(slug, application_request)
 
@@ -1429,6 +1274,83 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **core_authenticated_sessions_bulk_delete_destroy**
+> BulkDeleteSessionResponse core_authenticated_sessions_bulk_delete_destroy(user_pks)
+
+Bulk revoke all sessions for multiple users
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.bulk_delete_session_response import BulkDeleteSessionResponse
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.CoreApi(api_client)
+    user_pks = [56] # List[int] | List of user IDs to revoke all sessions for
+
+    try:
+        api_response = api_instance.core_authenticated_sessions_bulk_delete_destroy(user_pks)
+        print("The response of CoreApi->core_authenticated_sessions_bulk_delete_destroy:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_authenticated_sessions_bulk_delete_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_pks** | [**List[int]**](int.md)| List of user IDs to revoke all sessions for | 
+
+### Return type
+
+[**BulkDeleteSessionResponse**](BulkDeleteSessionResponse.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **core_authenticated_sessions_destroy**
 > core_authenticated_sessions_destroy(uuid)
 
@@ -1463,7 +1385,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    uuid = 'uuid_example' # str | 
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
 
     try:
         api_instance.core_authenticated_sessions_destroy(uuid)
@@ -1478,7 +1400,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**|  | 
+ **uuid** | **UUID**|  | 
 
 ### Return type
 
@@ -1627,7 +1549,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    uuid = 'uuid_example' # str | 
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
 
     try:
         api_response = api_instance.core_authenticated_sessions_retrieve(uuid)
@@ -1644,7 +1566,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**|  | 
+ **uuid** | **UUID**|  | 
 
 ### Return type
 
@@ -1704,7 +1626,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    uuid = 'uuid_example' # str | 
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
 
     try:
         api_response = api_instance.core_authenticated_sessions_used_by_list(uuid)
@@ -1721,7 +1643,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**|  | 
+ **uuid** | **UUID**|  | 
 
 ### Return type
 
@@ -1931,7 +1853,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    brand_uuid = 'brand_uuid_example' # str | A UUID string identifying this Brand.
+    brand_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Brand.
 
     try:
         api_instance.core_brands_destroy(brand_uuid)
@@ -1946,7 +1868,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **brand_uuid** | **str**| A UUID string identifying this Brand. | 
+ **brand_uuid** | **UUID**| A UUID string identifying this Brand. | 
 
 ### Return type
 
@@ -2006,25 +1928,25 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    brand_uuid = 'brand_uuid_example' # str |  (optional)
+    brand_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     branding_default_flow_background = 'branding_default_flow_background_example' # str |  (optional)
     branding_favicon = 'branding_favicon_example' # str |  (optional)
     branding_logo = 'branding_logo_example' # str |  (optional)
     branding_title = 'branding_title_example' # str |  (optional)
-    client_certificates = ['client_certificates_example'] # List[str] |  (optional)
+    client_certificates = None # List[UUID] |  (optional)
     default = True # bool |  (optional)
     domain = 'domain_example' # str |  (optional)
-    flow_authentication = 'flow_authentication_example' # str |  (optional)
-    flow_device_code = 'flow_device_code_example' # str |  (optional)
-    flow_invalidation = 'flow_invalidation_example' # str |  (optional)
-    flow_recovery = 'flow_recovery_example' # str |  (optional)
-    flow_unenrollment = 'flow_unenrollment_example' # str |  (optional)
-    flow_user_settings = 'flow_user_settings_example' # str |  (optional)
+    flow_authentication = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    flow_device_code = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    flow_invalidation = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    flow_recovery = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    flow_unenrollment = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    flow_user_settings = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     search = 'search_example' # str | A search term. (optional)
-    web_certificate = 'web_certificate_example' # str |  (optional)
+    web_certificate = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.core_brands_list(brand_uuid=brand_uuid, branding_default_flow_background=branding_default_flow_background, branding_favicon=branding_favicon, branding_logo=branding_logo, branding_title=branding_title, client_certificates=client_certificates, default=default, domain=domain, flow_authentication=flow_authentication, flow_device_code=flow_device_code, flow_invalidation=flow_invalidation, flow_recovery=flow_recovery, flow_unenrollment=flow_unenrollment, flow_user_settings=flow_user_settings, ordering=ordering, page=page, page_size=page_size, search=search, web_certificate=web_certificate)
@@ -2041,25 +1963,25 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **brand_uuid** | **str**|  | [optional] 
+ **brand_uuid** | **UUID**|  | [optional] 
  **branding_default_flow_background** | **str**|  | [optional] 
  **branding_favicon** | **str**|  | [optional] 
  **branding_logo** | **str**|  | [optional] 
  **branding_title** | **str**|  | [optional] 
- **client_certificates** | [**List[str]**](str.md)|  | [optional] 
+ **client_certificates** | [**List[UUID]**](UUID.md)|  | [optional] 
  **default** | **bool**|  | [optional] 
  **domain** | **str**|  | [optional] 
- **flow_authentication** | **str**|  | [optional] 
- **flow_device_code** | **str**|  | [optional] 
- **flow_invalidation** | **str**|  | [optional] 
- **flow_recovery** | **str**|  | [optional] 
- **flow_unenrollment** | **str**|  | [optional] 
- **flow_user_settings** | **str**|  | [optional] 
+ **flow_authentication** | **UUID**|  | [optional] 
+ **flow_device_code** | **UUID**|  | [optional] 
+ **flow_invalidation** | **UUID**|  | [optional] 
+ **flow_recovery** | **UUID**|  | [optional] 
+ **flow_unenrollment** | **UUID**|  | [optional] 
+ **flow_user_settings** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **search** | **str**| A search term. | [optional] 
- **web_certificate** | **str**|  | [optional] 
+ **web_certificate** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -2120,7 +2042,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    brand_uuid = 'brand_uuid_example' # str | A UUID string identifying this Brand.
+    brand_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Brand.
     patched_brand_request = authentik_client.PatchedBrandRequest() # PatchedBrandRequest |  (optional)
 
     try:
@@ -2138,7 +2060,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **brand_uuid** | **str**| A UUID string identifying this Brand. | 
+ **brand_uuid** | **UUID**| A UUID string identifying this Brand. | 
  **patched_brand_request** | [**PatchedBrandRequest**](PatchedBrandRequest.md)|  | [optional] 
 
 ### Return type
@@ -2199,7 +2121,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    brand_uuid = 'brand_uuid_example' # str | A UUID string identifying this Brand.
+    brand_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Brand.
 
     try:
         api_response = api_instance.core_brands_retrieve(brand_uuid)
@@ -2216,7 +2138,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **brand_uuid** | **str**| A UUID string identifying this Brand. | 
+ **brand_uuid** | **UUID**| A UUID string identifying this Brand. | 
 
 ### Return type
 
@@ -2277,7 +2199,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    brand_uuid = 'brand_uuid_example' # str | A UUID string identifying this Brand.
+    brand_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Brand.
     brand_request = authentik_client.BrandRequest() # BrandRequest | 
 
     try:
@@ -2295,7 +2217,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **brand_uuid** | **str**| A UUID string identifying this Brand. | 
+ **brand_uuid** | **UUID**| A UUID string identifying this Brand. | 
  **brand_request** | [**BrandRequest**](BrandRequest.md)|  | 
 
 ### Return type
@@ -2356,7 +2278,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    brand_uuid = 'brand_uuid_example' # str | A UUID string identifying this Brand.
+    brand_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Brand.
 
     try:
         api_response = api_instance.core_brands_used_by_list(brand_uuid)
@@ -2373,7 +2295,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **brand_uuid** | **str**| A UUID string identifying this Brand. | 
+ **brand_uuid** | **UUID**| A UUID string identifying this Brand. | 
 
 ### Return type
 
@@ -2433,7 +2355,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
+    group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Group.
     user_account_request = authentik_client.UserAccountRequest() # UserAccountRequest | 
 
     try:
@@ -2449,7 +2371,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_uuid** | **str**| A UUID string identifying this Group. | 
+ **group_uuid** | **UUID**| A UUID string identifying this Group. | 
  **user_account_request** | [**UserAccountRequest**](UserAccountRequest.md)|  | 
 
 ### Return type
@@ -2588,7 +2510,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
+    group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Group.
 
     try:
         api_instance.core_groups_destroy(group_uuid)
@@ -2603,7 +2525,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_uuid** | **str**| A UUID string identifying this Group. | 
+ **group_uuid** | **UUID**| A UUID string identifying this Group. | 
 
 ### Return type
 
@@ -2629,7 +2551,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_groups_list**
-> PaginatedGroupList core_groups_list(attributes=attributes, include_children=include_children, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+> PaginatedGroupList core_groups_list(attributes=attributes, include_children=include_children, include_inherited_roles=include_inherited_roles, include_parents=include_parents, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 Group Viewset
 
@@ -2665,6 +2587,8 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.CoreApi(api_client)
     attributes = 'attributes_example' # str | Attributes (optional)
     include_children = False # bool |  (optional) (default to False)
+    include_inherited_roles = False # bool |  (optional) (default to False)
+    include_parents = False # bool |  (optional) (default to False)
     include_users = True # bool |  (optional) (default to True)
     is_superuser = True # bool |  (optional)
     members_by_pk = [56] # List[int] |  (optional)
@@ -2676,7 +2600,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     search = 'search_example' # str | A search term. (optional)
 
     try:
-        api_response = api_instance.core_groups_list(attributes=attributes, include_children=include_children, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        api_response = api_instance.core_groups_list(attributes=attributes, include_children=include_children, include_inherited_roles=include_inherited_roles, include_parents=include_parents, include_users=include_users, is_superuser=is_superuser, members_by_pk=members_by_pk, members_by_username=members_by_username, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
         print("The response of CoreApi->core_groups_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -2692,6 +2616,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **attributes** | **str**| Attributes | [optional] 
  **include_children** | **bool**|  | [optional] [default to False]
+ **include_inherited_roles** | **bool**|  | [optional] [default to False]
+ **include_parents** | **bool**|  | [optional] [default to False]
  **include_users** | **bool**|  | [optional] [default to True]
  **is_superuser** | **bool**|  | [optional] 
  **members_by_pk** | [**List[int]**](int.md)|  | [optional] 
@@ -2761,7 +2687,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
+    group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Group.
     patched_group_request = authentik_client.PatchedGroupRequest() # PatchedGroupRequest |  (optional)
 
     try:
@@ -2779,7 +2705,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_uuid** | **str**| A UUID string identifying this Group. | 
+ **group_uuid** | **UUID**| A UUID string identifying this Group. | 
  **patched_group_request** | [**PatchedGroupRequest**](PatchedGroupRequest.md)|  | [optional] 
 
 ### Return type
@@ -2840,7 +2766,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
+    group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Group.
     user_account_request = authentik_client.UserAccountRequest() # UserAccountRequest | 
 
     try:
@@ -2856,7 +2782,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_uuid** | **str**| A UUID string identifying this Group. | 
+ **group_uuid** | **UUID**| A UUID string identifying this Group. | 
  **user_account_request** | [**UserAccountRequest**](UserAccountRequest.md)|  | 
 
 ### Return type
@@ -2884,7 +2810,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_groups_retrieve**
-> Group core_groups_retrieve(group_uuid, include_children=include_children, include_users=include_users)
+> Group core_groups_retrieve(group_uuid, include_children=include_children, include_inherited_roles=include_inherited_roles, include_parents=include_parents, include_users=include_users)
 
 Group Viewset
 
@@ -2918,12 +2844,14 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
+    group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Group.
     include_children = False # bool |  (optional) (default to False)
+    include_inherited_roles = False # bool |  (optional) (default to False)
+    include_parents = False # bool |  (optional) (default to False)
     include_users = True # bool |  (optional) (default to True)
 
     try:
-        api_response = api_instance.core_groups_retrieve(group_uuid, include_children=include_children, include_users=include_users)
+        api_response = api_instance.core_groups_retrieve(group_uuid, include_children=include_children, include_inherited_roles=include_inherited_roles, include_parents=include_parents, include_users=include_users)
         print("The response of CoreApi->core_groups_retrieve:\n")
         pprint(api_response)
     except Exception as e:
@@ -2937,8 +2865,10 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_uuid** | **str**| A UUID string identifying this Group. | 
+ **group_uuid** | **UUID**| A UUID string identifying this Group. | 
  **include_children** | **bool**|  | [optional] [default to False]
+ **include_inherited_roles** | **bool**|  | [optional] [default to False]
+ **include_parents** | **bool**|  | [optional] [default to False]
  **include_users** | **bool**|  | [optional] [default to True]
 
 ### Return type
@@ -3000,7 +2930,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
+    group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Group.
     group_request = authentik_client.GroupRequest() # GroupRequest | 
 
     try:
@@ -3018,7 +2948,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_uuid** | **str**| A UUID string identifying this Group. | 
+ **group_uuid** | **UUID**| A UUID string identifying this Group. | 
  **group_request** | [**GroupRequest**](GroupRequest.md)|  | 
 
 ### Return type
@@ -3079,7 +3009,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    group_uuid = 'group_uuid_example' # str | A UUID string identifying this Group.
+    group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Group.
 
     try:
         api_response = api_instance.core_groups_used_by_list(group_uuid)
@@ -3096,7 +3026,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_uuid** | **str**| A UUID string identifying this Group. | 
+ **group_uuid** | **UUID**| A UUID string identifying this Group. | 
 
 ### Return type
 
@@ -4028,7 +3958,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CoreApi(api_client)
-    application = 'application_example' # str |  (optional)
+    application = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -4050,7 +3980,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | **str**|  | [optional] 
+ **application** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -4386,6 +4316,137 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **core_users_export_create**
+> DataExport core_users_export_create(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, is_active=is_active, is_superuser=is_superuser, last_login=last_login, last_login__gt=last_login__gt, last_login__isnull=last_login__isnull, last_login__lt=last_login__lt, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, path=path, path_startswith=path_startswith, roles_by_name=roles_by_name, roles_by_pk=roles_by_pk, search=search, type=type, username=username, uuid=uuid)
+
+Create a data export for this data type. Note that the export is generated asynchronously:
+this method returns a `DataExport` object that will initially have `completed=false` as well
+as the permanent URL to that object in the `Location` header.
+You can poll that URL until `completed=true`, at which point the `file_url` property will
+contain a URL to download
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.data_export import DataExport
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.CoreApi(api_client)
+    attributes = 'attributes_example' # str | Attributes (optional)
+    date_joined = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    date_joined__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    date_joined__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    email = 'email_example' # str |  (optional)
+    groups_by_name = ['groups_by_name_example'] # List[str] |  (optional)
+    groups_by_pk = None # List[UUID] |  (optional)
+    is_active = True # bool |  (optional)
+    is_superuser = True # bool |  (optional)
+    last_login = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_login__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_login__isnull = True # bool |  (optional)
+    last_login__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_updated = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_updated__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_updated__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    path = 'path_example' # str |  (optional)
+    path_startswith = 'path_startswith_example' # str |  (optional)
+    roles_by_name = ['roles_by_name_example'] # List[str] |  (optional)
+    roles_by_pk = None # List[UUID] |  (optional)
+    search = 'search_example' # str | A search term. (optional)
+    type = ['type_example'] # List[str] |  (optional)
+    username = 'username_example' # str |  (optional)
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+
+    try:
+        api_response = api_instance.core_users_export_create(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, is_active=is_active, is_superuser=is_superuser, last_login=last_login, last_login__gt=last_login__gt, last_login__isnull=last_login__isnull, last_login__lt=last_login__lt, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, path=path, path_startswith=path_startswith, roles_by_name=roles_by_name, roles_by_pk=roles_by_pk, search=search, type=type, username=username, uuid=uuid)
+        print("The response of CoreApi->core_users_export_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoreApi->core_users_export_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **attributes** | **str**| Attributes | [optional] 
+ **date_joined** | **datetime**|  | [optional] 
+ **date_joined__gt** | **datetime**|  | [optional] 
+ **date_joined__lt** | **datetime**|  | [optional] 
+ **email** | **str**|  | [optional] 
+ **groups_by_name** | [**List[str]**](str.md)|  | [optional] 
+ **groups_by_pk** | [**List[UUID]**](UUID.md)|  | [optional] 
+ **is_active** | **bool**|  | [optional] 
+ **is_superuser** | **bool**|  | [optional] 
+ **last_login** | **datetime**|  | [optional] 
+ **last_login__gt** | **datetime**|  | [optional] 
+ **last_login__isnull** | **bool**|  | [optional] 
+ **last_login__lt** | **datetime**|  | [optional] 
+ **last_updated** | **datetime**|  | [optional] 
+ **last_updated__gt** | **datetime**|  | [optional] 
+ **last_updated__lt** | **datetime**|  | [optional] 
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **path** | **str**|  | [optional] 
+ **path_startswith** | **str**|  | [optional] 
+ **roles_by_name** | [**List[str]**](str.md)|  | [optional] 
+ **roles_by_pk** | [**List[UUID]**](UUID.md)|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **type** | [**List[str]**](str.md)|  | [optional] 
+ **username** | **str**|  | [optional] 
+ **uuid** | **UUID**|  | [optional] 
+
+### Return type
+
+[**DataExport**](DataExport.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **core_users_impersonate_create**
 > core_users_impersonate_create(id, impersonation_request)
 
@@ -4534,7 +4595,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_users_list**
-> PaginatedUserList core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, search=search, type=type, username=username, uuid=uuid)
+> PaginatedUserList core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, include_roles=include_roles, is_active=is_active, is_superuser=is_superuser, last_login=last_login, last_login__gt=last_login__gt, last_login__isnull=last_login__isnull, last_login__lt=last_login__lt, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, roles_by_name=roles_by_name, roles_by_pk=roles_by_pk, search=search, type=type, username=username, uuid=uuid)
 
 User Viewset
 
@@ -4574,10 +4635,15 @@ with authentik_client.ApiClient(configuration) as api_client:
     date_joined__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     email = 'email_example' # str |  (optional)
     groups_by_name = ['groups_by_name_example'] # List[str] |  (optional)
-    groups_by_pk = ['groups_by_pk_example'] # List[str] |  (optional)
+    groups_by_pk = None # List[UUID] |  (optional)
     include_groups = True # bool |  (optional) (default to True)
+    include_roles = True # bool |  (optional) (default to True)
     is_active = True # bool |  (optional)
     is_superuser = True # bool |  (optional)
+    last_login = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_login__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    last_login__isnull = True # bool |  (optional)
+    last_login__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     last_updated = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     last_updated__gt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     last_updated__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
@@ -4587,13 +4653,15 @@ with authentik_client.ApiClient(configuration) as api_client:
     page_size = 56 # int | Number of results to return per page. (optional)
     path = 'path_example' # str |  (optional)
     path_startswith = 'path_startswith_example' # str |  (optional)
+    roles_by_name = ['roles_by_name_example'] # List[str] |  (optional)
+    roles_by_pk = None # List[UUID] |  (optional)
     search = 'search_example' # str | A search term. (optional)
     type = ['type_example'] # List[str] |  (optional)
     username = 'username_example' # str |  (optional)
-    uuid = 'uuid_example' # str |  (optional)
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
-        api_response = api_instance.core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, is_active=is_active, is_superuser=is_superuser, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, search=search, type=type, username=username, uuid=uuid)
+        api_response = api_instance.core_users_list(attributes=attributes, date_joined=date_joined, date_joined__gt=date_joined__gt, date_joined__lt=date_joined__lt, email=email, groups_by_name=groups_by_name, groups_by_pk=groups_by_pk, include_groups=include_groups, include_roles=include_roles, is_active=is_active, is_superuser=is_superuser, last_login=last_login, last_login__gt=last_login__gt, last_login__isnull=last_login__isnull, last_login__lt=last_login__lt, last_updated=last_updated, last_updated__gt=last_updated__gt, last_updated__lt=last_updated__lt, name=name, ordering=ordering, page=page, page_size=page_size, path=path, path_startswith=path_startswith, roles_by_name=roles_by_name, roles_by_pk=roles_by_pk, search=search, type=type, username=username, uuid=uuid)
         print("The response of CoreApi->core_users_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -4613,10 +4681,15 @@ Name | Type | Description  | Notes
  **date_joined__lt** | **datetime**|  | [optional] 
  **email** | **str**|  | [optional] 
  **groups_by_name** | [**List[str]**](str.md)|  | [optional] 
- **groups_by_pk** | [**List[str]**](str.md)|  | [optional] 
+ **groups_by_pk** | [**List[UUID]**](UUID.md)|  | [optional] 
  **include_groups** | **bool**|  | [optional] [default to True]
+ **include_roles** | **bool**|  | [optional] [default to True]
  **is_active** | **bool**|  | [optional] 
  **is_superuser** | **bool**|  | [optional] 
+ **last_login** | **datetime**|  | [optional] 
+ **last_login__gt** | **datetime**|  | [optional] 
+ **last_login__isnull** | **bool**|  | [optional] 
+ **last_login__lt** | **datetime**|  | [optional] 
  **last_updated** | **datetime**|  | [optional] 
  **last_updated__gt** | **datetime**|  | [optional] 
  **last_updated__lt** | **datetime**|  | [optional] 
@@ -4626,10 +4699,12 @@ Name | Type | Description  | Notes
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **path** | **str**|  | [optional] 
  **path_startswith** | **str**|  | [optional] 
+ **roles_by_name** | [**List[str]**](str.md)|  | [optional] 
+ **roles_by_pk** | [**List[UUID]**](UUID.md)|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **type** | [**List[str]**](str.md)|  | [optional] 
  **username** | **str**|  | [optional] 
- **uuid** | **str**|  | [optional] 
+ **uuid** | **UUID**|  | [optional] 
 
 ### Return type
 

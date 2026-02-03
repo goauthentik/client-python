@@ -6,7 +6,7 @@ Tenant Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenant_uuid** | **str** |  | [readonly] 
+**tenant_uuid** | **UUID** |  | [readonly] 
 **schema_name** | **str** |  | 
 **name** | **str** |  | 
 **ready** | **bool** |  | [optional] 

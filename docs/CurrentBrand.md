@@ -9,7 +9,9 @@ Name | Type | Description | Notes
 **matched_domain** | **str** |  | 
 **branding_title** | **str** |  | 
 **branding_logo** | **str** |  | 
+**branding_logo_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **branding_favicon** | **str** |  | 
+**branding_favicon_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **branding_custom_css** | **str** |  | 
 **ui_footer_links** | [**List[FooterLink]**](FooterLink.md) |  | [readonly] 
 **ui_theme** | [**UiThemeEnum**](UiThemeEnum.md) |  | [readonly] 

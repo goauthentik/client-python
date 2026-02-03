@@ -45,6 +45,8 @@
 
 * `CONFIGURATION_ERROR` (value: `'configuration_error'`)
 
+* `CONFIGURATION_WARNING` (value: `'configuration_warning'`)
+
 * `MODEL_CREATED` (value: `'model_created'`)
 
 * `MODEL_UPDATED` (value: `'model_updated'`)
@@ -54,6 +56,8 @@
 * `EMAIL_SENT` (value: `'email_sent'`)
 
 * `UPDATE_AVAILABLE` (value: `'update_available'`)
+
+* `EXPORT_READY` (value: `'export_ready'`)
 
 * `CUSTOM` (value: `'custom_'`)
 

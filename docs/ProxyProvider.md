@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
 **name** | **str** |  | 
-**authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
-**authorization_flow** | **str** | Flow used when authorizing this provider. | 
-**invalidation_flow** | **str** | Flow used ending the session from a provider. | 
-**property_mappings** | **List[str]** |  | [optional] 
+**authentication_flow** | **UUID** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
+**authorization_flow** | **UUID** | Flow used when authorizing this provider. | 
+**invalidation_flow** | **UUID** | Flow used ending the session from a provider. | 
+**property_mappings** | **List[UUID]** |  | [optional] 
 **component** | **str** | Get object component so that we know how to edit the object | [readonly] 
 **assigned_application_slug** | **str** | Internal application name, used in URLs. | [readonly] 
 **assigned_application_name** | **str** | Application&#39;s display Name. | [readonly] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **internal_host** | **str** |  | [optional] 
 **external_host** | **str** |  | 
 **internal_host_ssl_validation** | **bool** | Validate SSL Certificates of upstream servers | [optional] 
-**certificate** | **str** |  | [optional] 
+**certificate** | **UUID** |  | [optional] 
 **skip_path_regex** | **str** | Regular expressions for which authentication is not required. Each new line is interpreted as a new Regular Expression. | [optional] 
 **basic_auth_enabled** | **bool** | Set a custom HTTP-Basic Authentication header based on values from authentik. | [optional] 
 **basic_auth_password_attribute** | **str** | User/Group Attribute used for the password part of the HTTP-Basic Header. | [optional] 
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **intercept_header_auth** | **bool** | When enabled, this provider will intercept the authorization header and authenticate requests based on its value. | [optional] 
 **redirect_uris** | [**List[RedirectURI]**](RedirectURI.md) |  | [readonly] 
 **cookie_domain** | **str** |  | [optional] 
-**jwt_federation_sources** | **List[str]** |  | [optional] 
+**jwt_federation_sources** | **List[UUID]** |  | [optional] 
 **jwt_federation_providers** | **List[int]** |  | [optional] 
 **access_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **refresh_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 

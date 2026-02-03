@@ -6,22 +6,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**property_mappings** | **List[str]** |  | [optional] 
-**property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
+**property_mappings** | **List[UUID]** |  | [optional] 
+**property_mappings_group** | **List[UUID]** | Property mappings used for group creation/updating. | [optional] 
 **delegated_subject** | **str** |  | 
 **credentials** | **Dict[str, object]** |  | 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
-**filter_group** | **str** |  | [optional] 
+**filter_group** | **UUID** |  | [optional] 
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **default_group_email_domain** | **str** |  | 
+**sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
+**sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
-**authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
-**authorization_flow** | **str** | Flow used when authorizing this provider. | 
-**invalidation_flow** | **str** | Flow used ending the session from a provider. | 
+**authentication_flow** | **UUID** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
+**authorization_flow** | **UUID** | Flow used when authorizing this provider. | 
+**invalidation_flow** | **UUID** | Flow used ending the session from a provider. | 
 **base_dn** | **str** | DN under which objects are accessible. | [optional] 
-**certificate** | **str** |  | [optional] 
+**certificate** | **UUID** |  | [optional] 
 **tls_server_name** | **str** |  | [optional] 
 **uid_start_number** | **int** | The start for uidNumbers, this number is added to the user.pk to make sure that the numbers aren&#39;t too low for POSIX users. Default is 2000 to ensure that we don&#39;t collide with local users uidNumber | [optional] 
 **gid_start_number** | **int** | The start for gidNumbers, this number is added to a number generated from the group.pk to make sure that the numbers aren&#39;t too low for POSIX groups. Default is 4000 to ensure that we don&#39;t collide with local groups or users primary groups gidNumber | [optional] 
@@ -37,14 +39,14 @@ Name | Type | Description | Notes
 **refresh_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **refresh_token_threshold** | **str** | When refreshing a token, if the refresh token is valid for less than this duration, it will be renewed. When set to seconds&#x3D;0, token will always be renewed. (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **include_claims_in_id_token** | **bool** | Include User claims from scopes in the id_token, for applications that don&#39;t access the userinfo endpoint. | [optional] 
-**signing_key** | **str** | Key used to sign the SSF Events. | 
-**encryption_key** | **str** | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional] 
+**signing_key** | **UUID** | Key used to sign the SSF Events. | 
+**encryption_key** | **UUID** | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional] 
 **redirect_uris** | [**List[RedirectURIRequest]**](RedirectURIRequest.md) |  | 
 **logout_uri** | **str** |  | [optional] 
-**logout_method** | [**SAMLProviderLogoutMethodEnum**](SAMLProviderLogoutMethodEnum.md) | Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding). | [optional] 
+**logout_method** | [**SAMLLogoutMethods**](SAMLLogoutMethods.md) | Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding). | [optional] 
 **sub_mode** | [**SubModeEnum**](SubModeEnum.md) | Configure what data should be used as unique User Identifier. For most cases, the default should be fine. | [optional] 
 **issuer_mode** | [**IssuerModeEnum**](IssuerModeEnum.md) | Configure how the issuer field of the ID Token should be filled. | [optional] 
-**jwt_federation_sources** | **List[str]** |  | [optional] 
+**jwt_federation_sources** | **List[UUID]** |  | [optional] 
 **jwt_federation_providers** | **List[int]** |  | [optional] 
 **internal_host** | **str** |  | [optional] 
 **external_host** | **str** |  | 
@@ -68,13 +70,13 @@ Name | Type | Description | Notes
 **assertion_valid_not_before** | **str** | Assertion valid not before current time + this value (Format: hours&#x3D;-1;minutes&#x3D;-2;seconds&#x3D;-3). | [optional] 
 **assertion_valid_not_on_or_after** | **str** | Assertion not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **session_valid_not_on_or_after** | **str** | Session not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
-**name_id_mapping** | **str** | Configure how the NameID value will be created. When left empty, the NameIDPolicy of the incoming request will be considered | [optional] 
-**authn_context_class_ref_mapping** | **str** | Configure how the AuthnContextClassRef value will be created. When left empty, the AuthnContextClassRef will be set based on which authentication methods the user used to authenticate. | [optional] 
+**name_id_mapping** | **UUID** | Configure how the NameID value will be created. When left empty, the NameIDPolicy of the incoming request will be considered | [optional] 
+**authn_context_class_ref_mapping** | **UUID** | Configure how the AuthnContextClassRef value will be created. When left empty, the AuthnContextClassRef will be set based on which authentication methods the user used to authenticate. | [optional] 
 **digest_algorithm** | [**DigestAlgorithmEnum**](DigestAlgorithmEnum.md) |  | [optional] 
 **signature_algorithm** | [**SignatureAlgorithmEnum**](SignatureAlgorithmEnum.md) |  | [optional] 
-**signing_kp** | **str** | Keypair used to sign outgoing Responses going to the Service Provider. | [optional] 
-**verification_kp** | **str** | When selected, incoming assertion&#39;s Signatures will be validated against this certificate. To allow unsigned Requests, leave on default. | [optional] 
-**encryption_kp** | **str** | When selected, incoming assertions are encrypted by the IdP using the public key of the encryption keypair. The assertion is decrypted by the SP using the the private key. | [optional] 
+**signing_kp** | **UUID** | Keypair used to sign outgoing Responses going to the Service Provider. | [optional] 
+**verification_kp** | **UUID** | When selected, incoming assertion&#39;s Signatures will be validated against this certificate. To allow unsigned Requests, leave on default. | [optional] 
+**encryption_kp** | **UUID** | When selected, incoming assertions are encrypted by the IdP using the public key of the encryption keypair. The assertion is decrypted by the SP using the the private key. | [optional] 
 **sign_assertion** | **bool** |  | [optional] 
 **sign_response** | **bool** |  | [optional] 
 **sign_logout_request** | **bool** |  | [optional] 
@@ -86,11 +88,14 @@ Name | Type | Description | Notes
 **verify_certificates** | **bool** |  | [optional] 
 **token** | **str** | Authentication token | [optional] 
 **auth_mode** | [**SCIMAuthenticationModeEnum**](SCIMAuthenticationModeEnum.md) |  | [optional] 
-**auth_oauth** | **str** | OAuth Source used for authentication | [optional] 
+**auth_oauth** | **UUID** | OAuth Source used for authentication | [optional] 
 **auth_oauth_params** | **Dict[str, object]** | Additional OAuth parameters, such as grant_type | [optional] 
 **compatibility_mode** | [**CompatibilityModeEnum**](CompatibilityModeEnum.md) | Alter authentik behavior for vendor-specific SCIM implementations. | [optional] 
+**service_provider_config_cache_timeout** | **str** | Cache duration for ServiceProviderConfig responses. Set minutes&#x3D;0 to disable. | [optional] 
+**group_filters** | **List[UUID]** | Group filters used to define sync-scope for groups. | [optional] 
 **oidc_auth_providers** | **List[int]** |  | [optional] 
 **event_retention** | **str** |  | [optional] 
+**reply_url** | **str** |  | 
 
 ## Example
 

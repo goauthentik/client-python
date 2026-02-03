@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **external_id** | **str** |  | 
 **user** | **int** |  | 
 **user_obj** | [**PartialUser**](PartialUser.md) |  | [readonly] 
-**source** | **str** |  | 
+**source** | **UUID** |  | 
 **attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example

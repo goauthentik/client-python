@@ -6,14 +6,15 @@ OAuth Source Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** | Source&#39;s display Name. | 
 **slug** | **str** | Internal source name, used in URLs. | 
 **enabled** | **bool** |  | [optional] 
-**authentication_flow** | **str** | Flow to use when authenticating existing users. | [optional] 
-**enrollment_flow** | **str** | Flow to use when enrolling new users. | [optional] 
-**user_property_mappings** | **List[str]** |  | [optional] 
-**group_property_mappings** | **List[str]** |  | [optional] 
+**promoted** | **bool** | When enabled, this source will be displayed as a prominent button on the login page, instead of a small icon. | [optional] 
+**authentication_flow** | **UUID** | Flow to use when authenticating existing users. | [optional] 
+**enrollment_flow** | **UUID** | Flow to use when enrolling new users. | [optional] 
+**user_property_mappings** | **List[UUID]** |  | [optional] 
+**group_property_mappings** | **List[UUID]** |  | [optional] 
 **component** | **str** | Get object component so that we know how to edit the object | [readonly] 
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
@@ -22,13 +23,16 @@ Name | Type | Description | Notes
 **user_matching_mode** | [**UserMatchingModeEnum**](UserMatchingModeEnum.md) | How the source determines if an existing user should be authenticated or a new user enrolled. | [optional] 
 **managed** | **str** | Objects that are managed by authentik. These objects are created and updated automatically. This flag only indicates that an object can be overwritten by migrations. You can still modify the objects via the API, but expect changes to be overwritten in a later update. | [readonly] 
 **user_path_template** | **str** |  | [optional] 
-**icon** | **str** |  | [readonly] 
+**icon** | **str** |  | [optional] 
+**icon_url** | **str** |  | [readonly] 
+**icon_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **group_matching_mode** | [**GroupMatchingModeEnum**](GroupMatchingModeEnum.md) | How the source determines if an existing group should be used or a new group created. | [optional] 
 **provider_type** | [**ProviderTypeEnum**](ProviderTypeEnum.md) |  | 
 **request_token_url** | **str** | URL used to request the initial token. This URL is only required for OAuth 1. | [optional] 
 **authorization_url** | **str** | URL the user is redirect to to conest the flow. | [optional] 
 **access_token_url** | **str** | URL used by authentik to retrieve tokens. | [optional] 
 **profile_url** | **str** | URL used by authentik to get user information. | [optional] 
+**pkce** | [**PKCEMethodEnum**](PKCEMethodEnum.md) |  | [optional] 
 **consumer_key** | **str** |  | 
 **callback_url** | **str** | Get OAuth Callback URL | [readonly] 
 **additional_scopes** | **str** |  | [optional] 

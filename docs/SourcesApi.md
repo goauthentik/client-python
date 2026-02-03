@@ -7,8 +7,6 @@ Method | HTTP request | Description
 [**sources_all_destroy**](SourcesApi.md#sources_all_destroy) | **DELETE** /sources/all/{slug}/ | 
 [**sources_all_list**](SourcesApi.md#sources_all_list) | **GET** /sources/all/ | 
 [**sources_all_retrieve**](SourcesApi.md#sources_all_retrieve) | **GET** /sources/all/{slug}/ | 
-[**sources_all_set_icon_create**](SourcesApi.md#sources_all_set_icon_create) | **POST** /sources/all/{slug}/set_icon/ | 
-[**sources_all_set_icon_url_create**](SourcesApi.md#sources_all_set_icon_url_create) | **POST** /sources/all/{slug}/set_icon_url/ | 
 [**sources_all_types_list**](SourcesApi.md#sources_all_types_list) | **GET** /sources/all/types/ | 
 [**sources_all_used_by_list**](SourcesApi.md#sources_all_used_by_list) | **GET** /sources/all/{slug}/used_by/ | 
 [**sources_all_user_settings_list**](SourcesApi.md#sources_all_user_settings_list) | **GET** /sources/all/user_settings/ | 
@@ -123,6 +121,7 @@ Method | HTTP request | Description
 [**sources_scim_users_retrieve**](SourcesApi.md#sources_scim_users_retrieve) | **GET** /sources/scim_users/{id}/ | 
 [**sources_scim_users_update**](SourcesApi.md#sources_scim_users_update) | **PUT** /sources/scim_users/{id}/ | 
 [**sources_scim_users_used_by_list**](SourcesApi.md#sources_scim_users_used_by_list) | **GET** /sources/scim_users/{id}/used_by/ | 
+[**sources_telegram_connect_user_create**](SourcesApi.md#sources_telegram_connect_user_create) | **POST** /sources/telegram/{slug}/connect_user/ | 
 [**sources_telegram_create**](SourcesApi.md#sources_telegram_create) | **POST** /sources/telegram/ | 
 [**sources_telegram_destroy**](SourcesApi.md#sources_telegram_destroy) | **DELETE** /sources/telegram/{slug}/ | 
 [**sources_telegram_list**](SourcesApi.md#sources_telegram_list) | **GET** /sources/telegram/ | 
@@ -294,7 +293,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
     slug = 'slug_example' # str |  (optional)
 
@@ -318,7 +317,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **slug** | **str**|  | [optional] 
 
@@ -418,161 +417,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **sources_all_set_icon_create**
-> sources_all_set_icon_create(slug, file=file, clear=clear)
-
-Set source icon
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.SourcesApi(api_client)
-    slug = 'slug_example' # str | 
-    file = None # bytearray |  (optional)
-    clear = False # bool |  (optional) (default to False)
-
-    try:
-        api_instance.sources_all_set_icon_create(slug, file=file, clear=clear)
-    except Exception as e:
-        print("Exception when calling SourcesApi->sources_all_set_icon_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file** | **bytearray**|  | [optional] 
- **clear** | **bool**|  | [optional] [default to False]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **sources_all_set_icon_url_create**
-> sources_all_set_icon_url_create(slug, file_path_request)
-
-Set source icon (as URL)
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.models.file_path_request import FilePathRequest
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.SourcesApi(api_client)
-    slug = 'slug_example' # str | 
-    file_path_request = authentik_client.FilePathRequest() # FilePathRequest | 
-
-    try:
-        api_instance.sources_all_set_icon_url_create(slug, file_path_request)
-    except Exception as e:
-        print("Exception when calling SourcesApi->sources_all_set_icon_url_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file_path_request** | [**FilePathRequest**](FilePathRequest.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
 **403** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -909,7 +753,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    group = 'group_example' # str |  (optional)
+    group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -931,7 +775,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group** | **str**|  | [optional] 
+ **group** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -1462,7 +1306,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    group = 'group_example' # str |  (optional)
+    group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -1484,7 +1328,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group** | **str**|  | [optional] 
+ **group** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -2015,7 +1859,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    group = 'group_example' # str |  (optional)
+    group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -2037,7 +1881,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group** | **str**|  | [optional] 
+ **group** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -2568,7 +2412,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    group = 'group_example' # str |  (optional)
+    group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -2590,7 +2434,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group** | **str**|  | [optional] 
+ **group** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -3121,7 +2965,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    group = 'group_example' # str |  (optional)
+    group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -3143,7 +2987,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group** | **str**|  | [optional] 
+ **group** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -3674,7 +3518,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    group = 'group_example' # str |  (optional)
+    group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -3696,7 +3540,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group** | **str**|  | [optional] 
+ **group** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -4227,7 +4071,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    group = 'group_example' # str |  (optional)
+    group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -4249,7 +4093,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group** | **str**|  | [optional] 
+ **group** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -4787,7 +4631,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     password_login_update_internal_password = True # bool |  (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     realm = 'realm_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     slug = 'slug_example' # str |  (optional)
@@ -4818,7 +4662,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **password_login_update_internal_password** | **bool**|  | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
  **realm** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **slug** | **str**|  | [optional] 
@@ -5509,12 +5353,12 @@ with authentik_client.ApiClient(configuration) as api_client:
     additional_user_dn = 'additional_user_dn_example' # str |  (optional)
     base_dn = 'base_dn_example' # str |  (optional)
     bind_cn = 'bind_cn_example' # str |  (optional)
-    client_certificate = 'client_certificate_example' # str |  (optional)
+    client_certificate = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     delete_not_found_objects = True # bool |  (optional)
     enabled = True # bool |  (optional)
     group_membership_field = 'group_membership_field_example' # str |  (optional)
     group_object_filter = 'group_object_filter_example' # str |  (optional)
-    group_property_mappings = ['group_property_mappings_example'] # List[str] |  (optional)
+    group_property_mappings = None # List[UUID] |  (optional)
     lookup_groups_from_user = True # bool |  (optional)
     name = 'name_example' # str |  (optional)
     object_uniqueness_field = 'object_uniqueness_field_example' # str |  (optional)
@@ -5522,20 +5366,20 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     password_login_update_internal_password = True # bool |  (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
-    peer_certificate = 'peer_certificate_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    peer_certificate = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
     server_uri = 'server_uri_example' # str |  (optional)
     slug = 'slug_example' # str |  (optional)
     sni = True # bool |  (optional)
     start_tls = True # bool |  (optional)
     sync_groups = True # bool |  (optional)
-    sync_parent_group = 'sync_parent_group_example' # str |  (optional)
+    sync_parent_group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     sync_users = True # bool |  (optional)
     sync_users_password = True # bool |  (optional)
     user_membership_attribute = 'user_membership_attribute_example' # str |  (optional)
     user_object_filter = 'user_object_filter_example' # str |  (optional)
-    user_property_mappings = ['user_property_mappings_example'] # List[str] |  (optional)
+    user_property_mappings = None # List[UUID] |  (optional)
 
     try:
         api_response = api_instance.sources_ldap_list(additional_group_dn=additional_group_dn, additional_user_dn=additional_user_dn, base_dn=base_dn, bind_cn=bind_cn, client_certificate=client_certificate, delete_not_found_objects=delete_not_found_objects, enabled=enabled, group_membership_field=group_membership_field, group_object_filter=group_object_filter, group_property_mappings=group_property_mappings, lookup_groups_from_user=lookup_groups_from_user, name=name, object_uniqueness_field=object_uniqueness_field, ordering=ordering, page=page, page_size=page_size, password_login_update_internal_password=password_login_update_internal_password, pbm_uuid=pbm_uuid, peer_certificate=peer_certificate, search=search, server_uri=server_uri, slug=slug, sni=sni, start_tls=start_tls, sync_groups=sync_groups, sync_parent_group=sync_parent_group, sync_users=sync_users, sync_users_password=sync_users_password, user_membership_attribute=user_membership_attribute, user_object_filter=user_object_filter, user_property_mappings=user_property_mappings)
@@ -5556,12 +5400,12 @@ Name | Type | Description  | Notes
  **additional_user_dn** | **str**|  | [optional] 
  **base_dn** | **str**|  | [optional] 
  **bind_cn** | **str**|  | [optional] 
- **client_certificate** | **str**|  | [optional] 
+ **client_certificate** | **UUID**|  | [optional] 
  **delete_not_found_objects** | **bool**|  | [optional] 
  **enabled** | **bool**|  | [optional] 
  **group_membership_field** | **str**|  | [optional] 
  **group_object_filter** | **str**|  | [optional] 
- **group_property_mappings** | [**List[str]**](str.md)|  | [optional] 
+ **group_property_mappings** | [**List[UUID]**](UUID.md)|  | [optional] 
  **lookup_groups_from_user** | **bool**|  | [optional] 
  **name** | **str**|  | [optional] 
  **object_uniqueness_field** | **str**|  | [optional] 
@@ -5569,20 +5413,20 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **password_login_update_internal_password** | **bool**|  | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
- **peer_certificate** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
+ **peer_certificate** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **server_uri** | **str**|  | [optional] 
  **slug** | **str**|  | [optional] 
  **sni** | **bool**|  | [optional] 
  **start_tls** | **bool**|  | [optional] 
  **sync_groups** | **bool**|  | [optional] 
- **sync_parent_group** | **str**|  | [optional] 
+ **sync_parent_group** | **UUID**|  | [optional] 
  **sync_users** | **bool**|  | [optional] 
  **sync_users_password** | **bool**|  | [optional] 
  **user_membership_attribute** | **str**|  | [optional] 
  **user_object_filter** | **str**|  | [optional] 
- **user_property_mappings** | [**List[str]**](str.md)|  | [optional] 
+ **user_property_mappings** | [**List[UUID]**](UUID.md)|  | [optional] 
 
 ### Return type
 
@@ -6187,18 +6031,18 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.SourcesApi(api_client)
     access_token_url = 'access_token_url_example' # str |  (optional)
     additional_scopes = 'additional_scopes_example' # str |  (optional)
-    authentication_flow = 'authentication_flow_example' # str |  (optional)
+    authentication_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     authorization_url = 'authorization_url_example' # str |  (optional)
     consumer_key = 'consumer_key_example' # str |  (optional)
     enabled = True # bool |  (optional)
-    enrollment_flow = 'enrollment_flow_example' # str |  (optional)
+    enrollment_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     group_matching_mode = 'group_matching_mode_example' # str | How the source determines if an existing group should be used or a new group created.   (optional)
     has_jwks = True # bool | Only return sources with JWKS data (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
     profile_url = 'profile_url_example' # str |  (optional)
     provider_type = 'provider_type_example' # str |  (optional)
@@ -6224,18 +6068,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token_url** | **str**|  | [optional] 
  **additional_scopes** | **str**|  | [optional] 
- **authentication_flow** | **str**|  | [optional] 
+ **authentication_flow** | **UUID**|  | [optional] 
  **authorization_url** | **str**|  | [optional] 
  **consumer_key** | **str**|  | [optional] 
  **enabled** | **bool**|  | [optional] 
- **enrollment_flow** | **str**|  | [optional] 
+ **enrollment_flow** | **UUID**|  | [optional] 
  **group_matching_mode** | **str**| How the source determines if an existing group should be used or a new group created.   | [optional] 
  **has_jwks** | **bool**| Only return sources with JWKS data | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
  **policy_engine_mode** | **str**|  | [optional] 
  **profile_url** | **str**|  | [optional] 
  **provider_type** | **str**|  | [optional] 
@@ -6847,16 +6691,16 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
     allow_friends = True # bool |  (optional)
-    authentication_flow = 'authentication_flow_example' # str |  (optional)
+    authentication_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     client_id = 'client_id_example' # str |  (optional)
     enabled = True # bool |  (optional)
-    enrollment_flow = 'enrollment_flow_example' # str |  (optional)
+    enrollment_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     group_matching_mode = 'group_matching_mode_example' # str | How the source determines if an existing group should be used or a new group created.   (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
     slug = 'slug_example' # str |  (optional)
@@ -6878,16 +6722,16 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allow_friends** | **bool**|  | [optional] 
- **authentication_flow** | **str**|  | [optional] 
+ **authentication_flow** | **UUID**|  | [optional] 
  **client_id** | **str**|  | [optional] 
  **enabled** | **bool**|  | [optional] 
- **enrollment_flow** | **str**|  | [optional] 
+ **enrollment_flow** | **UUID**|  | [optional] 
  **group_matching_mode** | **str**| How the source determines if an existing group should be used or a new group created.   | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
  **policy_engine_mode** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **slug** | **str**|  | [optional] 
@@ -7576,11 +7420,11 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
     allow_idp_initiated = True # bool |  (optional)
-    authentication_flow = 'authentication_flow_example' # str |  (optional)
+    authentication_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     binding_type = 'binding_type_example' # str |  (optional)
     digest_algorithm = 'digest_algorithm_example' # str |  (optional)
     enabled = True # bool |  (optional)
-    enrollment_flow = 'enrollment_flow_example' # str |  (optional)
+    enrollment_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     issuer = 'issuer_example' # str |  (optional)
     managed = 'managed_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
@@ -7588,20 +7432,20 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
-    pre_authentication_flow = 'pre_authentication_flow_example' # str |  (optional)
+    pre_authentication_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
     signature_algorithm = 'signature_algorithm_example' # str |  (optional)
     signed_assertion = True # bool |  (optional)
     signed_response = True # bool |  (optional)
-    signing_kp = 'signing_kp_example' # str |  (optional)
+    signing_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     slo_url = 'slo_url_example' # str |  (optional)
     slug = 'slug_example' # str |  (optional)
     sso_url = 'sso_url_example' # str |  (optional)
     temporary_user_delete_after = 'temporary_user_delete_after_example' # str |  (optional)
     user_matching_mode = 'user_matching_mode_example' # str | How the source determines if an existing user should be authenticated or a new user enrolled.   (optional)
-    verification_kp = 'verification_kp_example' # str |  (optional)
+    verification_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.sources_saml_list(allow_idp_initiated=allow_idp_initiated, authentication_flow=authentication_flow, binding_type=binding_type, digest_algorithm=digest_algorithm, enabled=enabled, enrollment_flow=enrollment_flow, issuer=issuer, managed=managed, name=name, name_id_policy=name_id_policy, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policy_engine_mode=policy_engine_mode, pre_authentication_flow=pre_authentication_flow, search=search, signature_algorithm=signature_algorithm, signed_assertion=signed_assertion, signed_response=signed_response, signing_kp=signing_kp, slo_url=slo_url, slug=slug, sso_url=sso_url, temporary_user_delete_after=temporary_user_delete_after, user_matching_mode=user_matching_mode, verification_kp=verification_kp)
@@ -7619,11 +7463,11 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allow_idp_initiated** | **bool**|  | [optional] 
- **authentication_flow** | **str**|  | [optional] 
+ **authentication_flow** | **UUID**|  | [optional] 
  **binding_type** | **str**|  | [optional] 
  **digest_algorithm** | **str**|  | [optional] 
  **enabled** | **bool**|  | [optional] 
- **enrollment_flow** | **str**|  | [optional] 
+ **enrollment_flow** | **UUID**|  | [optional] 
  **issuer** | **str**|  | [optional] 
  **managed** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
@@ -7631,20 +7475,20 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
  **policy_engine_mode** | **str**|  | [optional] 
- **pre_authentication_flow** | **str**|  | [optional] 
+ **pre_authentication_flow** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **signature_algorithm** | **str**|  | [optional] 
  **signed_assertion** | **bool**|  | [optional] 
  **signed_response** | **bool**|  | [optional] 
- **signing_kp** | **str**|  | [optional] 
+ **signing_kp** | **UUID**|  | [optional] 
  **slo_url** | **str**|  | [optional] 
  **slug** | **str**|  | [optional] 
  **sso_url** | **str**|  | [optional] 
  **temporary_user_delete_after** | **str**|  | [optional] 
  **user_matching_mode** | **str**| How the source determines if an existing user should be authenticated or a new user enrolled.   | [optional] 
- **verification_kp** | **str**|  | [optional] 
+ **verification_kp** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -8399,7 +8243,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    group__group_uuid = 'group__group_uuid_example' # str |  (optional)
+    group__group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     group__name = 'group__name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -8422,7 +8266,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group__group_uuid** | **str**|  | [optional] 
+ **group__group_uuid** | **UUID**|  | [optional] 
  **group__name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -8806,7 +8650,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
     slug = 'slug_example' # str |  (optional)
 
@@ -8829,7 +8673,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **slug** | **str**|  | [optional] 
 
@@ -9725,6 +9569,86 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sources_telegram_connect_user_create**
+> UserTelegramSourceConnection sources_telegram_connect_user_create(slug, telegram_auth_request)
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.telegram_auth_request import TelegramAuthRequest
+from authentik_client.models.user_telegram_source_connection import UserTelegramSourceConnection
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.SourcesApi(api_client)
+    slug = 'slug_example' # str | 
+    telegram_auth_request = authentik_client.TelegramAuthRequest() # TelegramAuthRequest | 
+
+    try:
+        api_response = api_instance.sources_telegram_connect_user_create(slug, telegram_auth_request)
+        print("The response of SourcesApi->sources_telegram_connect_user_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SourcesApi->sources_telegram_connect_user_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **str**|  | 
+ **telegram_auth_request** | [**TelegramAuthRequest**](TelegramAuthRequest.md)|  | 
+
+### Return type
+
+[**UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**403** | Access denied |  -  |
+**400** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **sources_telegram_create**
 > TelegramSource sources_telegram_create(telegram_source_request)
 
@@ -9912,16 +9836,16 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SourcesApi(api_client)
-    authentication_flow = 'authentication_flow_example' # str |  (optional)
+    authentication_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     bot_username = 'bot_username_example' # str |  (optional)
     enabled = True # bool |  (optional)
-    enrollment_flow = 'enrollment_flow_example' # str |  (optional)
+    enrollment_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     group_matching_mode = 'group_matching_mode_example' # str | How the source determines if an existing group should be used or a new group created.   (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
     request_message_access = True # bool |  (optional)
     search = 'search_example' # str | A search term. (optional)
@@ -9943,16 +9867,16 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authentication_flow** | **str**|  | [optional] 
+ **authentication_flow** | **UUID**|  | [optional] 
  **bot_username** | **str**|  | [optional] 
  **enabled** | **bool**|  | [optional] 
- **enrollment_flow** | **str**|  | [optional] 
+ **enrollment_flow** | **UUID**|  | [optional] 
  **group_matching_mode** | **str**| How the source determines if an existing group should be used or a new group created.   | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
  **policy_engine_mode** | **str**|  | [optional] 
  **request_message_access** | **bool**|  | [optional] 
  **search** | **str**| A search term. | [optional] 

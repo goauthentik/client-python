@@ -151,7 +151,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Property Mapping.
 
     try:
         api_instance.propertymappings_all_destroy(pm_uuid)
@@ -166,7 +166,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Property Mapping. | 
 
 ### Return type
 
@@ -315,7 +315,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_all_retrieve(pm_uuid)
@@ -332,7 +332,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Property Mapping. | 
 
 ### Return type
 
@@ -393,7 +393,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Property Mapping.
     format_result = True # bool |  (optional)
     property_mapping_test_request = authentik_client.PropertyMappingTestRequest() # PropertyMappingTestRequest |  (optional)
 
@@ -412,7 +412,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Property Mapping. | 
  **format_result** | **bool**|  | [optional] 
  **property_mapping_test_request** | [**PropertyMappingTestRequest**](PropertyMappingTestRequest.md)|  | [optional] 
 
@@ -547,7 +547,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_all_used_by_list(pm_uuid)
@@ -564,7 +564,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Property Mapping. | 
 
 ### Return type
 
@@ -701,7 +701,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Webhook Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Webhook Mapping.
 
     try:
         api_instance.propertymappings_notification_destroy(pm_uuid)
@@ -716,7 +716,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Webhook Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Webhook Mapping. | 
 
 ### Return type
 
@@ -862,7 +862,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Webhook Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Webhook Mapping.
     patched_notification_webhook_mapping_request = authentik_client.PatchedNotificationWebhookMappingRequest() # PatchedNotificationWebhookMappingRequest |  (optional)
 
     try:
@@ -880,7 +880,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Webhook Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Webhook Mapping. | 
  **patched_notification_webhook_mapping_request** | [**PatchedNotificationWebhookMappingRequest**](PatchedNotificationWebhookMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -941,7 +941,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Webhook Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Webhook Mapping.
 
     try:
         api_response = api_instance.propertymappings_notification_retrieve(pm_uuid)
@@ -958,7 +958,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Webhook Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Webhook Mapping. | 
 
 ### Return type
 
@@ -1019,7 +1019,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Webhook Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Webhook Mapping.
     notification_webhook_mapping_request = authentik_client.NotificationWebhookMappingRequest() # NotificationWebhookMappingRequest | 
 
     try:
@@ -1037,7 +1037,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Webhook Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Webhook Mapping. | 
  **notification_webhook_mapping_request** | [**NotificationWebhookMappingRequest**](NotificationWebhookMappingRequest.md)|  | 
 
 ### Return type
@@ -1098,7 +1098,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Webhook Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Webhook Mapping.
 
     try:
         api_response = api_instance.propertymappings_notification_used_by_list(pm_uuid)
@@ -1115,7 +1115,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Webhook Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Webhook Mapping. | 
 
 ### Return type
 
@@ -1252,7 +1252,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Google Workspace Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider Mapping.
 
     try:
         api_instance.propertymappings_provider_google_workspace_destroy(pm_uuid)
@@ -1267,7 +1267,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Google Workspace Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Google Workspace Provider Mapping. | 
 
 ### Return type
 
@@ -1333,7 +1333,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pm_uuid = 'pm_uuid_example' # str |  (optional)
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
 
     try:
@@ -1357,7 +1357,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pm_uuid** | **str**|  | [optional] 
+ **pm_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
 
 ### Return type
@@ -1419,7 +1419,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Google Workspace Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider Mapping.
     patched_google_workspace_provider_mapping_request = authentik_client.PatchedGoogleWorkspaceProviderMappingRequest() # PatchedGoogleWorkspaceProviderMappingRequest |  (optional)
 
     try:
@@ -1437,7 +1437,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Google Workspace Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Google Workspace Provider Mapping. | 
  **patched_google_workspace_provider_mapping_request** | [**PatchedGoogleWorkspaceProviderMappingRequest**](PatchedGoogleWorkspaceProviderMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -1498,7 +1498,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Google Workspace Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_google_workspace_retrieve(pm_uuid)
@@ -1515,7 +1515,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Google Workspace Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Google Workspace Provider Mapping. | 
 
 ### Return type
 
@@ -1576,7 +1576,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Google Workspace Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider Mapping.
     google_workspace_provider_mapping_request = authentik_client.GoogleWorkspaceProviderMappingRequest() # GoogleWorkspaceProviderMappingRequest | 
 
     try:
@@ -1594,7 +1594,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Google Workspace Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Google Workspace Provider Mapping. | 
  **google_workspace_provider_mapping_request** | [**GoogleWorkspaceProviderMappingRequest**](GoogleWorkspaceProviderMappingRequest.md)|  | 
 
 ### Return type
@@ -1655,7 +1655,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Google Workspace Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_google_workspace_used_by_list(pm_uuid)
@@ -1672,7 +1672,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Google Workspace Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Google Workspace Provider Mapping. | 
 
 ### Return type
 
@@ -1809,7 +1809,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Microsoft Entra Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider Mapping.
 
     try:
         api_instance.propertymappings_provider_microsoft_entra_destroy(pm_uuid)
@@ -1824,7 +1824,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
 
 ### Return type
 
@@ -1890,7 +1890,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pm_uuid = 'pm_uuid_example' # str |  (optional)
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
 
     try:
@@ -1914,7 +1914,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pm_uuid** | **str**|  | [optional] 
+ **pm_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
 
 ### Return type
@@ -1976,7 +1976,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Microsoft Entra Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider Mapping.
     patched_microsoft_entra_provider_mapping_request = authentik_client.PatchedMicrosoftEntraProviderMappingRequest() # PatchedMicrosoftEntraProviderMappingRequest |  (optional)
 
     try:
@@ -1994,7 +1994,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
  **patched_microsoft_entra_provider_mapping_request** | [**PatchedMicrosoftEntraProviderMappingRequest**](PatchedMicrosoftEntraProviderMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -2055,7 +2055,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Microsoft Entra Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_microsoft_entra_retrieve(pm_uuid)
@@ -2072,7 +2072,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
 
 ### Return type
 
@@ -2133,7 +2133,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Microsoft Entra Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider Mapping.
     microsoft_entra_provider_mapping_request = authentik_client.MicrosoftEntraProviderMappingRequest() # MicrosoftEntraProviderMappingRequest | 
 
     try:
@@ -2151,7 +2151,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
  **microsoft_entra_provider_mapping_request** | [**MicrosoftEntraProviderMappingRequest**](MicrosoftEntraProviderMappingRequest.md)|  | 
 
 ### Return type
@@ -2212,7 +2212,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Microsoft Entra Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_microsoft_entra_used_by_list(pm_uuid)
@@ -2229,7 +2229,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Microsoft Entra Provider Mapping. | 
 
 ### Return type
 
@@ -2366,7 +2366,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this RAC Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Provider Property Mapping.
 
     try:
         api_instance.propertymappings_provider_rac_destroy(pm_uuid)
@@ -2381,7 +2381,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this RAC Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this RAC Provider Property Mapping. | 
 
 ### Return type
 
@@ -2529,7 +2529,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this RAC Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Provider Property Mapping.
     patched_rac_property_mapping_request = authentik_client.PatchedRACPropertyMappingRequest() # PatchedRACPropertyMappingRequest |  (optional)
 
     try:
@@ -2547,7 +2547,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this RAC Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this RAC Provider Property Mapping. | 
  **patched_rac_property_mapping_request** | [**PatchedRACPropertyMappingRequest**](PatchedRACPropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -2608,7 +2608,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this RAC Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Provider Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_rac_retrieve(pm_uuid)
@@ -2625,7 +2625,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this RAC Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this RAC Provider Property Mapping. | 
 
 ### Return type
 
@@ -2686,7 +2686,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this RAC Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Provider Property Mapping.
     rac_property_mapping_request = authentik_client.RACPropertyMappingRequest() # RACPropertyMappingRequest | 
 
     try:
@@ -2704,7 +2704,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this RAC Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this RAC Provider Property Mapping. | 
  **rac_property_mapping_request** | [**RACPropertyMappingRequest**](RACPropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -2765,7 +2765,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this RAC Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this RAC Provider Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_rac_used_by_list(pm_uuid)
@@ -2782,7 +2782,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this RAC Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this RAC Provider Property Mapping. | 
 
 ### Return type
 
@@ -2919,7 +2919,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Radius Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Radius Provider Property Mapping.
 
     try:
         api_instance.propertymappings_provider_radius_destroy(pm_uuid)
@@ -2934,7 +2934,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Radius Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Radius Provider Property Mapping. | 
 
 ### Return type
 
@@ -3084,7 +3084,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Radius Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Radius Provider Property Mapping.
     patched_radius_provider_property_mapping_request = authentik_client.PatchedRadiusProviderPropertyMappingRequest() # PatchedRadiusProviderPropertyMappingRequest |  (optional)
 
     try:
@@ -3102,7 +3102,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Radius Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Radius Provider Property Mapping. | 
  **patched_radius_provider_property_mapping_request** | [**PatchedRadiusProviderPropertyMappingRequest**](PatchedRadiusProviderPropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -3163,7 +3163,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Radius Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Radius Provider Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_radius_retrieve(pm_uuid)
@@ -3180,7 +3180,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Radius Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Radius Provider Property Mapping. | 
 
 ### Return type
 
@@ -3241,7 +3241,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Radius Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Radius Provider Property Mapping.
     radius_provider_property_mapping_request = authentik_client.RadiusProviderPropertyMappingRequest() # RadiusProviderPropertyMappingRequest | 
 
     try:
@@ -3259,7 +3259,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Radius Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Radius Provider Property Mapping. | 
  **radius_provider_property_mapping_request** | [**RadiusProviderPropertyMappingRequest**](RadiusProviderPropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -3320,7 +3320,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Radius Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Radius Provider Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_radius_used_by_list(pm_uuid)
@@ -3337,7 +3337,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Radius Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Radius Provider Property Mapping. | 
 
 ### Return type
 
@@ -3474,7 +3474,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Provider Property Mapping.
 
     try:
         api_instance.propertymappings_provider_saml_destroy(pm_uuid)
@@ -3489,7 +3489,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Provider Property Mapping. | 
 
 ### Return type
 
@@ -3643,7 +3643,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Provider Property Mapping.
     patched_saml_property_mapping_request = authentik_client.PatchedSAMLPropertyMappingRequest() # PatchedSAMLPropertyMappingRequest |  (optional)
 
     try:
@@ -3661,7 +3661,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Provider Property Mapping. | 
  **patched_saml_property_mapping_request** | [**PatchedSAMLPropertyMappingRequest**](PatchedSAMLPropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -3722,7 +3722,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Provider Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_saml_retrieve(pm_uuid)
@@ -3739,7 +3739,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Provider Property Mapping. | 
 
 ### Return type
 
@@ -3800,7 +3800,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Provider Property Mapping.
     saml_property_mapping_request = authentik_client.SAMLPropertyMappingRequest() # SAMLPropertyMappingRequest | 
 
     try:
@@ -3818,7 +3818,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Provider Property Mapping. | 
  **saml_property_mapping_request** | [**SAMLPropertyMappingRequest**](SAMLPropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -3879,7 +3879,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Provider Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Provider Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_saml_used_by_list(pm_uuid)
@@ -3896,7 +3896,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Provider Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Provider Property Mapping. | 
 
 ### Return type
 
@@ -4033,7 +4033,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Provider Mapping.
 
     try:
         api_instance.propertymappings_provider_scim_destroy(pm_uuid)
@@ -4048,7 +4048,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Provider Mapping. | 
 
 ### Return type
 
@@ -4198,7 +4198,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Provider Mapping.
     patched_scim_mapping_request = authentik_client.PatchedSCIMMappingRequest() # PatchedSCIMMappingRequest |  (optional)
 
     try:
@@ -4216,7 +4216,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Provider Mapping. | 
  **patched_scim_mapping_request** | [**PatchedSCIMMappingRequest**](PatchedSCIMMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -4277,7 +4277,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Provider Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_scim_retrieve(pm_uuid)
@@ -4294,7 +4294,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Provider Mapping. | 
 
 ### Return type
 
@@ -4355,7 +4355,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Provider Mapping.
     scim_mapping_request = authentik_client.SCIMMappingRequest() # SCIMMappingRequest | 
 
     try:
@@ -4373,7 +4373,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Provider Mapping. | 
  **scim_mapping_request** | [**SCIMMappingRequest**](SCIMMappingRequest.md)|  | 
 
 ### Return type
@@ -4434,7 +4434,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Provider Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Provider Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_scim_used_by_list(pm_uuid)
@@ -4451,7 +4451,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Provider Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Provider Mapping. | 
 
 ### Return type
 
@@ -4588,7 +4588,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Scope Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Scope Mapping.
 
     try:
         api_instance.propertymappings_provider_scope_destroy(pm_uuid)
@@ -4603,7 +4603,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Scope Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Scope Mapping. | 
 
 ### Return type
 
@@ -4755,7 +4755,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Scope Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Scope Mapping.
     patched_scope_mapping_request = authentik_client.PatchedScopeMappingRequest() # PatchedScopeMappingRequest |  (optional)
 
     try:
@@ -4773,7 +4773,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Scope Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Scope Mapping. | 
  **patched_scope_mapping_request** | [**PatchedScopeMappingRequest**](PatchedScopeMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -4834,7 +4834,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Scope Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Scope Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_scope_retrieve(pm_uuid)
@@ -4851,7 +4851,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Scope Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Scope Mapping. | 
 
 ### Return type
 
@@ -4912,7 +4912,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Scope Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Scope Mapping.
     scope_mapping_request = authentik_client.ScopeMappingRequest() # ScopeMappingRequest | 
 
     try:
@@ -4930,7 +4930,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Scope Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Scope Mapping. | 
  **scope_mapping_request** | [**ScopeMappingRequest**](ScopeMappingRequest.md)|  | 
 
 ### Return type
@@ -4991,7 +4991,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Scope Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Scope Mapping.
 
     try:
         api_response = api_instance.propertymappings_provider_scope_used_by_list(pm_uuid)
@@ -5008,7 +5008,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Scope Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Scope Mapping. | 
 
 ### Return type
 
@@ -5145,7 +5145,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kerberos Source Property Mapping.
 
     try:
         api_instance.propertymappings_source_kerberos_destroy(pm_uuid)
@@ -5160,7 +5160,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Kerberos Source Property Mapping. | 
 
 ### Return type
 
@@ -5310,7 +5310,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kerberos Source Property Mapping.
     patched_kerberos_source_property_mapping_request = authentik_client.PatchedKerberosSourcePropertyMappingRequest() # PatchedKerberosSourcePropertyMappingRequest |  (optional)
 
     try:
@@ -5328,7 +5328,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Kerberos Source Property Mapping. | 
  **patched_kerberos_source_property_mapping_request** | [**PatchedKerberosSourcePropertyMappingRequest**](PatchedKerberosSourcePropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -5389,7 +5389,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kerberos Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_kerberos_retrieve(pm_uuid)
@@ -5406,7 +5406,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Kerberos Source Property Mapping. | 
 
 ### Return type
 
@@ -5467,7 +5467,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kerberos Source Property Mapping.
     kerberos_source_property_mapping_request = authentik_client.KerberosSourcePropertyMappingRequest() # KerberosSourcePropertyMappingRequest | 
 
     try:
@@ -5485,7 +5485,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Kerberos Source Property Mapping. | 
  **kerberos_source_property_mapping_request** | [**KerberosSourcePropertyMappingRequest**](KerberosSourcePropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -5546,7 +5546,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Kerberos Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Kerberos Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_kerberos_used_by_list(pm_uuid)
@@ -5563,7 +5563,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Kerberos Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Kerberos Source Property Mapping. | 
 
 ### Return type
 
@@ -5700,7 +5700,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this LDAP Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this LDAP Source Property Mapping.
 
     try:
         api_instance.propertymappings_source_ldap_destroy(pm_uuid)
@@ -5715,7 +5715,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this LDAP Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this LDAP Source Property Mapping. | 
 
 ### Return type
 
@@ -5865,7 +5865,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this LDAP Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this LDAP Source Property Mapping.
     patched_ldap_source_property_mapping_request = authentik_client.PatchedLDAPSourcePropertyMappingRequest() # PatchedLDAPSourcePropertyMappingRequest |  (optional)
 
     try:
@@ -5883,7 +5883,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this LDAP Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this LDAP Source Property Mapping. | 
  **patched_ldap_source_property_mapping_request** | [**PatchedLDAPSourcePropertyMappingRequest**](PatchedLDAPSourcePropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -5944,7 +5944,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this LDAP Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this LDAP Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_ldap_retrieve(pm_uuid)
@@ -5961,7 +5961,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this LDAP Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this LDAP Source Property Mapping. | 
 
 ### Return type
 
@@ -6022,7 +6022,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this LDAP Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this LDAP Source Property Mapping.
     ldap_source_property_mapping_request = authentik_client.LDAPSourcePropertyMappingRequest() # LDAPSourcePropertyMappingRequest | 
 
     try:
@@ -6040,7 +6040,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this LDAP Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this LDAP Source Property Mapping. | 
  **ldap_source_property_mapping_request** | [**LDAPSourcePropertyMappingRequest**](LDAPSourcePropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -6101,7 +6101,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this LDAP Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this LDAP Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_ldap_used_by_list(pm_uuid)
@@ -6118,7 +6118,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this LDAP Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this LDAP Source Property Mapping. | 
 
 ### Return type
 
@@ -6255,7 +6255,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this OAuth Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this OAuth Source Property Mapping.
 
     try:
         api_instance.propertymappings_source_oauth_destroy(pm_uuid)
@@ -6270,7 +6270,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this OAuth Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this OAuth Source Property Mapping. | 
 
 ### Return type
 
@@ -6420,7 +6420,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this OAuth Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this OAuth Source Property Mapping.
     patched_o_auth_source_property_mapping_request = authentik_client.PatchedOAuthSourcePropertyMappingRequest() # PatchedOAuthSourcePropertyMappingRequest |  (optional)
 
     try:
@@ -6438,7 +6438,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this OAuth Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this OAuth Source Property Mapping. | 
  **patched_o_auth_source_property_mapping_request** | [**PatchedOAuthSourcePropertyMappingRequest**](PatchedOAuthSourcePropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -6499,7 +6499,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this OAuth Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this OAuth Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_oauth_retrieve(pm_uuid)
@@ -6516,7 +6516,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this OAuth Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this OAuth Source Property Mapping. | 
 
 ### Return type
 
@@ -6577,7 +6577,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this OAuth Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this OAuth Source Property Mapping.
     o_auth_source_property_mapping_request = authentik_client.OAuthSourcePropertyMappingRequest() # OAuthSourcePropertyMappingRequest | 
 
     try:
@@ -6595,7 +6595,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this OAuth Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this OAuth Source Property Mapping. | 
  **o_auth_source_property_mapping_request** | [**OAuthSourcePropertyMappingRequest**](OAuthSourcePropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -6656,7 +6656,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this OAuth Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this OAuth Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_oauth_used_by_list(pm_uuid)
@@ -6673,7 +6673,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this OAuth Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this OAuth Source Property Mapping. | 
 
 ### Return type
 
@@ -6810,7 +6810,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Plex Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Plex Source Property Mapping.
 
     try:
         api_instance.propertymappings_source_plex_destroy(pm_uuid)
@@ -6825,7 +6825,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Plex Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Plex Source Property Mapping. | 
 
 ### Return type
 
@@ -6975,7 +6975,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Plex Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Plex Source Property Mapping.
     patched_plex_source_property_mapping_request = authentik_client.PatchedPlexSourcePropertyMappingRequest() # PatchedPlexSourcePropertyMappingRequest |  (optional)
 
     try:
@@ -6993,7 +6993,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Plex Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Plex Source Property Mapping. | 
  **patched_plex_source_property_mapping_request** | [**PatchedPlexSourcePropertyMappingRequest**](PatchedPlexSourcePropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -7054,7 +7054,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Plex Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Plex Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_plex_retrieve(pm_uuid)
@@ -7071,7 +7071,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Plex Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Plex Source Property Mapping. | 
 
 ### Return type
 
@@ -7132,7 +7132,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Plex Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Plex Source Property Mapping.
     plex_source_property_mapping_request = authentik_client.PlexSourcePropertyMappingRequest() # PlexSourcePropertyMappingRequest | 
 
     try:
@@ -7150,7 +7150,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Plex Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Plex Source Property Mapping. | 
  **plex_source_property_mapping_request** | [**PlexSourcePropertyMappingRequest**](PlexSourcePropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -7211,7 +7211,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Plex Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Plex Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_plex_used_by_list(pm_uuid)
@@ -7228,7 +7228,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Plex Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Plex Source Property Mapping. | 
 
 ### Return type
 
@@ -7365,7 +7365,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Source Property Mapping.
 
     try:
         api_instance.propertymappings_source_saml_destroy(pm_uuid)
@@ -7380,7 +7380,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Source Property Mapping. | 
 
 ### Return type
 
@@ -7530,7 +7530,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Source Property Mapping.
     patched_saml_source_property_mapping_request = authentik_client.PatchedSAMLSourcePropertyMappingRequest() # PatchedSAMLSourcePropertyMappingRequest |  (optional)
 
     try:
@@ -7548,7 +7548,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Source Property Mapping. | 
  **patched_saml_source_property_mapping_request** | [**PatchedSAMLSourcePropertyMappingRequest**](PatchedSAMLSourcePropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -7609,7 +7609,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_saml_retrieve(pm_uuid)
@@ -7626,7 +7626,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Source Property Mapping. | 
 
 ### Return type
 
@@ -7687,7 +7687,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Source Property Mapping.
     saml_source_property_mapping_request = authentik_client.SAMLSourcePropertyMappingRequest() # SAMLSourcePropertyMappingRequest | 
 
     try:
@@ -7705,7 +7705,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Source Property Mapping. | 
  **saml_source_property_mapping_request** | [**SAMLSourcePropertyMappingRequest**](SAMLSourcePropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -7766,7 +7766,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SAML Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SAML Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_saml_used_by_list(pm_uuid)
@@ -7783,7 +7783,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SAML Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SAML Source Property Mapping. | 
 
 ### Return type
 
@@ -7920,7 +7920,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Source Property Mapping.
 
     try:
         api_instance.propertymappings_source_scim_destroy(pm_uuid)
@@ -7935,7 +7935,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Source Property Mapping. | 
 
 ### Return type
 
@@ -8085,7 +8085,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Source Property Mapping.
     patched_scim_source_property_mapping_request = authentik_client.PatchedSCIMSourcePropertyMappingRequest() # PatchedSCIMSourcePropertyMappingRequest |  (optional)
 
     try:
@@ -8103,7 +8103,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Source Property Mapping. | 
  **patched_scim_source_property_mapping_request** | [**PatchedSCIMSourcePropertyMappingRequest**](PatchedSCIMSourcePropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -8164,7 +8164,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_scim_retrieve(pm_uuid)
@@ -8181,7 +8181,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Source Property Mapping. | 
 
 ### Return type
 
@@ -8242,7 +8242,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Source Property Mapping.
     scim_source_property_mapping_request = authentik_client.SCIMSourcePropertyMappingRequest() # SCIMSourcePropertyMappingRequest | 
 
     try:
@@ -8260,7 +8260,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Source Property Mapping. | 
  **scim_source_property_mapping_request** | [**SCIMSourcePropertyMappingRequest**](SCIMSourcePropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -8321,7 +8321,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this SCIM Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SCIM Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_scim_used_by_list(pm_uuid)
@@ -8338,7 +8338,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this SCIM Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this SCIM Source Property Mapping. | 
 
 ### Return type
 
@@ -8475,7 +8475,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Telegram Source Property Mapping.
 
     try:
         api_instance.propertymappings_source_telegram_destroy(pm_uuid)
@@ -8490,7 +8490,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Telegram Source Property Mapping. | 
 
 ### Return type
 
@@ -8640,7 +8640,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Telegram Source Property Mapping.
     patched_telegram_source_property_mapping_request = authentik_client.PatchedTelegramSourcePropertyMappingRequest() # PatchedTelegramSourcePropertyMappingRequest |  (optional)
 
     try:
@@ -8658,7 +8658,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Telegram Source Property Mapping. | 
  **patched_telegram_source_property_mapping_request** | [**PatchedTelegramSourcePropertyMappingRequest**](PatchedTelegramSourcePropertyMappingRequest.md)|  | [optional] 
 
 ### Return type
@@ -8719,7 +8719,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Telegram Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_telegram_retrieve(pm_uuid)
@@ -8736,7 +8736,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Telegram Source Property Mapping. | 
 
 ### Return type
 
@@ -8797,7 +8797,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Telegram Source Property Mapping.
     telegram_source_property_mapping_request = authentik_client.TelegramSourcePropertyMappingRequest() # TelegramSourcePropertyMappingRequest | 
 
     try:
@@ -8815,7 +8815,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Telegram Source Property Mapping. | 
  **telegram_source_property_mapping_request** | [**TelegramSourcePropertyMappingRequest**](TelegramSourcePropertyMappingRequest.md)|  | 
 
 ### Return type
@@ -8876,7 +8876,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PropertymappingsApi(api_client)
-    pm_uuid = 'pm_uuid_example' # str | A UUID string identifying this Telegram Source Property Mapping.
+    pm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Telegram Source Property Mapping.
 
     try:
         api_response = api_instance.propertymappings_source_telegram_used_by_list(pm_uuid)
@@ -8893,7 +8893,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pm_uuid** | **str**| A UUID string identifying this Telegram Source Property Mapping. | 
+ **pm_uuid** | **UUID**| A UUID string identifying this Telegram Source Property Mapping. | 
 
 ### Return type
 

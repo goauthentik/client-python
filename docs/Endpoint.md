@@ -6,14 +6,14 @@ Endpoint Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **provider** | **int** |  | 
 **provider_obj** | [**RACProvider**](RACProvider.md) |  | [readonly] 
 **protocol** | [**ProtocolEnum**](ProtocolEnum.md) |  | 
 **host** | **str** |  | 
 **settings** | **Dict[str, object]** |  | [optional] 
-**property_mappings** | **List[str]** |  | [optional] 
+**property_mappings** | **List[UUID]** |  | [optional] 
 **auth_mode** | [**EndpointAuthModeEnum**](EndpointAuthModeEnum.md) |  | 
 **launch_url** | **str** | Build actual launch URL (the provider itself does not have one, just individual endpoints) | [readonly] 
 **maximum_connections** | **int** |  | [optional] 

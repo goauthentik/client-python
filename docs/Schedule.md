@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [readonly] 
+**id** | **UUID** |  | [readonly] 
 **identifier** | **str** | Unique schedule identifier | [readonly] 
 **uid** | **str** |  | [readonly] 
 **actor_name** | **str** | Dramatiq actor to call | [readonly] 

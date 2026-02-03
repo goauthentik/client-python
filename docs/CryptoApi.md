@@ -128,7 +128,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CryptoApi(api_client)
-    kp_uuid = 'kp_uuid_example' # str | A UUID string identifying this Certificate-Key Pair.
+    kp_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Certificate-Key Pair.
 
     try:
         api_instance.crypto_certificatekeypairs_destroy(kp_uuid)
@@ -143,7 +143,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kp_uuid** | **str**| A UUID string identifying this Certificate-Key Pair. | 
+ **kp_uuid** | **UUID**| A UUID string identifying this Certificate-Key Pair. | 
 
 ### Return type
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crypto_certificatekeypairs_list**
-> PaginatedCertificateKeyPairList crypto_certificatekeypairs_list(has_key=has_key, include_details=include_details, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+> PaginatedCertificateKeyPairList crypto_certificatekeypairs_list(has_key=has_key, key_type=key_type, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
 
 CertificateKeyPair Viewset
 
@@ -282,7 +282,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CryptoApi(api_client)
     has_key = True # bool | Only return certificate-key pairs with keys (optional)
-    include_details = True # bool |  (optional) (default to True)
+    key_type = ['key_type_example'] # List[str] | Filter by key algorithm type (RSA, EC, DSA, etc). Can be specified multiple times (e.g. '?key_type=rsa&key_type=ec') (optional)
     managed = 'managed_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
@@ -291,7 +291,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     search = 'search_example' # str | A search term. (optional)
 
     try:
-        api_response = api_instance.crypto_certificatekeypairs_list(has_key=has_key, include_details=include_details, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        api_response = api_instance.crypto_certificatekeypairs_list(has_key=has_key, key_type=key_type, managed=managed, name=name, ordering=ordering, page=page, page_size=page_size, search=search)
         print("The response of CryptoApi->crypto_certificatekeypairs_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -306,7 +306,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **has_key** | **bool**| Only return certificate-key pairs with keys | [optional] 
- **include_details** | **bool**|  | [optional] [default to True]
+ **key_type** | [**List[str]**](str.md)| Filter by key algorithm type (RSA, EC, DSA, etc). Can be specified multiple times (e.g. &#39;?key_type&#x3D;rsa&amp;key_type&#x3D;ec&#39;) | [optional] 
  **managed** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
@@ -373,7 +373,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CryptoApi(api_client)
-    kp_uuid = 'kp_uuid_example' # str | A UUID string identifying this Certificate-Key Pair.
+    kp_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Certificate-Key Pair.
     patched_certificate_key_pair_request = authentik_client.PatchedCertificateKeyPairRequest() # PatchedCertificateKeyPairRequest |  (optional)
 
     try:
@@ -391,7 +391,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kp_uuid** | **str**| A UUID string identifying this Certificate-Key Pair. | 
+ **kp_uuid** | **UUID**| A UUID string identifying this Certificate-Key Pair. | 
  **patched_certificate_key_pair_request** | [**PatchedCertificateKeyPairRequest**](PatchedCertificateKeyPairRequest.md)|  | [optional] 
 
 ### Return type
@@ -452,7 +452,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CryptoApi(api_client)
-    kp_uuid = 'kp_uuid_example' # str | A UUID string identifying this Certificate-Key Pair.
+    kp_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Certificate-Key Pair.
 
     try:
         api_response = api_instance.crypto_certificatekeypairs_retrieve(kp_uuid)
@@ -469,7 +469,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kp_uuid** | **str**| A UUID string identifying this Certificate-Key Pair. | 
+ **kp_uuid** | **UUID**| A UUID string identifying this Certificate-Key Pair. | 
 
 ### Return type
 
@@ -530,7 +530,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CryptoApi(api_client)
-    kp_uuid = 'kp_uuid_example' # str | A UUID string identifying this Certificate-Key Pair.
+    kp_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Certificate-Key Pair.
     certificate_key_pair_request = authentik_client.CertificateKeyPairRequest() # CertificateKeyPairRequest | 
 
     try:
@@ -548,7 +548,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kp_uuid** | **str**| A UUID string identifying this Certificate-Key Pair. | 
+ **kp_uuid** | **UUID**| A UUID string identifying this Certificate-Key Pair. | 
  **certificate_key_pair_request** | [**CertificateKeyPairRequest**](CertificateKeyPairRequest.md)|  | 
 
 ### Return type
@@ -609,7 +609,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CryptoApi(api_client)
-    kp_uuid = 'kp_uuid_example' # str | A UUID string identifying this Certificate-Key Pair.
+    kp_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Certificate-Key Pair.
 
     try:
         api_response = api_instance.crypto_certificatekeypairs_used_by_list(kp_uuid)
@@ -626,7 +626,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kp_uuid** | **str**| A UUID string identifying this Certificate-Key Pair. | 
+ **kp_uuid** | **UUID**| A UUID string identifying this Certificate-Key Pair. | 
 
 ### Return type
 
@@ -686,7 +686,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CryptoApi(api_client)
-    kp_uuid = 'kp_uuid_example' # str | A UUID string identifying this Certificate-Key Pair.
+    kp_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Certificate-Key Pair.
     download = True # bool |  (optional)
 
     try:
@@ -704,7 +704,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kp_uuid** | **str**| A UUID string identifying this Certificate-Key Pair. | 
+ **kp_uuid** | **UUID**| A UUID string identifying this Certificate-Key Pair. | 
  **download** | **bool**|  | [optional] 
 
 ### Return type
@@ -765,7 +765,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.CryptoApi(api_client)
-    kp_uuid = 'kp_uuid_example' # str | A UUID string identifying this Certificate-Key Pair.
+    kp_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Certificate-Key Pair.
     download = True # bool |  (optional)
 
     try:
@@ -783,7 +783,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kp_uuid** | **str**| A UUID string identifying this Certificate-Key Pair. | 
+ **kp_uuid** | **UUID**| A UUID string identifying this Certificate-Key Pair. | 
  **download** | **bool**|  | [optional] 
 
 ### Return type

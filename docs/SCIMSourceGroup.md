@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **external_id** | **str** |  | 
-**group** | **str** |  | 
+**group** | **UUID** |  | 
 **group_obj** | [**PartialGroup**](PartialGroup.md) |  | [readonly] 
-**source** | **str** |  | 
+**source** | **UUID** |  | 
 **attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example

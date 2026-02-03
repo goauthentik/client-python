@@ -8,11 +8,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **is_superuser** | **bool** | Users added to this group will be superusers. | [optional] 
-**parent** | **str** |  | [optional] 
+**parents** | **List[UUID]** |  | [optional] 
 **users** | **List[int]** |  | [optional] 
 **attributes** | **Dict[str, object]** |  | [optional] 
-**roles** | **List[str]** |  | [optional] 
-**children** | **List[str]** |  | [optional] 
+**roles** | **List[UUID]** |  | [optional] 
 
 ## Example
 

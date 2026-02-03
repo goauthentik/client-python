@@ -6,9 +6,9 @@ ApplicationEntitlement Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pbm_uuid** | **str** |  | [readonly] 
+**pbm_uuid** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
-**app** | **str** |  | 
+**app** | **UUID** |  | 
 **attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example

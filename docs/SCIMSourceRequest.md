@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **name** | **str** | Source&#39;s display Name. | 
 **slug** | **str** | Internal source name, used in URLs. | 
 **enabled** | **bool** |  | [optional] 
-**user_property_mappings** | **List[str]** |  | [optional] 
-**group_property_mappings** | **List[str]** |  | [optional] 
+**user_property_mappings** | **List[UUID]** |  | [optional] 
+**group_property_mappings** | **List[UUID]** |  | [optional] 
 **user_path_template** | **str** |  | [optional] 
 
 ## Example

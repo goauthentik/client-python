@@ -6,13 +6,13 @@ Invitation Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **expires** | **datetime** |  | [optional] 
 **fixed_data** | **Dict[str, object]** |  | [optional] 
 **created_by** | [**PartialUser**](PartialUser.md) |  | [readonly] 
 **single_use** | **bool** | When enabled, the invitation will be deleted after usage. | [optional] 
-**flow** | **str** | When set, only the configured flow can use this invitation. | [optional] 
+**flow** | **UUID** | When set, only the configured flow can use this invitation. | [optional] 
 **flow_obj** | [**Flow**](Flow.md) |  | [readonly] 
 
 ## Example

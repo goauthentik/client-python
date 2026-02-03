@@ -6,7 +6,7 @@ Event Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **user** | **Dict[str, object]** |  | [optional] 
 **action** | [**EventActions**](EventActions.md) |  | 
 **app** | **str** |  | 

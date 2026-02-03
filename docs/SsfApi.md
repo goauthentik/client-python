@@ -132,7 +132,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.SsfApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this SSF Stream.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this SSF Stream.
 
     try:
         api_response = api_instance.ssf_streams_retrieve(uuid)
@@ -149,7 +149,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this SSF Stream. | 
+ **uuid** | **UUID**| A UUID string identifying this SSF Stream. | 
 
 ### Return type
 

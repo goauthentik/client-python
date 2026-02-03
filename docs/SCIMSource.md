@@ -6,12 +6,12 @@ SCIMSource Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** | Source&#39;s display Name. | 
 **slug** | **str** | Internal source name, used in URLs. | 
 **enabled** | **bool** |  | [optional] 
-**user_property_mappings** | **List[str]** |  | [optional] 
-**group_property_mappings** | **List[str]** |  | [optional] 
+**user_property_mappings** | **List[UUID]** |  | [optional] 
+**group_property_mappings** | **List[UUID]** |  | [optional] 
 **component** | **str** | Get object component so that we know how to edit the object | [readonly] 
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 

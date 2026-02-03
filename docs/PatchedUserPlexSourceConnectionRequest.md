@@ -7,7 +7,7 @@ User source connection
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | **int** |  | [optional] 
-**source** | **str** |  | [optional] 
+**source** | **UUID** |  | [optional] 
 **identifier** | **str** |  | [optional] 
 **plex_token** | **str** |  | [optional] 
 

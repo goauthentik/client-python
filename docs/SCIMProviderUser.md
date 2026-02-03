@@ -6,7 +6,7 @@ SCIMProviderUser Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [readonly] 
+**id** | **UUID** |  | [readonly] 
 **scim_id** | **str** |  | 
 **user** | **int** |  | 
 **user_obj** | [**PartialUser**](PartialUser.md) |  | [readonly] 

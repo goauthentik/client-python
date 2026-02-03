@@ -259,7 +259,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy.
 
     try:
         api_instance.policies_all_destroy(policy_uuid)
@@ -274,7 +274,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Policy. | 
 
 ### Return type
 
@@ -421,7 +421,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy.
 
     try:
         api_response = api_instance.policies_all_retrieve(policy_uuid)
@@ -438,7 +438,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Policy. | 
 
 ### Return type
 
@@ -499,7 +499,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy.
     policy_test_request = authentik_client.PolicyTestRequest() # PolicyTestRequest | 
 
     try:
@@ -517,7 +517,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Policy. | 
  **policy_test_request** | [**PolicyTestRequest**](PolicyTestRequest.md)|  | 
 
 ### Return type
@@ -651,7 +651,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy.
 
     try:
         api_response = api_instance.policies_all_used_by_list(policy_uuid)
@@ -668,7 +668,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Policy. | 
 
 ### Return type
 
@@ -805,7 +805,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_binding_uuid = 'policy_binding_uuid_example' # str | A UUID string identifying this Policy Binding.
+    policy_binding_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy Binding.
 
     try:
         api_instance.policies_bindings_destroy(policy_binding_uuid)
@@ -820,7 +820,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_binding_uuid** | **str**| A UUID string identifying this Policy Binding. | 
+ **policy_binding_uuid** | **UUID**| A UUID string identifying this Policy Binding. | 
 
 ### Return type
 
@@ -885,11 +885,11 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    policy = 'policy_example' # str |  (optional)
+    policy = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     policy__isnull = True # bool |  (optional)
     search = 'search_example' # str | A search term. (optional)
-    target = 'target_example' # str |  (optional)
-    target_in = ['target_in_example'] # List[str] |  (optional)
+    target = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    target_in = None # List[UUID] |  (optional)
     timeout = 56 # int |  (optional)
 
     try:
@@ -912,11 +912,11 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **policy** | **str**|  | [optional] 
+ **policy** | **UUID**|  | [optional] 
  **policy__isnull** | **bool**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **target** | **str**|  | [optional] 
- **target_in** | [**List[str]**](str.md)|  | [optional] 
+ **target** | **UUID**|  | [optional] 
+ **target_in** | [**List[UUID]**](UUID.md)|  | [optional] 
  **timeout** | **int**|  | [optional] 
 
 ### Return type
@@ -978,7 +978,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_binding_uuid = 'policy_binding_uuid_example' # str | A UUID string identifying this Policy Binding.
+    policy_binding_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy Binding.
     patched_policy_binding_request = authentik_client.PatchedPolicyBindingRequest() # PatchedPolicyBindingRequest |  (optional)
 
     try:
@@ -996,7 +996,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_binding_uuid** | **str**| A UUID string identifying this Policy Binding. | 
+ **policy_binding_uuid** | **UUID**| A UUID string identifying this Policy Binding. | 
  **patched_policy_binding_request** | [**PatchedPolicyBindingRequest**](PatchedPolicyBindingRequest.md)|  | [optional] 
 
 ### Return type
@@ -1057,7 +1057,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_binding_uuid = 'policy_binding_uuid_example' # str | A UUID string identifying this Policy Binding.
+    policy_binding_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy Binding.
 
     try:
         api_response = api_instance.policies_bindings_retrieve(policy_binding_uuid)
@@ -1074,7 +1074,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_binding_uuid** | **str**| A UUID string identifying this Policy Binding. | 
+ **policy_binding_uuid** | **UUID**| A UUID string identifying this Policy Binding. | 
 
 ### Return type
 
@@ -1135,7 +1135,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_binding_uuid = 'policy_binding_uuid_example' # str | A UUID string identifying this Policy Binding.
+    policy_binding_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy Binding.
     policy_binding_request = authentik_client.PolicyBindingRequest() # PolicyBindingRequest | 
 
     try:
@@ -1153,7 +1153,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_binding_uuid** | **str**| A UUID string identifying this Policy Binding. | 
+ **policy_binding_uuid** | **UUID**| A UUID string identifying this Policy Binding. | 
  **policy_binding_request** | [**PolicyBindingRequest**](PolicyBindingRequest.md)|  | 
 
 ### Return type
@@ -1214,7 +1214,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_binding_uuid = 'policy_binding_uuid_example' # str | A UUID string identifying this Policy Binding.
+    policy_binding_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Policy Binding.
 
     try:
         api_response = api_instance.policies_bindings_used_by_list(policy_binding_uuid)
@@ -1231,7 +1231,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_binding_uuid** | **str**| A UUID string identifying this Policy Binding. | 
+ **policy_binding_uuid** | **UUID**| A UUID string identifying this Policy Binding. | 
 
 ### Return type
 
@@ -1368,7 +1368,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Dummy Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Policy.
 
     try:
         api_instance.policies_dummy_destroy(policy_uuid)
@@ -1383,7 +1383,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Dummy Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Dummy Policy. | 
 
 ### Return type
 
@@ -1450,7 +1450,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    policy_uuid = 'policy_uuid_example' # str |  (optional)
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     result = True # bool |  (optional)
     search = 'search_example' # str | A search term. (optional)
     wait_max = 56 # int |  (optional)
@@ -1478,7 +1478,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **policy_uuid** | **str**|  | [optional] 
+ **policy_uuid** | **UUID**|  | [optional] 
  **result** | **bool**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **wait_max** | **int**|  | [optional] 
@@ -1543,7 +1543,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Dummy Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Policy.
     patched_dummy_policy_request = authentik_client.PatchedDummyPolicyRequest() # PatchedDummyPolicyRequest |  (optional)
 
     try:
@@ -1561,7 +1561,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Dummy Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Dummy Policy. | 
  **patched_dummy_policy_request** | [**PatchedDummyPolicyRequest**](PatchedDummyPolicyRequest.md)|  | [optional] 
 
 ### Return type
@@ -1622,7 +1622,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Dummy Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Policy.
 
     try:
         api_response = api_instance.policies_dummy_retrieve(policy_uuid)
@@ -1639,7 +1639,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Dummy Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Dummy Policy. | 
 
 ### Return type
 
@@ -1700,7 +1700,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Dummy Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Policy.
     dummy_policy_request = authentik_client.DummyPolicyRequest() # DummyPolicyRequest | 
 
     try:
@@ -1718,7 +1718,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Dummy Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Dummy Policy. | 
  **dummy_policy_request** | [**DummyPolicyRequest**](DummyPolicyRequest.md)|  | 
 
 ### Return type
@@ -1779,7 +1779,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Dummy Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Dummy Policy.
 
     try:
         api_response = api_instance.policies_dummy_used_by_list(policy_uuid)
@@ -1796,7 +1796,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Dummy Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Dummy Policy. | 
 
 ### Return type
 
@@ -1933,7 +1933,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Event Matcher Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event Matcher Policy.
 
     try:
         api_instance.policies_event_matcher_destroy(policy_uuid)
@@ -1948,7 +1948,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Event Matcher Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Event Matcher Policy. | 
 
 ### Return type
 
@@ -2019,7 +2019,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    policy_uuid = 'policy_uuid_example' # str |  (optional)
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
 
     try:
@@ -2048,7 +2048,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **policy_uuid** | **str**|  | [optional] 
+ **policy_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
 
 ### Return type
@@ -2110,7 +2110,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Event Matcher Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event Matcher Policy.
     patched_event_matcher_policy_request = authentik_client.PatchedEventMatcherPolicyRequest() # PatchedEventMatcherPolicyRequest |  (optional)
 
     try:
@@ -2128,7 +2128,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Event Matcher Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Event Matcher Policy. | 
  **patched_event_matcher_policy_request** | [**PatchedEventMatcherPolicyRequest**](PatchedEventMatcherPolicyRequest.md)|  | [optional] 
 
 ### Return type
@@ -2189,7 +2189,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Event Matcher Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event Matcher Policy.
 
     try:
         api_response = api_instance.policies_event_matcher_retrieve(policy_uuid)
@@ -2206,7 +2206,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Event Matcher Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Event Matcher Policy. | 
 
 ### Return type
 
@@ -2267,7 +2267,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Event Matcher Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event Matcher Policy.
     event_matcher_policy_request = authentik_client.EventMatcherPolicyRequest() # EventMatcherPolicyRequest | 
 
     try:
@@ -2285,7 +2285,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Event Matcher Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Event Matcher Policy. | 
  **event_matcher_policy_request** | [**EventMatcherPolicyRequest**](EventMatcherPolicyRequest.md)|  | 
 
 ### Return type
@@ -2346,7 +2346,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Event Matcher Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event Matcher Policy.
 
     try:
         api_response = api_instance.policies_event_matcher_used_by_list(policy_uuid)
@@ -2363,7 +2363,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Event Matcher Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Event Matcher Policy. | 
 
 ### Return type
 
@@ -2500,7 +2500,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Expression Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Expression Policy.
 
     try:
         api_instance.policies_expression_destroy(policy_uuid)
@@ -2515,7 +2515,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Expression Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Expression Policy. | 
 
 ### Return type
 
@@ -2583,7 +2583,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    policy_uuid = 'policy_uuid_example' # str |  (optional)
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
 
     try:
@@ -2609,7 +2609,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **policy_uuid** | **str**|  | [optional] 
+ **policy_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
 
 ### Return type
@@ -2671,7 +2671,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Expression Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Expression Policy.
     patched_expression_policy_request = authentik_client.PatchedExpressionPolicyRequest() # PatchedExpressionPolicyRequest |  (optional)
 
     try:
@@ -2689,7 +2689,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Expression Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Expression Policy. | 
  **patched_expression_policy_request** | [**PatchedExpressionPolicyRequest**](PatchedExpressionPolicyRequest.md)|  | [optional] 
 
 ### Return type
@@ -2750,7 +2750,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Expression Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Expression Policy.
 
     try:
         api_response = api_instance.policies_expression_retrieve(policy_uuid)
@@ -2767,7 +2767,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Expression Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Expression Policy. | 
 
 ### Return type
 
@@ -2828,7 +2828,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Expression Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Expression Policy.
     expression_policy_request = authentik_client.ExpressionPolicyRequest() # ExpressionPolicyRequest | 
 
     try:
@@ -2846,7 +2846,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Expression Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Expression Policy. | 
  **expression_policy_request** | [**ExpressionPolicyRequest**](ExpressionPolicyRequest.md)|  | 
 
 ### Return type
@@ -2907,7 +2907,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Expression Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Expression Policy.
 
     try:
         api_response = api_instance.policies_expression_used_by_list(policy_uuid)
@@ -2924,7 +2924,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Expression Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Expression Policy. | 
 
 ### Return type
 
@@ -3061,7 +3061,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this GeoIP Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this GeoIP Policy.
 
     try:
         api_instance.policies_geoip_destroy(policy_uuid)
@@ -3076,7 +3076,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this GeoIP Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this GeoIP Policy. | 
 
 ### Return type
 
@@ -3295,7 +3295,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this GeoIP Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this GeoIP Policy.
     patched_geo_ip_policy_request = authentik_client.PatchedGeoIPPolicyRequest() # PatchedGeoIPPolicyRequest |  (optional)
 
     try:
@@ -3313,7 +3313,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this GeoIP Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this GeoIP Policy. | 
  **patched_geo_ip_policy_request** | [**PatchedGeoIPPolicyRequest**](PatchedGeoIPPolicyRequest.md)|  | [optional] 
 
 ### Return type
@@ -3374,7 +3374,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this GeoIP Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this GeoIP Policy.
 
     try:
         api_response = api_instance.policies_geoip_retrieve(policy_uuid)
@@ -3391,7 +3391,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this GeoIP Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this GeoIP Policy. | 
 
 ### Return type
 
@@ -3452,7 +3452,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this GeoIP Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this GeoIP Policy.
     geo_ip_policy_request = authentik_client.GeoIPPolicyRequest() # GeoIPPolicyRequest | 
 
     try:
@@ -3470,7 +3470,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this GeoIP Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this GeoIP Policy. | 
  **geo_ip_policy_request** | [**GeoIPPolicyRequest**](GeoIPPolicyRequest.md)|  | 
 
 ### Return type
@@ -3531,7 +3531,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this GeoIP Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this GeoIP Policy.
 
     try:
         api_response = api_instance.policies_geoip_used_by_list(policy_uuid)
@@ -3548,7 +3548,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this GeoIP Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this GeoIP Policy. | 
 
 ### Return type
 
@@ -3685,7 +3685,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Policy.
 
     try:
         api_instance.policies_password_destroy(policy_uuid)
@@ -3700,7 +3700,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Policy. | 
 
 ### Return type
 
@@ -3837,7 +3837,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Expiry Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Expiry Policy.
 
     try:
         api_instance.policies_password_expiry_destroy(policy_uuid)
@@ -3852,7 +3852,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Expiry Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Expiry Policy. | 
 
 ### Return type
 
@@ -3921,7 +3921,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    policy_uuid = 'policy_uuid_example' # str |  (optional)
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
 
     try:
@@ -3948,7 +3948,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **policy_uuid** | **str**|  | [optional] 
+ **policy_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
 
 ### Return type
@@ -4010,7 +4010,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Expiry Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Expiry Policy.
     patched_password_expiry_policy_request = authentik_client.PatchedPasswordExpiryPolicyRequest() # PatchedPasswordExpiryPolicyRequest |  (optional)
 
     try:
@@ -4028,7 +4028,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Expiry Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Expiry Policy. | 
  **patched_password_expiry_policy_request** | [**PatchedPasswordExpiryPolicyRequest**](PatchedPasswordExpiryPolicyRequest.md)|  | [optional] 
 
 ### Return type
@@ -4089,7 +4089,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Expiry Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Expiry Policy.
 
     try:
         api_response = api_instance.policies_password_expiry_retrieve(policy_uuid)
@@ -4106,7 +4106,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Expiry Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Expiry Policy. | 
 
 ### Return type
 
@@ -4167,7 +4167,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Expiry Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Expiry Policy.
     password_expiry_policy_request = authentik_client.PasswordExpiryPolicyRequest() # PasswordExpiryPolicyRequest | 
 
     try:
@@ -4185,7 +4185,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Expiry Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Expiry Policy. | 
  **password_expiry_policy_request** | [**PasswordExpiryPolicyRequest**](PasswordExpiryPolicyRequest.md)|  | 
 
 ### Return type
@@ -4246,7 +4246,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Expiry Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Expiry Policy.
 
     try:
         api_response = api_instance.policies_password_expiry_used_by_list(policy_uuid)
@@ -4263,7 +4263,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Expiry Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Expiry Policy. | 
 
 ### Return type
 
@@ -4341,7 +4341,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     password_field = 'password_field_example' # str |  (optional)
-    policy_uuid = 'policy_uuid_example' # str |  (optional)
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
     symbol_charset = 'symbol_charset_example' # str |  (optional)
     zxcvbn_score_threshold = 56 # int |  (optional)
@@ -4379,7 +4379,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **password_field** | **str**|  | [optional] 
- **policy_uuid** | **str**|  | [optional] 
+ **policy_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **symbol_charset** | **str**|  | [optional] 
  **zxcvbn_score_threshold** | **int**|  | [optional] 
@@ -4443,7 +4443,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Policy.
     patched_password_policy_request = authentik_client.PatchedPasswordPolicyRequest() # PatchedPasswordPolicyRequest |  (optional)
 
     try:
@@ -4461,7 +4461,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Policy. | 
  **patched_password_policy_request** | [**PatchedPasswordPolicyRequest**](PatchedPasswordPolicyRequest.md)|  | [optional] 
 
 ### Return type
@@ -4522,7 +4522,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Policy.
 
     try:
         api_response = api_instance.policies_password_retrieve(policy_uuid)
@@ -4539,7 +4539,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Policy. | 
 
 ### Return type
 
@@ -4600,7 +4600,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Policy.
     password_policy_request = authentik_client.PasswordPolicyRequest() # PasswordPolicyRequest | 
 
     try:
@@ -4618,7 +4618,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Policy. | 
  **password_policy_request** | [**PasswordPolicyRequest**](PasswordPolicyRequest.md)|  | 
 
 ### Return type
@@ -4679,7 +4679,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Policy.
 
     try:
         api_response = api_instance.policies_password_used_by_list(policy_uuid)
@@ -4696,7 +4696,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Policy. | 
 
 ### Return type
 
@@ -4833,7 +4833,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Reputation Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Reputation Policy.
 
     try:
         api_instance.policies_reputation_destroy(policy_uuid)
@@ -4848,7 +4848,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Reputation Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Reputation Policy. | 
 
 ### Return type
 
@@ -4917,7 +4917,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    policy_uuid = 'policy_uuid_example' # str |  (optional)
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
     threshold = 56 # int |  (optional)
 
@@ -4945,7 +4945,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **policy_uuid** | **str**|  | [optional] 
+ **policy_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **threshold** | **int**|  | [optional] 
 
@@ -5008,7 +5008,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Reputation Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Reputation Policy.
     patched_reputation_policy_request = authentik_client.PatchedReputationPolicyRequest() # PatchedReputationPolicyRequest |  (optional)
 
     try:
@@ -5026,7 +5026,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Reputation Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Reputation Policy. | 
  **patched_reputation_policy_request** | [**PatchedReputationPolicyRequest**](PatchedReputationPolicyRequest.md)|  | [optional] 
 
 ### Return type
@@ -5087,7 +5087,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Reputation Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Reputation Policy.
 
     try:
         api_response = api_instance.policies_reputation_retrieve(policy_uuid)
@@ -5104,7 +5104,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Reputation Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Reputation Policy. | 
 
 ### Return type
 
@@ -5163,7 +5163,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    reputation_uuid = 'reputation_uuid_example' # str | A UUID string identifying this Reputation Score.
+    reputation_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Reputation Score.
 
     try:
         api_instance.policies_reputation_scores_destroy(reputation_uuid)
@@ -5178,7 +5178,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reputation_uuid** | **str**| A UUID string identifying this Reputation Score. | 
+ **reputation_uuid** | **UUID**| A UUID string identifying this Reputation Score. | 
 
 ### Return type
 
@@ -5329,7 +5329,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    reputation_uuid = 'reputation_uuid_example' # str | A UUID string identifying this Reputation Score.
+    reputation_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Reputation Score.
 
     try:
         api_response = api_instance.policies_reputation_scores_retrieve(reputation_uuid)
@@ -5346,7 +5346,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reputation_uuid** | **str**| A UUID string identifying this Reputation Score. | 
+ **reputation_uuid** | **UUID**| A UUID string identifying this Reputation Score. | 
 
 ### Return type
 
@@ -5406,7 +5406,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    reputation_uuid = 'reputation_uuid_example' # str | A UUID string identifying this Reputation Score.
+    reputation_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Reputation Score.
 
     try:
         api_response = api_instance.policies_reputation_scores_used_by_list(reputation_uuid)
@@ -5423,7 +5423,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reputation_uuid** | **str**| A UUID string identifying this Reputation Score. | 
+ **reputation_uuid** | **UUID**| A UUID string identifying this Reputation Score. | 
 
 ### Return type
 
@@ -5484,7 +5484,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Reputation Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Reputation Policy.
     reputation_policy_request = authentik_client.ReputationPolicyRequest() # ReputationPolicyRequest | 
 
     try:
@@ -5502,7 +5502,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Reputation Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Reputation Policy. | 
  **reputation_policy_request** | [**ReputationPolicyRequest**](ReputationPolicyRequest.md)|  | 
 
 ### Return type
@@ -5563,7 +5563,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Reputation Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Reputation Policy.
 
     try:
         api_response = api_instance.policies_reputation_used_by_list(policy_uuid)
@@ -5580,7 +5580,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Reputation Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Reputation Policy. | 
 
 ### Return type
 
@@ -5717,7 +5717,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Uniqueness Policy.
 
     try:
         api_instance.policies_unique_password_destroy(policy_uuid)
@@ -5732,7 +5732,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Uniqueness Policy. | 
 
 ### Return type
 
@@ -5801,7 +5801,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
     password_field = 'password_field_example' # str |  (optional)
-    policy_uuid = 'policy_uuid_example' # str |  (optional)
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     search = 'search_example' # str | A search term. (optional)
 
     try:
@@ -5828,7 +5828,7 @@ Name | Type | Description  | Notes
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **password_field** | **str**|  | [optional] 
- **policy_uuid** | **str**|  | [optional] 
+ **policy_uuid** | **UUID**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
 
 ### Return type
@@ -5890,7 +5890,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Uniqueness Policy.
     patched_unique_password_policy_request = authentik_client.PatchedUniquePasswordPolicyRequest() # PatchedUniquePasswordPolicyRequest |  (optional)
 
     try:
@@ -5908,7 +5908,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Uniqueness Policy. | 
  **patched_unique_password_policy_request** | [**PatchedUniquePasswordPolicyRequest**](PatchedUniquePasswordPolicyRequest.md)|  | [optional] 
 
 ### Return type
@@ -5969,7 +5969,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Uniqueness Policy.
 
     try:
         api_response = api_instance.policies_unique_password_retrieve(policy_uuid)
@@ -5986,7 +5986,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Uniqueness Policy. | 
 
 ### Return type
 
@@ -6047,7 +6047,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Uniqueness Policy.
     unique_password_policy_request = authentik_client.UniquePasswordPolicyRequest() # UniquePasswordPolicyRequest | 
 
     try:
@@ -6065,7 +6065,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Uniqueness Policy. | 
  **unique_password_policy_request** | [**UniquePasswordPolicyRequest**](UniquePasswordPolicyRequest.md)|  | 
 
 ### Return type
@@ -6126,7 +6126,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.PoliciesApi(api_client)
-    policy_uuid = 'policy_uuid_example' # str | A UUID string identifying this Password Uniqueness Policy.
+    policy_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Password Uniqueness Policy.
 
     try:
         api_response = api_instance.policies_unique_password_used_by_list(policy_uuid)
@@ -6143,7 +6143,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_uuid** | **str**| A UUID string identifying this Password Uniqueness Policy. | 
+ **policy_uuid** | **UUID**| A UUID string identifying this Password Uniqueness Policy. | 
 
 ### Return type
 

@@ -6,7 +6,6 @@ Base class for all challenge responses
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**component** | **str** |  | [optional] [default to 'ak-source-telegram']
 **id** | **int** |  | 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
@@ -14,6 +13,7 @@ Name | Type | Description | Notes
 **photo_url** | **str** |  | [optional] 
 **auth_date** | **int** |  | 
 **hash** | **str** |  | 
+**component** | **str** |  | [optional] [default to 'ak-source-telegram']
 
 ## Example
 

@@ -6,7 +6,7 @@ SSFStream Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **provider** | **int** |  | 
 **provider_obj** | [**SSFProvider**](SSFProvider.md) |  | [readonly] 
 **delivery_method** | [**DeliveryMethodEnum**](DeliveryMethodEnum.md) |  | 

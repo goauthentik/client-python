@@ -6,13 +6,13 @@ NotificationTransport Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **mode** | [**NotificationTransportModeEnum**](NotificationTransportModeEnum.md) |  | [optional] 
 **mode_verbose** | **str** | Return selected mode with a UI Label | [readonly] 
 **webhook_url** | **str** |  | [optional] 
-**webhook_mapping_body** | **str** | Customize the body of the request. Mapping should return data that is JSON-serializable. | [optional] 
-**webhook_mapping_headers** | **str** | Configure additional headers to be sent. Mapping should return a dictionary of key-value pairs | [optional] 
+**webhook_mapping_body** | **UUID** | Customize the body of the request. Mapping should return data that is JSON-serializable. | [optional] 
+**webhook_mapping_headers** | **UUID** | Configure additional headers to be sent. Mapping should return a dictionary of key-value pairs | [optional] 
 **email_subject_prefix** | **str** |  | [optional] 
 **email_template** | **str** |  | [optional] 
 **send_once** | **bool** | Only send notification once, for example when sending a webhook into a chat channel. | [optional] 

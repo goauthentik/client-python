@@ -7,16 +7,18 @@ GoogleWorkspaceProvider Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**property_mappings** | **List[str]** |  | [optional] 
-**property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
+**property_mappings** | **List[UUID]** |  | [optional] 
+**property_mappings_group** | **List[UUID]** | Property mappings used for group creation/updating. | [optional] 
 **delegated_subject** | **str** |  | 
 **credentials** | **Dict[str, object]** |  | 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
-**filter_group** | **str** |  | [optional] 
+**filter_group** | **UUID** |  | [optional] 
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **default_group_email_domain** | **str** |  | 
+**sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
+**sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 
 ## Example

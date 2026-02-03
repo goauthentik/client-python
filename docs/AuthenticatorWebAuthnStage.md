@@ -6,19 +6,19 @@ AuthenticatorWebAuthnStage Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **component** | **str** | Get object type so that we know how to edit the object | [readonly] 
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
-**configure_flow** | **str** | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional] 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
+**configure_flow** | **UUID** | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional] 
 **friendly_name** | **str** |  | [optional] 
 **user_verification** | [**UserVerificationEnum**](UserVerificationEnum.md) |  | [optional] 
 **authenticator_attachment** | [**AuthenticatorAttachmentEnum**](AuthenticatorAttachmentEnum.md) |  | [optional] 
 **resident_key_requirement** | [**ResidentKeyRequirementEnum**](ResidentKeyRequirementEnum.md) |  | [optional] 
-**device_type_restrictions** | **List[str]** |  | [optional] 
+**device_type_restrictions** | **List[UUID]** |  | [optional] 
 **device_type_restrictions_obj** | [**List[WebAuthnDeviceType]**](WebAuthnDeviceType.md) |  | [readonly] 
 **max_attempts** | **int** |  | [optional] 
 

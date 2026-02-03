@@ -7,7 +7,7 @@ TOTP Challenge response, device is set by get_response_instance
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component** | **str** |  | [optional] [default to 'ak-stage-authenticator-totp']
-**code** | **int** |  | 
+**code** | **str** |  | 
 
 ## Example
 

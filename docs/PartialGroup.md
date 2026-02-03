@@ -6,12 +6,10 @@ Partial Group Serializer, does not include child relations.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **num_pk** | **int** | Get a numerical, int32 ID for the group | [readonly] 
 **name** | **str** |  | 
 **is_superuser** | **bool** | Users added to this group will be superusers. | [optional] 
-**parent** | **str** |  | [optional] 
-**parent_name** | **str** |  | [readonly] 
 **attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example

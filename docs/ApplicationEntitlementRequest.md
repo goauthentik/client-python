@@ -7,7 +7,7 @@ ApplicationEntitlement Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**app** | **str** |  | 
+**app** | **UUID** |  | 
 **attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example

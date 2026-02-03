@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **domain** | **str** |  | 
 **is_primary** | **bool** |  | [optional] 
-**tenant** | **str** |  | 
+**tenant** | **UUID** |  | 
 
 ## Example
 

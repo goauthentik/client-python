@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
 **user** | **int** |  | 
-**source** | **str** |  | 
+**source** | **UUID** |  | 
 **source_obj** | [**Source**](Source.md) |  | [readonly] 
 **identifier** | **str** |  | 
 **created** | **datetime** |  | [readonly] 

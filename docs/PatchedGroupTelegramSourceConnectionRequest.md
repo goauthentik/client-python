@@ -6,8 +6,8 @@ Group Source Connection
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**group** | **str** |  | [optional] 
-**source** | **str** |  | [optional] 
+**group** | **UUID** |  | [optional] 
+**source** | **UUID** |  | [optional] 
 **identifier** | **str** |  | [optional] 
 
 ## Example

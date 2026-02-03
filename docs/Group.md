@@ -6,19 +6,20 @@ Group Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **num_pk** | **int** |  | [readonly] 
 **name** | **str** |  | 
 **is_superuser** | **bool** | Users added to this group will be superusers. | [optional] 
-**parent** | **str** |  | [optional] 
-**parent_name** | **str** |  | [readonly] 
+**parents** | **List[UUID]** |  | [optional] 
+**parents_obj** | [**List[RelatedGroup]**](RelatedGroup.md) |  | [readonly] 
 **users** | **List[int]** |  | [optional] 
 **users_obj** | [**List[PartialUser]**](PartialUser.md) |  | [readonly] 
 **attributes** | **Dict[str, object]** |  | [optional] 
-**roles** | **List[str]** |  | [optional] 
+**roles** | **List[UUID]** |  | [optional] 
 **roles_obj** | [**List[Role]**](Role.md) |  | [readonly] 
-**children** | **List[str]** |  | [optional] 
-**children_obj** | [**List[GroupChild]**](GroupChild.md) |  | [readonly] 
+**inherited_roles_obj** | [**List[Role]**](Role.md) |  | [readonly] 
+**children** | **List[UUID]** |  | [readonly] 
+**children_obj** | [**List[RelatedGroup]**](RelatedGroup.md) |  | [readonly] 
 
 ## Example
 

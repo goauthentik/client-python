@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
 **name** | **str** |  | 
-**property_mappings** | **List[str]** |  | [optional] 
-**property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
+**property_mappings** | **List[UUID]** |  | [optional] 
+**property_mappings_group** | **List[UUID]** | Property mappings used for group creation/updating. | [optional] 
 **component** | **str** | Get object component so that we know how to edit the object | [readonly] 
 **assigned_backchannel_application_slug** | **str** | Internal application name, used in URLs. | [readonly] 
 **assigned_backchannel_application_name** | **str** | Application&#39;s display Name. | [readonly] 
@@ -20,10 +20,12 @@ Name | Type | Description | Notes
 **credentials** | **Dict[str, object]** |  | 
 **scopes** | **str** |  | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
-**filter_group** | **str** |  | [optional] 
+**filter_group** | **UUID** |  | [optional] 
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **default_group_email_domain** | **str** |  | 
+**sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
+**sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 
 ## Example

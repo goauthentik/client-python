@@ -7,7 +7,7 @@ SSFProvider Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**signing_key** | **str** | Key used to sign the SSF Events. | [optional] 
+**signing_key** | **UUID** | Key used to sign the SSF Events. | [optional] 
 **oidc_auth_providers** | **List[int]** |  | [optional] 
 **event_retention** | **str** |  | [optional] 
 

@@ -1,6 +1,6 @@
 # ExtraRoleObjectPermission
 
-User permission with additional object-related data
+Role permission with additional object-related data
 
 ## Properties
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [readonly] 
 **app_label_verbose** | **str** | Get app label from permission&#39;s model | [readonly] 
 **model_verbose** | **str** | Get model label from permission&#39;s model | [readonly] 
-**object_description** | **str** | Get model description from attached model. This operation takes at least one additional query, and the description is only shown if the user/role has the view_ permission on the object | [readonly] 
+**object_description** | **str** | Get model description from attached model. This operation takes at least one additional query, and the description is only shown if the role has the view_ permission on the object | [readonly] 
 
 ## Example
 

@@ -6,8 +6,8 @@ FlowStageBinding Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | **str** |  | 
-**stage** | **str** |  | 
+**target** | **UUID** |  | 
+**stage** | **UUID** |  | 
 **evaluate_on_plan** | **bool** | Evaluate policies during the Flow planning process. | [optional] 
 **re_evaluate_policies** | **bool** | Evaluate policies when the Stage is presented to the user. | [optional] 
 **order** | **int** |  | 

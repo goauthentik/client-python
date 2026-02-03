@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** |  | [optional] 
 **background** | **str** |  | [optional] 
+**background_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [optional] 
 **cancel_url** | **str** |  | 
 **layout** | [**ContextualFlowInfoLayoutEnum**](ContextualFlowInfoLayoutEnum.md) |  | 
 

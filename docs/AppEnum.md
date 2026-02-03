@@ -17,9 +17,15 @@
 
 * `AUTHENTIK_DOT_CRYPTO` (value: `'authentik.crypto'`)
 
+* `AUTHENTIK_DOT_ENDPOINTS` (value: `'authentik.endpoints'`)
+
+* `AUTHENTIK_DOT_ENDPOINTS_DOT_CONNECTORS_DOT_AGENT` (value: `'authentik.endpoints.connectors.agent'`)
+
 * `AUTHENTIK_DOT_ENTERPRISE` (value: `'authentik.enterprise'`)
 
 * `AUTHENTIK_DOT_EVENTS` (value: `'authentik.events'`)
+
+* `AUTHENTIK_DOT_ADMIN_DOT_FILES` (value: `'authentik.admin.files'`)
 
 * `AUTHENTIK_DOT_FLOWS` (value: `'authentik.flows'`)
 
@@ -125,6 +131,10 @@
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_AUDIT` (value: `'authentik.enterprise.audit'`)
 
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_ENDPOINTS_DOT_CONNECTORS_DOT_AGENT` (value: `'authentik.enterprise.endpoints.connectors.agent'`)
+
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_ENDPOINTS_DOT_CONNECTORS_DOT_FLEET` (value: `'authentik.enterprise.endpoints.connectors.fleet'`)
+
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_POLICIES_DOT_UNIQUE_PASSWORD` (value: `'authentik.enterprise.policies.unique_password'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_GOOGLE_WORKSPACE` (value: `'authentik.enterprise.providers.google_workspace'`)
@@ -136,6 +146,10 @@
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SCIM` (value: `'authentik.enterprise.providers.scim'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_SSF` (value: `'authentik.enterprise.providers.ssf'`)
+
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_WS_FEDERATION` (value: `'authentik.enterprise.providers.ws_federation'`)
+
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_REPORTS` (value: `'authentik.enterprise.reports'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_SEARCH` (value: `'authentik.enterprise.search'`)
 

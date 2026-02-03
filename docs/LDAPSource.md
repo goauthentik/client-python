@@ -6,14 +6,15 @@ LDAP Source Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** | Source&#39;s display Name. | 
 **slug** | **str** | Internal source name, used in URLs. | 
 **enabled** | **bool** |  | [optional] 
-**authentication_flow** | **str** | Flow to use when authenticating existing users. | [optional] 
-**enrollment_flow** | **str** | Flow to use when enrolling new users. | [optional] 
-**user_property_mappings** | **List[str]** |  | [optional] 
-**group_property_mappings** | **List[str]** |  | [optional] 
+**promoted** | **bool** | When enabled, this source will be displayed as a prominent button on the login page, instead of a small icon. | [optional] 
+**authentication_flow** | **UUID** | Flow to use when authenticating existing users. | [optional] 
+**enrollment_flow** | **UUID** | Flow to use when enrolling new users. | [optional] 
+**user_property_mappings** | **List[UUID]** |  | [optional] 
+**group_property_mappings** | **List[UUID]** |  | [optional] 
 **component** | **str** | Get object component so that we know how to edit the object | [readonly] 
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
@@ -22,10 +23,12 @@ Name | Type | Description | Notes
 **user_matching_mode** | [**UserMatchingModeEnum**](UserMatchingModeEnum.md) | How the source determines if an existing user should be authenticated or a new user enrolled. | [optional] 
 **managed** | **str** | Objects that are managed by authentik. These objects are created and updated automatically. This flag only indicates that an object can be overwritten by migrations. You can still modify the objects via the API, but expect changes to be overwritten in a later update. | [readonly] 
 **user_path_template** | **str** |  | [optional] 
-**icon** | **str** |  | [readonly] 
+**icon** | **str** |  | [optional] 
+**icon_url** | **str** |  | [readonly] 
+**icon_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **server_uri** | **str** |  | 
-**peer_certificate** | **str** | Optionally verify the LDAP Server&#39;s Certificate against the CA Chain in this keypair. | [optional] 
-**client_certificate** | **str** | Client certificate to authenticate against the LDAP Server&#39;s Certificate. | [optional] 
+**peer_certificate** | **UUID** | Optionally verify the LDAP Server&#39;s Certificate against the CA Chain in this keypair. | [optional] 
+**client_certificate** | **UUID** | Client certificate to authenticate against the LDAP Server&#39;s Certificate. | [optional] 
 **bind_cn** | **str** |  | [optional] 
 **start_tls** | **bool** |  | [optional] 
 **sni** | **bool** |  | [optional] 
@@ -41,10 +44,11 @@ Name | Type | Description | Notes
 **sync_users** | **bool** |  | [optional] 
 **sync_users_password** | **bool** | When a user changes their password, sync it back to LDAP. This can only be enabled on a single LDAP source. | [optional] 
 **sync_groups** | **bool** |  | [optional] 
-**sync_parent_group** | **str** |  | [optional] 
+**sync_parent_group** | **UUID** |  | [optional] 
 **connectivity** | **Dict[str, Dict[str, str]]** | Get cached source connectivity | [readonly] 
 **lookup_groups_from_user** | **bool** | Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory | [optional] 
 **delete_not_found_objects** | **bool** | Delete authentik users and groups which were previously supplied by this source, but are now missing from it. | [optional] 
+**sync_outgoing_trigger_mode** | [**SyncOutgoingTriggerModeEnum**](SyncOutgoingTriggerModeEnum.md) | When to trigger sync for outgoing providers | [optional] 
 
 ## Example
 

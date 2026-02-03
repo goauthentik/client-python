@@ -8,8 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
 **name** | **str** |  | 
-**mode** | [**InitialPermissionsModeEnum**](InitialPermissionsModeEnum.md) |  | 
-**role** | **str** |  | 
+**role** | **UUID** |  | 
 **permissions** | **List[int]** |  | [optional] 
 **permissions_obj** | [**List[Permission]**](Permission.md) |  | [readonly] 
 

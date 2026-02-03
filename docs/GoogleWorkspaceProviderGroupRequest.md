@@ -7,7 +7,7 @@ GoogleWorkspaceProviderGroup Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **google_id** | **str** |  | 
-**group** | **str** |  | 
+**group** | **UUID** |  | 
 **provider** | **int** |  | 
 
 ## Example

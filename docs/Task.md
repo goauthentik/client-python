@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message_id** | **str** |  | [optional] 
+**message_id** | **UUID** |  | [optional] 
 **queue_name** | **str** | Queue name | [optional] 
 **actor_name** | **str** | Dramatiq actor name | 
 **state** | [**StateEnum**](StateEnum.md) | Task status | [optional] 

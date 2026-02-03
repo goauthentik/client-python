@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [readonly] 
 **domain** | **str** |  | 
 **is_primary** | **bool** |  | [optional] 
-**tenant** | **str** |  | 
+**tenant** | **UUID** |  | 
 
 ## Example
 

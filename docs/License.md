@@ -6,7 +6,7 @@ License Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**license_uuid** | **str** |  | [readonly] 
+**license_uuid** | **UUID** |  | [readonly] 
 **name** | **str** |  | [readonly] 
 **key** | **str** |  | 
 **expiry** | **datetime** |  | [readonly] 

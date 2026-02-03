@@ -6,7 +6,7 @@ Reputation Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [optional] 
+**pk** | **UUID** |  | [optional] 
 **identifier** | **str** |  | 
 **ip** | **str** |  | 
 **ip_geo_data** | **Dict[str, object]** |  | [optional] 

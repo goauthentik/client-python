@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**events_events_actions_list**](EventsApi.md#events_events_actions_list) | **GET** /events/events/actions/ | 
 [**events_events_create**](EventsApi.md#events_events_create) | **POST** /events/events/ | 
 [**events_events_destroy**](EventsApi.md#events_events_destroy) | **DELETE** /events/events/{event_uuid}/ | 
+[**events_events_export_create**](EventsApi.md#events_events_export_create) | **POST** /events/events/export/ | 
 [**events_events_list**](EventsApi.md#events_events_list) | **GET** /events/events/ | 
 [**events_events_partial_update**](EventsApi.md#events_events_partial_update) | **PATCH** /events/events/{event_uuid}/ | 
 [**events_events_retrieve**](EventsApi.md#events_events_retrieve) | **GET** /events/events/{event_uuid}/ | 
@@ -222,7 +223,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    event_uuid = 'event_uuid_example' # str | A UUID string identifying this Event.
+    event_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event.
 
     try:
         api_instance.events_events_destroy(event_uuid)
@@ -237,7 +238,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_uuid** | **str**| A UUID string identifying this Event. | 
+ **event_uuid** | **UUID**| A UUID string identifying this Event. | 
 
 ### Return type
 
@@ -257,6 +258,107 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **events_events_export_create**
+> DataExport events_events_export_create(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, search=search, username=username)
+
+Create a data export for this data type. Note that the export is generated asynchronously:
+this method returns a `DataExport` object that will initially have `completed=false` as well
+as the permanent URL to that object in the `Location` header.
+You can poll that URL until `completed=true`, at which point the `file_url` property will
+contain a URL to download
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.data_export import DataExport
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EventsApi(api_client)
+    action = 'action_example' # str |  (optional)
+    actions = ['actions_example'] # List[str] |  (optional)
+    brand_name = 'brand_name_example' # str | Brand name (optional)
+    client_ip = 'client_ip_example' # str |  (optional)
+    context_authorized_app = 'context_authorized_app_example' # str | Context Authorized application (optional)
+    context_model_app = 'context_model_app_example' # str | Context Model App (optional)
+    context_model_name = 'context_model_name_example' # str | Context Model Name (optional)
+    context_model_pk = 'context_model_pk_example' # str | Context Model Primary Key (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    search = 'search_example' # str | A search term. (optional)
+    username = 'username_example' # str | Username (optional)
+
+    try:
+        api_response = api_instance.events_events_export_create(action=action, actions=actions, brand_name=brand_name, client_ip=client_ip, context_authorized_app=context_authorized_app, context_model_app=context_model_app, context_model_name=context_model_name, context_model_pk=context_model_pk, ordering=ordering, search=search, username=username)
+        print("The response of EventsApi->events_events_export_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->events_events_export_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **action** | **str**|  | [optional] 
+ **actions** | [**List[str]**](str.md)|  | [optional] 
+ **brand_name** | **str**| Brand name | [optional] 
+ **client_ip** | **str**|  | [optional] 
+ **context_authorized_app** | **str**| Context Authorized application | [optional] 
+ **context_model_app** | **str**| Context Model App | [optional] 
+ **context_model_name** | **str**| Context Model Name | [optional] 
+ **context_model_pk** | **str**| Context Model Primary Key | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **username** | **str**| Username | [optional] 
+
+### Return type
+
+[**DataExport**](DataExport.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 
@@ -399,7 +501,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    event_uuid = 'event_uuid_example' # str | A UUID string identifying this Event.
+    event_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event.
     patched_event_request = authentik_client.PatchedEventRequest() # PatchedEventRequest |  (optional)
 
     try:
@@ -417,7 +519,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_uuid** | **str**| A UUID string identifying this Event. | 
+ **event_uuid** | **UUID**| A UUID string identifying this Event. | 
  **patched_event_request** | [**PatchedEventRequest**](PatchedEventRequest.md)|  | [optional] 
 
 ### Return type
@@ -478,7 +580,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    event_uuid = 'event_uuid_example' # str | A UUID string identifying this Event.
+    event_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event.
 
     try:
         api_response = api_instance.events_events_retrieve(event_uuid)
@@ -495,7 +597,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_uuid** | **str**| A UUID string identifying this Event. | 
+ **event_uuid** | **UUID**| A UUID string identifying this Event. | 
 
 ### Return type
 
@@ -635,7 +737,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    event_uuid = 'event_uuid_example' # str | A UUID string identifying this Event.
+    event_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Event.
     event_request = authentik_client.EventRequest() # EventRequest | 
 
     try:
@@ -653,7 +755,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_uuid** | **str**| A UUID string identifying this Event. | 
+ **event_uuid** | **UUID**| A UUID string identifying this Event. | 
  **event_request** | [**EventRequest**](EventRequest.md)|  | 
 
 ### Return type
@@ -812,7 +914,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification.
 
     try:
         api_instance.events_notifications_destroy(uuid)
@@ -827,7 +929,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification. | 
 
 ### Return type
 
@@ -889,7 +991,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.EventsApi(api_client)
     body = 'body_example' # str |  (optional)
     created = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    event = 'event_example' # str |  (optional)
+    event = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
@@ -915,7 +1017,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **str**|  | [optional] 
  **created** | **datetime**|  | [optional] 
- **event** | **str**|  | [optional] 
+ **event** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
@@ -1053,7 +1155,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification.
     patched_notification_request = authentik_client.PatchedNotificationRequest() # PatchedNotificationRequest |  (optional)
 
     try:
@@ -1071,7 +1173,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification. | 
  **patched_notification_request** | [**PatchedNotificationRequest**](PatchedNotificationRequest.md)|  | [optional] 
 
 ### Return type
@@ -1132,7 +1234,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification.
 
     try:
         api_response = api_instance.events_notifications_retrieve(uuid)
@@ -1149,7 +1251,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification. | 
 
 ### Return type
 
@@ -1210,7 +1312,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification.
     notification_request = authentik_client.NotificationRequest() # NotificationRequest |  (optional)
 
     try:
@@ -1228,7 +1330,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification. | 
  **notification_request** | [**NotificationRequest**](NotificationRequest.md)|  | [optional] 
 
 ### Return type
@@ -1289,7 +1391,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification.
 
     try:
         api_response = api_instance.events_notifications_used_by_list(uuid)
@@ -1306,7 +1408,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification. | 
 
 ### Return type
 
@@ -1443,7 +1545,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Notification Rule.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Rule.
 
     try:
         api_instance.events_rules_destroy(pbm_uuid)
@@ -1458,7 +1560,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Notification Rule. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Notification Rule. | 
 
 ### Return type
 
@@ -1608,7 +1710,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Notification Rule.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Rule.
     patched_notification_rule_request = authentik_client.PatchedNotificationRuleRequest() # PatchedNotificationRuleRequest |  (optional)
 
     try:
@@ -1626,7 +1728,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Notification Rule. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Notification Rule. | 
  **patched_notification_rule_request** | [**PatchedNotificationRuleRequest**](PatchedNotificationRuleRequest.md)|  | [optional] 
 
 ### Return type
@@ -1687,7 +1789,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Notification Rule.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Rule.
 
     try:
         api_response = api_instance.events_rules_retrieve(pbm_uuid)
@@ -1704,7 +1806,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Notification Rule. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Notification Rule. | 
 
 ### Return type
 
@@ -1765,7 +1867,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Notification Rule.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Rule.
     notification_rule_request = authentik_client.NotificationRuleRequest() # NotificationRuleRequest | 
 
     try:
@@ -1783,7 +1885,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Notification Rule. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Notification Rule. | 
  **notification_rule_request** | [**NotificationRuleRequest**](NotificationRuleRequest.md)|  | 
 
 ### Return type
@@ -1844,7 +1946,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    pbm_uuid = 'pbm_uuid_example' # str | A UUID string identifying this Notification Rule.
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Rule.
 
     try:
         api_response = api_instance.events_rules_used_by_list(pbm_uuid)
@@ -1861,7 +1963,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pbm_uuid** | **str**| A UUID string identifying this Notification Rule. | 
+ **pbm_uuid** | **UUID**| A UUID string identifying this Notification Rule. | 
 
 ### Return type
 
@@ -1998,7 +2100,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification Transport.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Transport.
 
     try:
         api_instance.events_transports_destroy(uuid)
@@ -2013,7 +2115,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification Transport. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification Transport. | 
 
 ### Return type
 
@@ -2165,7 +2267,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification Transport.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Transport.
     patched_notification_transport_request = authentik_client.PatchedNotificationTransportRequest() # PatchedNotificationTransportRequest |  (optional)
 
     try:
@@ -2183,7 +2285,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification Transport. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification Transport. | 
  **patched_notification_transport_request** | [**PatchedNotificationTransportRequest**](PatchedNotificationTransportRequest.md)|  | [optional] 
 
 ### Return type
@@ -2244,7 +2346,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification Transport.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Transport.
 
     try:
         api_response = api_instance.events_transports_retrieve(uuid)
@@ -2261,7 +2363,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification Transport. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification Transport. | 
 
 ### Return type
 
@@ -2322,7 +2424,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification Transport.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Transport.
 
     try:
         api_response = api_instance.events_transports_test_create(uuid)
@@ -2339,7 +2441,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification Transport. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification Transport. | 
 
 ### Return type
 
@@ -2401,7 +2503,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification Transport.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Transport.
     notification_transport_request = authentik_client.NotificationTransportRequest() # NotificationTransportRequest | 
 
     try:
@@ -2419,7 +2521,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification Transport. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification Transport. | 
  **notification_transport_request** | [**NotificationTransportRequest**](NotificationTransportRequest.md)|  | 
 
 ### Return type
@@ -2480,7 +2582,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EventsApi(api_client)
-    uuid = 'uuid_example' # str | A UUID string identifying this Notification Transport.
+    uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Notification Transport.
 
     try:
         api_response = api_instance.events_transports_used_by_list(uuid)
@@ -2497,7 +2599,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| A UUID string identifying this Notification Transport. | 
+ **uuid** | **UUID**| A UUID string identifying this Notification Transport. | 
 
 ### Return type
 

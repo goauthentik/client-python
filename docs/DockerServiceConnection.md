@@ -6,7 +6,7 @@ DockerServiceConnection Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **local** | **bool** | If enabled, use the local connection. Required Docker socket/Kubernetes Integration | [optional] 
 **component** | **str** |  | [readonly] 
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
 **url** | **str** | Can be in the format of &#39;unix://&lt;path&gt;&#39; when connecting to a local docker daemon, or &#39;https://&lt;hostname&gt;:2376&#39; when connecting to a remote system. | 
-**tls_verification** | **str** | CA which the endpoint&#39;s Certificate is verified against. Can be left empty for no validation. | [optional] 
-**tls_authentication** | **str** | Certificate/Key used for authentication. Can be left empty for no authentication. | [optional] 
+**tls_verification** | **UUID** | CA which the endpoint&#39;s Certificate is verified against. Can be left empty for no validation. | [optional] 
+**tls_authentication** | **UUID** | Certificate/Key used for authentication. Can be left empty for no authentication. | [optional] 
 
 ## Example
 

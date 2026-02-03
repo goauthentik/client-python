@@ -6,7 +6,7 @@ Brand Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**brand_uuid** | **str** |  | [readonly] 
+**brand_uuid** | **UUID** |  | [readonly] 
 **domain** | **str** | Domain that activates this brand. Can be a superset, i.e. &#x60;a.b&#x60; for &#x60;aa.b&#x60; and &#x60;ba.b&#x60; | 
 **default** | **bool** |  | [optional] 
 **branding_title** | **str** |  | [optional] 
@@ -14,15 +14,15 @@ Name | Type | Description | Notes
 **branding_favicon** | **str** |  | [optional] 
 **branding_custom_css** | **str** |  | [optional] 
 **branding_default_flow_background** | **str** |  | [optional] 
-**flow_authentication** | **str** |  | [optional] 
-**flow_invalidation** | **str** |  | [optional] 
-**flow_recovery** | **str** |  | [optional] 
-**flow_unenrollment** | **str** |  | [optional] 
-**flow_user_settings** | **str** |  | [optional] 
-**flow_device_code** | **str** |  | [optional] 
-**default_application** | **str** | When set, external users will be redirected to this application after authenticating. | [optional] 
-**web_certificate** | **str** | Web Certificate used by the authentik Core webserver. | [optional] 
-**client_certificates** | **List[str]** | Certificates used for client authentication. | [optional] 
+**flow_authentication** | **UUID** |  | [optional] 
+**flow_invalidation** | **UUID** |  | [optional] 
+**flow_recovery** | **UUID** |  | [optional] 
+**flow_unenrollment** | **UUID** |  | [optional] 
+**flow_user_settings** | **UUID** |  | [optional] 
+**flow_device_code** | **UUID** |  | [optional] 
+**default_application** | **UUID** | When set, external users will be redirected to this application after authenticating. | [optional] 
+**web_certificate** | **UUID** | Web Certificate used by the authentik Core webserver. | [optional] 
+**client_certificates** | **List[UUID]** | Certificates used for client authentication. | [optional] 
 **attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example

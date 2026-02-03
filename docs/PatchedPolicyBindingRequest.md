@@ -6,10 +6,10 @@ PolicyBinding Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**policy** | **str** |  | [optional] 
-**group** | **str** |  | [optional] 
+**policy** | **UUID** |  | [optional] 
+**group** | **UUID** |  | [optional] 
 **user** | **int** |  | [optional] 
-**target** | **str** |  | [optional] 
+**target** | **UUID** |  | [optional] 
 **negate** | **bool** | Negates the outcome of the policy. Messages are unaffected. | [optional] 
 **enabled** | **bool** |  | [optional] 
 **order** | **int** |  | [optional] 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **bind_flow_slug** | **str** |  | 
 **unbind_flow_slug** | **str** | Get slug for unbind flow, defaulting to brand&#39;s default flow. | [readonly] 
 **application_slug** | **str** | Prioritise backchannel slug over direct application slug | [readonly] 
-**certificate** | **str** |  | [optional] 
+**certificate** | **UUID** |  | [optional] 
 **tls_server_name** | **str** |  | [optional] 
 **uid_start_number** | **int** | The start for uidNumbers, this number is added to the user.pk to make sure that the numbers aren&#39;t too low for POSIX users. Default is 2000 to ensure that we don&#39;t collide with local users uidNumber | [optional] 
 **gid_start_number** | **int** | The start for gidNumbers, this number is added to a number generated from the group.pk to make sure that the numbers aren&#39;t too low for POSIX groups. Default is 4000 to ensure that we don&#39;t collide with local groups or users primary groups gidNumber | [optional] 

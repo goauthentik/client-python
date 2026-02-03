@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **model_name** | **str** |  | 
 **icon_url** | **str** |  | [optional] 
 **requires_enterprise** | **bool** |  | [optional] [default to False]
+**deprecated** | **bool** |  | [optional] [default to False]
 
 ## Example
 

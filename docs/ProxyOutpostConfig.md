@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **client_secret** | **str** |  | [optional] 
 **oidc_configuration** | [**OpenIDConnectConfiguration**](OpenIDConnectConfiguration.md) |  | [readonly] 
 **cookie_secret** | **str** |  | [optional] 
-**certificate** | **str** |  | [optional] 
+**certificate** | **UUID** |  | [optional] 
 **skip_path_regex** | **str** | Regular expressions for which authentication is not required. Each new line is interpreted as a new Regular Expression. | [optional] 
 **basic_auth_enabled** | **bool** | Set a custom HTTP-Basic Authentication header based on values from authentik. | [optional] 
 **basic_auth_password_attribute** | **str** | User/Group Attribute used for the password part of the HTTP-Basic Header. | [optional] 

@@ -6,9 +6,9 @@ SCIMProviderGroup Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [readonly] 
+**id** | **UUID** |  | [readonly] 
 **scim_id** | **str** |  | 
-**group** | **str** |  | 
+**group** | **UUID** |  | 
 **group_obj** | [**PartialGroup**](PartialGroup.md) |  | [readonly] 
 **provider** | **int** |  | 
 **attributes** | **Dict[str, object]** |  | [readonly] 

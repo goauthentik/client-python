@@ -1,13 +1,17 @@
 # EndpointDeviceRequest
 
-Serializer for Endpoint authenticator devices
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [optional] 
-**name** | **str** | The human-readable name of this device. | 
+**device_uuid** | **UUID** |  | [optional] 
+**name** | **str** |  | 
+**access_group** | **UUID** |  | [optional] 
+**access_group_obj** | [**DeviceAccessGroupRequest**](DeviceAccessGroupRequest.md) |  | [optional] 
+**expiring** | **bool** |  | [optional] 
+**expires** | **datetime** |  | [optional] 
+**attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **external_id** | **str** |  | 
 **user** | **int** |  | 
-**source** | **str** |  | 
+**source** | **UUID** |  | 
 **attributes** | **Dict[str, object]** |  | [optional] 
 
 ## Example

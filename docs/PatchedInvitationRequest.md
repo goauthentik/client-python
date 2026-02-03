@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **expires** | **datetime** |  | [optional] 
 **fixed_data** | **Dict[str, object]** |  | [optional] 
 **single_use** | **bool** | When enabled, the invitation will be deleted after usage. | [optional] 
-**flow** | **str** | When set, only the configured flow can use this invitation. | [optional] 
+**flow** | **UUID** | When set, only the configured flow can use this invitation. | [optional] 
 
 ## Example
 

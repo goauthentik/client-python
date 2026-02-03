@@ -25,8 +25,6 @@ Method | HTTP request | Description
 [**flows_instances_list**](FlowsApi.md#flows_instances_list) | **GET** /flows/instances/ | 
 [**flows_instances_partial_update**](FlowsApi.md#flows_instances_partial_update) | **PATCH** /flows/instances/{slug}/ | 
 [**flows_instances_retrieve**](FlowsApi.md#flows_instances_retrieve) | **GET** /flows/instances/{slug}/ | 
-[**flows_instances_set_background_create**](FlowsApi.md#flows_instances_set_background_create) | **POST** /flows/instances/{slug}/set_background/ | 
-[**flows_instances_set_background_url_create**](FlowsApi.md#flows_instances_set_background_url_create) | **POST** /flows/instances/{slug}/set_background_url/ | 
 [**flows_instances_update**](FlowsApi.md#flows_instances_update) | **PUT** /flows/instances/{slug}/ | 
 [**flows_instances_used_by_list**](FlowsApi.md#flows_instances_used_by_list) | **GET** /flows/instances/{slug}/used_by/ | 
 
@@ -143,7 +141,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.FlowsApi(api_client)
-    fsb_uuid = 'fsb_uuid_example' # str | A UUID string identifying this Flow Stage Binding.
+    fsb_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Flow Stage Binding.
 
     try:
         api_instance.flows_bindings_destroy(fsb_uuid)
@@ -158,7 +156,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fsb_uuid** | **str**| A UUID string identifying this Flow Stage Binding. | 
+ **fsb_uuid** | **UUID**| A UUID string identifying this Flow Stage Binding. | 
 
 ### Return type
 
@@ -219,19 +217,19 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.FlowsApi(api_client)
     evaluate_on_plan = True # bool |  (optional)
-    fsb_uuid = 'fsb_uuid_example' # str |  (optional)
+    fsb_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     invalid_response_action = 'invalid_response_action_example' # str | Configure how the flow executor should handle an invalid response to a challenge. RETRY returns the error message and a similar challenge to the executor. RESTART restarts the flow from the beginning, and RESTART_WITH_CONTEXT restarts the flow while keeping the current context.   (optional)
     order = 56 # int |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    pbm_uuid = 'pbm_uuid_example' # str |  (optional)
-    policies = ['policies_example'] # List[str] |  (optional)
+    pbm_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    policies = None # List[UUID] |  (optional)
     policy_engine_mode = 'policy_engine_mode_example' # str |  (optional)
     re_evaluate_policies = True # bool |  (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage = 'stage_example' # str |  (optional)
-    target = 'target_example' # str |  (optional)
+    stage = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    target = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.flows_bindings_list(evaluate_on_plan=evaluate_on_plan, fsb_uuid=fsb_uuid, invalid_response_action=invalid_response_action, order=order, ordering=ordering, page=page, page_size=page_size, pbm_uuid=pbm_uuid, policies=policies, policy_engine_mode=policy_engine_mode, re_evaluate_policies=re_evaluate_policies, search=search, stage=stage, target=target)
@@ -249,19 +247,19 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **evaluate_on_plan** | **bool**|  | [optional] 
- **fsb_uuid** | **str**|  | [optional] 
+ **fsb_uuid** | **UUID**|  | [optional] 
  **invalid_response_action** | **str**| Configure how the flow executor should handle an invalid response to a challenge. RETRY returns the error message and a similar challenge to the executor. RESTART restarts the flow from the beginning, and RESTART_WITH_CONTEXT restarts the flow while keeping the current context.   | [optional] 
  **order** | **int**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **pbm_uuid** | **str**|  | [optional] 
- **policies** | [**List[str]**](str.md)|  | [optional] 
+ **pbm_uuid** | **UUID**|  | [optional] 
+ **policies** | [**List[UUID]**](UUID.md)|  | [optional] 
  **policy_engine_mode** | **str**|  | [optional] 
  **re_evaluate_policies** | **bool**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage** | **str**|  | [optional] 
- **target** | **str**|  | [optional] 
+ **stage** | **UUID**|  | [optional] 
+ **target** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -322,7 +320,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.FlowsApi(api_client)
-    fsb_uuid = 'fsb_uuid_example' # str | A UUID string identifying this Flow Stage Binding.
+    fsb_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Flow Stage Binding.
     patched_flow_stage_binding_request = authentik_client.PatchedFlowStageBindingRequest() # PatchedFlowStageBindingRequest |  (optional)
 
     try:
@@ -340,7 +338,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fsb_uuid** | **str**| A UUID string identifying this Flow Stage Binding. | 
+ **fsb_uuid** | **UUID**| A UUID string identifying this Flow Stage Binding. | 
  **patched_flow_stage_binding_request** | [**PatchedFlowStageBindingRequest**](PatchedFlowStageBindingRequest.md)|  | [optional] 
 
 ### Return type
@@ -401,7 +399,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.FlowsApi(api_client)
-    fsb_uuid = 'fsb_uuid_example' # str | A UUID string identifying this Flow Stage Binding.
+    fsb_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Flow Stage Binding.
 
     try:
         api_response = api_instance.flows_bindings_retrieve(fsb_uuid)
@@ -418,7 +416,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fsb_uuid** | **str**| A UUID string identifying this Flow Stage Binding. | 
+ **fsb_uuid** | **UUID**| A UUID string identifying this Flow Stage Binding. | 
 
 ### Return type
 
@@ -479,7 +477,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.FlowsApi(api_client)
-    fsb_uuid = 'fsb_uuid_example' # str | A UUID string identifying this Flow Stage Binding.
+    fsb_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Flow Stage Binding.
     flow_stage_binding_request = authentik_client.FlowStageBindingRequest() # FlowStageBindingRequest | 
 
     try:
@@ -497,7 +495,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fsb_uuid** | **str**| A UUID string identifying this Flow Stage Binding. | 
+ **fsb_uuid** | **UUID**| A UUID string identifying this Flow Stage Binding. | 
  **flow_stage_binding_request** | [**FlowStageBindingRequest**](FlowStageBindingRequest.md)|  | 
 
 ### Return type
@@ -558,7 +556,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.FlowsApi(api_client)
-    fsb_uuid = 'fsb_uuid_example' # str | A UUID string identifying this Flow Stage Binding.
+    fsb_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Flow Stage Binding.
 
     try:
         api_response = api_instance.flows_bindings_used_by_list(fsb_uuid)
@@ -575,7 +573,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fsb_uuid** | **str**| A UUID string identifying this Flow Stage Binding. | 
+ **fsb_uuid** | **UUID**| A UUID string identifying this Flow Stage Binding. | 
 
 ### Return type
 
@@ -1479,7 +1477,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.FlowsApi(api_client)
     denied_action = 'denied_action_example' # str | Configure what should happen when a flow denies access to a user.   (optional)
     designation = 'designation_example' # str | Decides what this Flow is used for. For example, the Authentication flow is redirect to when an un-authenticated user visits authentik.   (optional)
-    flow_uuid = 'flow_uuid_example' # str |  (optional)
+    flow_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -1504,7 +1502,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **denied_action** | **str**| Configure what should happen when a flow denies access to a user.   | [optional] 
  **designation** | **str**| Decides what this Flow is used for. For example, the Authentication flow is redirect to when an un-authenticated user visits authentik.   | [optional] 
- **flow_uuid** | **str**|  | [optional] 
+ **flow_uuid** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -1688,161 +1686,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** |  |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **flows_instances_set_background_create**
-> flows_instances_set_background_create(slug, file=file, clear=clear)
-
-Set Flow background
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.FlowsApi(api_client)
-    slug = 'slug_example' # str | 
-    file = None # bytearray |  (optional)
-    clear = False # bool |  (optional) (default to False)
-
-    try:
-        api_instance.flows_instances_set_background_create(slug, file=file, clear=clear)
-    except Exception as e:
-        print("Exception when calling FlowsApi->flows_instances_set_background_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file** | **bytearray**|  | [optional] 
- **clear** | **bool**|  | [optional] [default to False]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
-**403** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **flows_instances_set_background_url_create**
-> flows_instances_set_background_url_create(slug, file_path_request)
-
-Set Flow background (as URL)
-
-### Example
-
-* Bearer Authentication (authentik):
-
-```python
-import authentik_client
-from authentik_client.models.file_path_request import FilePathRequest
-from authentik_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = authentik_client.Configuration(
-    host = "/api/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authentik
-configuration = authentik_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with authentik_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = authentik_client.FlowsApi(api_client)
-    slug = 'slug_example' # str | 
-    file_path_request = authentik_client.FilePathRequest() # FilePathRequest | 
-
-    try:
-        api_instance.flows_instances_set_background_url_create(slug, file_path_request)
-    except Exception as e:
-        print("Exception when calling FlowsApi->flows_instances_set_background_url_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **str**|  | 
- **file_path_request** | [**FilePathRequest**](FilePathRequest.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad request |  -  |
 **403** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

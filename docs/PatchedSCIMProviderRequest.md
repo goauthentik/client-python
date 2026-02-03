@@ -7,17 +7,20 @@ SCIMProvider Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**property_mappings** | **List[str]** |  | [optional] 
-**property_mappings_group** | **List[str]** | Property mappings used for group creation/updating. | [optional] 
+**property_mappings** | **List[UUID]** |  | [optional] 
+**property_mappings_group** | **List[UUID]** | Property mappings used for group creation/updating. | [optional] 
 **url** | **str** | Base URL to SCIM requests, usually ends in /v2 | [optional] 
 **verify_certificates** | **bool** |  | [optional] 
 **token** | **str** | Authentication token | [optional] 
 **auth_mode** | [**SCIMAuthenticationModeEnum**](SCIMAuthenticationModeEnum.md) |  | [optional] 
-**auth_oauth** | **str** | OAuth Source used for authentication | [optional] 
+**auth_oauth** | **UUID** | OAuth Source used for authentication | [optional] 
 **auth_oauth_params** | **Dict[str, object]** | Additional OAuth parameters, such as grant_type | [optional] 
 **compatibility_mode** | [**CompatibilityModeEnum**](CompatibilityModeEnum.md) | Alter authentik behavior for vendor-specific SCIM implementations. | [optional] 
+**service_provider_config_cache_timeout** | **str** | Cache duration for ServiceProviderConfig responses. Set minutes&#x3D;0 to disable. | [optional] 
 **exclude_users_service_account** | **bool** |  | [optional] 
-**filter_group** | **str** |  | [optional] 
+**sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
+**sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
+**group_filters** | **List[UUID]** | Group filters used to define sync-scope for groups. | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 
 ## Example

@@ -7,10 +7,10 @@ OAuth2Provider Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
-**authorization_flow** | **str** | Flow used when authorizing this provider. | [optional] 
-**invalidation_flow** | **str** | Flow used ending the session from a provider. | [optional] 
-**property_mappings** | **List[str]** |  | [optional] 
+**authentication_flow** | **UUID** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
+**authorization_flow** | **UUID** | Flow used when authorizing this provider. | [optional] 
+**invalidation_flow** | **UUID** | Flow used ending the session from a provider. | [optional] 
+**property_mappings** | **List[UUID]** |  | [optional] 
 **client_type** | [**ClientTypeEnum**](ClientTypeEnum.md) | Confidential clients are capable of maintaining the confidentiality of their credentials. Public clients are incapable | [optional] 
 **client_id** | **str** |  | [optional] 
 **client_secret** | **str** |  | [optional] 
@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **refresh_token_validity** | **str** | Tokens not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **refresh_token_threshold** | **str** | When refreshing a token, if the refresh token is valid for less than this duration, it will be renewed. When set to seconds&#x3D;0, token will always be renewed. (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **include_claims_in_id_token** | **bool** | Include User claims from scopes in the id_token, for applications that don&#39;t access the userinfo endpoint. | [optional] 
-**signing_key** | **str** | Key used to sign the tokens. | [optional] 
-**encryption_key** | **str** | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional] 
+**signing_key** | **UUID** | Key used to sign the tokens. | [optional] 
+**encryption_key** | **UUID** | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional] 
 **redirect_uris** | [**List[RedirectURIRequest]**](RedirectURIRequest.md) |  | [optional] 
 **logout_uri** | **str** |  | [optional] 
 **logout_method** | [**OAuth2ProviderLogoutMethodEnum**](OAuth2ProviderLogoutMethodEnum.md) | Backchannel logs out with server to server calls. Frontchannel uses iframes in your browser | [optional] 
 **sub_mode** | [**SubModeEnum**](SubModeEnum.md) | Configure what data should be used as unique User Identifier. For most cases, the default should be fine. | [optional] 
 **issuer_mode** | [**IssuerModeEnum**](IssuerModeEnum.md) | Configure how the issuer field of the ID Token should be filled. | [optional] 
-**jwt_federation_sources** | **List[str]** |  | [optional] 
+**jwt_federation_sources** | **List[UUID]** |  | [optional] 
 **jwt_federation_providers** | **List[int]** |  | [optional] 
 
 ## Example

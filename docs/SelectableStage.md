@@ -6,7 +6,7 @@ Serializer for stages which can be selected by users
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | 
+**pk** | **UUID** |  | 
 **name** | **str** |  | 
 **verbose_name** | **str** |  | 
 **meta_model_name** | **str** |  | 

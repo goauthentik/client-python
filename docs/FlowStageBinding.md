@@ -6,10 +6,10 @@ FlowStageBinding Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
-**policybindingmodel_ptr_id** | **str** |  | [readonly] 
-**target** | **str** |  | 
-**stage** | **str** |  | 
+**pk** | **UUID** |  | [readonly] 
+**policybindingmodel_ptr_id** | **UUID** |  | [readonly] 
+**target** | **UUID** |  | 
+**stage** | **UUID** |  | 
 **stage_obj** | [**Stage**](Stage.md) |  | [readonly] 
 **evaluate_on_plan** | **bool** | Evaluate policies during the Flow planning process. | [optional] 
 **re_evaluate_policies** | **bool** | Evaluate policies when the Stage is presented to the user. | [optional] 

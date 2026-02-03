@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | **int** |  | [optional] 
 **context** | **Dict[str, object]** |  | [optional] 
-**group** | **str** |  | [optional] 
+**group** | **UUID** |  | [optional] 
 
 ## Example
 

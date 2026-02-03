@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **component** | **str** |  | [optional] [default to 'ak-stage-identification']
 **response_errors** | **Dict[str, List[ErrorDetail]]** |  | [optional] 
 **user_fields** | **List[str]** |  | 
+**pending_user_identifier** | **str** |  | [optional] 
 **password_fields** | **bool** |  | 
 **allow_show_password** | **bool** |  | [optional] [default to False]
 **application_pre** | **str** |  | [optional] 
@@ -22,6 +23,7 @@ Name | Type | Description | Notes
 **sources** | [**List[LoginSource]**](LoginSource.md) |  | [optional] 
 **show_source_labels** | **bool** |  | 
 **enable_remember_me** | **bool** |  | [optional] [default to True]
+**passkey_challenge** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

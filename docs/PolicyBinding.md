@@ -6,14 +6,14 @@ PolicyBinding Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
-**policy** | **str** |  | [optional] 
-**group** | **str** |  | [optional] 
+**pk** | **UUID** |  | [readonly] 
+**policy** | **UUID** |  | [optional] 
+**group** | **UUID** |  | [optional] 
 **user** | **int** |  | [optional] 
 **policy_obj** | [**Policy**](Policy.md) |  | [readonly] 
 **group_obj** | [**PartialGroup**](PartialGroup.md) |  | [readonly] 
 **user_obj** | [**PartialUser**](PartialUser.md) |  | [readonly] 
-**target** | **str** |  | 
+**target** | **UUID** |  | 
 **negate** | **bool** | Negates the outcome of the policy. Messages are unaffected. | [optional] 
 **enabled** | **bool** |  | [optional] 
 **order** | **int** |  | 

@@ -6,8 +6,8 @@ PolicyBindingSerializer which does not require target as target is set implicitl
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**policy** | **str** |  | [optional] 
-**group** | **str** |  | [optional] 
+**policy** | **UUID** |  | [optional] 
+**group** | **UUID** |  | [optional] 
 **user** | **int** |  | [optional] 
 **negate** | **bool** | Negates the outcome of the policy. Messages are unaffected. | [optional] 
 **enabled** | **bool** |  | [optional] 

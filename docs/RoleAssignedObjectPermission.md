@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **role_pk** | **str** |  | [readonly] 
 **name** | **str** |  | [readonly] 
-**permissions** | [**List[RoleObjectPermission]**](RoleObjectPermission.md) |  | 
+**object_permissions** | [**List[RoleObjectPermission]**](RoleObjectPermission.md) |  | 
+**model_permissions** | [**List[RoleModelPermission]**](RoleModelPermission.md) |  | 
 
 ## Example
 

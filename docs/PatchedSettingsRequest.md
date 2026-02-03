@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **impersonation_require_reason** | **bool** | Require administrators to provide a reason for impersonating a user. | [optional] 
 **default_token_duration** | **str** | Default token duration | [optional] 
 **default_token_length** | **int** | Default token length | [optional] 
+**pagination_default_page_size** | **int** | Default page size for API responses, if no size was requested. | [optional] 
+**pagination_max_page_size** | **int** | Maximum page size | [optional] 
 **flags** | [**PatchedSettingsRequestFlags**](PatchedSettingsRequestFlags.md) |  | [optional] 
 
 ## Example

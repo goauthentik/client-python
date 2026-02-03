@@ -6,15 +6,15 @@ MutualTLSStage Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | **str** |  | [readonly] 
+**pk** | **UUID** |  | [readonly] 
 **name** | **str** |  | 
 **component** | **str** | Get object type so that we know how to edit the object | [readonly] 
 **verbose_name** | **str** | Return object&#39;s verbose_name | [readonly] 
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
-**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [optional] 
-**mode** | [**MutualTLSStageModeEnum**](MutualTLSStageModeEnum.md) |  | 
-**certificate_authorities** | **List[str]** | Configure certificate authorities to validate the certificate against. This option has a higher priority than the &#x60;client_certificate&#x60; option on &#x60;Brand&#x60;. | [optional] 
+**flow_set** | [**List[FlowSet]**](FlowSet.md) |  | [readonly] 
+**mode** | [**StageModeEnum**](StageModeEnum.md) |  | 
+**certificate_authorities** | **List[UUID]** | Configure certificate authorities to validate the certificate against. This option has a higher priority than the &#x60;client_certificate&#x60; option on &#x60;Brand&#x60;. | [optional] 
 **cert_attribute** | [**CertAttributeEnum**](CertAttributeEnum.md) |  | 
 **user_attribute** | [**UserAttributeEnum**](UserAttributeEnum.md) |  | 
 

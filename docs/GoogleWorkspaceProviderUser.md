@@ -6,7 +6,7 @@ GoogleWorkspaceProviderUser Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [readonly] 
+**id** | **UUID** |  | [readonly] 
 **google_id** | **str** |  | 
 **user** | **int** |  | 
 **user_obj** | [**PartialUser**](PartialUser.md) |  | [readonly] 

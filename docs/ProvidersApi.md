@@ -120,6 +120,15 @@ Method | HTTP request | Description
 [**providers_ssf_retrieve**](ProvidersApi.md#providers_ssf_retrieve) | **GET** /providers/ssf/{id}/ | 
 [**providers_ssf_update**](ProvidersApi.md#providers_ssf_update) | **PUT** /providers/ssf/{id}/ | 
 [**providers_ssf_used_by_list**](ProvidersApi.md#providers_ssf_used_by_list) | **GET** /providers/ssf/{id}/used_by/ | 
+[**providers_wsfed_create**](ProvidersApi.md#providers_wsfed_create) | **POST** /providers/wsfed/ | 
+[**providers_wsfed_destroy**](ProvidersApi.md#providers_wsfed_destroy) | **DELETE** /providers/wsfed/{id}/ | 
+[**providers_wsfed_list**](ProvidersApi.md#providers_wsfed_list) | **GET** /providers/wsfed/ | 
+[**providers_wsfed_metadata_retrieve**](ProvidersApi.md#providers_wsfed_metadata_retrieve) | **GET** /providers/wsfed/{id}/metadata/ | 
+[**providers_wsfed_partial_update**](ProvidersApi.md#providers_wsfed_partial_update) | **PATCH** /providers/wsfed/{id}/ | 
+[**providers_wsfed_preview_user_retrieve**](ProvidersApi.md#providers_wsfed_preview_user_retrieve) | **GET** /providers/wsfed/{id}/preview_user/ | 
+[**providers_wsfed_retrieve**](ProvidersApi.md#providers_wsfed_retrieve) | **GET** /providers/wsfed/{id}/ | 
+[**providers_wsfed_update**](ProvidersApi.md#providers_wsfed_update) | **PUT** /providers/wsfed/{id}/ | 
+[**providers_wsfed_used_by_list**](ProvidersApi.md#providers_wsfed_used_by_list) | **GET** /providers/wsfed/{id}/used_by/ | 
 
 
 # **providers_all_destroy**
@@ -774,7 +783,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Google Workspace Provider Group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider Group.
 
     try:
         api_instance.providers_google_workspace_groups_destroy(id)
@@ -789,7 +798,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Google Workspace Provider Group. | 
+ **id** | **UUID**| A UUID string identifying this Google Workspace Provider Group. | 
 
 ### Return type
 
@@ -849,7 +858,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    group__group_uuid = 'group__group_uuid_example' # str |  (optional)
+    group__group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     group__name = 'group__name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -872,7 +881,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group__group_uuid** | **str**|  | [optional] 
+ **group__group_uuid** | **UUID**|  | [optional] 
  **group__name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -938,7 +947,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Google Workspace Provider Group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider Group.
 
     try:
         api_response = api_instance.providers_google_workspace_groups_retrieve(id)
@@ -955,7 +964,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Google Workspace Provider Group. | 
+ **id** | **UUID**| A UUID string identifying this Google Workspace Provider Group. | 
 
 ### Return type
 
@@ -1015,7 +1024,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Google Workspace Provider Group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider Group.
 
     try:
         api_response = api_instance.providers_google_workspace_groups_used_by_list(id)
@@ -1032,7 +1041,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Google Workspace Provider Group. | 
+ **id** | **UUID**| A UUID string identifying this Google Workspace Provider Group. | 
 
 ### Return type
 
@@ -1094,7 +1103,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.ProvidersApi(api_client)
     delegated_subject = 'delegated_subject_example' # str |  (optional)
     exclude_users_service_account = True # bool |  (optional)
-    filter_group = 'filter_group_example' # str |  (optional)
+    filter_group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -1118,7 +1127,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegated_subject** | **str**|  | [optional] 
  **exclude_users_service_account** | **bool**|  | [optional] 
- **filter_group** | **str**|  | [optional] 
+ **filter_group** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -1731,7 +1740,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Google Workspace Provider User.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider User.
 
     try:
         api_instance.providers_google_workspace_users_destroy(id)
@@ -1746,7 +1755,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Google Workspace Provider User. | 
+ **id** | **UUID**| A UUID string identifying this Google Workspace Provider User. | 
 
 ### Return type
 
@@ -1895,7 +1904,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Google Workspace Provider User.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider User.
 
     try:
         api_response = api_instance.providers_google_workspace_users_retrieve(id)
@@ -1912,7 +1921,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Google Workspace Provider User. | 
+ **id** | **UUID**| A UUID string identifying this Google Workspace Provider User. | 
 
 ### Return type
 
@@ -1972,7 +1981,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Google Workspace Provider User.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Workspace Provider User.
 
     try:
         api_response = api_instance.providers_google_workspace_users_used_by_list(id)
@@ -1989,7 +1998,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Google Workspace Provider User. | 
+ **id** | **UUID**| A UUID string identifying this Google Workspace Provider User. | 
 
 ### Return type
 
@@ -2204,7 +2213,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     application__isnull = True # bool |  (optional)
     authorization_flow__slug__iexact = 'authorization_flow__slug__iexact_example' # str |  (optional)
     base_dn__iexact = 'base_dn__iexact_example' # str |  (optional)
-    certificate__kp_uuid__iexact = 'certificate__kp_uuid__iexact_example' # str |  (optional)
+    certificate__kp_uuid__iexact = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     certificate__name__iexact = 'certificate__name__iexact_example' # str |  (optional)
     gid_start_number__iexact = 56 # int |  (optional)
     name__iexact = 'name__iexact_example' # str |  (optional)
@@ -2233,7 +2242,7 @@ Name | Type | Description  | Notes
  **application__isnull** | **bool**|  | [optional] 
  **authorization_flow__slug__iexact** | **str**|  | [optional] 
  **base_dn__iexact** | **str**|  | [optional] 
- **certificate__kp_uuid__iexact** | **str**|  | [optional] 
+ **certificate__kp_uuid__iexact** | **UUID**|  | [optional] 
  **certificate__name__iexact** | **str**|  | [optional] 
  **gid_start_number__iexact** | **int**|  | [optional] 
  **name__iexact** | **str**|  | [optional] 
@@ -2845,7 +2854,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Microsoft Entra Provider Group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider Group.
 
     try:
         api_instance.providers_microsoft_entra_groups_destroy(id)
@@ -2860,7 +2869,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Microsoft Entra Provider Group. | 
+ **id** | **UUID**| A UUID string identifying this Microsoft Entra Provider Group. | 
 
 ### Return type
 
@@ -2920,7 +2929,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    group__group_uuid = 'group__group_uuid_example' # str |  (optional)
+    group__group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     group__name = 'group__name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -2943,7 +2952,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group__group_uuid** | **str**|  | [optional] 
+ **group__group_uuid** | **UUID**|  | [optional] 
  **group__name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -3009,7 +3018,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Microsoft Entra Provider Group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider Group.
 
     try:
         api_response = api_instance.providers_microsoft_entra_groups_retrieve(id)
@@ -3026,7 +3035,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Microsoft Entra Provider Group. | 
+ **id** | **UUID**| A UUID string identifying this Microsoft Entra Provider Group. | 
 
 ### Return type
 
@@ -3086,7 +3095,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Microsoft Entra Provider Group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider Group.
 
     try:
         api_response = api_instance.providers_microsoft_entra_groups_used_by_list(id)
@@ -3103,7 +3112,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Microsoft Entra Provider Group. | 
+ **id** | **UUID**| A UUID string identifying this Microsoft Entra Provider Group. | 
 
 ### Return type
 
@@ -3164,7 +3173,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
     exclude_users_service_account = True # bool |  (optional)
-    filter_group = 'filter_group_example' # str |  (optional)
+    filter_group = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -3187,7 +3196,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exclude_users_service_account** | **bool**|  | [optional] 
- **filter_group** | **str**|  | [optional] 
+ **filter_group** | **UUID**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -3800,7 +3809,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Microsoft Entra Provider User.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider User.
 
     try:
         api_instance.providers_microsoft_entra_users_destroy(id)
@@ -3815,7 +3824,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Microsoft Entra Provider User. | 
+ **id** | **UUID**| A UUID string identifying this Microsoft Entra Provider User. | 
 
 ### Return type
 
@@ -3964,7 +3973,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Microsoft Entra Provider User.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider User.
 
     try:
         api_response = api_instance.providers_microsoft_entra_users_retrieve(id)
@@ -3981,7 +3990,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Microsoft Entra Provider User. | 
+ **id** | **UUID**| A UUID string identifying this Microsoft Entra Provider User. | 
 
 ### Return type
 
@@ -4041,7 +4050,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this Microsoft Entra Provider User.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Microsoft Entra Provider User.
 
     try:
         api_response = api_instance.providers_microsoft_entra_users_used_by_list(id)
@@ -4058,7 +4067,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this Microsoft Entra Provider User. | 
+ **id** | **UUID**| A UUID string identifying this Microsoft Entra Provider User. | 
 
 ### Return type
 
@@ -4272,8 +4281,8 @@ with authentik_client.ApiClient(configuration) as api_client:
     api_instance = authentik_client.ProvidersApi(api_client)
     access_code_validity = 'access_code_validity_example' # str |  (optional)
     access_token_validity = 'access_token_validity_example' # str |  (optional)
-    application = 'application_example' # str |  (optional)
-    authorization_flow = 'authorization_flow_example' # str |  (optional)
+    application = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    authorization_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     client_id = 'client_id_example' # str |  (optional)
     client_type = 'client_type_example' # str | Confidential clients are capable of maintaining the confidentiality of their credentials. Public clients are incapable   (optional)
     include_claims_in_id_token = True # bool |  (optional)
@@ -4282,10 +4291,10 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    property_mappings = ['property_mappings_example'] # List[str] |  (optional)
+    property_mappings = None # List[UUID] |  (optional)
     refresh_token_validity = 'refresh_token_validity_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
-    signing_key = 'signing_key_example' # str |  (optional)
+    signing_key = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     sub_mode = 'sub_mode_example' # str | Configure what data should be used as unique User Identifier. For most cases, the default should be fine.   (optional)
 
     try:
@@ -4305,8 +4314,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_code_validity** | **str**|  | [optional] 
  **access_token_validity** | **str**|  | [optional] 
- **application** | **str**|  | [optional] 
- **authorization_flow** | **str**|  | [optional] 
+ **application** | **UUID**|  | [optional] 
+ **authorization_flow** | **UUID**|  | [optional] 
  **client_id** | **str**|  | [optional] 
  **client_type** | **str**| Confidential clients are capable of maintaining the confidentiality of their credentials. Public clients are incapable   | [optional] 
  **include_claims_in_id_token** | **bool**|  | [optional] 
@@ -4315,10 +4324,10 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **property_mappings** | [**List[str]**](str.md)|  | [optional] 
+ **property_mappings** | [**List[UUID]**](UUID.md)|  | [optional] 
  **refresh_token_validity** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **signing_key** | **str**|  | [optional] 
+ **signing_key** | **UUID**|  | [optional] 
  **sub_mode** | **str**| Configure what data should be used as unique User Identifier. For most cases, the default should be fine.   | [optional] 
 
 ### Return type
@@ -5007,7 +5016,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     basic_auth_enabled__iexact = True # bool |  (optional)
     basic_auth_password_attribute__iexact = 'basic_auth_password_attribute__iexact_example' # str |  (optional)
     basic_auth_user_attribute__iexact = 'basic_auth_user_attribute__iexact_example' # str |  (optional)
-    certificate__kp_uuid__iexact = 'certificate__kp_uuid__iexact_example' # str |  (optional)
+    certificate__kp_uuid__iexact = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     certificate__name__iexact = 'certificate__name__iexact_example' # str |  (optional)
     cookie_domain__iexact = 'cookie_domain__iexact_example' # str |  (optional)
     external_host__iexact = 'external_host__iexact_example' # str |  (optional)
@@ -5018,7 +5027,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    property_mappings__iexact = ['property_mappings__iexact_example'] # List[str] |  (optional)
+    property_mappings__iexact = None # List[UUID] |  (optional)
     search = 'search_example' # str | A search term. (optional)
     skip_path_regex__iexact = 'skip_path_regex__iexact_example' # str |  (optional)
 
@@ -5042,7 +5051,7 @@ Name | Type | Description  | Notes
  **basic_auth_enabled__iexact** | **bool**|  | [optional] 
  **basic_auth_password_attribute__iexact** | **str**|  | [optional] 
  **basic_auth_user_attribute__iexact** | **str**|  | [optional] 
- **certificate__kp_uuid__iexact** | **str**|  | [optional] 
+ **certificate__kp_uuid__iexact** | **UUID**|  | [optional] 
  **certificate__name__iexact** | **str**|  | [optional] 
  **cookie_domain__iexact** | **str**|  | [optional] 
  **external_host__iexact** | **str**|  | [optional] 
@@ -5053,7 +5062,7 @@ Name | Type | Description  | Notes
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **property_mappings__iexact** | [**List[str]**](str.md)|  | [optional] 
+ **property_mappings__iexact** | [**List[UUID]**](UUID.md)|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **skip_path_regex__iexact** | **str**|  | [optional] 
 
@@ -6657,7 +6666,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **providers_saml_import_metadata_create**
-> providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
+> SAMLProvider providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
 
 Create provider from SAML Metadata
 
@@ -6667,6 +6676,7 @@ Create provider from SAML Metadata
 
 ```python
 import authentik_client
+from authentik_client.models.saml_provider import SAMLProvider
 from authentik_client.rest import ApiException
 from pprint import pprint
 
@@ -6691,12 +6701,14 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
     name = 'name_example' # str | 
-    authorization_flow = 'authorization_flow_example' # str | 
-    invalidation_flow = 'invalidation_flow_example' # str | 
+    authorization_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
+    invalidation_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
     file = None # bytearray | 
 
     try:
-        api_instance.providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
+        api_response = api_instance.providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
+        print("The response of ProvidersApi->providers_saml_import_metadata_create:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ProvidersApi->providers_saml_import_metadata_create: %s\n" % e)
 ```
@@ -6709,13 +6721,13 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**|  | 
- **authorization_flow** | **str**|  | 
- **invalidation_flow** | **str**|  | 
+ **authorization_flow** | **UUID**|  | 
+ **invalidation_flow** | **UUID**|  | 
  **file** | **bytearray**|  | 
 
 ### Return type
 
-void (empty response body)
+[**SAMLProvider**](SAMLProvider.md)
 
 ### Authorization
 
@@ -6730,7 +6742,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Successfully imported provider |  -  |
+**201** |  |  -  |
 **400** | Bad request |  -  |
 **403** |  |  -  |
 
@@ -6775,35 +6787,35 @@ with authentik_client.ApiClient(configuration) as api_client:
     assertion_valid_not_before = 'assertion_valid_not_before_example' # str |  (optional)
     assertion_valid_not_on_or_after = 'assertion_valid_not_on_or_after_example' # str |  (optional)
     audience = 'audience_example' # str |  (optional)
-    authentication_flow = 'authentication_flow_example' # str |  (optional)
-    authn_context_class_ref_mapping = 'authn_context_class_ref_mapping_example' # str |  (optional)
-    authorization_flow = 'authorization_flow_example' # str |  (optional)
-    backchannel_application = 'backchannel_application_example' # str |  (optional)
+    authentication_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    authn_context_class_ref_mapping = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    authorization_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    backchannel_application = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     default_name_id_policy = 'default_name_id_policy_example' # str |  (optional)
     default_relay_state = 'default_relay_state_example' # str |  (optional)
     digest_algorithm = 'digest_algorithm_example' # str |  (optional)
-    encryption_kp = 'encryption_kp_example' # str |  (optional)
-    invalidation_flow = 'invalidation_flow_example' # str |  (optional)
+    encryption_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    invalidation_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     is_backchannel = True # bool |  (optional)
     issuer = 'issuer_example' # str |  (optional)
     logout_method = 'logout_method_example' # str | Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).   (optional)
     name = 'name_example' # str |  (optional)
-    name_id_mapping = 'name_id_mapping_example' # str |  (optional)
+    name_id_mapping = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
     page_size = 56 # int | Number of results to return per page. (optional)
-    property_mappings = ['property_mappings_example'] # List[str] |  (optional)
+    property_mappings = None # List[UUID] |  (optional)
     search = 'search_example' # str | A search term. (optional)
     session_valid_not_on_or_after = 'session_valid_not_on_or_after_example' # str |  (optional)
     sign_assertion = True # bool |  (optional)
     sign_logout_request = True # bool |  (optional)
     sign_response = True # bool |  (optional)
     signature_algorithm = 'signature_algorithm_example' # str |  (optional)
-    signing_kp = 'signing_kp_example' # str |  (optional)
+    signing_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     sls_binding = 'sls_binding_example' # str | This determines how authentik sends the logout response back to the Service Provider.   (optional)
     sls_url = 'sls_url_example' # str |  (optional)
     sp_binding = 'sp_binding_example' # str | This determines how authentik sends the response back to the Service Provider.   (optional)
-    verification_kp = 'verification_kp_example' # str |  (optional)
+    verification_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
         api_response = api_instance.providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
@@ -6824,35 +6836,35 @@ Name | Type | Description  | Notes
  **assertion_valid_not_before** | **str**|  | [optional] 
  **assertion_valid_not_on_or_after** | **str**|  | [optional] 
  **audience** | **str**|  | [optional] 
- **authentication_flow** | **str**|  | [optional] 
- **authn_context_class_ref_mapping** | **str**|  | [optional] 
- **authorization_flow** | **str**|  | [optional] 
- **backchannel_application** | **str**|  | [optional] 
+ **authentication_flow** | **UUID**|  | [optional] 
+ **authn_context_class_ref_mapping** | **UUID**|  | [optional] 
+ **authorization_flow** | **UUID**|  | [optional] 
+ **backchannel_application** | **UUID**|  | [optional] 
  **default_name_id_policy** | **str**|  | [optional] 
  **default_relay_state** | **str**|  | [optional] 
  **digest_algorithm** | **str**|  | [optional] 
- **encryption_kp** | **str**|  | [optional] 
- **invalidation_flow** | **str**|  | [optional] 
+ **encryption_kp** | **UUID**|  | [optional] 
+ **invalidation_flow** | **UUID**|  | [optional] 
  **is_backchannel** | **bool**|  | [optional] 
  **issuer** | **str**|  | [optional] 
  **logout_method** | **str**| Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).   | [optional] 
  **name** | **str**|  | [optional] 
- **name_id_mapping** | **str**|  | [optional] 
+ **name_id_mapping** | **UUID**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
- **property_mappings** | [**List[str]**](str.md)|  | [optional] 
+ **property_mappings** | [**List[UUID]**](UUID.md)|  | [optional] 
  **search** | **str**| A search term. | [optional] 
  **session_valid_not_on_or_after** | **str**|  | [optional] 
  **sign_assertion** | **bool**|  | [optional] 
  **sign_logout_request** | **bool**|  | [optional] 
  **sign_response** | **bool**|  | [optional] 
  **signature_algorithm** | **str**|  | [optional] 
- **signing_kp** | **str**|  | [optional] 
+ **signing_kp** | **UUID**|  | [optional] 
  **sls_binding** | **str**| This determines how authentik sends the logout response back to the Service Provider.   | [optional] 
  **sls_url** | **str**|  | [optional] 
  **sp_binding** | **str**| This determines how authentik sends the response back to the Service Provider.   | [optional] 
- **verification_kp** | **str**|  | [optional] 
+ **verification_kp** | **UUID**|  | [optional] 
 
 ### Return type
 
@@ -7616,7 +7628,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this scim provider group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this scim provider group.
 
     try:
         api_instance.providers_scim_groups_destroy(id)
@@ -7631,7 +7643,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this scim provider group. | 
+ **id** | **UUID**| A UUID string identifying this scim provider group. | 
 
 ### Return type
 
@@ -7691,7 +7703,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    group__group_uuid = 'group__group_uuid_example' # str |  (optional)
+    group__group_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     group__name = 'group__name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -7714,7 +7726,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group__group_uuid** | **str**|  | [optional] 
+ **group__group_uuid** | **UUID**|  | [optional] 
  **group__name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -7780,7 +7792,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this scim provider group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this scim provider group.
 
     try:
         api_response = api_instance.providers_scim_groups_retrieve(id)
@@ -7797,7 +7809,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this scim provider group. | 
+ **id** | **UUID**| A UUID string identifying this scim provider group. | 
 
 ### Return type
 
@@ -7857,7 +7869,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this scim provider group.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this scim provider group.
 
     try:
         api_response = api_instance.providers_scim_groups_used_by_list(id)
@@ -7874,7 +7886,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this scim provider group. | 
+ **id** | **UUID**| A UUID string identifying this scim provider group. | 
 
 ### Return type
 
@@ -7900,7 +7912,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **providers_scim_list**
-> PaginatedSCIMProviderList providers_scim_list(exclude_users_service_account=exclude_users_service_account, filter_group=filter_group, name=name, ordering=ordering, page=page, page_size=page_size, search=search, url=url)
+> PaginatedSCIMProviderList providers_scim_list(exclude_users_service_account=exclude_users_service_account, group_filters=group_filters, name=name, ordering=ordering, page=page, page_size=page_size, search=search, url=url)
 
 SCIMProvider Viewset
 
@@ -7935,7 +7947,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
     exclude_users_service_account = True # bool |  (optional)
-    filter_group = 'filter_group_example' # str |  (optional)
+    group_filters = None # List[UUID] |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
     page = 56 # int | A page number within the paginated result set. (optional)
@@ -7944,7 +7956,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     url = 'url_example' # str |  (optional)
 
     try:
-        api_response = api_instance.providers_scim_list(exclude_users_service_account=exclude_users_service_account, filter_group=filter_group, name=name, ordering=ordering, page=page, page_size=page_size, search=search, url=url)
+        api_response = api_instance.providers_scim_list(exclude_users_service_account=exclude_users_service_account, group_filters=group_filters, name=name, ordering=ordering, page=page, page_size=page_size, search=search, url=url)
         print("The response of ProvidersApi->providers_scim_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -7959,7 +7971,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exclude_users_service_account** | **bool**|  | [optional] 
- **filter_group** | **str**|  | [optional] 
+ **group_filters** | [**List[UUID]**](UUID.md)|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
@@ -8573,7 +8585,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this scim provider user.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this scim provider user.
 
     try:
         api_instance.providers_scim_users_destroy(id)
@@ -8588,7 +8600,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this scim provider user. | 
+ **id** | **UUID**| A UUID string identifying this scim provider user. | 
 
 ### Return type
 
@@ -8737,7 +8749,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this scim provider user.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this scim provider user.
 
     try:
         api_response = api_instance.providers_scim_users_retrieve(id)
@@ -8754,7 +8766,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this scim provider user. | 
+ **id** | **UUID**| A UUID string identifying this scim provider user. | 
 
 ### Return type
 
@@ -8814,7 +8826,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.ProvidersApi(api_client)
-    id = 'id_example' # str | A UUID string identifying this scim provider user.
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this scim provider user.
 
     try:
         api_response = api_instance.providers_scim_users_used_by_list(id)
@@ -8831,7 +8843,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| A UUID string identifying this scim provider user. | 
+ **id** | **UUID**| A UUID string identifying this scim provider user. | 
 
 ### Return type
 
@@ -9385,6 +9397,774 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Shared Signals Framework Provider. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_create**
+> WSFederationProvider providers_wsfed_create(ws_federation_provider_request)
+
+WSFederationProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.ws_federation_provider import WSFederationProvider
+from authentik_client.models.ws_federation_provider_request import WSFederationProviderRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    ws_federation_provider_request = authentik_client.WSFederationProviderRequest() # WSFederationProviderRequest | 
+
+    try:
+        api_response = api_instance.providers_wsfed_create(ws_federation_provider_request)
+        print("The response of ProvidersApi->providers_wsfed_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ws_federation_provider_request** | [**WSFederationProviderRequest**](WSFederationProviderRequest.md)|  | 
+
+### Return type
+
+[**WSFederationProvider**](WSFederationProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_destroy**
+> providers_wsfed_destroy(id)
+
+WSFederationProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this WS-Federation Provider.
+
+    try:
+        api_instance.providers_wsfed_destroy(id)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this WS-Federation Provider. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_list**
+> PaginatedWSFederationProviderList providers_wsfed_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
+
+WSFederationProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_ws_federation_provider_list import PaginatedWSFederationProviderList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    acs_url = 'acs_url_example' # str |  (optional)
+    assertion_valid_not_before = 'assertion_valid_not_before_example' # str |  (optional)
+    assertion_valid_not_on_or_after = 'assertion_valid_not_on_or_after_example' # str |  (optional)
+    audience = 'audience_example' # str |  (optional)
+    authentication_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    authn_context_class_ref_mapping = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    authorization_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    backchannel_application = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    default_name_id_policy = 'default_name_id_policy_example' # str |  (optional)
+    default_relay_state = 'default_relay_state_example' # str |  (optional)
+    digest_algorithm = 'digest_algorithm_example' # str |  (optional)
+    encryption_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    invalidation_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    is_backchannel = True # bool |  (optional)
+    issuer = 'issuer_example' # str |  (optional)
+    logout_method = 'logout_method_example' # str | Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).   (optional)
+    name = 'name_example' # str |  (optional)
+    name_id_mapping = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    property_mappings = None # List[UUID] |  (optional)
+    search = 'search_example' # str | A search term. (optional)
+    session_valid_not_on_or_after = 'session_valid_not_on_or_after_example' # str |  (optional)
+    sign_assertion = True # bool |  (optional)
+    sign_logout_request = True # bool |  (optional)
+    sign_response = True # bool |  (optional)
+    signature_algorithm = 'signature_algorithm_example' # str |  (optional)
+    signing_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    sls_binding = 'sls_binding_example' # str | This determines how authentik sends the logout response back to the Service Provider.   (optional)
+    sls_url = 'sls_url_example' # str |  (optional)
+    sp_binding = 'sp_binding_example' # str | This determines how authentik sends the response back to the Service Provider.   (optional)
+    verification_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+
+    try:
+        api_response = api_instance.providers_wsfed_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
+        print("The response of ProvidersApi->providers_wsfed_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **acs_url** | **str**|  | [optional] 
+ **assertion_valid_not_before** | **str**|  | [optional] 
+ **assertion_valid_not_on_or_after** | **str**|  | [optional] 
+ **audience** | **str**|  | [optional] 
+ **authentication_flow** | **UUID**|  | [optional] 
+ **authn_context_class_ref_mapping** | **UUID**|  | [optional] 
+ **authorization_flow** | **UUID**|  | [optional] 
+ **backchannel_application** | **UUID**|  | [optional] 
+ **default_name_id_policy** | **str**|  | [optional] 
+ **default_relay_state** | **str**|  | [optional] 
+ **digest_algorithm** | **str**|  | [optional] 
+ **encryption_kp** | **UUID**|  | [optional] 
+ **invalidation_flow** | **UUID**|  | [optional] 
+ **is_backchannel** | **bool**|  | [optional] 
+ **issuer** | **str**|  | [optional] 
+ **logout_method** | **str**| Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).   | [optional] 
+ **name** | **str**|  | [optional] 
+ **name_id_mapping** | **UUID**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **property_mappings** | [**List[UUID]**](UUID.md)|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **session_valid_not_on_or_after** | **str**|  | [optional] 
+ **sign_assertion** | **bool**|  | [optional] 
+ **sign_logout_request** | **bool**|  | [optional] 
+ **sign_response** | **bool**|  | [optional] 
+ **signature_algorithm** | **str**|  | [optional] 
+ **signing_kp** | **UUID**|  | [optional] 
+ **sls_binding** | **str**| This determines how authentik sends the logout response back to the Service Provider.   | [optional] 
+ **sls_url** | **str**|  | [optional] 
+ **sp_binding** | **str**| This determines how authentik sends the response back to the Service Provider.   | [optional] 
+ **verification_kp** | **UUID**|  | [optional] 
+
+### Return type
+
+[**PaginatedWSFederationProviderList**](PaginatedWSFederationProviderList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_metadata_retrieve**
+> SAMLMetadata providers_wsfed_metadata_retrieve(id, download=download, force_binding=force_binding)
+
+Return metadata as XML string
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.saml_metadata import SAMLMetadata
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this WS-Federation Provider.
+    download = True # bool |  (optional)
+    force_binding = 'force_binding_example' # str | Optionally force the metadata to only include one binding. (optional)
+
+    try:
+        api_response = api_instance.providers_wsfed_metadata_retrieve(id, download=download, force_binding=force_binding)
+        print("The response of ProvidersApi->providers_wsfed_metadata_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_metadata_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this WS-Federation Provider. | 
+ **download** | **bool**|  | [optional] 
+ **force_binding** | **str**| Optionally force the metadata to only include one binding. | [optional] 
+
+### Return type
+
+[**SAMLMetadata**](SAMLMetadata.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**404** | Provider has no application assigned |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_partial_update**
+> WSFederationProvider providers_wsfed_partial_update(id, patched_ws_federation_provider_request=patched_ws_federation_provider_request)
+
+WSFederationProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.patched_ws_federation_provider_request import PatchedWSFederationProviderRequest
+from authentik_client.models.ws_federation_provider import WSFederationProvider
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this WS-Federation Provider.
+    patched_ws_federation_provider_request = authentik_client.PatchedWSFederationProviderRequest() # PatchedWSFederationProviderRequest |  (optional)
+
+    try:
+        api_response = api_instance.providers_wsfed_partial_update(id, patched_ws_federation_provider_request=patched_ws_federation_provider_request)
+        print("The response of ProvidersApi->providers_wsfed_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this WS-Federation Provider. | 
+ **patched_ws_federation_provider_request** | [**PatchedWSFederationProviderRequest**](PatchedWSFederationProviderRequest.md)|  | [optional] 
+
+### Return type
+
+[**WSFederationProvider**](WSFederationProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_preview_user_retrieve**
+> PropertyMappingPreview providers_wsfed_preview_user_retrieve(id, for_user=for_user)
+
+Preview user data for provider
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.property_mapping_preview import PropertyMappingPreview
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this WS-Federation Provider.
+    for_user = 56 # int |  (optional)
+
+    try:
+        api_response = api_instance.providers_wsfed_preview_user_retrieve(id, for_user=for_user)
+        print("The response of ProvidersApi->providers_wsfed_preview_user_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_preview_user_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this WS-Federation Provider. | 
+ **for_user** | **int**|  | [optional] 
+
+### Return type
+
+[**PropertyMappingPreview**](PropertyMappingPreview.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad request |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_retrieve**
+> WSFederationProvider providers_wsfed_retrieve(id)
+
+WSFederationProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.ws_federation_provider import WSFederationProvider
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this WS-Federation Provider.
+
+    try:
+        api_response = api_instance.providers_wsfed_retrieve(id)
+        print("The response of ProvidersApi->providers_wsfed_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this WS-Federation Provider. | 
+
+### Return type
+
+[**WSFederationProvider**](WSFederationProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_update**
+> WSFederationProvider providers_wsfed_update(id, ws_federation_provider_request)
+
+WSFederationProvider Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.ws_federation_provider import WSFederationProvider
+from authentik_client.models.ws_federation_provider_request import WSFederationProviderRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this WS-Federation Provider.
+    ws_federation_provider_request = authentik_client.WSFederationProviderRequest() # WSFederationProviderRequest | 
+
+    try:
+        api_response = api_instance.providers_wsfed_update(id, ws_federation_provider_request)
+        print("The response of ProvidersApi->providers_wsfed_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this WS-Federation Provider. | 
+ **ws_federation_provider_request** | [**WSFederationProviderRequest**](WSFederationProviderRequest.md)|  | 
+
+### Return type
+
+[**WSFederationProvider**](WSFederationProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **providers_wsfed_used_by_list**
+> List[UsedBy] providers_wsfed_used_by_list(id)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.used_by import UsedBy
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.ProvidersApi(api_client)
+    id = 56 # int | A unique integer value identifying this WS-Federation Provider.
+
+    try:
+        api_response = api_instance.providers_wsfed_used_by_list(id)
+        print("The response of ProvidersApi->providers_wsfed_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProvidersApi->providers_wsfed_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this WS-Federation Provider. | 
 
 ### Return type
 

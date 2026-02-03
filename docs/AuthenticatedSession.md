@@ -6,7 +6,7 @@ AuthenticatedSession Serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **str** |  | [optional] 
+**uuid** | **UUID** |  | [optional] 
 **current** | **bool** | Check if session is currently active session | [readonly] 
 **user_agent** | [**AuthenticatedSessionUserAgent**](AuthenticatedSessionUserAgent.md) |  | 
 **geo_ip** | [**AuthenticatedSessionGeoIp**](AuthenticatedSessionGeoIp.md) |  | 

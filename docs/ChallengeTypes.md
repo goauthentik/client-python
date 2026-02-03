@@ -37,12 +37,15 @@ Name | Type | Description | Notes
 **additional_permissions** | [**List[ConsentPermission]**](ConsentPermission.md) |  | 
 **token** | **str** |  | 
 **name** | **str** |  | 
+**challenge** | **str** |  | 
+**challenge_idle_timeout** | **int** |  | 
 **request_id** | **str** |  | 
 **error** | **str** |  | [optional] 
 **traceback** | **str** |  | [optional] 
 **loading_overlay** | **bool** |  | [optional] [default to False]
 **loading_text** | **str** |  | 
 **user_fields** | **List[str]** |  | 
+**pending_user_identifier** | **str** |  | [optional] 
 **password_fields** | **bool** |  | 
 **allow_show_password** | **bool** |  | [optional] [default to False]
 **application_pre** | **str** |  | [optional] 
@@ -55,6 +58,7 @@ Name | Type | Description | Notes
 **sources** | [**List[LoginSource]**](LoginSource.md) |  | [optional] 
 **show_source_labels** | **bool** |  | 
 **enable_remember_me** | **bool** |  | [optional] [default to True]
+**passkey_challenge** | **Dict[str, object]** |  | [optional] 
 **logout_urls** | **List[Dict[str, object]]** |  | [optional] 
 **post_url** | **str** |  | [optional] 
 **saml_request** | **str** |  | [optional] 

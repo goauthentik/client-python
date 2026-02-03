@@ -7,10 +7,9 @@ UserWriteStage Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**flow_set** | [**List[FlowSetRequest]**](FlowSetRequest.md) |  | [optional] 
 **user_creation_mode** | [**UserCreationModeEnum**](UserCreationModeEnum.md) |  | [optional] 
 **create_users_as_inactive** | **bool** | When set, newly created users are inactive and cannot login. | [optional] 
-**create_users_group** | **str** | Optionally add newly created users to this group. | [optional] 
+**create_users_group** | **UUID** | Optionally add newly created users to this group. | [optional] 
 **user_type** | [**UserTypeEnum**](UserTypeEnum.md) |  | [optional] 
 **user_path_template** | **str** |  | [optional] 
 

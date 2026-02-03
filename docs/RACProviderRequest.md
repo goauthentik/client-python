@@ -7,9 +7,9 @@ RACProvider Serializer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**authentication_flow** | **str** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
-**authorization_flow** | **str** | Flow used when authorizing this provider. | 
-**property_mappings** | **List[str]** |  | [optional] 
+**authentication_flow** | **UUID** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
+**authorization_flow** | **UUID** | Flow used when authorizing this provider. | 
+**property_mappings** | **List[UUID]** |  | [optional] 
 **settings** | **Dict[str, object]** |  | [optional] 
 **connection_expiry** | **str** | Determines how long a session lasts. Default of 0 means that the sessions lasts until the browser is closed. (Format: hours&#x3D;-1;minutes&#x3D;-2;seconds&#x3D;-3) | [optional] 
 **delete_token_on_disconnect** | **bool** | When set to true, connection tokens will be deleted upon disconnect. | [optional] 

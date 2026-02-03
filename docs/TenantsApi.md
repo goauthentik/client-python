@@ -525,7 +525,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TenantsApi(api_client)
-    tenant_uuid = 'tenant_uuid_example' # str | A UUID string identifying this Tenant.
+    tenant_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Tenant.
     tenant_admin_group_request_request = authentik_client.TenantAdminGroupRequestRequest() # TenantAdminGroupRequestRequest | 
 
     try:
@@ -541,7 +541,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_uuid** | **str**| A UUID string identifying this Tenant. | 
+ **tenant_uuid** | **UUID**| A UUID string identifying this Tenant. | 
  **tenant_admin_group_request_request** | [**TenantAdminGroupRequestRequest**](TenantAdminGroupRequestRequest.md)|  | 
 
 ### Return type
@@ -594,7 +594,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TenantsApi(api_client)
-    tenant_uuid = 'tenant_uuid_example' # str | A UUID string identifying this Tenant.
+    tenant_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Tenant.
     tenant_recovery_key_request_request = authentik_client.TenantRecoveryKeyRequestRequest() # TenantRecoveryKeyRequestRequest | 
 
     try:
@@ -612,7 +612,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_uuid** | **str**| A UUID string identifying this Tenant. | 
+ **tenant_uuid** | **UUID**| A UUID string identifying this Tenant. | 
  **tenant_recovery_key_request_request** | [**TenantRecoveryKeyRequestRequest**](TenantRecoveryKeyRequestRequest.md)|  | 
 
 ### Return type
@@ -663,7 +663,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TenantsApi(api_client)
-    tenant_uuid = 'tenant_uuid_example' # str | A UUID string identifying this Tenant.
+    tenant_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Tenant.
 
     try:
         api_instance.tenants_tenants_destroy(tenant_uuid)
@@ -678,7 +678,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_uuid** | **str**| A UUID string identifying this Tenant. | 
+ **tenant_uuid** | **UUID**| A UUID string identifying this Tenant. | 
 
 ### Return type
 
@@ -802,7 +802,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TenantsApi(api_client)
-    tenant_uuid = 'tenant_uuid_example' # str | A UUID string identifying this Tenant.
+    tenant_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Tenant.
     patched_tenant_request = authentik_client.PatchedTenantRequest() # PatchedTenantRequest |  (optional)
 
     try:
@@ -820,7 +820,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_uuid** | **str**| A UUID string identifying this Tenant. | 
+ **tenant_uuid** | **UUID**| A UUID string identifying this Tenant. | 
  **patched_tenant_request** | [**PatchedTenantRequest**](PatchedTenantRequest.md)|  | [optional] 
 
 ### Return type
@@ -871,7 +871,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TenantsApi(api_client)
-    tenant_uuid = 'tenant_uuid_example' # str | A UUID string identifying this Tenant.
+    tenant_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Tenant.
 
     try:
         api_response = api_instance.tenants_tenants_retrieve(tenant_uuid)
@@ -888,7 +888,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_uuid** | **str**| A UUID string identifying this Tenant. | 
+ **tenant_uuid** | **UUID**| A UUID string identifying this Tenant. | 
 
 ### Return type
 
@@ -939,7 +939,7 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.TenantsApi(api_client)
-    tenant_uuid = 'tenant_uuid_example' # str | A UUID string identifying this Tenant.
+    tenant_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Tenant.
     tenant_request = authentik_client.TenantRequest() # TenantRequest | 
 
     try:
@@ -957,7 +957,7 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_uuid** | **str**| A UUID string identifying this Tenant. | 
+ **tenant_uuid** | **UUID**| A UUID string identifying this Tenant. | 
  **tenant_request** | [**TenantRequest**](TenantRequest.md)|  | 
 
 ### Return type

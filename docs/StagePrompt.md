@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **initial_value** | **str** |  | 
 **order** | **int** |  | 
 **sub_text** | **str** |  | 
-**choices** | **List[str]** |  | 
+**choices** | [**List[PromptChoice]**](PromptChoice.md) |  | 
 
 ## Example
 
