@@ -32,6 +32,8 @@ class ContextualFlowInfoLayoutEnum(str, Enum):
     CONTENT_RIGHT = 'content_right'
     SIDEBAR_LEFT = 'sidebar_left'
     SIDEBAR_RIGHT = 'sidebar_right'
+    SIDEBAR_LEFT_FRAME_BACKGROUND = 'sidebar_left_frame_background'
+    SIDEBAR_RIGHT_FRAME_BACKGROUND = 'sidebar_right_frame_background'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
