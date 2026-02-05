@@ -53,6 +53,7 @@ class TestWSFederationProvider(unittest.TestCase):
                 verbose_name_plural = '',
                 meta_model_name = '',
                 reply_url = '',
+                wtrealm = '',
                 assertion_valid_not_before = '',
                 assertion_valid_not_on_or_after = '',
                 session_valid_not_on_or_after = '',
@@ -66,8 +67,7 @@ class TestWSFederationProvider(unittest.TestCase):
                 sign_logout_request = True,
                 default_name_id_policy = 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
                 url_download_metadata = '',
-                url_wsfed = '',
-                wtrealm = ''
+                url_wsfed = ''
             )
         else:
             return WSFederationProvider(
@@ -84,9 +84,9 @@ class TestWSFederationProvider(unittest.TestCase):
                 verbose_name_plural = '',
                 meta_model_name = '',
                 reply_url = '',
+                wtrealm = '',
                 url_download_metadata = '',
                 url_wsfed = '',
-                wtrealm = '',
         )
         """
 

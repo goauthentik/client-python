@@ -44,6 +44,7 @@ class TestPatchedWSFederationProviderRequest(unittest.TestCase):
                     ''
                     ],
                 reply_url = '0',
+                wtrealm = '0',
                 assertion_valid_not_before = '0',
                 assertion_valid_not_on_or_after = '0',
                 session_valid_not_on_or_after = '0',

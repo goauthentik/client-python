@@ -38,6 +38,7 @@ class PatchedWSFederationProviderRequest(BaseModel):
     invalidation_flow: Optional[UUID] = Field(default=None, description="Flow used ending the session from a provider.")
     property_mappings: Optional[List[UUID]] = None
     reply_url: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
+    wtrealm: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     assertion_valid_not_before: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Assertion valid not before current time + this value (Format: hours=-1;minutes=-2;seconds=-3).")
     assertion_valid_not_on_or_after: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Assertion not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
     session_valid_not_on_or_after: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Session not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
@@ -50,7 +51,7 @@ class PatchedWSFederationProviderRequest(BaseModel):
     sign_assertion: Optional[StrictBool] = None
     sign_logout_request: Optional[StrictBool] = None
     default_name_id_policy: Optional[SAMLNameIDPolicyEnum] = None
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "reply_url", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "encryption_kp", "sign_assertion", "sign_logout_request", "default_name_id_policy"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "reply_url", "wtrealm", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "encryption_kp", "sign_assertion", "sign_logout_request", "default_name_id_policy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -134,6 +135,7 @@ class PatchedWSFederationProviderRequest(BaseModel):
             "invalidation_flow": obj.get("invalidation_flow"),
             "property_mappings": obj.get("property_mappings"),
             "reply_url": obj.get("reply_url"),
+            "wtrealm": obj.get("wtrealm"),
             "assertion_valid_not_before": obj.get("assertion_valid_not_before"),
             "assertion_valid_not_on_or_after": obj.get("assertion_valid_not_on_or_after"),
             "session_valid_not_on_or_after": obj.get("session_valid_not_on_or_after"),

@@ -148,7 +148,8 @@ class TestModelRequest(unittest.TestCase):
                     56
                     ],
                 event_retention = '0',
-                reply_url = '0'
+                reply_url = '0',
+                wtrealm = '0'
             )
         else:
             return ModelRequest(
@@ -173,6 +174,7 @@ class TestModelRequest(unittest.TestCase):
                 acs_url = '0',
                 url = '0',
                 reply_url = '0',
+                wtrealm = '0',
         )
         """
 

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
 **reply_url** | **str** |  | 
+**wtrealm** | **str** |  | 
 **assertion_valid_not_before** | **str** | Assertion valid not before current time + this value (Format: hours&#x3D;-1;minutes&#x3D;-2;seconds&#x3D;-3). | [optional] 
 **assertion_valid_not_on_or_after** | **str** | Assertion not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **session_valid_not_on_or_after** | **str** | Session not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
@@ -35,7 +36,6 @@ Name | Type | Description | Notes
 **default_name_id_policy** | [**SAMLNameIDPolicyEnum**](SAMLNameIDPolicyEnum.md) |  | [optional] 
 **url_download_metadata** | **str** | Get metadata download URL | [readonly] 
 **url_wsfed** | **str** | Get WS-Fed url | [readonly] 
-**wtrealm** | **str** |  | [readonly] 
 
 ## Example
 

@@ -63,6 +63,7 @@ class TestPaginatedWSFederationProviderList(unittest.TestCase):
                         verbose_name_plural = '', 
                         meta_model_name = '', 
                         reply_url = '', 
+                        wtrealm = '', 
                         assertion_valid_not_before = '', 
                         assertion_valid_not_on_or_after = '', 
                         session_valid_not_on_or_after = '', 
@@ -76,8 +77,7 @@ class TestPaginatedWSFederationProviderList(unittest.TestCase):
                         sign_logout_request = True, 
                         default_name_id_policy = 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress', 
                         url_download_metadata = '', 
-                        url_wsfed = '', 
-                        wtrealm = '', )
+                        url_wsfed = '', )
                     ],
                 autocomplete = {
                     'key' : null
@@ -112,6 +112,7 @@ class TestPaginatedWSFederationProviderList(unittest.TestCase):
                         verbose_name_plural = '', 
                         meta_model_name = '', 
                         reply_url = '', 
+                        wtrealm = '', 
                         assertion_valid_not_before = '', 
                         assertion_valid_not_on_or_after = '', 
                         session_valid_not_on_or_after = '', 
@@ -125,8 +126,7 @@ class TestPaginatedWSFederationProviderList(unittest.TestCase):
                         sign_logout_request = True, 
                         default_name_id_policy = 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress', 
                         url_download_metadata = '', 
-                        url_wsfed = '', 
-                        wtrealm = '', )
+                        url_wsfed = '', )
                     ],
                 autocomplete = {
                     'key' : null

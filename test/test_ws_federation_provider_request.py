@@ -44,6 +44,7 @@ class TestWSFederationProviderRequest(unittest.TestCase):
                     ''
                     ],
                 reply_url = '0',
+                wtrealm = '0',
                 assertion_valid_not_before = '0',
                 assertion_valid_not_on_or_after = '0',
                 session_valid_not_on_or_after = '0',
@@ -63,6 +64,7 @@ class TestWSFederationProviderRequest(unittest.TestCase):
                 authorization_flow = '',
                 invalidation_flow = '',
                 reply_url = '0',
+                wtrealm = '0',
         )
         """
 

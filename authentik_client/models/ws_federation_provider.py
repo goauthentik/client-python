@@ -46,6 +46,7 @@ class WSFederationProvider(BaseModel):
     verbose_name_plural: StrictStr = Field(description="Return object's plural verbose_name")
     meta_model_name: StrictStr = Field(description="Return internal model name")
     reply_url: StrictStr
+    wtrealm: StrictStr
     assertion_valid_not_before: Optional[StrictStr] = Field(default=None, description="Assertion valid not before current time + this value (Format: hours=-1;minutes=-2;seconds=-3).")
     assertion_valid_not_on_or_after: Optional[StrictStr] = Field(default=None, description="Assertion not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
     session_valid_not_on_or_after: Optional[StrictStr] = Field(default=None, description="Session not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).")
@@ -60,8 +61,7 @@ class WSFederationProvider(BaseModel):
     default_name_id_policy: Optional[SAMLNameIDPolicyEnum] = None
     url_download_metadata: StrictStr = Field(description="Get metadata download URL")
     url_wsfed: StrictStr = Field(description="Get WS-Fed url")
-    wtrealm: StrictStr
-    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "reply_url", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "encryption_kp", "sign_assertion", "sign_logout_request", "default_name_id_policy", "url_download_metadata", "url_wsfed", "wtrealm"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "reply_url", "wtrealm", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "encryption_kp", "sign_assertion", "sign_logout_request", "default_name_id_policy", "url_download_metadata", "url_wsfed"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,7 +104,6 @@ class WSFederationProvider(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "pk",
@@ -118,7 +117,6 @@ class WSFederationProvider(BaseModel):
             "meta_model_name",
             "url_download_metadata",
             "url_wsfed",
-            "wtrealm",
         ])
 
         _dict = self.model_dump(
@@ -198,6 +196,7 @@ class WSFederationProvider(BaseModel):
             "verbose_name_plural": obj.get("verbose_name_plural"),
             "meta_model_name": obj.get("meta_model_name"),
             "reply_url": obj.get("reply_url"),
+            "wtrealm": obj.get("wtrealm"),
             "assertion_valid_not_before": obj.get("assertion_valid_not_before"),
             "assertion_valid_not_on_or_after": obj.get("assertion_valid_not_on_or_after"),
             "session_valid_not_on_or_after": obj.get("session_valid_not_on_or_after"),
@@ -211,8 +210,7 @@ class WSFederationProvider(BaseModel):
             "sign_logout_request": obj.get("sign_logout_request"),
             "default_name_id_policy": obj.get("default_name_id_policy"),
             "url_download_metadata": obj.get("url_download_metadata"),
-            "url_wsfed": obj.get("url_wsfed"),
-            "wtrealm": obj.get("wtrealm")
+            "url_wsfed": obj.get("url_wsfed")
         })
         return _obj
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **invalidation_flow** | **UUID** | Flow used ending the session from a provider. | [optional] 
 **property_mappings** | **List[UUID]** |  | [optional] 
 **reply_url** | **str** |  | [optional] 
+**wtrealm** | **str** |  | [optional] 
 **assertion_valid_not_before** | **str** | Assertion valid not before current time + this value (Format: hours&#x3D;-1;minutes&#x3D;-2;seconds&#x3D;-3). | [optional] 
 **assertion_valid_not_on_or_after** | **str** | Assertion not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 
 **session_valid_not_on_or_after** | **str** | Session not valid on or after current time + this value (Format: hours&#x3D;1;minutes&#x3D;2;seconds&#x3D;3). | [optional] 

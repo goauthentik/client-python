@@ -96,6 +96,7 @@ Name | Type | Description | Notes
 **oidc_auth_providers** | **List[int]** |  | [optional] 
 **event_retention** | **str** |  | [optional] 
 **reply_url** | **str** |  | 
+**wtrealm** | **str** |  | 
 
 ## Example
 
