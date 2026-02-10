@@ -19,25 +19,22 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class StateEnum(str, Enum):
+class LifecycleIterationStateEnum(str, Enum):
     """
-    StateEnum
+    LifecycleIterationStateEnum
     """
 
     """
     allowed enum values
     """
-    QUEUED = 'queued'
-    CONSUMED = 'consumed'
-    PREPROCESS = 'preprocess'
-    RUNNING = 'running'
-    POSTPROCESS = 'postprocess'
-    REJECTED = 'rejected'
-    DONE = 'done'
+    REVIEWED = 'REVIEWED'
+    PENDING = 'PENDING'
+    OVERDUE = 'OVERDUE'
+    CANCELED = 'CANCELED'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of StateEnum from a JSON string"""
+        """Create an instance of LifecycleIterationStateEnum from a JSON string"""
         return cls(json.loads(json_str))
 
 

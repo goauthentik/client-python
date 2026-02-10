@@ -215,6 +215,12 @@
 
 * `AUTHENTIK_ENDPOINTS_CONNECTORS_FLEET_DOT_FLEETCONNECTOR` (value: `'authentik_endpoints_connectors_fleet.fleetconnector'`)
 
+* `AUTHENTIK_LIFECYCLE_DOT_LIFECYCLERULE` (value: `'authentik_lifecycle.lifecyclerule'`)
+
+* `AUTHENTIK_LIFECYCLE_DOT_LIFECYCLEITERATION` (value: `'authentik_lifecycle.lifecycleiteration'`)
+
+* `AUTHENTIK_LIFECYCLE_DOT_REVIEW` (value: `'authentik_lifecycle.review'`)
+
 * `AUTHENTIK_POLICIES_UNIQUE_PASSWORD_DOT_UNIQUEPASSWORDPOLICY` (value: `'authentik_policies_unique_password.uniquepasswordpolicy'`)
 
 * `AUTHENTIK_PROVIDERS_GOOGLE_WORKSPACE_DOT_GOOGLEWORKSPACEPROVIDER` (value: `'authentik_providers_google_workspace.googleworkspaceprovider'`)

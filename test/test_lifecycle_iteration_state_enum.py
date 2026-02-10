@@ -15,10 +15,10 @@
 
 import unittest
 
-from authentik_client.models.state_enum import StateEnum
+from authentik_client.models.lifecycle_iteration_state_enum import LifecycleIterationStateEnum
 
-class TestStateEnum(unittest.TestCase):
-    """StateEnum unit test stubs"""
+class TestLifecycleIterationStateEnum(unittest.TestCase):
+    """LifecycleIterationStateEnum unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,9 +26,9 @@ class TestStateEnum(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testStateEnum(self):
-        """Test StateEnum"""
-        # inst = StateEnum()
+    def testLifecycleIterationStateEnum(self):
+        """Test LifecycleIterationStateEnum"""
+        # inst = LifecycleIterationStateEnum()
 
 if __name__ == '__main__':
     unittest.main()

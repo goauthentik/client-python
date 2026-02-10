@@ -9,6 +9,7 @@ from authentik_client.api.endpoints_api import EndpointsApi
 from authentik_client.api.enterprise_api import EnterpriseApi
 from authentik_client.api.events_api import EventsApi
 from authentik_client.api.flows_api import FlowsApi
+from authentik_client.api.lifecycle_api import LifecycleApi
 from authentik_client.api.managed_api import ManagedApi
 from authentik_client.api.oauth2_api import Oauth2Api
 from authentik_client.api.outposts_api import OutpostsApi

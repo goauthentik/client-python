@@ -59,6 +59,14 @@
 
 * `EXPORT_READY` (value: `'export_ready'`)
 
+* `REVIEW_INITIATED` (value: `'review_initiated'`)
+
+* `REVIEW_OVERDUE` (value: `'review_overdue'`)
+
+* `REVIEW_ATTESTED` (value: `'review_attested'`)
+
+* `REVIEW_COMPLETED` (value: `'review_completed'`)
+
 * `CUSTOM` (value: `'custom_'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

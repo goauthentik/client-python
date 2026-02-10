@@ -135,6 +135,8 @@
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_ENDPOINTS_DOT_CONNECTORS_DOT_FLEET` (value: `'authentik.enterprise.endpoints.connectors.fleet'`)
 
+* `AUTHENTIK_DOT_ENTERPRISE_DOT_LIFECYCLE` (value: `'authentik.enterprise.lifecycle'`)
+
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_POLICIES_DOT_UNIQUE_PASSWORD` (value: `'authentik.enterprise.policies.unique_password'`)
 
 * `AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_GOOGLE_WORKSPACE` (value: `'authentik.enterprise.providers.google_workspace'`)

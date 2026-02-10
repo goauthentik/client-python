@@ -13,6 +13,7 @@ authentik_client/api/endpoints_api.py
 authentik_client/api/enterprise_api.py
 authentik_client/api/events_api.py
 authentik_client/api/flows_api.py
+authentik_client/api/lifecycle_api.py
 authentik_client/api/managed_api.py
 authentik_client/api/oauth2_api.py
 authentik_client/api/outposts_api.py
@@ -131,6 +132,7 @@ authentik_client/models/consent_stage.py
 authentik_client/models/consent_stage_mode_enum.py
 authentik_client/models/consent_stage_request.py
 authentik_client/models/content_type.py
+authentik_client/models/content_type_enum.py
 authentik_client/models/contextual_flow_info.py
 authentik_client/models/contextual_flow_info_layout_enum.py
 authentik_client/models/country_code_enum.py
@@ -308,6 +310,11 @@ authentik_client/models/license_request.py
 authentik_client/models/license_status_enum.py
 authentik_client/models/license_summary.py
 authentik_client/models/license_summary_status_enum.py
+authentik_client/models/lifecycle_iteration.py
+authentik_client/models/lifecycle_iteration_request.py
+authentik_client/models/lifecycle_iteration_state_enum.py
+authentik_client/models/lifecycle_rule.py
+authentik_client/models/lifecycle_rule_request.py
 authentik_client/models/link.py
 authentik_client/models/log_event.py
 authentik_client/models/log_level_enum.py
@@ -436,6 +443,8 @@ authentik_client/models/paginated_ldap_provider_list.py
 authentik_client/models/paginated_ldap_source_list.py
 authentik_client/models/paginated_ldap_source_property_mapping_list.py
 authentik_client/models/paginated_license_list.py
+authentik_client/models/paginated_lifecycle_iteration_list.py
+authentik_client/models/paginated_lifecycle_rule_list.py
 authentik_client/models/paginated_microsoft_entra_provider_group_list.py
 authentik_client/models/paginated_microsoft_entra_provider_list.py
 authentik_client/models/paginated_microsoft_entra_provider_mapping_list.py
@@ -590,6 +599,7 @@ authentik_client/models/patched_ldap_provider_request.py
 authentik_client/models/patched_ldap_source_property_mapping_request.py
 authentik_client/models/patched_ldap_source_request.py
 authentik_client/models/patched_license_request.py
+authentik_client/models/patched_lifecycle_rule_request.py
 authentik_client/models/patched_microsoft_entra_provider_mapping_request.py
 authentik_client/models/patched_microsoft_entra_provider_request.py
 authentik_client/models/patched_mutual_tls_stage_request.py
@@ -718,6 +728,10 @@ authentik_client/models/reputation.py
 authentik_client/models/reputation_policy.py
 authentik_client/models/reputation_policy_request.py
 authentik_client/models/resident_key_requirement_enum.py
+authentik_client/models/review.py
+authentik_client/models/review_request.py
+authentik_client/models/reviewer_group.py
+authentik_client/models/reviewer_user.py
 authentik_client/models/role.py
 authentik_client/models/role_assigned_object_permission.py
 authentik_client/models/role_model_permission.py
@@ -780,7 +794,6 @@ authentik_client/models/ssf_stream.py
 authentik_client/models/stage.py
 authentik_client/models/stage_mode_enum.py
 authentik_client/models/stage_prompt.py
-authentik_client/models/state_enum.py
 authentik_client/models/static_device.py
 authentik_client/models/static_device_request.py
 authentik_client/models/static_device_token.py
@@ -794,6 +807,7 @@ authentik_client/models/system_info.py
 authentik_client/models/system_info_runtime.py
 authentik_client/models/task.py
 authentik_client/models/task_aggregated_status_enum.py
+authentik_client/models/task_state_enum.py
 authentik_client/models/telegram_auth_request.py
 authentik_client/models/telegram_challenge_response_request.py
 authentik_client/models/telegram_login_challenge.py
@@ -979,6 +993,7 @@ docs/ConsentStage.md
 docs/ConsentStageModeEnum.md
 docs/ConsentStageRequest.md
 docs/ContentType.md
+docs/ContentTypeEnum.md
 docs/ContextualFlowInfo.md
 docs/ContextualFlowInfoLayoutEnum.md
 docs/CoreApi.md
@@ -1162,6 +1177,12 @@ docs/LicenseRequest.md
 docs/LicenseStatusEnum.md
 docs/LicenseSummary.md
 docs/LicenseSummaryStatusEnum.md
+docs/LifecycleApi.md
+docs/LifecycleIteration.md
+docs/LifecycleIterationRequest.md
+docs/LifecycleIterationStateEnum.md
+docs/LifecycleRule.md
+docs/LifecycleRuleRequest.md
 docs/Link.md
 docs/LogEvent.md
 docs/LogLevelEnum.md
@@ -1294,6 +1315,8 @@ docs/PaginatedLDAPProviderList.md
 docs/PaginatedLDAPSourceList.md
 docs/PaginatedLDAPSourcePropertyMappingList.md
 docs/PaginatedLicenseList.md
+docs/PaginatedLifecycleIterationList.md
+docs/PaginatedLifecycleRuleList.md
 docs/PaginatedMicrosoftEntraProviderGroupList.md
 docs/PaginatedMicrosoftEntraProviderList.md
 docs/PaginatedMicrosoftEntraProviderMappingList.md
@@ -1448,6 +1471,7 @@ docs/PatchedLDAPProviderRequest.md
 docs/PatchedLDAPSourcePropertyMappingRequest.md
 docs/PatchedLDAPSourceRequest.md
 docs/PatchedLicenseRequest.md
+docs/PatchedLifecycleRuleRequest.md
 docs/PatchedMicrosoftEntraProviderMappingRequest.md
 docs/PatchedMicrosoftEntraProviderRequest.md
 docs/PatchedMutualTLSStageRequest.md
@@ -1581,6 +1605,10 @@ docs/Reputation.md
 docs/ReputationPolicy.md
 docs/ReputationPolicyRequest.md
 docs/ResidentKeyRequirementEnum.md
+docs/Review.md
+docs/ReviewRequest.md
+docs/ReviewerGroup.md
+docs/ReviewerUser.md
 docs/Role.md
 docs/RoleAssignedObjectPermission.md
 docs/RoleModelPermission.md
@@ -1648,7 +1676,6 @@ docs/Stage.md
 docs/StageModeEnum.md
 docs/StagePrompt.md
 docs/StagesApi.md
-docs/StateEnum.md
 docs/StaticDevice.md
 docs/StaticDeviceRequest.md
 docs/StaticDeviceToken.md
@@ -1664,6 +1691,7 @@ docs/TOTPDevice.md
 docs/TOTPDeviceRequest.md
 docs/Task.md
 docs/TaskAggregatedStatusEnum.md
+docs/TaskStateEnum.md
 docs/TasksApi.md
 docs/TelegramAuthRequest.md
 docs/TelegramChallengeResponseRequest.md
@@ -1854,6 +1882,7 @@ test/test_consent_stage.py
 test/test_consent_stage_mode_enum.py
 test/test_consent_stage_request.py
 test/test_content_type.py
+test/test_content_type_enum.py
 test/test_contextual_flow_info.py
 test/test_contextual_flow_info_layout_enum.py
 test/test_core_api.py
@@ -2037,6 +2066,12 @@ test/test_license_request.py
 test/test_license_status_enum.py
 test/test_license_summary.py
 test/test_license_summary_status_enum.py
+test/test_lifecycle_api.py
+test/test_lifecycle_iteration.py
+test/test_lifecycle_iteration_request.py
+test/test_lifecycle_iteration_state_enum.py
+test/test_lifecycle_rule.py
+test/test_lifecycle_rule_request.py
 test/test_link.py
 test/test_log_event.py
 test/test_log_level_enum.py
@@ -2168,6 +2203,8 @@ test/test_paginated_ldap_provider_list.py
 test/test_paginated_ldap_source_list.py
 test/test_paginated_ldap_source_property_mapping_list.py
 test/test_paginated_license_list.py
+test/test_paginated_lifecycle_iteration_list.py
+test/test_paginated_lifecycle_rule_list.py
 test/test_paginated_microsoft_entra_provider_group_list.py
 test/test_paginated_microsoft_entra_provider_list.py
 test/test_paginated_microsoft_entra_provider_mapping_list.py
@@ -2322,6 +2359,7 @@ test/test_patched_ldap_provider_request.py
 test/test_patched_ldap_source_property_mapping_request.py
 test/test_patched_ldap_source_request.py
 test/test_patched_license_request.py
+test/test_patched_lifecycle_rule_request.py
 test/test_patched_microsoft_entra_provider_mapping_request.py
 test/test_patched_microsoft_entra_provider_request.py
 test/test_patched_mutual_tls_stage_request.py
@@ -2456,6 +2494,10 @@ test/test_reputation.py
 test/test_reputation_policy.py
 test/test_reputation_policy_request.py
 test/test_resident_key_requirement_enum.py
+test/test_review.py
+test/test_review_request.py
+test/test_reviewer_group.py
+test/test_reviewer_user.py
 test/test_role.py
 test/test_role_assigned_object_permission.py
 test/test_role_model_permission.py
@@ -2523,7 +2565,6 @@ test/test_stage.py
 test/test_stage_mode_enum.py
 test/test_stage_prompt.py
 test/test_stages_api.py
-test/test_state_enum.py
 test/test_static_device.py
 test/test_static_device_request.py
 test/test_static_device_token.py
@@ -2537,6 +2578,7 @@ test/test_system_info.py
 test/test_system_info_runtime.py
 test/test_task.py
 test/test_task_aggregated_status_enum.py
+test/test_task_state_enum.py
 test/test_tasks_api.py
 test/test_telegram_auth_request.py
 test/test_telegram_challenge_response_request.py

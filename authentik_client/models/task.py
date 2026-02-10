@@ -24,8 +24,8 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
 from authentik_client.models.log_event import LogEvent
-from authentik_client.models.state_enum import StateEnum
 from authentik_client.models.task_aggregated_status_enum import TaskAggregatedStatusEnum
+from authentik_client.models.task_state_enum import TaskStateEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,7 +36,7 @@ class Task(BaseModel):
     message_id: Optional[UUID] = None
     queue_name: Optional[StrictStr] = Field(default=None, description="Queue name")
     actor_name: StrictStr = Field(description="Dramatiq actor name")
-    state: Optional[StateEnum] = Field(default=None, description="Task status")
+    state: Optional[TaskStateEnum] = Field(default=None, description="Task status")
     mtime: Optional[datetime] = Field(default=None, description="Task last modified time")
     retries: Optional[Annotated[int, Field(le=9223372036854775807, strict=True, ge=0)]] = Field(default=None, description="Number of retries")
     eta: Optional[datetime] = Field(default=None, description="Planned execution time")

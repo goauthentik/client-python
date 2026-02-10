@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **message_id** | **UUID** |  | [optional] 
 **queue_name** | **str** | Queue name | [optional] 
 **actor_name** | **str** | Dramatiq actor name | 
-**state** | [**StateEnum**](StateEnum.md) | Task status | [optional] 
+**state** | [**TaskStateEnum**](TaskStateEnum.md) | Task status | [optional] 
 **mtime** | **datetime** | Task last modified time | [optional] 
 **retries** | **int** | Number of retries | [optional] 
 **eta** | **datetime** | Planned execution time | [optional] 

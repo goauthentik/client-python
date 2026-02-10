@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2026.2.0-rc1-1770333987"
+__version__ = "2026.2.0-rc1-1770745181"
 
 # Define package exports
 __all__ = [
@@ -27,6 +27,7 @@ __all__ = [
     "EnterpriseApi",
     "EventsApi",
     "FlowsApi",
+    "LifecycleApi",
     "ManagedApi",
     "Oauth2Api",
     "OutpostsApi",
@@ -149,6 +150,7 @@ __all__ = [
     "ConsentStageModeEnum",
     "ConsentStageRequest",
     "ContentType",
+    "ContentTypeEnum",
     "ContextualFlowInfo",
     "ContextualFlowInfoLayoutEnum",
     "CountryCodeEnum",
@@ -326,6 +328,11 @@ __all__ = [
     "LicenseStatusEnum",
     "LicenseSummary",
     "LicenseSummaryStatusEnum",
+    "LifecycleIteration",
+    "LifecycleIterationRequest",
+    "LifecycleIterationStateEnum",
+    "LifecycleRule",
+    "LifecycleRuleRequest",
     "Link",
     "LogEvent",
     "LogLevelEnum",
@@ -455,6 +462,8 @@ __all__ = [
     "PaginatedLDAPSourceList",
     "PaginatedLDAPSourcePropertyMappingList",
     "PaginatedLicenseList",
+    "PaginatedLifecycleIterationList",
+    "PaginatedLifecycleRuleList",
     "PaginatedMicrosoftEntraProviderGroupList",
     "PaginatedMicrosoftEntraProviderList",
     "PaginatedMicrosoftEntraProviderMappingList",
@@ -609,6 +618,7 @@ __all__ = [
     "PatchedLDAPSourcePropertyMappingRequest",
     "PatchedLDAPSourceRequest",
     "PatchedLicenseRequest",
+    "PatchedLifecycleRuleRequest",
     "PatchedMicrosoftEntraProviderMappingRequest",
     "PatchedMicrosoftEntraProviderRequest",
     "PatchedMutualTLSStageRequest",
@@ -736,6 +746,10 @@ __all__ = [
     "ReputationPolicy",
     "ReputationPolicyRequest",
     "ResidentKeyRequirementEnum",
+    "Review",
+    "ReviewRequest",
+    "ReviewerGroup",
+    "ReviewerUser",
     "Role",
     "RoleAssignedObjectPermission",
     "RoleModelPermission",
@@ -798,7 +812,6 @@ __all__ = [
     "Stage",
     "StageModeEnum",
     "StagePrompt",
-    "StateEnum",
     "StaticDevice",
     "StaticDeviceRequest",
     "StaticDeviceToken",
@@ -814,6 +827,7 @@ __all__ = [
     "TOTPDeviceRequest",
     "Task",
     "TaskAggregatedStatusEnum",
+    "TaskStateEnum",
     "TelegramAuthRequest",
     "TelegramChallengeResponseRequest",
     "TelegramLoginChallenge",
@@ -907,6 +921,7 @@ from authentik_client.api.endpoints_api import EndpointsApi as EndpointsApi
 from authentik_client.api.enterprise_api import EnterpriseApi as EnterpriseApi
 from authentik_client.api.events_api import EventsApi as EventsApi
 from authentik_client.api.flows_api import FlowsApi as FlowsApi
+from authentik_client.api.lifecycle_api import LifecycleApi as LifecycleApi
 from authentik_client.api.managed_api import ManagedApi as ManagedApi
 from authentik_client.api.oauth2_api import Oauth2Api as Oauth2Api
 from authentik_client.api.outposts_api import OutpostsApi as OutpostsApi
@@ -1033,6 +1048,7 @@ from authentik_client.models.consent_stage import ConsentStage as ConsentStage
 from authentik_client.models.consent_stage_mode_enum import ConsentStageModeEnum as ConsentStageModeEnum
 from authentik_client.models.consent_stage_request import ConsentStageRequest as ConsentStageRequest
 from authentik_client.models.content_type import ContentType as ContentType
+from authentik_client.models.content_type_enum import ContentTypeEnum as ContentTypeEnum
 from authentik_client.models.contextual_flow_info import ContextualFlowInfo as ContextualFlowInfo
 from authentik_client.models.contextual_flow_info_layout_enum import ContextualFlowInfoLayoutEnum as ContextualFlowInfoLayoutEnum
 from authentik_client.models.country_code_enum import CountryCodeEnum as CountryCodeEnum
@@ -1210,6 +1226,11 @@ from authentik_client.models.license_request import LicenseRequest as LicenseReq
 from authentik_client.models.license_status_enum import LicenseStatusEnum as LicenseStatusEnum
 from authentik_client.models.license_summary import LicenseSummary as LicenseSummary
 from authentik_client.models.license_summary_status_enum import LicenseSummaryStatusEnum as LicenseSummaryStatusEnum
+from authentik_client.models.lifecycle_iteration import LifecycleIteration as LifecycleIteration
+from authentik_client.models.lifecycle_iteration_request import LifecycleIterationRequest as LifecycleIterationRequest
+from authentik_client.models.lifecycle_iteration_state_enum import LifecycleIterationStateEnum as LifecycleIterationStateEnum
+from authentik_client.models.lifecycle_rule import LifecycleRule as LifecycleRule
+from authentik_client.models.lifecycle_rule_request import LifecycleRuleRequest as LifecycleRuleRequest
 from authentik_client.models.link import Link as Link
 from authentik_client.models.log_event import LogEvent as LogEvent
 from authentik_client.models.log_level_enum import LogLevelEnum as LogLevelEnum
@@ -1339,6 +1360,8 @@ from authentik_client.models.paginated_ldap_provider_list import PaginatedLDAPPr
 from authentik_client.models.paginated_ldap_source_list import PaginatedLDAPSourceList as PaginatedLDAPSourceList
 from authentik_client.models.paginated_ldap_source_property_mapping_list import PaginatedLDAPSourcePropertyMappingList as PaginatedLDAPSourcePropertyMappingList
 from authentik_client.models.paginated_license_list import PaginatedLicenseList as PaginatedLicenseList
+from authentik_client.models.paginated_lifecycle_iteration_list import PaginatedLifecycleIterationList as PaginatedLifecycleIterationList
+from authentik_client.models.paginated_lifecycle_rule_list import PaginatedLifecycleRuleList as PaginatedLifecycleRuleList
 from authentik_client.models.paginated_microsoft_entra_provider_group_list import PaginatedMicrosoftEntraProviderGroupList as PaginatedMicrosoftEntraProviderGroupList
 from authentik_client.models.paginated_microsoft_entra_provider_list import PaginatedMicrosoftEntraProviderList as PaginatedMicrosoftEntraProviderList
 from authentik_client.models.paginated_microsoft_entra_provider_mapping_list import PaginatedMicrosoftEntraProviderMappingList as PaginatedMicrosoftEntraProviderMappingList
@@ -1493,6 +1516,7 @@ from authentik_client.models.patched_ldap_provider_request import PatchedLDAPPro
 from authentik_client.models.patched_ldap_source_property_mapping_request import PatchedLDAPSourcePropertyMappingRequest as PatchedLDAPSourcePropertyMappingRequest
 from authentik_client.models.patched_ldap_source_request import PatchedLDAPSourceRequest as PatchedLDAPSourceRequest
 from authentik_client.models.patched_license_request import PatchedLicenseRequest as PatchedLicenseRequest
+from authentik_client.models.patched_lifecycle_rule_request import PatchedLifecycleRuleRequest as PatchedLifecycleRuleRequest
 from authentik_client.models.patched_microsoft_entra_provider_mapping_request import PatchedMicrosoftEntraProviderMappingRequest as PatchedMicrosoftEntraProviderMappingRequest
 from authentik_client.models.patched_microsoft_entra_provider_request import PatchedMicrosoftEntraProviderRequest as PatchedMicrosoftEntraProviderRequest
 from authentik_client.models.patched_mutual_tls_stage_request import PatchedMutualTLSStageRequest as PatchedMutualTLSStageRequest
@@ -1620,6 +1644,10 @@ from authentik_client.models.reputation import Reputation as Reputation
 from authentik_client.models.reputation_policy import ReputationPolicy as ReputationPolicy
 from authentik_client.models.reputation_policy_request import ReputationPolicyRequest as ReputationPolicyRequest
 from authentik_client.models.resident_key_requirement_enum import ResidentKeyRequirementEnum as ResidentKeyRequirementEnum
+from authentik_client.models.review import Review as Review
+from authentik_client.models.review_request import ReviewRequest as ReviewRequest
+from authentik_client.models.reviewer_group import ReviewerGroup as ReviewerGroup
+from authentik_client.models.reviewer_user import ReviewerUser as ReviewerUser
 from authentik_client.models.role import Role as Role
 from authentik_client.models.role_assigned_object_permission import RoleAssignedObjectPermission as RoleAssignedObjectPermission
 from authentik_client.models.role_model_permission import RoleModelPermission as RoleModelPermission
@@ -1682,7 +1710,6 @@ from authentik_client.models.source_type import SourceType as SourceType
 from authentik_client.models.stage import Stage as Stage
 from authentik_client.models.stage_mode_enum import StageModeEnum as StageModeEnum
 from authentik_client.models.stage_prompt import StagePrompt as StagePrompt
-from authentik_client.models.state_enum import StateEnum as StateEnum
 from authentik_client.models.static_device import StaticDevice as StaticDevice
 from authentik_client.models.static_device_request import StaticDeviceRequest as StaticDeviceRequest
 from authentik_client.models.static_device_token import StaticDeviceToken as StaticDeviceToken
@@ -1698,6 +1725,7 @@ from authentik_client.models.totp_device import TOTPDevice as TOTPDevice
 from authentik_client.models.totp_device_request import TOTPDeviceRequest as TOTPDeviceRequest
 from authentik_client.models.task import Task as Task
 from authentik_client.models.task_aggregated_status_enum import TaskAggregatedStatusEnum as TaskAggregatedStatusEnum
+from authentik_client.models.task_state_enum import TaskStateEnum as TaskStateEnum
 from authentik_client.models.telegram_auth_request import TelegramAuthRequest as TelegramAuthRequest
 from authentik_client.models.telegram_challenge_response_request import TelegramChallengeResponseRequest as TelegramChallengeResponseRequest
 from authentik_client.models.telegram_login_challenge import TelegramLoginChallenge as TelegramLoginChallenge
