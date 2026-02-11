@@ -56,12 +56,13 @@ class SAMLProviderRequest(BaseModel):
     sign_assertion: Optional[StrictBool] = None
     sign_response: Optional[StrictBool] = None
     sign_logout_request: Optional[StrictBool] = None
+    sign_logout_response: Optional[StrictBool] = None
     sp_binding: Optional[SAMLBindingsEnum] = Field(default=None, description="This determines how authentik sends the response back to the Service Provider.")
     sls_binding: Optional[SAMLBindingsEnum] = Field(default=None, description="This determines how authentik sends the logout response back to the Service Provider.")
     logout_method: Optional[SAMLLogoutMethods] = Field(default=None, description="Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).")
     default_relay_state: Optional[StrictStr] = Field(default=None, description="Default relay_state value for IDP-initiated logins")
     default_name_id_policy: Optional[SAMLNameIDPolicyEnum] = None
-    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "acs_url", "sls_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sign_logout_request", "sp_binding", "sls_binding", "logout_method", "default_relay_state", "default_name_id_policy"]
+    __properties: ClassVar[List[str]] = ["name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "acs_url", "sls_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sign_logout_request", "sign_logout_response", "sp_binding", "sls_binding", "logout_method", "default_relay_state", "default_name_id_policy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -166,6 +167,7 @@ class SAMLProviderRequest(BaseModel):
             "sign_assertion": obj.get("sign_assertion"),
             "sign_response": obj.get("sign_response"),
             "sign_logout_request": obj.get("sign_logout_request"),
+            "sign_logout_response": obj.get("sign_logout_response"),
             "sp_binding": obj.get("sp_binding"),
             "sls_binding": obj.get("sls_binding"),
             "logout_method": obj.get("logout_method"),

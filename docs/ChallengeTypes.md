@@ -59,14 +59,15 @@ Name | Type | Description | Notes
 **show_source_labels** | **bool** |  | 
 **enable_remember_me** | **bool** |  | [optional] [default to True]
 **passkey_challenge** | **Dict[str, object]** |  | [optional] 
-**logout_urls** | **List[Dict[str, object]]** |  | [optional] 
-**post_url** | **str** |  | [optional] 
-**saml_request** | **str** |  | [optional] 
-**relay_state** | **str** |  | [optional] 
+**logout_urls** | [**List[LogoutURL]**](LogoutURL.md) |  | [optional] 
 **provider_name** | **str** |  | [optional] 
-**binding** | **str** |  | [optional] 
-**redirect_url** | **str** |  | [optional] 
 **is_complete** | **bool** |  | [optional] [default to False]
+**post_url** | **str** |  | [optional] 
+**redirect_url** | **str** |  | [optional] 
+**saml_binding** | [**SAMLBindingsEnum**](SAMLBindingsEnum.md) |  | [optional] 
+**saml_request** | **str** |  | [optional] 
+**saml_response** | **str** |  | [optional] 
+**saml_relay_state** | **str** |  | [optional] 
 **slug** | **str** |  | 
 **fields** | [**List[StagePrompt]**](StagePrompt.md) |  | 
 **to** | **str** |  | 

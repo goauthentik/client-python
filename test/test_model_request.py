@@ -127,6 +127,7 @@ class TestModelRequest(unittest.TestCase):
                 sign_assertion = True,
                 sign_response = True,
                 sign_logout_request = True,
+                sign_logout_response = True,
                 sp_binding = 'redirect',
                 sls_binding = 'redirect',
                 default_relay_state = '',

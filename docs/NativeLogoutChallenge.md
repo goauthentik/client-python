@@ -9,13 +9,14 @@ Name | Type | Description | Notes
 **flow_info** | [**ContextualFlowInfo**](ContextualFlowInfo.md) |  | [optional] 
 **component** | **str** |  | [optional] [default to 'ak-provider-saml-native-logout']
 **response_errors** | **Dict[str, List[ErrorDetail]]** |  | [optional] 
-**post_url** | **str** |  | [optional] 
-**saml_request** | **str** |  | [optional] 
-**relay_state** | **str** |  | [optional] 
 **provider_name** | **str** |  | [optional] 
-**binding** | **str** |  | [optional] 
-**redirect_url** | **str** |  | [optional] 
 **is_complete** | **bool** |  | [optional] [default to False]
+**post_url** | **str** |  | [optional] 
+**redirect_url** | **str** |  | [optional] 
+**saml_binding** | [**SAMLBindingsEnum**](SAMLBindingsEnum.md) |  | [optional] 
+**saml_request** | **str** |  | [optional] 
+**saml_response** | **str** |  | [optional] 
+**saml_relay_state** | **str** |  | [optional] 
 
 ## Example
 

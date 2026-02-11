@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **flow_info** | [**ContextualFlowInfo**](ContextualFlowInfo.md) |  | [optional] 
 **component** | **str** |  | [optional] [default to 'ak-provider-iframe-logout']
 **response_errors** | **Dict[str, List[ErrorDetail]]** |  | [optional] 
-**logout_urls** | **List[Dict[str, object]]** |  | [optional] 
+**logout_urls** | [**List[LogoutURL]**](LogoutURL.md) |  | [optional] 
 
 ## Example
 

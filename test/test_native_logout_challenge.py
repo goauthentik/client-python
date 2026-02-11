@@ -50,13 +50,14 @@ class TestNativeLogoutChallenge(unittest.TestCase):
                             code = '', )
                         ]
                     },
-                post_url = '',
-                saml_request = '',
-                relay_state = '',
                 provider_name = '',
-                binding = '',
+                is_complete = True,
+                post_url = '',
                 redirect_url = '',
-                is_complete = True
+                saml_binding = 'redirect',
+                saml_request = '',
+                saml_response = '',
+                saml_relay_state = ''
             )
         else:
             return NativeLogoutChallenge(

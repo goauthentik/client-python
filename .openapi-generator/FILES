@@ -320,6 +320,7 @@ authentik_client/models/log_event.py
 authentik_client/models/log_level_enum.py
 authentik_client/models/login_challenge_types.py
 authentik_client/models/login_source.py
+authentik_client/models/logout_url.py
 authentik_client/models/matching_mode_enum.py
 authentik_client/models/mdm_config_request.py
 authentik_client/models/mdm_config_response.py
@@ -1188,6 +1189,7 @@ docs/LogEvent.md
 docs/LogLevelEnum.md
 docs/LoginChallengeTypes.md
 docs/LoginSource.md
+docs/LogoutURL.md
 docs/MDMConfigRequest.md
 docs/MDMConfigResponse.md
 docs/ManagedApi.md
@@ -2077,6 +2079,7 @@ test/test_log_event.py
 test/test_log_level_enum.py
 test/test_login_challenge_types.py
 test/test_login_source.py
+test/test_logout_url.py
 test/test_managed_api.py
 test/test_matching_mode_enum.py
 test/test_mdm_config_request.py

@@ -64,6 +64,7 @@ class SAMLProvider(BaseModel):
     sign_assertion: Optional[StrictBool] = None
     sign_response: Optional[StrictBool] = None
     sign_logout_request: Optional[StrictBool] = None
+    sign_logout_response: Optional[StrictBool] = None
     sp_binding: Optional[SAMLBindingsEnum] = Field(default=None, description="This determines how authentik sends the response back to the Service Provider.")
     sls_binding: Optional[SAMLBindingsEnum] = Field(default=None, description="This determines how authentik sends the logout response back to the Service Provider.")
     logout_method: Optional[SAMLLogoutMethods] = Field(default=None, description="Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).")
@@ -75,7 +76,7 @@ class SAMLProvider(BaseModel):
     url_sso_init: StrictStr = Field(description="Get SSO IDP-Initiated URL")
     url_slo_post: StrictStr = Field(description="Get SLO POST URL")
     url_slo_redirect: StrictStr = Field(description="Get SLO redirect URL")
-    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "acs_url", "sls_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sign_logout_request", "sp_binding", "sls_binding", "logout_method", "default_relay_state", "default_name_id_policy", "url_download_metadata", "url_sso_post", "url_sso_redirect", "url_sso_init", "url_slo_post", "url_slo_redirect"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "authentication_flow", "authorization_flow", "invalidation_flow", "property_mappings", "component", "assigned_application_slug", "assigned_application_name", "assigned_backchannel_application_slug", "assigned_backchannel_application_name", "verbose_name", "verbose_name_plural", "meta_model_name", "acs_url", "sls_url", "audience", "issuer", "assertion_valid_not_before", "assertion_valid_not_on_or_after", "session_valid_not_on_or_after", "name_id_mapping", "authn_context_class_ref_mapping", "digest_algorithm", "signature_algorithm", "signing_kp", "verification_kp", "encryption_kp", "sign_assertion", "sign_response", "sign_logout_request", "sign_logout_response", "sp_binding", "sls_binding", "logout_method", "default_relay_state", "default_name_id_policy", "url_download_metadata", "url_sso_post", "url_sso_redirect", "url_sso_init", "url_slo_post", "url_slo_redirect"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -239,6 +240,7 @@ class SAMLProvider(BaseModel):
             "sign_assertion": obj.get("sign_assertion"),
             "sign_response": obj.get("sign_response"),
             "sign_logout_request": obj.get("sign_logout_request"),
+            "sign_logout_response": obj.get("sign_logout_response"),
             "sp_binding": obj.get("sp_binding"),
             "sls_binding": obj.get("sls_binding"),
             "logout_method": obj.get("logout_method"),

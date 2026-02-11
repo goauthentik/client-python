@@ -299,6 +299,7 @@ from authentik_client.models.log_event import LogEvent
 from authentik_client.models.log_level_enum import LogLevelEnum
 from authentik_client.models.login_challenge_types import LoginChallengeTypes
 from authentik_client.models.login_source import LoginSource
+from authentik_client.models.logout_url import LogoutURL
 from authentik_client.models.mdm_config_request import MDMConfigRequest
 from authentik_client.models.mdm_config_response import MDMConfigResponse
 from authentik_client.models.matching_mode_enum import MatchingModeEnum

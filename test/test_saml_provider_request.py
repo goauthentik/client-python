@@ -60,6 +60,7 @@ class TestSAMLProviderRequest(unittest.TestCase):
                 sign_assertion = True,
                 sign_response = True,
                 sign_logout_request = True,
+                sign_logout_response = True,
                 sp_binding = 'redirect',
                 sls_binding = 'redirect',
                 logout_method = 'frontchannel_iframe',

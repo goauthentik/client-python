@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from authentik_client.models.contextual_flow_info import ContextualFlowInfo
 from authentik_client.models.error_detail import ErrorDetail
+from authentik_client.models.saml_bindings_enum import SAMLBindingsEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,14 +33,15 @@ class NativeLogoutChallenge(BaseModel):
     flow_info: Optional[ContextualFlowInfo] = None
     component: Optional[StrictStr] = 'ak-provider-saml-native-logout'
     response_errors: Optional[Dict[str, List[ErrorDetail]]] = None
-    post_url: Optional[StrictStr] = None
-    saml_request: Optional[StrictStr] = None
-    relay_state: Optional[StrictStr] = None
     provider_name: Optional[StrictStr] = None
-    binding: Optional[StrictStr] = None
-    redirect_url: Optional[StrictStr] = None
     is_complete: Optional[StrictBool] = False
-    __properties: ClassVar[List[str]] = ["flow_info", "component", "response_errors", "post_url", "saml_request", "relay_state", "provider_name", "binding", "redirect_url", "is_complete"]
+    post_url: Optional[StrictStr] = None
+    redirect_url: Optional[StrictStr] = None
+    saml_binding: Optional[SAMLBindingsEnum] = None
+    saml_request: Optional[StrictStr] = None
+    saml_response: Optional[StrictStr] = None
+    saml_relay_state: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["flow_info", "component", "response_errors", "provider_name", "is_complete", "post_url", "redirect_url", "saml_binding", "saml_request", "saml_response", "saml_relay_state"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -114,13 +116,14 @@ class NativeLogoutChallenge(BaseModel):
                 )
                 for _k, _v in obj.get("response_errors", {}).items()
             ),
-            "post_url": obj.get("post_url"),
-            "saml_request": obj.get("saml_request"),
-            "relay_state": obj.get("relay_state"),
             "provider_name": obj.get("provider_name"),
-            "binding": obj.get("binding"),
+            "is_complete": obj.get("is_complete") if obj.get("is_complete") is not None else False,
+            "post_url": obj.get("post_url"),
             "redirect_url": obj.get("redirect_url"),
-            "is_complete": obj.get("is_complete") if obj.get("is_complete") is not None else False
+            "saml_binding": obj.get("saml_binding"),
+            "saml_request": obj.get("saml_request"),
+            "saml_response": obj.get("saml_response"),
+            "saml_relay_state": obj.get("saml_relay_state")
         })
         return _obj
 

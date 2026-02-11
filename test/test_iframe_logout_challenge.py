@@ -51,9 +51,13 @@ class TestIframeLogoutChallenge(unittest.TestCase):
                         ]
                     },
                 logout_urls = [
-                    {
-                        'key' : null
-                        }
+                    authentik_client.models.logout_url.LogoutURL(
+                        url = '', 
+                        provider_name = '', 
+                        binding = '', 
+                        saml_request = '', 
+                        saml_response = '', 
+                        saml_relay_state = '', )
                     ]
             )
         else:

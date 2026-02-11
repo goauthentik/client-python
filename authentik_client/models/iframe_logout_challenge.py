@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from authentik_client.models.contextual_flow_info import ContextualFlowInfo
 from authentik_client.models.error_detail import ErrorDetail
+from authentik_client.models.logout_url import LogoutURL
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +33,7 @@ class IframeLogoutChallenge(BaseModel):
     flow_info: Optional[ContextualFlowInfo] = None
     component: Optional[StrictStr] = 'ak-provider-iframe-logout'
     response_errors: Optional[Dict[str, List[ErrorDetail]]] = None
-    logout_urls: Optional[List[Dict[str, Any]]] = None
+    logout_urls: Optional[List[LogoutURL]] = None
     __properties: ClassVar[List[str]] = ["flow_info", "component", "response_errors", "logout_urls"]
 
     model_config = ConfigDict(
@@ -86,6 +87,13 @@ class IframeLogoutChallenge(BaseModel):
                         _item.to_dict() for _item in self.response_errors[_key_response_errors]
                     ]
             _dict['response_errors'] = _field_dict_of_array
+        # override the default output from pydantic by calling `to_dict()` of each item in logout_urls (list)
+        _items = []
+        if self.logout_urls:
+            for _item_logout_urls in self.logout_urls:
+                if _item_logout_urls:
+                    _items.append(_item_logout_urls.to_dict())
+            _dict['logout_urls'] = _items
         return _dict
 
     @classmethod
@@ -108,7 +116,7 @@ class IframeLogoutChallenge(BaseModel):
                 )
                 for _k, _v in obj.get("response_errors", {}).items()
             ),
-            "logout_urls": obj.get("logout_urls")
+            "logout_urls": [LogoutURL.from_dict(_item) for _item in obj["logout_urls"]] if obj.get("logout_urls") is not None else None
         })
         return _obj
 

@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2026.5.0-rc1-1770771015"
+__version__ = "2026.5.0-rc1-1770841716"
 
 # Define package exports
 __all__ = [
@@ -338,6 +338,7 @@ __all__ = [
     "LogLevelEnum",
     "LoginChallengeTypes",
     "LoginSource",
+    "LogoutURL",
     "MDMConfigRequest",
     "MDMConfigResponse",
     "MatchingModeEnum",
@@ -1236,6 +1237,7 @@ from authentik_client.models.log_event import LogEvent as LogEvent
 from authentik_client.models.log_level_enum import LogLevelEnum as LogLevelEnum
 from authentik_client.models.login_challenge_types import LoginChallengeTypes as LoginChallengeTypes
 from authentik_client.models.login_source import LoginSource as LoginSource
+from authentik_client.models.logout_url import LogoutURL as LogoutURL
 from authentik_client.models.mdm_config_request import MDMConfigRequest as MDMConfigRequest
 from authentik_client.models.mdm_config_response import MDMConfigResponse as MDMConfigResponse
 from authentik_client.models.matching_mode_enum import MatchingModeEnum as MatchingModeEnum

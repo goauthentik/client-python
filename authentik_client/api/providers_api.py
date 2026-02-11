@@ -24695,6 +24695,7 @@ class ProvidersApi:
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
         sign_logout_request: Optional[StrictBool] = None,
+        sign_logout_response: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
@@ -24771,6 +24772,8 @@ class ProvidersApi:
         :type sign_assertion: bool
         :param sign_logout_request:
         :type sign_logout_request: bool
+        :param sign_logout_response:
+        :type sign_logout_response: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
@@ -24834,6 +24837,7 @@ class ProvidersApi:
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
             sign_logout_request=sign_logout_request,
+            sign_logout_response=sign_logout_response,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
@@ -24892,6 +24896,7 @@ class ProvidersApi:
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
         sign_logout_request: Optional[StrictBool] = None,
+        sign_logout_response: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
@@ -24968,6 +24973,8 @@ class ProvidersApi:
         :type sign_assertion: bool
         :param sign_logout_request:
         :type sign_logout_request: bool
+        :param sign_logout_response:
+        :type sign_logout_response: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
@@ -25031,6 +25038,7 @@ class ProvidersApi:
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
             sign_logout_request=sign_logout_request,
+            sign_logout_response=sign_logout_response,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
@@ -25089,6 +25097,7 @@ class ProvidersApi:
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
         sign_logout_request: Optional[StrictBool] = None,
+        sign_logout_response: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
@@ -25165,6 +25174,8 @@ class ProvidersApi:
         :type sign_assertion: bool
         :param sign_logout_request:
         :type sign_logout_request: bool
+        :param sign_logout_response:
+        :type sign_logout_response: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
@@ -25228,6 +25239,7 @@ class ProvidersApi:
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
             sign_logout_request=sign_logout_request,
+            sign_logout_response=sign_logout_response,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
@@ -25281,6 +25293,7 @@ class ProvidersApi:
         session_valid_not_on_or_after,
         sign_assertion,
         sign_logout_request,
+        sign_logout_response,
         sign_response,
         signature_algorithm,
         signing_kp,
@@ -25414,6 +25427,10 @@ class ProvidersApi:
         if sign_logout_request is not None:
             
             _query_params.append(('sign_logout_request', sign_logout_request))
+            
+        if sign_logout_response is not None:
+            
+            _query_params.append(('sign_logout_response', sign_logout_response))
             
         if sign_response is not None:
             
@@ -35320,6 +35337,7 @@ class ProvidersApi:
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
         sign_logout_request: Optional[StrictBool] = None,
+        sign_logout_response: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
@@ -35396,6 +35414,8 @@ class ProvidersApi:
         :type sign_assertion: bool
         :param sign_logout_request:
         :type sign_logout_request: bool
+        :param sign_logout_response:
+        :type sign_logout_response: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
@@ -35459,6 +35479,7 @@ class ProvidersApi:
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
             sign_logout_request=sign_logout_request,
+            sign_logout_response=sign_logout_response,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
@@ -35517,6 +35538,7 @@ class ProvidersApi:
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
         sign_logout_request: Optional[StrictBool] = None,
+        sign_logout_response: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
@@ -35593,6 +35615,8 @@ class ProvidersApi:
         :type sign_assertion: bool
         :param sign_logout_request:
         :type sign_logout_request: bool
+        :param sign_logout_response:
+        :type sign_logout_response: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
@@ -35656,6 +35680,7 @@ class ProvidersApi:
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
             sign_logout_request=sign_logout_request,
+            sign_logout_response=sign_logout_response,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
@@ -35714,6 +35739,7 @@ class ProvidersApi:
         session_valid_not_on_or_after: Optional[StrictStr] = None,
         sign_assertion: Optional[StrictBool] = None,
         sign_logout_request: Optional[StrictBool] = None,
+        sign_logout_response: Optional[StrictBool] = None,
         sign_response: Optional[StrictBool] = None,
         signature_algorithm: Optional[StrictStr] = None,
         signing_kp: Optional[UUID] = None,
@@ -35790,6 +35816,8 @@ class ProvidersApi:
         :type sign_assertion: bool
         :param sign_logout_request:
         :type sign_logout_request: bool
+        :param sign_logout_response:
+        :type sign_logout_response: bool
         :param sign_response:
         :type sign_response: bool
         :param signature_algorithm:
@@ -35853,6 +35881,7 @@ class ProvidersApi:
             session_valid_not_on_or_after=session_valid_not_on_or_after,
             sign_assertion=sign_assertion,
             sign_logout_request=sign_logout_request,
+            sign_logout_response=sign_logout_response,
             sign_response=sign_response,
             signature_algorithm=signature_algorithm,
             signing_kp=signing_kp,
@@ -35906,6 +35935,7 @@ class ProvidersApi:
         session_valid_not_on_or_after,
         sign_assertion,
         sign_logout_request,
+        sign_logout_response,
         sign_response,
         signature_algorithm,
         signing_kp,
@@ -36039,6 +36069,10 @@ class ProvidersApi:
         if sign_logout_request is not None:
             
             _query_params.append(('sign_logout_request', sign_logout_request))
+            
+        if sign_logout_response is not None:
+            
+            _query_params.append(('sign_logout_response', sign_logout_response))
             
         if sign_response is not None:
             

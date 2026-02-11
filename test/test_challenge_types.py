@@ -159,17 +159,22 @@ class TestChallengeTypes(unittest.TestCase):
                     'key' : None
                     },
                 logout_urls = [
-                    {
-                        'key' : None
-                        }
+                    authentik_client.models.logout_url.LogoutURL(
+                        url = '', 
+                        provider_name = '', 
+                        binding = '', 
+                        saml_request = '', 
+                        saml_response = '', 
+                        saml_relay_state = '', )
                     ],
-                post_url = '',
-                saml_request = '',
-                relay_state = '',
                 provider_name = '',
-                binding = '',
-                redirect_url = '',
                 is_complete = True,
+                post_url = '',
+                redirect_url = '',
+                saml_binding = 'redirect',
+                saml_request = '',
+                saml_response = '',
+                saml_relay_state = '',
                 slug = '',
                 fields = [
                     authentik_client.models.stage_prompt.StagePrompt(

@@ -6749,7 +6749,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **providers_saml_list**
-> PaginatedSAMLProviderList providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
+> PaginatedSAMLProviderList providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_logout_response=sign_logout_response, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
 
 SAMLProvider Viewset
 
@@ -6809,6 +6809,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     session_valid_not_on_or_after = 'session_valid_not_on_or_after_example' # str |  (optional)
     sign_assertion = True # bool |  (optional)
     sign_logout_request = True # bool |  (optional)
+    sign_logout_response = True # bool |  (optional)
     sign_response = True # bool |  (optional)
     signature_algorithm = 'signature_algorithm_example' # str |  (optional)
     signing_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
@@ -6818,7 +6819,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     verification_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
-        api_response = api_instance.providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
+        api_response = api_instance.providers_saml_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_logout_response=sign_logout_response, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
         print("The response of ProvidersApi->providers_saml_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -6858,6 +6859,7 @@ Name | Type | Description  | Notes
  **session_valid_not_on_or_after** | **str**|  | [optional] 
  **sign_assertion** | **bool**|  | [optional] 
  **sign_logout_request** | **bool**|  | [optional] 
+ **sign_logout_response** | **bool**|  | [optional] 
  **sign_response** | **bool**|  | [optional] 
  **signature_algorithm** | **str**|  | [optional] 
  **signing_kp** | **UUID**|  | [optional] 
@@ -9574,7 +9576,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **providers_wsfed_list**
-> PaginatedWSFederationProviderList providers_wsfed_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
+> PaginatedWSFederationProviderList providers_wsfed_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_logout_response=sign_logout_response, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
 
 WSFederationProvider Viewset
 
@@ -9634,6 +9636,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     session_valid_not_on_or_after = 'session_valid_not_on_or_after_example' # str |  (optional)
     sign_assertion = True # bool |  (optional)
     sign_logout_request = True # bool |  (optional)
+    sign_logout_response = True # bool |  (optional)
     sign_response = True # bool |  (optional)
     signature_algorithm = 'signature_algorithm_example' # str |  (optional)
     signing_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
@@ -9643,7 +9646,7 @@ with authentik_client.ApiClient(configuration) as api_client:
     verification_kp = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
 
     try:
-        api_response = api_instance.providers_wsfed_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
+        api_response = api_instance.providers_wsfed_list(acs_url=acs_url, assertion_valid_not_before=assertion_valid_not_before, assertion_valid_not_on_or_after=assertion_valid_not_on_or_after, audience=audience, authentication_flow=authentication_flow, authn_context_class_ref_mapping=authn_context_class_ref_mapping, authorization_flow=authorization_flow, backchannel_application=backchannel_application, default_name_id_policy=default_name_id_policy, default_relay_state=default_relay_state, digest_algorithm=digest_algorithm, encryption_kp=encryption_kp, invalidation_flow=invalidation_flow, is_backchannel=is_backchannel, issuer=issuer, logout_method=logout_method, name=name, name_id_mapping=name_id_mapping, ordering=ordering, page=page, page_size=page_size, property_mappings=property_mappings, search=search, session_valid_not_on_or_after=session_valid_not_on_or_after, sign_assertion=sign_assertion, sign_logout_request=sign_logout_request, sign_logout_response=sign_logout_response, sign_response=sign_response, signature_algorithm=signature_algorithm, signing_kp=signing_kp, sls_binding=sls_binding, sls_url=sls_url, sp_binding=sp_binding, verification_kp=verification_kp)
         print("The response of ProvidersApi->providers_wsfed_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -9683,6 +9686,7 @@ Name | Type | Description  | Notes
  **session_valid_not_on_or_after** | **str**|  | [optional] 
  **sign_assertion** | **bool**|  | [optional] 
  **sign_logout_request** | **bool**|  | [optional] 
+ **sign_logout_response** | **bool**|  | [optional] 
  **sign_response** | **bool**|  | [optional] 
  **signature_algorithm** | **str**|  | [optional] 
  **signing_kp** | **UUID**|  | [optional] 
