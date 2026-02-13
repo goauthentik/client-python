@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2026.5.0-rc1-1770841716"
+__version__ = "2026.5.0-rc1-1770991623"
 
 # Define package exports
 __all__ = [
@@ -299,6 +299,7 @@ __all__ = [
     "InvalidResponseActionEnum",
     "Invitation",
     "InvitationRequest",
+    "InvitationSendEmailRequest",
     "InvitationStage",
     "InvitationStageRequest",
     "IssuerModeEnum",
@@ -1198,6 +1199,7 @@ from authentik_client.models.intent_enum import IntentEnum as IntentEnum
 from authentik_client.models.invalid_response_action_enum import InvalidResponseActionEnum as InvalidResponseActionEnum
 from authentik_client.models.invitation import Invitation as Invitation
 from authentik_client.models.invitation_request import InvitationRequest as InvitationRequest
+from authentik_client.models.invitation_send_email_request import InvitationSendEmailRequest as InvitationSendEmailRequest
 from authentik_client.models.invitation_stage import InvitationStage as InvitationStage
 from authentik_client.models.invitation_stage_request import InvitationStageRequest as InvitationStageRequest
 from authentik_client.models.issuer_mode_enum import IssuerModeEnum as IssuerModeEnum

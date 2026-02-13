@@ -260,6 +260,7 @@ from authentik_client.models.intent_enum import IntentEnum
 from authentik_client.models.invalid_response_action_enum import InvalidResponseActionEnum
 from authentik_client.models.invitation import Invitation
 from authentik_client.models.invitation_request import InvitationRequest
+from authentik_client.models.invitation_send_email_request import InvitationSendEmailRequest
 from authentik_client.models.invitation_stage import InvitationStage
 from authentik_client.models.invitation_stage_request import InvitationStageRequest
 from authentik_client.models.issuer_mode_enum import IssuerModeEnum

@@ -759,6 +759,12 @@ class TestStagesApi(unittest.TestCase):
         """
         pass
 
+    def test_stages_invitation_invitations_send_email_create(self) -> None:
+        """Test case for stages_invitation_invitations_send_email_create
+
+        """
+        pass
+
     def test_stages_invitation_invitations_update(self) -> None:
         """Test case for stages_invitation_invitations_update
 

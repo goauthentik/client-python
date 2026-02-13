@@ -126,6 +126,7 @@ Method | HTTP request | Description
 [**stages_invitation_invitations_list**](StagesApi.md#stages_invitation_invitations_list) | **GET** /stages/invitation/invitations/ | 
 [**stages_invitation_invitations_partial_update**](StagesApi.md#stages_invitation_invitations_partial_update) | **PATCH** /stages/invitation/invitations/{invite_uuid}/ | 
 [**stages_invitation_invitations_retrieve**](StagesApi.md#stages_invitation_invitations_retrieve) | **GET** /stages/invitation/invitations/{invite_uuid}/ | 
+[**stages_invitation_invitations_send_email_create**](StagesApi.md#stages_invitation_invitations_send_email_create) | **POST** /stages/invitation/invitations/{invite_uuid}/send_email/ | 
 [**stages_invitation_invitations_update**](StagesApi.md#stages_invitation_invitations_update) | **PUT** /stages/invitation/invitations/{invite_uuid}/ | 
 [**stages_invitation_invitations_used_by_list**](StagesApi.md#stages_invitation_invitations_used_by_list) | **GET** /stages/invitation/invitations/{invite_uuid}/used_by/ | 
 [**stages_invitation_stages_create**](StagesApi.md#stages_invitation_stages_create) | **POST** /stages/invitation/stages/ | 
@@ -9943,6 +9944,83 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stages_invitation_invitations_send_email_create**
+> stages_invitation_invitations_send_email_create(invite_uuid, invitation_send_email_request)
+
+Send invitation link via email to one or more addresses
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.invitation_send_email_request import InvitationSendEmailRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.StagesApi(api_client)
+    invite_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Invitation.
+    invitation_send_email_request = authentik_client.InvitationSendEmailRequest() # InvitationSendEmailRequest | 
+
+    try:
+        api_instance.stages_invitation_invitations_send_email_create(invite_uuid, invitation_send_email_request)
+    except Exception as e:
+        print("Exception when calling StagesApi->stages_invitation_invitations_send_email_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invite_uuid** | **UUID**| A UUID string identifying this Invitation. | 
+ **invitation_send_email_request** | [**InvitationSendEmailRequest**](InvitationSendEmailRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
 **400** |  |  -  |
 **403** |  |  -  |
 

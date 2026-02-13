@@ -281,6 +281,7 @@ authentik_client/models/intent_enum.py
 authentik_client/models/invalid_response_action_enum.py
 authentik_client/models/invitation.py
 authentik_client/models/invitation_request.py
+authentik_client/models/invitation_send_email_request.py
 authentik_client/models/invitation_stage.py
 authentik_client/models/invitation_stage_request.py
 authentik_client/models/issuer_mode_enum.py
@@ -1149,6 +1150,7 @@ docs/IntentEnum.md
 docs/InvalidResponseActionEnum.md
 docs/Invitation.md
 docs/InvitationRequest.md
+docs/InvitationSendEmailRequest.md
 docs/InvitationStage.md
 docs/InvitationStageRequest.md
 docs/IssuerModeEnum.md
@@ -2039,6 +2041,7 @@ test/test_intent_enum.py
 test/test_invalid_response_action_enum.py
 test/test_invitation.py
 test/test_invitation_request.py
+test/test_invitation_send_email_request.py
 test/test_invitation_stage.py
 test/test_invitation_stage_request.py
 test/test_issuer_mode_enum.py
