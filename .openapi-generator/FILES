@@ -144,7 +144,6 @@ authentik_client/models/denied_action_enum.py
 authentik_client/models/deny_stage.py
 authentik_client/models/deny_stage_request.py
 authentik_client/models/detailed_country.py
-authentik_client/models/detailed_country_field.py
 authentik_client/models/device.py
 authentik_client/models/device_access_group.py
 authentik_client/models/device_access_group_request.py
@@ -235,6 +234,7 @@ authentik_client/models/frame_challenge.py
 authentik_client/models/frame_challenge_response_request.py
 authentik_client/models/generic_error.py
 authentik_client/models/geo_ip_policy.py
+authentik_client/models/geo_ip_policy_countries_obj_inner.py
 authentik_client/models/geo_ip_policy_request.py
 authentik_client/models/geoip_binding_enum.py
 authentik_client/models/global_task_status.py
@@ -1009,7 +1009,6 @@ docs/DeniedActionEnum.md
 docs/DenyStage.md
 docs/DenyStageRequest.md
 docs/DetailedCountry.md
-docs/DetailedCountryField.md
 docs/Device.md
 docs/DeviceAccessGroup.md
 docs/DeviceAccessGroupRequest.md
@@ -1104,6 +1103,7 @@ docs/FrameChallenge.md
 docs/FrameChallengeResponseRequest.md
 docs/GenericError.md
 docs/GeoIPPolicy.md
+docs/GeoIPPolicyCountriesObjInner.md
 docs/GeoIPPolicyRequest.md
 docs/GeoipBindingEnum.md
 docs/GlobalTaskStatus.md
@@ -1900,7 +1900,6 @@ test/test_denied_action_enum.py
 test/test_deny_stage.py
 test/test_deny_stage_request.py
 test/test_detailed_country.py
-test/test_detailed_country_field.py
 test/test_device.py
 test/test_device_access_group.py
 test/test_device_access_group_request.py
@@ -1995,6 +1994,7 @@ test/test_frame_challenge.py
 test/test_frame_challenge_response_request.py
 test/test_generic_error.py
 test/test_geo_ip_policy.py
+test/test_geo_ip_policy_countries_obj_inner.py
 test/test_geo_ip_policy_request.py
 test/test_geoip_binding_enum.py
 test/test_global_task_status.py

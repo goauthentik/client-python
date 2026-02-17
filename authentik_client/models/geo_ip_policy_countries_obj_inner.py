@@ -18,17 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
-from authentik_client.models.country_code_enum import CountryCodeEnum
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DetailedCountryField(BaseModel):
+class GeoIPPolicyCountriesObjInner(BaseModel):
     """
-    DetailedCountryField
+    GeoIPPolicyCountriesObjInner
     """ # noqa: E501
-    code: CountryCodeEnum
+    code: Annotated[str, Field(min_length=2, strict=True, max_length=2)]
     name: StrictStr
     __properties: ClassVar[List[str]] = ["code", "name"]
 
@@ -50,7 +50,7 @@ class DetailedCountryField(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DetailedCountryField from a JSON string"""
+        """Create an instance of GeoIPPolicyCountriesObjInner from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +75,7 @@ class DetailedCountryField(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DetailedCountryField from a dict"""
+        """Create an instance of GeoIPPolicyCountriesObjInner from a dict"""
         if obj is None:
             return None
 

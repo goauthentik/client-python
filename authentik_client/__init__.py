@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2026.5.0-rc1-1770991623"
+__version__ = "2026.5.0-rc1-1771349837"
 
 # Define package exports
 __all__ = [
@@ -162,7 +162,6 @@ __all__ = [
     "DenyStage",
     "DenyStageRequest",
     "DetailedCountry",
-    "DetailedCountryField",
     "Device",
     "DeviceAccessGroup",
     "DeviceAccessGroupRequest",
@@ -253,6 +252,7 @@ __all__ = [
     "FrameChallengeResponseRequest",
     "GenericError",
     "GeoIPPolicy",
+    "GeoIPPolicyCountriesObjInner",
     "GeoIPPolicyRequest",
     "GeoipBindingEnum",
     "GlobalTaskStatus",
@@ -1062,7 +1062,6 @@ from authentik_client.models.denied_action_enum import DeniedActionEnum as Denie
 from authentik_client.models.deny_stage import DenyStage as DenyStage
 from authentik_client.models.deny_stage_request import DenyStageRequest as DenyStageRequest
 from authentik_client.models.detailed_country import DetailedCountry as DetailedCountry
-from authentik_client.models.detailed_country_field import DetailedCountryField as DetailedCountryField
 from authentik_client.models.device import Device as Device
 from authentik_client.models.device_access_group import DeviceAccessGroup as DeviceAccessGroup
 from authentik_client.models.device_access_group_request import DeviceAccessGroupRequest as DeviceAccessGroupRequest
@@ -1153,6 +1152,7 @@ from authentik_client.models.frame_challenge import FrameChallenge as FrameChall
 from authentik_client.models.frame_challenge_response_request import FrameChallengeResponseRequest as FrameChallengeResponseRequest
 from authentik_client.models.generic_error import GenericError as GenericError
 from authentik_client.models.geo_ip_policy import GeoIPPolicy as GeoIPPolicy
+from authentik_client.models.geo_ip_policy_countries_obj_inner import GeoIPPolicyCountriesObjInner as GeoIPPolicyCountriesObjInner
 from authentik_client.models.geo_ip_policy_request import GeoIPPolicyRequest as GeoIPPolicyRequest
 from authentik_client.models.geoip_binding_enum import GeoipBindingEnum as GeoipBindingEnum
 from authentik_client.models.global_task_status import GlobalTaskStatus as GlobalTaskStatus

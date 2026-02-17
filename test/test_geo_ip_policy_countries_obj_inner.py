@@ -15,10 +15,10 @@
 
 import unittest
 
-from authentik_client.models.detailed_country_field import DetailedCountryField
+from authentik_client.models.geo_ip_policy_countries_obj_inner import GeoIPPolicyCountriesObjInner
 
-class TestDetailedCountryField(unittest.TestCase):
-    """DetailedCountryField unit test stubs"""
+class TestGeoIPPolicyCountriesObjInner(unittest.TestCase):
+    """GeoIPPolicyCountriesObjInner unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,28 @@ class TestDetailedCountryField(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DetailedCountryField:
-        """Test DetailedCountryField
+    def make_instance(self, include_optional) -> GeoIPPolicyCountriesObjInner:
+        """Test GeoIPPolicyCountriesObjInner
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DetailedCountryField`
+        # uncomment below to create an instance of `GeoIPPolicyCountriesObjInner`
         """
-        model = DetailedCountryField()
+        model = GeoIPPolicyCountriesObjInner()
         if include_optional:
-            return DetailedCountryField(
-                code = 'AF',
+            return GeoIPPolicyCountriesObjInner(
+                code = '01',
                 name = ''
             )
         else:
-            return DetailedCountryField(
-                code = 'AF',
+            return GeoIPPolicyCountriesObjInner(
+                code = '01',
                 name = '',
         )
         """
 
-    def testDetailedCountryField(self):
-        """Test DetailedCountryField"""
+    def testGeoIPPolicyCountriesObjInner(self):
+        """Test GeoIPPolicyCountriesObjInner"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

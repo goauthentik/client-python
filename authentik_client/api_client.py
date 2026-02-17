@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     authentik
 
@@ -11,6 +9,7 @@
 
     Do not edit the class manually.
 """  # noqa: E501
+
 
 
 import datetime
@@ -92,7 +91,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/2026.5.0-rc1-1770991623/python'
+        self.user_agent = 'OpenAPI-Generator/2026.5.0-rc1-1771349837/python'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -709,7 +708,9 @@ class ApiClient:
                 content_disposition
             )
             assert m is not None, "Unexpected 'content-disposition' header value"
-            filename = m.group(1)
+            filename = os.path.basename(m.group(1))  # Strip any directory traversal
+            if filename in ("", ".", ".."):  # fall back to tmp filename
+                filename = os.path.basename(path)
             path = os.path.join(os.path.dirname(path), filename)
 
         with open(path, "wb") as f:

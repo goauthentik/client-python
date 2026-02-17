@@ -23,7 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
 from authentik_client.models.country_code_enum import CountryCodeEnum
-from authentik_client.models.detailed_country_field import DetailedCountryField
+from authentik_client.models.geo_ip_policy_countries_obj_inner import GeoIPPolicyCountriesObjInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -41,7 +41,7 @@ class GeoIPPolicy(BaseModel):
     bound_to: StrictInt = Field(description="Return objects policy is bound to")
     asns: Optional[List[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]]] = None
     countries: Annotated[List[CountryCodeEnum], Field(max_length=249)]
-    countries_obj: List[DetailedCountryField]
+    countries_obj: List[GeoIPPolicyCountriesObjInner]
     check_history_distance: Optional[StrictBool] = None
     history_max_distance_km: Optional[Annotated[int, Field(le=9223372036854775807, strict=True, ge=0)]] = None
     distance_tolerance_km: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = None
@@ -132,7 +132,7 @@ class GeoIPPolicy(BaseModel):
             "bound_to": obj.get("bound_to"),
             "asns": obj.get("asns"),
             "countries": obj.get("countries"),
-            "countries_obj": [DetailedCountryField.from_dict(_item) for _item in obj["countries_obj"]] if obj.get("countries_obj") is not None else None,
+            "countries_obj": [GeoIPPolicyCountriesObjInner.from_dict(_item) for _item in obj["countries_obj"]] if obj.get("countries_obj") is not None else None,
             "check_history_distance": obj.get("check_history_distance"),
             "history_max_distance_km": obj.get("history_max_distance_km"),
             "distance_tolerance_km": obj.get("distance_tolerance_km"),

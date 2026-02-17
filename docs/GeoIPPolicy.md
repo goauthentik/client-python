@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **bound_to** | **int** | Return objects policy is bound to | [readonly] 
 **asns** | **List[int]** |  | [optional] 
 **countries** | [**List[CountryCodeEnum]**](CountryCodeEnum.md) |  | 
-**countries_obj** | [**List[DetailedCountryField]**](DetailedCountryField.md) |  | [readonly] 
+**countries_obj** | [**List[GeoIPPolicyCountriesObjInner]**](GeoIPPolicyCountriesObjInner.md) |  | [readonly] 
 **check_history_distance** | **bool** |  | [optional] 
 **history_max_distance_km** | **int** |  | [optional] 
 **distance_tolerance_km** | **int** |  | [optional] 

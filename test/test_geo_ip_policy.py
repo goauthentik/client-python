@@ -51,8 +51,8 @@ class TestGeoIPPolicy(unittest.TestCase):
                     'AF'
                     ],
                 countries_obj = [
-                    authentik_client.models.detailed_country_field.DetailedCountryField(
-                        code = 'AF', 
+                    authentik_client.models.geo_ip_policy_countries_obj_inner.GeoIPPolicy_countries_obj_inner(
+                        code = '01', 
                         name = '', )
                     ],
                 check_history_distance = True,
@@ -75,8 +75,8 @@ class TestGeoIPPolicy(unittest.TestCase):
                     'AF'
                     ],
                 countries_obj = [
-                    authentik_client.models.detailed_country_field.DetailedCountryField(
-                        code = 'AF', 
+                    authentik_client.models.geo_ip_policy_countries_obj_inner.GeoIPPolicy_countries_obj_inner(
+                        code = '01', 
                         name = '', )
                     ],
         )

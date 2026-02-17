@@ -123,7 +123,6 @@ from authentik_client.models.denied_action_enum import DeniedActionEnum
 from authentik_client.models.deny_stage import DenyStage
 from authentik_client.models.deny_stage_request import DenyStageRequest
 from authentik_client.models.detailed_country import DetailedCountry
-from authentik_client.models.detailed_country_field import DetailedCountryField
 from authentik_client.models.device import Device
 from authentik_client.models.device_access_group import DeviceAccessGroup
 from authentik_client.models.device_access_group_request import DeviceAccessGroupRequest
@@ -214,6 +213,7 @@ from authentik_client.models.frame_challenge import FrameChallenge
 from authentik_client.models.frame_challenge_response_request import FrameChallengeResponseRequest
 from authentik_client.models.generic_error import GenericError
 from authentik_client.models.geo_ip_policy import GeoIPPolicy
+from authentik_client.models.geo_ip_policy_countries_obj_inner import GeoIPPolicyCountriesObjInner
 from authentik_client.models.geo_ip_policy_request import GeoIPPolicyRequest
 from authentik_client.models.geoip_binding_enum import GeoipBindingEnum
 from authentik_client.models.global_task_status import GlobalTaskStatus
