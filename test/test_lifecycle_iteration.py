@@ -42,9 +42,9 @@ class TestLifecycleIteration(unittest.TestCase):
                 object_verbose = '',
                 object_admin_url = '',
                 state = 'REVIEWED',
-                opened_on = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                grace_period_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                next_review_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                opened_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                grace_period_end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                next_review_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 reviews = [
                     authentik_client.models.review.Review(
                         id = '', 
@@ -76,9 +76,9 @@ class TestLifecycleIteration(unittest.TestCase):
                 object_verbose = '',
                 object_admin_url = '',
                 state = 'REVIEWED',
-                opened_on = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                grace_period_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                next_review_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                opened_on = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                grace_period_end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                next_review_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 reviews = [
                     authentik_client.models.review.Review(
                         id = '', 

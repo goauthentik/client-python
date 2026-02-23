@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import date
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
@@ -40,9 +40,9 @@ class LifecycleIteration(BaseModel):
     object_verbose: StrictStr
     object_admin_url: StrictStr
     state: LifecycleIterationStateEnum
-    opened_on: date
-    grace_period_end: date
-    next_review_date: date
+    opened_on: datetime
+    grace_period_end: datetime
+    next_review_date: datetime
     reviews: List[Review]
     user_can_review: StrictBool
     reviewer_groups: List[ReviewerGroup]
