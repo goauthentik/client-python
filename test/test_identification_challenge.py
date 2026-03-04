@@ -57,6 +57,7 @@ class TestIdentificationChallenge(unittest.TestCase):
                 password_fields = True,
                 allow_show_password = True,
                 application_pre = '',
+                application_pre_launch = '',
                 flow_designation = 'authentication',
                 captcha_stage = authentik_client.models.captcha_challenge.CaptchaChallenge(
                     flow_info = authentik_client.models.contextual_flow_info.ContextualFlowInfo(

@@ -63,6 +63,7 @@ class TestCurrentBrand(unittest.TestCase):
                 flags = authentik_client.models.current_brand_flags.CurrentBrand_flags(
                     enterprise_audit_include_expanded_diff = True, 
                     policies_buffered_access_view = True, 
+                    flows_continuous_login = True, 
                     flows_refresh_others = True, )
             )
         else:
@@ -88,6 +89,7 @@ class TestCurrentBrand(unittest.TestCase):
                 flags = authentik_client.models.current_brand_flags.CurrentBrand_flags(
                     enterprise_audit_include_expanded_diff = True, 
                     policies_buffered_access_view = True, 
+                    flows_continuous_login = True, 
                     flows_refresh_others = True, ),
         )
         """

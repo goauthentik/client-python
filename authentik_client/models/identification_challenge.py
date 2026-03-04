@@ -40,6 +40,7 @@ class IdentificationChallenge(BaseModel):
     password_fields: StrictBool
     allow_show_password: Optional[StrictBool] = False
     application_pre: Optional[StrictStr] = None
+    application_pre_launch: Optional[StrictStr] = None
     flow_designation: FlowDesignationEnum
     captcha_stage: Optional[CaptchaChallenge] = None
     enroll_url: Optional[StrictStr] = None
@@ -50,7 +51,7 @@ class IdentificationChallenge(BaseModel):
     show_source_labels: StrictBool
     enable_remember_me: Optional[StrictBool] = True
     passkey_challenge: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["flow_info", "component", "response_errors", "user_fields", "pending_user_identifier", "password_fields", "allow_show_password", "application_pre", "flow_designation", "captcha_stage", "enroll_url", "recovery_url", "passwordless_url", "primary_action", "sources", "show_source_labels", "enable_remember_me", "passkey_challenge"]
+    __properties: ClassVar[List[str]] = ["flow_info", "component", "response_errors", "user_fields", "pending_user_identifier", "password_fields", "allow_show_password", "application_pre", "application_pre_launch", "flow_designation", "captcha_stage", "enroll_url", "recovery_url", "passwordless_url", "primary_action", "sources", "show_source_labels", "enable_remember_me", "passkey_challenge"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -160,6 +161,7 @@ class IdentificationChallenge(BaseModel):
             "password_fields": obj.get("password_fields"),
             "allow_show_password": obj.get("allow_show_password") if obj.get("allow_show_password") is not None else False,
             "application_pre": obj.get("application_pre"),
+            "application_pre_launch": obj.get("application_pre_launch"),
             "flow_designation": obj.get("flow_designation"),
             "captcha_stage": CaptchaChallenge.from_dict(obj["captcha_stage"]) if obj.get("captcha_stage") is not None else None,
             "enroll_url": obj.get("enroll_url"),

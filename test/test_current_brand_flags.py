@@ -38,12 +38,14 @@ class TestCurrentBrandFlags(unittest.TestCase):
             return CurrentBrandFlags(
                 enterprise_audit_include_expanded_diff = True,
                 policies_buffered_access_view = True,
+                flows_continuous_login = True,
                 flows_refresh_others = True
             )
         else:
             return CurrentBrandFlags(
                 enterprise_audit_include_expanded_diff = True,
                 policies_buffered_access_view = True,
+                flows_continuous_login = True,
                 flows_refresh_others = True,
         )
         """
