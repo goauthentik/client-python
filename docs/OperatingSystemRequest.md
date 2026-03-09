@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **family** | [**DeviceFactsOSFamily**](DeviceFactsOSFamily.md) |  | 
 **name** | **str** | Operating System name, such as &#39;Server 2022&#39; or &#39;Ubuntu&#39; | [optional] 
 **version** | **str** | Operating System version, must always be the version number but may contain build name | [optional] 
-**arch** | **str** |  | 
+**arch** | **str** |  | [optional] 
 
 ## Example
 

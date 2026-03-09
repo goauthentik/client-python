@@ -133,6 +133,7 @@ class ModelEnum(str, Enum):
     AUTHENTIK_BRANDS_DOT_BRAND = 'authentik_brands.brand'
     AUTHENTIK_BLUEPRINTS_DOT_BLUEPRINTINSTANCE = 'authentik_blueprints.blueprintinstance'
     AUTHENTIK_ENDPOINTS_CONNECTORS_FLEET_DOT_FLEETCONNECTOR = 'authentik_endpoints_connectors_fleet.fleetconnector'
+    AUTHENTIK_ENDPOINTS_CONNECTORS_GOOGLE_CHROME_DOT_GOOGLECHROMECONNECTOR = 'authentik_endpoints_connectors_google_chrome.googlechromeconnector'
     AUTHENTIK_LIFECYCLE_DOT_LIFECYCLERULE = 'authentik_lifecycle.lifecyclerule'
     AUTHENTIK_LIFECYCLE_DOT_LIFECYCLEITERATION = 'authentik_lifecycle.lifecycleiteration'
     AUTHENTIK_LIFECYCLE_DOT_REVIEW = 'authentik_lifecycle.review'

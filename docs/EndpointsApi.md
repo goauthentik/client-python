@@ -60,6 +60,13 @@ Method | HTTP request | Description
 [**endpoints_fleet_connectors_retrieve**](EndpointsApi.md#endpoints_fleet_connectors_retrieve) | **GET** /endpoints/fleet/connectors/{connector_uuid}/ | 
 [**endpoints_fleet_connectors_update**](EndpointsApi.md#endpoints_fleet_connectors_update) | **PUT** /endpoints/fleet/connectors/{connector_uuid}/ | 
 [**endpoints_fleet_connectors_used_by_list**](EndpointsApi.md#endpoints_fleet_connectors_used_by_list) | **GET** /endpoints/fleet/connectors/{connector_uuid}/used_by/ | 
+[**endpoints_google_chrome_connectors_create**](EndpointsApi.md#endpoints_google_chrome_connectors_create) | **POST** /endpoints/google_chrome/connectors/ | 
+[**endpoints_google_chrome_connectors_destroy**](EndpointsApi.md#endpoints_google_chrome_connectors_destroy) | **DELETE** /endpoints/google_chrome/connectors/{connector_uuid}/ | 
+[**endpoints_google_chrome_connectors_list**](EndpointsApi.md#endpoints_google_chrome_connectors_list) | **GET** /endpoints/google_chrome/connectors/ | 
+[**endpoints_google_chrome_connectors_partial_update**](EndpointsApi.md#endpoints_google_chrome_connectors_partial_update) | **PATCH** /endpoints/google_chrome/connectors/{connector_uuid}/ | 
+[**endpoints_google_chrome_connectors_retrieve**](EndpointsApi.md#endpoints_google_chrome_connectors_retrieve) | **GET** /endpoints/google_chrome/connectors/{connector_uuid}/ | 
+[**endpoints_google_chrome_connectors_update**](EndpointsApi.md#endpoints_google_chrome_connectors_update) | **PUT** /endpoints/google_chrome/connectors/{connector_uuid}/ | 
+[**endpoints_google_chrome_connectors_used_by_list**](EndpointsApi.md#endpoints_google_chrome_connectors_used_by_list) | **GET** /endpoints/google_chrome/connectors/{connector_uuid}/used_by/ | 
 
 
 # **endpoints_agents_connectors_agent_config_retrieve**
@@ -4360,6 +4367,557 @@ with authentik_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **connector_uuid** | **UUID**| A UUID string identifying this Fleet Connector. | 
+
+### Return type
+
+[**List[UsedBy]**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **endpoints_google_chrome_connectors_create**
+> GoogleChromeConnector endpoints_google_chrome_connectors_create(google_chrome_connector_request)
+
+GoogleChromeConnector Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.google_chrome_connector import GoogleChromeConnector
+from authentik_client.models.google_chrome_connector_request import GoogleChromeConnectorRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EndpointsApi(api_client)
+    google_chrome_connector_request = authentik_client.GoogleChromeConnectorRequest() # GoogleChromeConnectorRequest | 
+
+    try:
+        api_response = api_instance.endpoints_google_chrome_connectors_create(google_chrome_connector_request)
+        print("The response of EndpointsApi->endpoints_google_chrome_connectors_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->endpoints_google_chrome_connectors_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **google_chrome_connector_request** | [**GoogleChromeConnectorRequest**](GoogleChromeConnectorRequest.md)|  | 
+
+### Return type
+
+[**GoogleChromeConnector**](GoogleChromeConnector.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **endpoints_google_chrome_connectors_destroy**
+> endpoints_google_chrome_connectors_destroy(connector_uuid)
+
+GoogleChromeConnector Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EndpointsApi(api_client)
+    connector_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Device Trust Connector.
+
+    try:
+        api_instance.endpoints_google_chrome_connectors_destroy(connector_uuid)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->endpoints_google_chrome_connectors_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector_uuid** | **UUID**| A UUID string identifying this Google Device Trust Connector. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **endpoints_google_chrome_connectors_list**
+> PaginatedGoogleChromeConnectorList endpoints_google_chrome_connectors_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+
+GoogleChromeConnector Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.paginated_google_chrome_connector_list import PaginatedGoogleChromeConnectorList
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EndpointsApi(api_client)
+    name = 'name_example' # str |  (optional)
+    ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+    page = 56 # int | A page number within the paginated result set. (optional)
+    page_size = 56 # int | Number of results to return per page. (optional)
+    search = 'search_example' # str | A search term. (optional)
+
+    try:
+        api_response = api_instance.endpoints_google_chrome_connectors_list(name=name, ordering=ordering, page=page, page_size=page_size, search=search)
+        print("The response of EndpointsApi->endpoints_google_chrome_connectors_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->endpoints_google_chrome_connectors_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedGoogleChromeConnectorList**](PaginatedGoogleChromeConnectorList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **endpoints_google_chrome_connectors_partial_update**
+> GoogleChromeConnector endpoints_google_chrome_connectors_partial_update(connector_uuid, patched_google_chrome_connector_request=patched_google_chrome_connector_request)
+
+GoogleChromeConnector Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.google_chrome_connector import GoogleChromeConnector
+from authentik_client.models.patched_google_chrome_connector_request import PatchedGoogleChromeConnectorRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EndpointsApi(api_client)
+    connector_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Device Trust Connector.
+    patched_google_chrome_connector_request = authentik_client.PatchedGoogleChromeConnectorRequest() # PatchedGoogleChromeConnectorRequest |  (optional)
+
+    try:
+        api_response = api_instance.endpoints_google_chrome_connectors_partial_update(connector_uuid, patched_google_chrome_connector_request=patched_google_chrome_connector_request)
+        print("The response of EndpointsApi->endpoints_google_chrome_connectors_partial_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->endpoints_google_chrome_connectors_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector_uuid** | **UUID**| A UUID string identifying this Google Device Trust Connector. | 
+ **patched_google_chrome_connector_request** | [**PatchedGoogleChromeConnectorRequest**](PatchedGoogleChromeConnectorRequest.md)|  | [optional] 
+
+### Return type
+
+[**GoogleChromeConnector**](GoogleChromeConnector.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **endpoints_google_chrome_connectors_retrieve**
+> GoogleChromeConnector endpoints_google_chrome_connectors_retrieve(connector_uuid)
+
+GoogleChromeConnector Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.google_chrome_connector import GoogleChromeConnector
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EndpointsApi(api_client)
+    connector_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Device Trust Connector.
+
+    try:
+        api_response = api_instance.endpoints_google_chrome_connectors_retrieve(connector_uuid)
+        print("The response of EndpointsApi->endpoints_google_chrome_connectors_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->endpoints_google_chrome_connectors_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector_uuid** | **UUID**| A UUID string identifying this Google Device Trust Connector. | 
+
+### Return type
+
+[**GoogleChromeConnector**](GoogleChromeConnector.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **endpoints_google_chrome_connectors_update**
+> GoogleChromeConnector endpoints_google_chrome_connectors_update(connector_uuid, google_chrome_connector_request)
+
+GoogleChromeConnector Viewset
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.google_chrome_connector import GoogleChromeConnector
+from authentik_client.models.google_chrome_connector_request import GoogleChromeConnectorRequest
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EndpointsApi(api_client)
+    connector_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Device Trust Connector.
+    google_chrome_connector_request = authentik_client.GoogleChromeConnectorRequest() # GoogleChromeConnectorRequest | 
+
+    try:
+        api_response = api_instance.endpoints_google_chrome_connectors_update(connector_uuid, google_chrome_connector_request)
+        print("The response of EndpointsApi->endpoints_google_chrome_connectors_update:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->endpoints_google_chrome_connectors_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector_uuid** | **UUID**| A UUID string identifying this Google Device Trust Connector. | 
+ **google_chrome_connector_request** | [**GoogleChromeConnectorRequest**](GoogleChromeConnectorRequest.md)|  | 
+
+### Return type
+
+[**GoogleChromeConnector**](GoogleChromeConnector.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **endpoints_google_chrome_connectors_used_by_list**
+> List[UsedBy] endpoints_google_chrome_connectors_used_by_list(connector_uuid)
+
+Get a list of all objects that use this object
+
+### Example
+
+* Bearer Authentication (authentik):
+
+```python
+import authentik_client
+from authentik_client.models.used_by import UsedBy
+from authentik_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = authentik_client.Configuration(
+    host = "/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: authentik
+configuration = authentik_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with authentik_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = authentik_client.EndpointsApi(api_client)
+    connector_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | A UUID string identifying this Google Device Trust Connector.
+
+    try:
+        api_response = api_instance.endpoints_google_chrome_connectors_used_by_list(connector_uuid)
+        print("The response of EndpointsApi->endpoints_google_chrome_connectors_used_by_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->endpoints_google_chrome_connectors_used_by_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector_uuid** | **UUID**| A UUID string identifying this Google Device Trust Connector. | 
 
 ### Return type
 

@@ -18,21 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from authentik_client.models.device_facts_os_family import DeviceFactsOSFamily
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List
+from authentik_client.models.google_chrome_connector import GoogleChromeConnector
+from authentik_client.models.pagination import Pagination
 from typing import Optional, Set
 from typing_extensions import Self
 
-class OperatingSystem(BaseModel):
+class PaginatedGoogleChromeConnectorList(BaseModel):
     """
-    For example: {\"family\":\"linux\",\"name\":\"Ubuntu\",\"version\":\"24.04.3 LTS (Noble Numbat)\",\"arch\":\"amd64\"} {\"family\": \"windows\",\"name\":\"Server 2022 Datacenter\",\"version\":\"10.0.20348.4405\",\"arch\":\"amd64\"} {\"family\": \"windows\",\"name\":\"Server 2022 Datacenter\",\"version\":\"10.0.20348.4405\",\"arch\":\"amd64\"} {\"family\": \"mac_os\", \"name\": \"\", \"version\": \"26.2\", \"arch\": \"arm64\"}
+    PaginatedGoogleChromeConnectorList
     """ # noqa: E501
-    family: DeviceFactsOSFamily
-    name: Optional[StrictStr] = Field(default=None, description="Operating System name, such as 'Server 2022' or 'Ubuntu'")
-    version: Optional[StrictStr] = Field(default=None, description="Operating System version, must always be the version number but may contain build name")
-    arch: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["family", "name", "version", "arch"]
+    pagination: Pagination
+    results: List[GoogleChromeConnector]
+    autocomplete: Dict[str, Any]
+    __properties: ClassVar[List[str]] = ["pagination", "results", "autocomplete"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +52,7 @@ class OperatingSystem(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OperatingSystem from a JSON string"""
+        """Create an instance of PaginatedGoogleChromeConnectorList from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,11 +73,21 @@ class OperatingSystem(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of pagination
+        if self.pagination:
+            _dict['pagination'] = self.pagination.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in results (list)
+        _items = []
+        if self.results:
+            for _item_results in self.results:
+                if _item_results:
+                    _items.append(_item_results.to_dict())
+            _dict['results'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OperatingSystem from a dict"""
+        """Create an instance of PaginatedGoogleChromeConnectorList from a dict"""
         if obj is None:
             return None
 
@@ -85,10 +95,9 @@ class OperatingSystem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "family": obj.get("family"),
-            "name": obj.get("name"),
-            "version": obj.get("version"),
-            "arch": obj.get("arch")
+            "pagination": Pagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
+            "results": [GoogleChromeConnector.from_dict(_item) for _item in obj["results"]] if obj.get("results") is not None else None,
+            "autocomplete": obj.get("autocomplete")
         })
         return _obj
 

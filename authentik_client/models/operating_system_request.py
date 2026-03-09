@@ -32,7 +32,7 @@ class OperatingSystemRequest(BaseModel):
     family: DeviceFactsOSFamily
     name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Operating System name, such as 'Server 2022' or 'Ubuntu'")
     version: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Operating System version, must always be the version number but may contain build name")
-    arch: Annotated[str, Field(min_length=1, strict=True)]
+    arch: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     __properties: ClassVar[List[str]] = ["family", "name", "version", "arch"]
 
     model_config = ConfigDict(

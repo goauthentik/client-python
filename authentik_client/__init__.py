@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2026.5.0-rc1-1772621265"
+__version__ = "2026.5.0-rc1-1773051796"
 
 # Define package exports
 __all__ = [
@@ -256,6 +256,8 @@ __all__ = [
     "GeoIPPolicyRequest",
     "GeoipBindingEnum",
     "GlobalTaskStatus",
+    "GoogleChromeConnector",
+    "GoogleChromeConnectorRequest",
     "GoogleEndpointDevice",
     "GoogleEndpointDeviceRequest",
     "GoogleWorkspaceProvider",
@@ -439,6 +441,7 @@ __all__ = [
     "PaginatedFlowList",
     "PaginatedFlowStageBindingList",
     "PaginatedGeoIPPolicyList",
+    "PaginatedGoogleChromeConnectorList",
     "PaginatedGoogleEndpointDeviceList",
     "PaginatedGoogleWorkspaceProviderGroupList",
     "PaginatedGoogleWorkspaceProviderList",
@@ -598,6 +601,7 @@ __all__ = [
     "PatchedFlowRequest",
     "PatchedFlowStageBindingRequest",
     "PatchedGeoIPPolicyRequest",
+    "PatchedGoogleChromeConnectorRequest",
     "PatchedGoogleEndpointDeviceRequest",
     "PatchedGoogleWorkspaceProviderMappingRequest",
     "PatchedGoogleWorkspaceProviderRequest",
@@ -1156,6 +1160,8 @@ from authentik_client.models.geo_ip_policy_countries_obj_inner import GeoIPPolic
 from authentik_client.models.geo_ip_policy_request import GeoIPPolicyRequest as GeoIPPolicyRequest
 from authentik_client.models.geoip_binding_enum import GeoipBindingEnum as GeoipBindingEnum
 from authentik_client.models.global_task_status import GlobalTaskStatus as GlobalTaskStatus
+from authentik_client.models.google_chrome_connector import GoogleChromeConnector as GoogleChromeConnector
+from authentik_client.models.google_chrome_connector_request import GoogleChromeConnectorRequest as GoogleChromeConnectorRequest
 from authentik_client.models.google_endpoint_device import GoogleEndpointDevice as GoogleEndpointDevice
 from authentik_client.models.google_endpoint_device_request import GoogleEndpointDeviceRequest as GoogleEndpointDeviceRequest
 from authentik_client.models.google_workspace_provider import GoogleWorkspaceProvider as GoogleWorkspaceProvider
@@ -1339,6 +1345,7 @@ from authentik_client.models.paginated_fleet_connector_list import PaginatedFlee
 from authentik_client.models.paginated_flow_list import PaginatedFlowList as PaginatedFlowList
 from authentik_client.models.paginated_flow_stage_binding_list import PaginatedFlowStageBindingList as PaginatedFlowStageBindingList
 from authentik_client.models.paginated_geo_ip_policy_list import PaginatedGeoIPPolicyList as PaginatedGeoIPPolicyList
+from authentik_client.models.paginated_google_chrome_connector_list import PaginatedGoogleChromeConnectorList as PaginatedGoogleChromeConnectorList
 from authentik_client.models.paginated_google_endpoint_device_list import PaginatedGoogleEndpointDeviceList as PaginatedGoogleEndpointDeviceList
 from authentik_client.models.paginated_google_workspace_provider_group_list import PaginatedGoogleWorkspaceProviderGroupList as PaginatedGoogleWorkspaceProviderGroupList
 from authentik_client.models.paginated_google_workspace_provider_list import PaginatedGoogleWorkspaceProviderList as PaginatedGoogleWorkspaceProviderList
@@ -1498,6 +1505,7 @@ from authentik_client.models.patched_fleet_connector_request import PatchedFleet
 from authentik_client.models.patched_flow_request import PatchedFlowRequest as PatchedFlowRequest
 from authentik_client.models.patched_flow_stage_binding_request import PatchedFlowStageBindingRequest as PatchedFlowStageBindingRequest
 from authentik_client.models.patched_geo_ip_policy_request import PatchedGeoIPPolicyRequest as PatchedGeoIPPolicyRequest
+from authentik_client.models.patched_google_chrome_connector_request import PatchedGoogleChromeConnectorRequest as PatchedGoogleChromeConnectorRequest
 from authentik_client.models.patched_google_endpoint_device_request import PatchedGoogleEndpointDeviceRequest as PatchedGoogleEndpointDeviceRequest
 from authentik_client.models.patched_google_workspace_provider_mapping_request import PatchedGoogleWorkspaceProviderMappingRequest as PatchedGoogleWorkspaceProviderMappingRequest
 from authentik_client.models.patched_google_workspace_provider_request import PatchedGoogleWorkspaceProviderRequest as PatchedGoogleWorkspaceProviderRequest

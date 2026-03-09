@@ -238,6 +238,8 @@ authentik_client/models/geo_ip_policy_countries_obj_inner.py
 authentik_client/models/geo_ip_policy_request.py
 authentik_client/models/geoip_binding_enum.py
 authentik_client/models/global_task_status.py
+authentik_client/models/google_chrome_connector.py
+authentik_client/models/google_chrome_connector_request.py
 authentik_client/models/google_endpoint_device.py
 authentik_client/models/google_endpoint_device_request.py
 authentik_client/models/google_workspace_provider.py
@@ -420,6 +422,7 @@ authentik_client/models/paginated_fleet_connector_list.py
 authentik_client/models/paginated_flow_list.py
 authentik_client/models/paginated_flow_stage_binding_list.py
 authentik_client/models/paginated_geo_ip_policy_list.py
+authentik_client/models/paginated_google_chrome_connector_list.py
 authentik_client/models/paginated_google_endpoint_device_list.py
 authentik_client/models/paginated_google_workspace_provider_group_list.py
 authentik_client/models/paginated_google_workspace_provider_list.py
@@ -579,6 +582,7 @@ authentik_client/models/patched_fleet_connector_request.py
 authentik_client/models/patched_flow_request.py
 authentik_client/models/patched_flow_stage_binding_request.py
 authentik_client/models/patched_geo_ip_policy_request.py
+authentik_client/models/patched_google_chrome_connector_request.py
 authentik_client/models/patched_google_endpoint_device_request.py
 authentik_client/models/patched_google_workspace_provider_mapping_request.py
 authentik_client/models/patched_google_workspace_provider_request.py
@@ -1107,6 +1111,8 @@ docs/GeoIPPolicyCountriesObjInner.md
 docs/GeoIPPolicyRequest.md
 docs/GeoipBindingEnum.md
 docs/GlobalTaskStatus.md
+docs/GoogleChromeConnector.md
+docs/GoogleChromeConnectorRequest.md
 docs/GoogleEndpointDevice.md
 docs/GoogleEndpointDeviceRequest.md
 docs/GoogleWorkspaceProvider.md
@@ -1294,6 +1300,7 @@ docs/PaginatedFleetConnectorList.md
 docs/PaginatedFlowList.md
 docs/PaginatedFlowStageBindingList.md
 docs/PaginatedGeoIPPolicyList.md
+docs/PaginatedGoogleChromeConnectorList.md
 docs/PaginatedGoogleEndpointDeviceList.md
 docs/PaginatedGoogleWorkspaceProviderGroupList.md
 docs/PaginatedGoogleWorkspaceProviderList.md
@@ -1453,6 +1460,7 @@ docs/PatchedFleetConnectorRequest.md
 docs/PatchedFlowRequest.md
 docs/PatchedFlowStageBindingRequest.md
 docs/PatchedGeoIPPolicyRequest.md
+docs/PatchedGoogleChromeConnectorRequest.md
 docs/PatchedGoogleEndpointDeviceRequest.md
 docs/PatchedGoogleWorkspaceProviderMappingRequest.md
 docs/PatchedGoogleWorkspaceProviderRequest.md
@@ -1998,6 +2006,8 @@ test/test_geo_ip_policy_countries_obj_inner.py
 test/test_geo_ip_policy_request.py
 test/test_geoip_binding_enum.py
 test/test_global_task_status.py
+test/test_google_chrome_connector.py
+test/test_google_chrome_connector_request.py
 test/test_google_endpoint_device.py
 test/test_google_endpoint_device_request.py
 test/test_google_workspace_provider.py
@@ -2184,6 +2194,7 @@ test/test_paginated_fleet_connector_list.py
 test/test_paginated_flow_list.py
 test/test_paginated_flow_stage_binding_list.py
 test/test_paginated_geo_ip_policy_list.py
+test/test_paginated_google_chrome_connector_list.py
 test/test_paginated_google_endpoint_device_list.py
 test/test_paginated_google_workspace_provider_group_list.py
 test/test_paginated_google_workspace_provider_list.py
@@ -2343,6 +2354,7 @@ test/test_patched_fleet_connector_request.py
 test/test_patched_flow_request.py
 test/test_patched_flow_stage_binding_request.py
 test/test_patched_geo_ip_policy_request.py
+test/test_patched_google_chrome_connector_request.py
 test/test_patched_google_endpoint_device_request.py
 test/test_patched_google_workspace_provider_mapping_request.py
 test/test_patched_google_workspace_provider_request.py

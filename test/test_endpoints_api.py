@@ -363,6 +363,48 @@ class TestEndpointsApi(unittest.TestCase):
         """
         pass
 
+    def test_endpoints_google_chrome_connectors_create(self) -> None:
+        """Test case for endpoints_google_chrome_connectors_create
+
+        """
+        pass
+
+    def test_endpoints_google_chrome_connectors_destroy(self) -> None:
+        """Test case for endpoints_google_chrome_connectors_destroy
+
+        """
+        pass
+
+    def test_endpoints_google_chrome_connectors_list(self) -> None:
+        """Test case for endpoints_google_chrome_connectors_list
+
+        """
+        pass
+
+    def test_endpoints_google_chrome_connectors_partial_update(self) -> None:
+        """Test case for endpoints_google_chrome_connectors_partial_update
+
+        """
+        pass
+
+    def test_endpoints_google_chrome_connectors_retrieve(self) -> None:
+        """Test case for endpoints_google_chrome_connectors_retrieve
+
+        """
+        pass
+
+    def test_endpoints_google_chrome_connectors_update(self) -> None:
+        """Test case for endpoints_google_chrome_connectors_update
+
+        """
+        pass
+
+    def test_endpoints_google_chrome_connectors_used_by_list(self) -> None:
+        """Test case for endpoints_google_chrome_connectors_used_by_list
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

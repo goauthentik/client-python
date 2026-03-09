@@ -93,6 +93,7 @@ class AppEnum(str, Enum):
     AUTHENTIK_DOT_ENTERPRISE_DOT_AUDIT = 'authentik.enterprise.audit'
     AUTHENTIK_DOT_ENTERPRISE_DOT_ENDPOINTS_DOT_CONNECTORS_DOT_AGENT = 'authentik.enterprise.endpoints.connectors.agent'
     AUTHENTIK_DOT_ENTERPRISE_DOT_ENDPOINTS_DOT_CONNECTORS_DOT_FLEET = 'authentik.enterprise.endpoints.connectors.fleet'
+    AUTHENTIK_DOT_ENTERPRISE_DOT_ENDPOINTS_DOT_CONNECTORS_DOT_GOOGLE_CHROME = 'authentik.enterprise.endpoints.connectors.google_chrome'
     AUTHENTIK_DOT_ENTERPRISE_DOT_LIFECYCLE = 'authentik.enterprise.lifecycle'
     AUTHENTIK_DOT_ENTERPRISE_DOT_POLICIES_DOT_UNIQUE_PASSWORD = 'authentik.enterprise.policies.unique_password'
     AUTHENTIK_DOT_ENTERPRISE_DOT_PROVIDERS_DOT_GOOGLE_WORKSPACE = 'authentik.enterprise.providers.google_workspace'

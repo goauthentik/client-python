@@ -30,6 +30,7 @@ class VendorEnum(str, Enum):
     GOAUTHENTIK_DOT_IO_SLASH_AT_MERGED = 'goauthentik.io/@merged'
     GOAUTHENTIK_DOT_IO_SLASH_PLATFORM = 'goauthentik.io/platform'
     FLEETDM_DOT_COM = 'fleetdm.com'
+    CHROME_DOT_GOOGLE_DOT_COM = 'chrome.google.com'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

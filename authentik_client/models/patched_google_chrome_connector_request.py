@@ -18,21 +18,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
-from authentik_client.models.device_facts_os_family import DeviceFactsOSFamily
+from typing_extensions import Annotated
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
-class OperatingSystem(BaseModel):
+class PatchedGoogleChromeConnectorRequest(BaseModel):
     """
-    For example: {\"family\":\"linux\",\"name\":\"Ubuntu\",\"version\":\"24.04.3 LTS (Noble Numbat)\",\"arch\":\"amd64\"} {\"family\": \"windows\",\"name\":\"Server 2022 Datacenter\",\"version\":\"10.0.20348.4405\",\"arch\":\"amd64\"} {\"family\": \"windows\",\"name\":\"Server 2022 Datacenter\",\"version\":\"10.0.20348.4405\",\"arch\":\"amd64\"} {\"family\": \"mac_os\", \"name\": \"\", \"version\": \"26.2\", \"arch\": \"arm64\"}
+    GoogleChromeConnector Serializer
     """ # noqa: E501
-    family: DeviceFactsOSFamily
-    name: Optional[StrictStr] = Field(default=None, description="Operating System name, such as 'Server 2022' or 'Ubuntu'")
-    version: Optional[StrictStr] = Field(default=None, description="Operating System version, must always be the version number but may contain build name")
-    arch: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["family", "name", "version", "arch"]
+    connector_uuid: Optional[UUID] = None
+    name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
+    enabled: Optional[StrictBool] = None
+    credentials: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["connector_uuid", "name", "enabled", "credentials"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +53,7 @@ class OperatingSystem(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OperatingSystem from a JSON string"""
+        """Create an instance of PatchedGoogleChromeConnectorRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,7 +78,7 @@ class OperatingSystem(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OperatingSystem from a dict"""
+        """Create an instance of PatchedGoogleChromeConnectorRequest from a dict"""
         if obj is None:
             return None
 
@@ -85,10 +86,10 @@ class OperatingSystem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "family": obj.get("family"),
+            "connector_uuid": obj.get("connector_uuid"),
             "name": obj.get("name"),
-            "version": obj.get("version"),
-            "arch": obj.get("arch")
+            "enabled": obj.get("enabled"),
+            "credentials": obj.get("credentials")
         })
         return _obj
 

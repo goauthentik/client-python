@@ -44,7 +44,6 @@ class TestOperatingSystemRequest(unittest.TestCase):
         else:
             return OperatingSystemRequest(
                 family = 'linux',
-                arch = '0',
         )
         """
 
