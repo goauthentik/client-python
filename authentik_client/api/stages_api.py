@@ -18575,7 +18575,6 @@ class StagesApi:
         authenticator_attachment: Optional[StrictStr] = None,
         configure_flow: Optional[UUID] = None,
         device_type_restrictions: Optional[List[UUID]] = None,
-        friendly_name: Optional[StrictStr] = None,
         max_attempts: Optional[StrictInt] = None,
         name: Optional[StrictStr] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
@@ -18583,7 +18582,6 @@ class StagesApi:
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
         resident_key_requirement: Optional[StrictStr] = None,
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
-        stage_uuid: Optional[UUID] = None,
         user_verification: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -18608,8 +18606,6 @@ class StagesApi:
         :type configure_flow: UUID
         :param device_type_restrictions:
         :type device_type_restrictions: List[UUID]
-        :param friendly_name:
-        :type friendly_name: str
         :param max_attempts:
         :type max_attempts: int
         :param name:
@@ -18624,8 +18620,6 @@ class StagesApi:
         :type resident_key_requirement: str
         :param search: A search term.
         :type search: str
-        :param stage_uuid:
-        :type stage_uuid: UUID
         :param user_verification:
         :type user_verification: str
         :param _request_timeout: timeout setting for this request. If one
@@ -18654,7 +18648,6 @@ class StagesApi:
             authenticator_attachment=authenticator_attachment,
             configure_flow=configure_flow,
             device_type_restrictions=device_type_restrictions,
-            friendly_name=friendly_name,
             max_attempts=max_attempts,
             name=name,
             ordering=ordering,
@@ -18662,7 +18655,6 @@ class StagesApi:
             page_size=page_size,
             resident_key_requirement=resident_key_requirement,
             search=search,
-            stage_uuid=stage_uuid,
             user_verification=user_verification,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -18692,7 +18684,6 @@ class StagesApi:
         authenticator_attachment: Optional[StrictStr] = None,
         configure_flow: Optional[UUID] = None,
         device_type_restrictions: Optional[List[UUID]] = None,
-        friendly_name: Optional[StrictStr] = None,
         max_attempts: Optional[StrictInt] = None,
         name: Optional[StrictStr] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
@@ -18700,7 +18691,6 @@ class StagesApi:
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
         resident_key_requirement: Optional[StrictStr] = None,
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
-        stage_uuid: Optional[UUID] = None,
         user_verification: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -18725,8 +18715,6 @@ class StagesApi:
         :type configure_flow: UUID
         :param device_type_restrictions:
         :type device_type_restrictions: List[UUID]
-        :param friendly_name:
-        :type friendly_name: str
         :param max_attempts:
         :type max_attempts: int
         :param name:
@@ -18741,8 +18729,6 @@ class StagesApi:
         :type resident_key_requirement: str
         :param search: A search term.
         :type search: str
-        :param stage_uuid:
-        :type stage_uuid: UUID
         :param user_verification:
         :type user_verification: str
         :param _request_timeout: timeout setting for this request. If one
@@ -18771,7 +18757,6 @@ class StagesApi:
             authenticator_attachment=authenticator_attachment,
             configure_flow=configure_flow,
             device_type_restrictions=device_type_restrictions,
-            friendly_name=friendly_name,
             max_attempts=max_attempts,
             name=name,
             ordering=ordering,
@@ -18779,7 +18764,6 @@ class StagesApi:
             page_size=page_size,
             resident_key_requirement=resident_key_requirement,
             search=search,
-            stage_uuid=stage_uuid,
             user_verification=user_verification,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -18809,7 +18793,6 @@ class StagesApi:
         authenticator_attachment: Optional[StrictStr] = None,
         configure_flow: Optional[UUID] = None,
         device_type_restrictions: Optional[List[UUID]] = None,
-        friendly_name: Optional[StrictStr] = None,
         max_attempts: Optional[StrictInt] = None,
         name: Optional[StrictStr] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="Which field to use when ordering the results.")] = None,
@@ -18817,7 +18800,6 @@ class StagesApi:
         page_size: Annotated[Optional[StrictInt], Field(description="Number of results to return per page.")] = None,
         resident_key_requirement: Optional[StrictStr] = None,
         search: Annotated[Optional[StrictStr], Field(description="A search term.")] = None,
-        stage_uuid: Optional[UUID] = None,
         user_verification: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -18842,8 +18824,6 @@ class StagesApi:
         :type configure_flow: UUID
         :param device_type_restrictions:
         :type device_type_restrictions: List[UUID]
-        :param friendly_name:
-        :type friendly_name: str
         :param max_attempts:
         :type max_attempts: int
         :param name:
@@ -18858,8 +18838,6 @@ class StagesApi:
         :type resident_key_requirement: str
         :param search: A search term.
         :type search: str
-        :param stage_uuid:
-        :type stage_uuid: UUID
         :param user_verification:
         :type user_verification: str
         :param _request_timeout: timeout setting for this request. If one
@@ -18888,7 +18866,6 @@ class StagesApi:
             authenticator_attachment=authenticator_attachment,
             configure_flow=configure_flow,
             device_type_restrictions=device_type_restrictions,
-            friendly_name=friendly_name,
             max_attempts=max_attempts,
             name=name,
             ordering=ordering,
@@ -18896,7 +18873,6 @@ class StagesApi:
             page_size=page_size,
             resident_key_requirement=resident_key_requirement,
             search=search,
-            stage_uuid=stage_uuid,
             user_verification=user_verification,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -18921,7 +18897,6 @@ class StagesApi:
         authenticator_attachment,
         configure_flow,
         device_type_restrictions,
-        friendly_name,
         max_attempts,
         name,
         ordering,
@@ -18929,7 +18904,6 @@ class StagesApi:
         page_size,
         resident_key_requirement,
         search,
-        stage_uuid,
         user_verification,
         _request_auth,
         _content_type,
@@ -18966,10 +18940,6 @@ class StagesApi:
             
             _query_params.append(('device_type_restrictions', device_type_restrictions))
             
-        if friendly_name is not None:
-            
-            _query_params.append(('friendly_name', friendly_name))
-            
         if max_attempts is not None:
             
             _query_params.append(('max_attempts', max_attempts))
@@ -18997,10 +18967,6 @@ class StagesApi:
         if search is not None:
             
             _query_params.append(('search', search))
-            
-        if stage_uuid is not None:
-            
-            _query_params.append(('stage_uuid', stage_uuid))
             
         if user_verification is not None:
             

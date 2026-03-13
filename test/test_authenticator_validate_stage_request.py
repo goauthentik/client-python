@@ -46,6 +46,9 @@ class TestAuthenticatorValidateStageRequest(unittest.TestCase):
                     ],
                 last_auth_threshold = '0',
                 webauthn_user_verification = 'required',
+                webauthn_hints = [
+                    'security-key'
+                    ],
                 webauthn_allowed_device_types = [
                     ''
                     ]

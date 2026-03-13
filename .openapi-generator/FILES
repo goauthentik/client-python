@@ -895,6 +895,7 @@ authentik_client/models/version_history.py
 authentik_client/models/web_authn_device.py
 authentik_client/models/web_authn_device_request.py
 authentik_client/models/web_authn_device_type.py
+authentik_client/models/web_authn_hint_enum.py
 authentik_client/models/worker.py
 authentik_client/models/ws_federation_provider.py
 authentik_client/models/ws_federation_provider_request.py
@@ -1787,6 +1788,7 @@ docs/WSFederationProviderRequest.md
 docs/WebAuthnDevice.md
 docs/WebAuthnDeviceRequest.md
 docs/WebAuthnDeviceType.md
+docs/WebAuthnHintEnum.md
 docs/Worker.md
 git_push.sh
 pyproject.toml
@@ -2680,6 +2682,7 @@ test/test_version_history.py
 test/test_web_authn_device.py
 test/test_web_authn_device_request.py
 test/test_web_authn_device_type.py
+test/test_web_authn_hint_enum.py
 test/test_worker.py
 test/test_ws_federation_provider.py
 test/test_ws_federation_provider_request.py

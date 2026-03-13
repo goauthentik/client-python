@@ -42,6 +42,9 @@ class TestAuthenticatorWebAuthnStageRequest(unittest.TestCase):
                 user_verification = 'required',
                 authenticator_attachment = 'platform',
                 resident_key_requirement = 'discouraged',
+                hints = [
+                    'security-key'
+                    ],
                 device_type_restrictions = [
                     ''
                     ],

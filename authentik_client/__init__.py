@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "2026.5.0-rc1-1773051796"
+__version__ = "2026.5.0-rc1-1773445570"
 
 # Define package exports
 __all__ = [
@@ -915,6 +915,7 @@ __all__ = [
     "WebAuthnDevice",
     "WebAuthnDeviceRequest",
     "WebAuthnDeviceType",
+    "WebAuthnHintEnum",
     "Worker",
 ]
 
@@ -1819,5 +1820,6 @@ from authentik_client.models.ws_federation_provider_request import WSFederationP
 from authentik_client.models.web_authn_device import WebAuthnDevice as WebAuthnDevice
 from authentik_client.models.web_authn_device_request import WebAuthnDeviceRequest as WebAuthnDeviceRequest
 from authentik_client.models.web_authn_device_type import WebAuthnDeviceType as WebAuthnDeviceType
+from authentik_client.models.web_authn_hint_enum import WebAuthnHintEnum as WebAuthnHintEnum
 from authentik_client.models.worker import Worker as Worker
 

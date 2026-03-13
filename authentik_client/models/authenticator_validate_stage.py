@@ -26,6 +26,7 @@ from authentik_client.models.flow_set import FlowSet
 from authentik_client.models.not_configured_action_enum import NotConfiguredActionEnum
 from authentik_client.models.user_verification_enum import UserVerificationEnum
 from authentik_client.models.web_authn_device_type import WebAuthnDeviceType
+from authentik_client.models.web_authn_hint_enum import WebAuthnHintEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -45,9 +46,10 @@ class AuthenticatorValidateStage(BaseModel):
     configuration_stages: Optional[List[UUID]] = Field(default=None, description="Stages used to configure Authenticator when user doesn't have any compatible devices. After this configuration Stage passes, the user is not prompted again.")
     last_auth_threshold: Optional[StrictStr] = Field(default=None, description="If any of the user's device has been used within this threshold, this stage will be skipped")
     webauthn_user_verification: Optional[UserVerificationEnum] = Field(default=None, description="Enforce user verification for WebAuthn devices.")
+    webauthn_hints: Optional[List[WebAuthnHintEnum]] = None
     webauthn_allowed_device_types: Optional[List[UUID]] = None
     webauthn_allowed_device_types_obj: List[WebAuthnDeviceType]
-    __properties: ClassVar[List[str]] = ["pk", "name", "component", "verbose_name", "verbose_name_plural", "meta_model_name", "flow_set", "not_configured_action", "device_classes", "configuration_stages", "last_auth_threshold", "webauthn_user_verification", "webauthn_allowed_device_types", "webauthn_allowed_device_types_obj"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "component", "verbose_name", "verbose_name_plural", "meta_model_name", "flow_set", "not_configured_action", "device_classes", "configuration_stages", "last_auth_threshold", "webauthn_user_verification", "webauthn_hints", "webauthn_allowed_device_types", "webauthn_allowed_device_types_obj"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -140,6 +142,7 @@ class AuthenticatorValidateStage(BaseModel):
             "configuration_stages": obj.get("configuration_stages"),
             "last_auth_threshold": obj.get("last_auth_threshold"),
             "webauthn_user_verification": obj.get("webauthn_user_verification"),
+            "webauthn_hints": obj.get("webauthn_hints"),
             "webauthn_allowed_device_types": obj.get("webauthn_allowed_device_types"),
             "webauthn_allowed_device_types_obj": [WebAuthnDeviceType.from_dict(_item) for _item in obj["webauthn_allowed_device_types_obj"]] if obj.get("webauthn_allowed_device_types_obj") is not None else None
         })

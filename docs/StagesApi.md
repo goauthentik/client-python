@@ -5147,7 +5147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stages_authenticator_webauthn_list**
-> PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment=authenticator_attachment, configure_flow=configure_flow, device_type_restrictions=device_type_restrictions, friendly_name=friendly_name, max_attempts=max_attempts, name=name, ordering=ordering, page=page, page_size=page_size, resident_key_requirement=resident_key_requirement, search=search, stage_uuid=stage_uuid, user_verification=user_verification)
+> PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment=authenticator_attachment, configure_flow=configure_flow, device_type_restrictions=device_type_restrictions, max_attempts=max_attempts, name=name, ordering=ordering, page=page, page_size=page_size, resident_key_requirement=resident_key_requirement, search=search, user_verification=user_verification)
 
 AuthenticatorWebAuthnStage Viewset
 
@@ -5184,7 +5184,6 @@ with authentik_client.ApiClient(configuration) as api_client:
     authenticator_attachment = 'authenticator_attachment_example' # str |  (optional)
     configure_flow = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     device_type_restrictions = None # List[UUID] |  (optional)
-    friendly_name = 'friendly_name_example' # str |  (optional)
     max_attempts = 56 # int |  (optional)
     name = 'name_example' # str |  (optional)
     ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
@@ -5192,11 +5191,10 @@ with authentik_client.ApiClient(configuration) as api_client:
     page_size = 56 # int | Number of results to return per page. (optional)
     resident_key_requirement = 'resident_key_requirement_example' # str |  (optional)
     search = 'search_example' # str | A search term. (optional)
-    stage_uuid = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
     user_verification = 'user_verification_example' # str |  (optional)
 
     try:
-        api_response = api_instance.stages_authenticator_webauthn_list(authenticator_attachment=authenticator_attachment, configure_flow=configure_flow, device_type_restrictions=device_type_restrictions, friendly_name=friendly_name, max_attempts=max_attempts, name=name, ordering=ordering, page=page, page_size=page_size, resident_key_requirement=resident_key_requirement, search=search, stage_uuid=stage_uuid, user_verification=user_verification)
+        api_response = api_instance.stages_authenticator_webauthn_list(authenticator_attachment=authenticator_attachment, configure_flow=configure_flow, device_type_restrictions=device_type_restrictions, max_attempts=max_attempts, name=name, ordering=ordering, page=page, page_size=page_size, resident_key_requirement=resident_key_requirement, search=search, user_verification=user_verification)
         print("The response of StagesApi->stages_authenticator_webauthn_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -5213,7 +5211,6 @@ Name | Type | Description  | Notes
  **authenticator_attachment** | **str**|  | [optional] 
  **configure_flow** | **UUID**|  | [optional] 
  **device_type_restrictions** | [**List[UUID]**](UUID.md)|  | [optional] 
- **friendly_name** | **str**|  | [optional] 
  **max_attempts** | **int**|  | [optional] 
  **name** | **str**|  | [optional] 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
@@ -5221,7 +5218,6 @@ Name | Type | Description  | Notes
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **resident_key_requirement** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **stage_uuid** | **UUID**|  | [optional] 
  **user_verification** | **str**|  | [optional] 
 
 ### Return type

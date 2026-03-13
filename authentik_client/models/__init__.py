@@ -876,5 +876,6 @@ from authentik_client.models.ws_federation_provider_request import WSFederationP
 from authentik_client.models.web_authn_device import WebAuthnDevice
 from authentik_client.models.web_authn_device_request import WebAuthnDeviceRequest
 from authentik_client.models.web_authn_device_type import WebAuthnDeviceType
+from authentik_client.models.web_authn_hint_enum import WebAuthnHintEnum
 from authentik_client.models.worker import Worker
 

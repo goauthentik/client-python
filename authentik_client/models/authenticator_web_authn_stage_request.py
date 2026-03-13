@@ -25,6 +25,7 @@ from uuid import UUID
 from authentik_client.models.authenticator_attachment_enum import AuthenticatorAttachmentEnum
 from authentik_client.models.resident_key_requirement_enum import ResidentKeyRequirementEnum
 from authentik_client.models.user_verification_enum import UserVerificationEnum
+from authentik_client.models.web_authn_hint_enum import WebAuthnHintEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,9 +39,10 @@ class AuthenticatorWebAuthnStageRequest(BaseModel):
     user_verification: Optional[UserVerificationEnum] = None
     authenticator_attachment: Optional[AuthenticatorAttachmentEnum] = None
     resident_key_requirement: Optional[ResidentKeyRequirementEnum] = None
+    hints: Optional[List[WebAuthnHintEnum]] = None
     device_type_restrictions: Optional[List[UUID]] = None
     max_attempts: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = None
-    __properties: ClassVar[List[str]] = ["name", "configure_flow", "friendly_name", "user_verification", "authenticator_attachment", "resident_key_requirement", "device_type_restrictions", "max_attempts"]
+    __properties: ClassVar[List[str]] = ["name", "configure_flow", "friendly_name", "user_verification", "authenticator_attachment", "resident_key_requirement", "hints", "device_type_restrictions", "max_attempts"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -109,6 +111,7 @@ class AuthenticatorWebAuthnStageRequest(BaseModel):
             "user_verification": obj.get("user_verification"),
             "authenticator_attachment": obj.get("authenticator_attachment"),
             "resident_key_requirement": obj.get("resident_key_requirement"),
+            "hints": obj.get("hints"),
             "device_type_restrictions": obj.get("device_type_restrictions"),
             "max_attempts": obj.get("max_attempts")
         })

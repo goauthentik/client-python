@@ -76,6 +76,9 @@ class TestPaginatedAuthenticatorValidateStageList(unittest.TestCase):
                             ], 
                         last_auth_threshold = '', 
                         webauthn_user_verification = null, 
+                        webauthn_hints = [
+                            'security-key'
+                            ], 
                         webauthn_allowed_device_types = [
                             ''
                             ], 
@@ -131,6 +134,9 @@ class TestPaginatedAuthenticatorValidateStageList(unittest.TestCase):
                             ], 
                         last_auth_threshold = '', 
                         webauthn_user_verification = null, 
+                        webauthn_hints = [
+                            'security-key'
+                            ], 
                         webauthn_allowed_device_types = [
                             ''
                             ], 

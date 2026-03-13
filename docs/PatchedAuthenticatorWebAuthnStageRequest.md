@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **user_verification** | [**UserVerificationEnum**](UserVerificationEnum.md) |  | [optional] 
 **authenticator_attachment** | [**AuthenticatorAttachmentEnum**](AuthenticatorAttachmentEnum.md) |  | [optional] 
 **resident_key_requirement** | [**ResidentKeyRequirementEnum**](ResidentKeyRequirementEnum.md) |  | [optional] 
+**hints** | [**List[WebAuthnHintEnum]**](WebAuthnHintEnum.md) |  | [optional] 
 **device_type_restrictions** | **List[UUID]** |  | [optional] 
 **max_attempts** | **int** |  | [optional] 
 

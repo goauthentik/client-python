@@ -72,6 +72,9 @@ class TestPaginatedAuthenticatorWebAuthnStageList(unittest.TestCase):
                         user_verification = 'required', 
                         authenticator_attachment = null, 
                         resident_key_requirement = 'discouraged', 
+                        hints = [
+                            'security-key'
+                            ], 
                         device_type_restrictions = [
                             ''
                             ], 
@@ -124,6 +127,9 @@ class TestPaginatedAuthenticatorWebAuthnStageList(unittest.TestCase):
                         user_verification = 'required', 
                         authenticator_attachment = null, 
                         resident_key_requirement = 'discouraged', 
+                        hints = [
+                            'security-key'
+                            ], 
                         device_type_restrictions = [
                             ''
                             ], 

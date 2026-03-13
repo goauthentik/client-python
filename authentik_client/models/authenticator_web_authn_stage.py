@@ -27,6 +27,7 @@ from authentik_client.models.flow_set import FlowSet
 from authentik_client.models.resident_key_requirement_enum import ResidentKeyRequirementEnum
 from authentik_client.models.user_verification_enum import UserVerificationEnum
 from authentik_client.models.web_authn_device_type import WebAuthnDeviceType
+from authentik_client.models.web_authn_hint_enum import WebAuthnHintEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -46,10 +47,11 @@ class AuthenticatorWebAuthnStage(BaseModel):
     user_verification: Optional[UserVerificationEnum] = None
     authenticator_attachment: Optional[AuthenticatorAttachmentEnum] = None
     resident_key_requirement: Optional[ResidentKeyRequirementEnum] = None
+    hints: Optional[List[WebAuthnHintEnum]] = None
     device_type_restrictions: Optional[List[UUID]] = None
     device_type_restrictions_obj: List[WebAuthnDeviceType]
     max_attempts: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = None
-    __properties: ClassVar[List[str]] = ["pk", "name", "component", "verbose_name", "verbose_name_plural", "meta_model_name", "flow_set", "configure_flow", "friendly_name", "user_verification", "authenticator_attachment", "resident_key_requirement", "device_type_restrictions", "device_type_restrictions_obj", "max_attempts"]
+    __properties: ClassVar[List[str]] = ["pk", "name", "component", "verbose_name", "verbose_name_plural", "meta_model_name", "flow_set", "configure_flow", "friendly_name", "user_verification", "authenticator_attachment", "resident_key_requirement", "hints", "device_type_restrictions", "device_type_restrictions_obj", "max_attempts"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -152,6 +154,7 @@ class AuthenticatorWebAuthnStage(BaseModel):
             "user_verification": obj.get("user_verification"),
             "authenticator_attachment": obj.get("authenticator_attachment"),
             "resident_key_requirement": obj.get("resident_key_requirement"),
+            "hints": obj.get("hints"),
             "device_type_restrictions": obj.get("device_type_restrictions"),
             "device_type_restrictions_obj": [WebAuthnDeviceType.from_dict(_item) for _item in obj["device_type_restrictions_obj"]] if obj.get("device_type_restrictions_obj") is not None else None,
             "max_attempts": obj.get("max_attempts")
