@@ -41,6 +41,7 @@ class TestNotificationTransport(unittest.TestCase):
                 mode = 'local',
                 mode_verbose = '',
                 webhook_url = '',
+                webhook_ca = '',
                 webhook_mapping_body = '',
                 webhook_mapping_headers = '',
                 email_subject_prefix = '',

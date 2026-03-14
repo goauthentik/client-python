@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **mode** | [**NotificationTransportModeEnum**](NotificationTransportModeEnum.md) |  | [optional] 
 **webhook_url** | **str** |  | [optional] 
+**webhook_ca** | **UUID** | When set, the selected ceritifcate is used to validate the certificate of the webhook server. | [optional] 
 **webhook_mapping_body** | **UUID** | Customize the body of the request. Mapping should return data that is JSON-serializable. | [optional] 
 **webhook_mapping_headers** | **UUID** | Configure additional headers to be sent. Mapping should return a dictionary of key-value pairs | [optional] 
 **email_subject_prefix** | **str** |  | [optional] 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **mode** | [**NotificationTransportModeEnum**](NotificationTransportModeEnum.md) |  | [optional] 
 **mode_verbose** | **str** | Return selected mode with a UI Label | [readonly] 
 **webhook_url** | **str** |  | [optional] 
+**webhook_ca** | **UUID** | When set, the selected ceritifcate is used to validate the certificate of the webhook server. | [optional] 
 **webhook_mapping_body** | **UUID** | Customize the body of the request. Mapping should return data that is JSON-serializable. | [optional] 
 **webhook_mapping_headers** | **UUID** | Configure additional headers to be sent. Mapping should return a dictionary of key-value pairs | [optional] 
 **email_subject_prefix** | **str** |  | [optional] 

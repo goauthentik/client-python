@@ -39,6 +39,7 @@ class TestPatchedNotificationTransportRequest(unittest.TestCase):
                 name = '0',
                 mode = 'local',
                 webhook_url = '',
+                webhook_ca = '',
                 webhook_mapping_body = '',
                 webhook_mapping_headers = '',
                 email_subject_prefix = '',

@@ -33,12 +33,13 @@ class PatchedNotificationTransportRequest(BaseModel):
     name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     mode: Optional[NotificationTransportModeEnum] = None
     webhook_url: Optional[StrictStr] = None
+    webhook_ca: Optional[UUID] = Field(default=None, description="When set, the selected ceritifcate is used to validate the certificate of the webhook server.")
     webhook_mapping_body: Optional[UUID] = Field(default=None, description="Customize the body of the request. Mapping should return data that is JSON-serializable.")
     webhook_mapping_headers: Optional[UUID] = Field(default=None, description="Configure additional headers to be sent. Mapping should return a dictionary of key-value pairs")
     email_subject_prefix: Optional[StrictStr] = None
     email_template: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     send_once: Optional[StrictBool] = Field(default=None, description="Only send notification once, for example when sending a webhook into a chat channel.")
-    __properties: ClassVar[List[str]] = ["name", "mode", "webhook_url", "webhook_mapping_body", "webhook_mapping_headers", "email_subject_prefix", "email_template", "send_once"]
+    __properties: ClassVar[List[str]] = ["name", "mode", "webhook_url", "webhook_ca", "webhook_mapping_body", "webhook_mapping_headers", "email_subject_prefix", "email_template", "send_once"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +80,11 @@ class PatchedNotificationTransportRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if webhook_ca (nullable) is None
+        # and model_fields_set contains the field
+        if self.webhook_ca is None and "webhook_ca" in self.model_fields_set:
+            _dict['webhook_ca'] = None
+
         # set to None if webhook_mapping_body (nullable) is None
         # and model_fields_set contains the field
         if self.webhook_mapping_body is None and "webhook_mapping_body" in self.model_fields_set:
@@ -104,6 +110,7 @@ class PatchedNotificationTransportRequest(BaseModel):
             "name": obj.get("name"),
             "mode": obj.get("mode"),
             "webhook_url": obj.get("webhook_url"),
+            "webhook_ca": obj.get("webhook_ca"),
             "webhook_mapping_body": obj.get("webhook_mapping_body"),
             "webhook_mapping_headers": obj.get("webhook_mapping_headers"),
             "email_subject_prefix": obj.get("email_subject_prefix"),
