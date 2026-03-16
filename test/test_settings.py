@@ -53,7 +53,6 @@ class TestSettings(unittest.TestCase):
                 pagination_max_page_size = 0,
                 flags = authentik_client.models.patched_settings_request_flags.PatchedSettingsRequest_flags(
                     enterprise_audit_include_expanded_diff = True, 
-                    policies_buffered_access_view = True, 
                     flows_continuous_login = True, 
                     flows_refresh_others = True, )
             )
@@ -61,7 +60,6 @@ class TestSettings(unittest.TestCase):
             return Settings(
                 flags = authentik_client.models.patched_settings_request_flags.PatchedSettingsRequest_flags(
                     enterprise_audit_include_expanded_diff = True, 
-                    policies_buffered_access_view = True, 
                     flows_continuous_login = True, 
                     flows_refresh_others = True, ),
         )

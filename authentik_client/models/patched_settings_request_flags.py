@@ -28,10 +28,9 @@ class PatchedSettingsRequestFlags(BaseModel):
     PatchedSettingsRequestFlags
     """ # noqa: E501
     enterprise_audit_include_expanded_diff: StrictBool
-    policies_buffered_access_view: StrictBool
     flows_continuous_login: StrictBool
     flows_refresh_others: StrictBool
-    __properties: ClassVar[List[str]] = ["enterprise_audit_include_expanded_diff", "policies_buffered_access_view", "flows_continuous_login", "flows_refresh_others"]
+    __properties: ClassVar[List[str]] = ["enterprise_audit_include_expanded_diff", "flows_continuous_login", "flows_refresh_others"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +84,6 @@ class PatchedSettingsRequestFlags(BaseModel):
 
         _obj = cls.model_validate({
             "enterprise_audit_include_expanded_diff": obj.get("enterprise_audit_include_expanded_diff"),
-            "policies_buffered_access_view": obj.get("policies_buffered_access_view"),
             "flows_continuous_login": obj.get("flows_continuous_login"),
             "flows_refresh_others": obj.get("flows_refresh_others")
         })
