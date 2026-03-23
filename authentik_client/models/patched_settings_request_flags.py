@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool
+from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,10 +27,11 @@ class PatchedSettingsRequestFlags(BaseModel):
     """
     PatchedSettingsRequestFlags
     """ # noqa: E501
-    enterprise_audit_include_expanded_diff: StrictBool
-    flows_continuous_login: StrictBool
-    flows_refresh_others: StrictBool
-    __properties: ClassVar[List[str]] = ["enterprise_audit_include_expanded_diff", "flows_continuous_login", "flows_refresh_others"]
+    core_default_app_access: StrictBool = Field(description="Configure if applications without any policy/group/user bindings should be accessible to any user.")
+    enterprise_audit_include_expanded_diff: StrictBool = Field(description="Include additional information in audit logs, may incur a performance penalty.")
+    flows_continuous_login: StrictBool = Field(description="Upon successful authentication, re-start authentication in other open tabs.")
+    flows_refresh_others: StrictBool = Field(description="Refresh other tabs after successful authentication.")
+    __properties: ClassVar[List[str]] = ["core_default_app_access", "enterprise_audit_include_expanded_diff", "flows_continuous_login", "flows_refresh_others"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +84,7 @@ class PatchedSettingsRequestFlags(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "core_default_app_access": obj.get("core_default_app_access"),
             "enterprise_audit_include_expanded_diff": obj.get("enterprise_audit_include_expanded_diff"),
             "flows_continuous_login": obj.get("flows_continuous_login"),
             "flows_refresh_others": obj.get("flows_refresh_others")

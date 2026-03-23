@@ -36,12 +36,14 @@ class TestCurrentBrandFlags(unittest.TestCase):
         model = CurrentBrandFlags()
         if include_optional:
             return CurrentBrandFlags(
+                core_default_app_access = True,
                 enterprise_audit_include_expanded_diff = True,
                 flows_continuous_login = True,
                 flows_refresh_others = True
             )
         else:
             return CurrentBrandFlags(
+                core_default_app_access = True,
                 enterprise_audit_include_expanded_diff = True,
                 flows_continuous_login = True,
                 flows_refresh_others = True,

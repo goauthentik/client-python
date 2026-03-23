@@ -36,12 +36,14 @@ class TestPatchedSettingsRequestFlags(unittest.TestCase):
         model = PatchedSettingsRequestFlags()
         if include_optional:
             return PatchedSettingsRequestFlags(
+                core_default_app_access = True,
                 enterprise_audit_include_expanded_diff = True,
                 flows_continuous_login = True,
                 flows_refresh_others = True
             )
         else:
             return PatchedSettingsRequestFlags(
+                core_default_app_access = True,
                 enterprise_audit_include_expanded_diff = True,
                 flows_continuous_login = True,
                 flows_refresh_others = True,

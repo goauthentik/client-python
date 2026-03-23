@@ -61,6 +61,7 @@ class TestCurrentBrand(unittest.TestCase):
                 flow_device_code = '',
                 default_locale = '',
                 flags = authentik_client.models.current_brand_flags.CurrentBrand_flags(
+                    core_default_app_access = True, 
                     enterprise_audit_include_expanded_diff = True, 
                     flows_continuous_login = True, 
                     flows_refresh_others = True, )
@@ -86,6 +87,7 @@ class TestCurrentBrand(unittest.TestCase):
                 ui_theme = 'automatic',
                 default_locale = '',
                 flags = authentik_client.models.current_brand_flags.CurrentBrand_flags(
+                    core_default_app_access = True, 
                     enterprise_audit_include_expanded_diff = True, 
                     flows_continuous_login = True, 
                     flows_refresh_others = True, ),

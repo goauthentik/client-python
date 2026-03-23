@@ -52,6 +52,7 @@ class TestPatchedSettingsRequest(unittest.TestCase):
                 pagination_default_page_size = 0,
                 pagination_max_page_size = 0,
                 flags = authentik_client.models.patched_settings_request_flags.PatchedSettingsRequest_flags(
+                    core_default_app_access = True, 
                     enterprise_audit_include_expanded_diff = True, 
                     flows_continuous_login = True, 
                     flows_refresh_others = True, )
