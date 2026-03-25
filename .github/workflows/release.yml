@@ -1,5 +1,5 @@
 ---
-name: Stable release
+name: Release
 
 on:
   workflow_dispatch:
@@ -108,7 +108,7 @@ jobs:
           git tag "$tag"
           git push origin "$branch"
           git push --tags
-          gh release create "$tag" --latest --title "$version"
+          gh release create "$tag" --latest --title "$version" --notes "See https://github.com/goauthentik/authentik/releases/tag/$tag"
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
       - name: Build package
