@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **policies_buffered_access_view** | **bool** |  | 
+**flows_continuous_login** | **bool** |  | 
 **flows_refresh_others** | **bool** |  | 
 
 ## Example
