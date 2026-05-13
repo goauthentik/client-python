@@ -6,8 +6,8 @@ SAML Provider Metadata serializer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | **str** |  | 
-**download_url** | **str** |  | [optional] 
+**metadata** | **str** |  | [readonly] 
+**download_url** | **str** |  | [readonly] 
 
 ## Example
 
