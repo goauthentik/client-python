@@ -7,7 +7,7 @@ Serializer for BaseGrantModel and ExpiringBaseGrant
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
-**provider** | [**OAuth2Provider**](OAuth2Provider.md) |  | 
+**provider** | [**Provider**](Provider.md) |  | 
 **user** | [**User**](User.md) |  | 
 **is_expired** | **bool** | Check if token is expired yet. | [readonly] 
 **expires** | **datetime** |  | [optional] 
