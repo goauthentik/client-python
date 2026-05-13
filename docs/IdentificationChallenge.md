@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **password_fields** | **bool** |  | 
 **allow_show_password** | **bool** |  | [optional] [default to False]
 **application_pre** | **str** |  | [optional] 
+**application_pre_launch** | **str** |  | [optional] 
 **flow_designation** | [**FlowDesignationEnum**](FlowDesignationEnum.md) |  | 
 **captcha_stage** | [**CaptchaChallenge**](CaptchaChallenge.md) |  | [optional] 
 **enroll_url** | **str** |  | [optional] 
