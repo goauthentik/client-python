@@ -75,6 +75,7 @@ Name | Type | Description | Notes
 **application_name** | **str** |  | [optional] 
 **application_launch_url** | **str** |  | [optional] 
 **invalidation_flow_url** | **str** |  | [optional] 
+**overview_url** | **str** |  | [optional] 
 **brand_name** | **str** |  | 
 **body** | **str** |  | 
 **bot_username** | **str** | Telegram bot username | 
