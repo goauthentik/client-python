@@ -6,7 +6,6 @@ Group Source Connection
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**group** | **UUID** |  | 
 **source** | **UUID** |  | 
 **identifier** | **str** |  | 
 

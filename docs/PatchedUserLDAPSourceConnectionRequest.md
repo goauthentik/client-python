@@ -6,7 +6,6 @@ User source connection
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | **int** |  | [optional] 
 **source** | **UUID** |  | [optional] 
 **identifier** | **str** |  | [optional] 
 
