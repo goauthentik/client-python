@@ -6,6 +6,7 @@ Group Source Connection
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**group** | **str** |  | 
 **source** | **str** |  | 
 **identifier** | **str** |  | 
 
