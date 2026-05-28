@@ -7,7 +7,7 @@ Group Source Connection
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
-**group** | **str** |  | 
+**group** | **str** |  | [readonly] 
 **source** | **str** |  | 
 **source_obj** | [**Source**](Source.md) |  | [readonly] 
 **identifier** | **str** |  | 
