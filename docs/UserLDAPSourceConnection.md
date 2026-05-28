@@ -7,7 +7,7 @@ User source connection
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [readonly] 
-**user** | **int** |  | 
+**user** | **int** |  | [readonly] 
 **source** | **UUID** |  | 
 **source_obj** | [**Source**](Source.md) |  | [readonly] 
 **identifier** | **str** |  | 

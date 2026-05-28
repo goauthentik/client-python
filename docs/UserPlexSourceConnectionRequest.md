@@ -6,7 +6,6 @@ User source connection
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | **int** |  | 
 **source** | **UUID** |  | 
 **identifier** | **str** |  | 
 **plex_token** | **str** |  | 
