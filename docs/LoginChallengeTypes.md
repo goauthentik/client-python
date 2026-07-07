@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **component** | **str** |  | [optional] [default to 'ak-source-telegram']
 **response_errors** | **Dict[str, List[ErrorDetail]]** |  | [optional] 
 **to** | **str** |  | 
+**final_redirect** | **bool** |  | [optional] [default to False]
 **client_id** | **str** |  | 
 **scope** | **str** |  | 
 **redirect_uri** | **str** |  | 

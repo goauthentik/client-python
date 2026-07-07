@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **component** | **str** |  | [optional] [default to 'xak-flow-redirect']
 **response_errors** | **Dict[str, List[ErrorDetail]]** |  | [optional] 
 **to** | **str** |  | 
+**final_redirect** | **bool** |  | [optional] [default to False]
 
 ## Example
 
