@@ -72,6 +72,7 @@ Name | Type | Description | Notes
 **slug** | **str** |  | 
 **fields** | [**List[StagePrompt]**](StagePrompt.md) |  | 
 **to** | **str** |  | 
+**final_redirect** | **bool** |  | [optional] [default to False]
 **application_name** | **str** |  | [optional] 
 **application_launch_url** | **str** |  | [optional] 
 **invalidation_flow_url** | **str** |  | [optional] 
