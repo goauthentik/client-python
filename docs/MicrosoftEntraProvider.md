@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **user_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **group_delete_action** | [**OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md) |  | [optional] 
 **sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
+**discovery_enabled** | **bool** | When enabled, authentik will attempt to discover existing resources in the remote system. | [optional] 
 **sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
 

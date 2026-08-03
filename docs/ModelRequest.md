@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **sync_page_size** | **int** | Controls the number of objects synced in a single task | [optional] 
 **sync_page_timeout** | **str** | Timeout for synchronization of a single page | [optional] 
 **dry_run** | **bool** | When enabled, provider will not modify or create objects in the remote system. | [optional] 
+**discovery_enabled** | **bool** | When enabled, authentik will attempt to discover existing resources in the remote system. | [optional] 
 **authentication_flow** | **UUID** | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional] 
 **authorization_flow** | **UUID** | Flow used when authorizing this provider. | 
 **invalidation_flow** | **UUID** | Flow used ending the session from a provider. | 
