@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **branding_favicon** | **str** |  | 
 **branding_favicon_themed_urls** | [**ThemedUrls**](ThemedUrls.md) |  | [readonly] 
 **branding_custom_css** | **str** |  | 
+**branding_map_tiles** | **str** |  | 
 **ui_footer_links** | [**List[FooterLink]**](FooterLink.md) |  | [readonly] 
 **ui_theme** | [**UiThemeEnum**](UiThemeEnum.md) |  | [readonly] 
 **flow_authentication** | **str** |  | [optional] 
