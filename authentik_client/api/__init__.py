@@ -2,6 +2,7 @@
 
 # import apis into api package
 from authentik_client.api.admin_api import AdminApi
+from authentik_client.api.agents_api import AgentsApi
 from authentik_client.api.authenticators_api import AuthenticatorsApi
 from authentik_client.api.core_api import CoreApi
 from authentik_client.api.crypto_api import CryptoApi

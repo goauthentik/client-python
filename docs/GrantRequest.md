@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **requester_data** | **Dict[str, object]** |  | [optional] 
 **fulfiller_data** | **Dict[str, object]** |  | [optional] 
 **revoked_by** | [**PartialUser**](PartialUser.md) |  | [readonly] 
+**agent_owner** | [**PartialUser**](PartialUser.md) |  | [readonly] 
 **is_active** | **bool** |  | [readonly] 
 **expires** | **datetime** |  | [optional] 
 **status** | [**RequestStatus**](RequestStatus.md) |  | [readonly] 

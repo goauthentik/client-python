@@ -17,6 +17,8 @@
 
 * `AUTHENTIK_CORE_DOT_OBJECTATTRIBUTE` (value: `'authentik_core.objectattribute'`)
 
+* `AUTHENTIK_CORE_DOT_ACTOR` (value: `'authentik_core.actor'`)
+
 * `AUTHENTIK_CRYPTO_DOT_CERTIFICATEKEYPAIR` (value: `'authentik_crypto.certificatekeypair'`)
 
 * `AUTHENTIK_ENDPOINTS_DOT_DEVICEUSERBINDING` (value: `'authentik_endpoints.deviceuserbinding'`)
@@ -216,6 +218,8 @@
 * `AUTHENTIK_BRANDS_DOT_BRAND` (value: `'authentik_brands.brand'`)
 
 * `AUTHENTIK_BLUEPRINTS_DOT_BLUEPRINTINSTANCE` (value: `'authentik_blueprints.blueprintinstance'`)
+
+* `AUTHENTIK_AGENTS_DOT_AGENT` (value: `'authentik_agents.agent'`)
 
 * `AUTHENTIK_ENDPOINTS_CONNECTORS_FLEET_DOT_FLEETCONNECTOR` (value: `'authentik_endpoints_connectors_fleet.fleetconnector'`)
 
