@@ -793,6 +793,7 @@ authentik_client/models/request_rule_child_binding_request.py
 authentik_client/models/request_rule_request.py
 authentik_client/models/request_status.py
 authentik_client/models/requestable_target.py
+authentik_client/models/resume_on_match_failures_enum.py
 authentik_client/models/review.py
 authentik_client/models/review_request.py
 authentik_client/models/role.py
@@ -1745,6 +1746,7 @@ docs/RequestRuleRequest.md
 docs/RequestStatus.md
 docs/RequestableTarget.md
 docs/RequestsApi.md
+docs/ResumeOnMatchFailuresEnum.md
 docs/Review.md
 docs/ReviewRequest.md
 docs/Role.md
@@ -1933,14 +1935,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_agent.py
-test/test_agent_create_request.py
-test/test_agent_created.py
-test/test_agent_grant_request_create_request.py
-test/test_agent_grant_request_created.py
-test/test_agent_request.py
-test/test_agents_api.py
-test/test_paginated_agent_list.py
-test/test_patched_agent_request.py
-test/test_policy_behavior_enum.py
+test/test_resume_on_match_failures_enum.py
 tox.ini

@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **endpoints_agents_connectors_auth_ia_create**
-> AgentAuthenticationResponse endpoints_agents_connectors_auth_ia_create()
+> AgentAuthenticationResponse endpoints_agents_connectors_auth_ia_create(login_hint=login_hint)
 
 Mixin to add a used_by endpoint to return a list of all objects using this object
 
@@ -250,9 +250,10 @@ configuration = authentik_client.Configuration(
 with authentik_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentik_client.EndpointsApi(api_client)
+    login_hint = 'login_hint_example' # str |  (optional)
 
     try:
-        api_response = api_instance.endpoints_agents_connectors_auth_ia_create()
+        api_response = api_instance.endpoints_agents_connectors_auth_ia_create(login_hint=login_hint)
         print("The response of EndpointsApi->endpoints_agents_connectors_auth_ia_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -263,7 +264,10 @@ with authentik_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **login_hint** | **str**|  | [optional] 
 
 ### Return type
 
