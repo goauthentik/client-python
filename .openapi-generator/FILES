@@ -1935,5 +1935,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_resume_on_match_failures_enum.py
 tox.ini
