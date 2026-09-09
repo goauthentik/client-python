@@ -18,8 +18,6 @@ Name | Type | Description | Notes
 **provider** | [**ProviderEnum**](ProviderEnum.md) |  | 
 **from_number** | **str** |  | 
 **account_sid** | **str** |  | 
-**auth** | **str** |  | 
-**auth_password** | **str** |  | [optional] 
 **auth_type** | [**AuthTypeEnum**](AuthTypeEnum.md) |  | [optional] 
 **verify_only** | **bool** | When enabled, the Phone number is only used during enrollment to verify the users authenticity. Only a hash of the phone number is saved to ensure it is not reused in the future. | [optional] 
 **mapping** | **UUID** | Optionally modify the payload being sent to custom providers. | [optional] 

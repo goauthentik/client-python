@@ -33,10 +33,8 @@ Name | Type | Description | Notes
 **sync_users** | **bool** | Sync users from Kerberos into authentik | [optional] 
 **sync_users_password** | **bool** | When a user changes their password, sync it back to Kerberos | [optional] 
 **sync_principal** | **str** | Principal to authenticate to kadmin for sync. | [optional] 
-**sync_ccache** | **str** | Credentials cache to authenticate to kadmin for sync. Must be in the form TYPE:residual | [optional] 
 **connectivity** | **Dict[str, str]** | Get cached source connectivity | [readonly] 
 **spnego_server_name** | **str** | Force the use of a specific server name for SPNEGO. Must be in the form HTTP@hostname | [optional] 
-**spnego_ccache** | **str** | Credential cache to use for SPNEGO in form type:residual | [optional] 
 **password_login_update_internal_password** | **bool** | If enabled, the authentik-stored password will be updated upon login with the Kerberos password backend | [optional] 
 **sync_outgoing_trigger_mode** | [**SyncOutgoingTriggerModeEnum**](SyncOutgoingTriggerModeEnum.md) | When to trigger sync for outgoing providers | [optional] 
 

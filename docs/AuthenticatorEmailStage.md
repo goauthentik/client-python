@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **host** | **str** |  | [optional] 
 **port** | **int** |  | [optional] 
 **username** | **str** |  | [optional] 
-**password** | **str** |  | [optional] 
 **use_tls** | **bool** |  | [optional] 
 **use_ssl** | **bool** |  | [optional] 
 **timeout** | **int** |  | [optional] 

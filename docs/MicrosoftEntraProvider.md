@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **str** | Return object&#39;s plural verbose_name | [readonly] 
 **meta_model_name** | **str** | Return internal model name | [readonly] 
 **client_id** | **str** |  | 
-**client_secret** | **str** |  | 
 **tenant_id** | **str** |  | 
 **exclude_users_service_account** | **bool** |  | [optional] 
 **filter_group** | **UUID** |  | [optional] 
